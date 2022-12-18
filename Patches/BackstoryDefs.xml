@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="VatgrownChild11"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="GlitterworldOfficer60"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="MedievalFarmOaf58"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Taster16"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Blacksmith72"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="MessageCarrier77"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="MedievalDoctor40"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Herbalist54"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="MedievalSailor97"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Policeman45"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>		
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="ConceptualArtist39"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>			
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="AsceticPriest84"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>			
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="EscapedConvict90"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="HouseServant63"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>				
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Bodyguard58"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>				
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Paramedic45"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>				
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Gardener99"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>				
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Torturer37"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>				
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Defector78"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>				
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="ConstructionEngineer32"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>				
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="LowWageWorker7"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Jailbird40"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Veterinarian99"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="ExplosivesExpert26"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Drifter67"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="MachineCollector55"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Logger95"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Ranger96"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Forester96"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="CropFarmer17"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="FactoryWorker58"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="PsychiatricPatient94"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Sheriff52"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="MafiaBoss17"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="UrbworldDrone32"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="UrbworldRebel56"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>					
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="ColonySettler53"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>							
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="StarshipJanitor33"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>							
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Castaway57"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>							
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="SpaceTactician28"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>							
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="UrbworldRebel56"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>							
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Hermit82"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>							
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="SpacePirate55"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>							
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="PitBrawler76"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>							
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="IllegalShipwright76"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>							
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="SpaceMarine16"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>							
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BackstoryDef[defName="Assassin20"]/spawnCategories</xpath>
+		<value>
+			<li>Biodrone</li>
+		</value>
+	</Operation>	
+	
+</Patch>

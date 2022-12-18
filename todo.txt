@@ -1,0 +1,11 @@
+name lists
+
+figure out if there's a way to make the (requires restart) options not require restart
+test failure states for PatchOperationBySetting
+forcing backstories by xenotype
+toggles for each gene
+head attachments that vary by head shape
+
+
+
+
