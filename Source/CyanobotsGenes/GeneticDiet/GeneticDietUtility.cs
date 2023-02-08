@@ -72,18 +72,6 @@ namespace CyanobotsGenes
             return ((int)foodDef.ingestible.foodType & (int)CG_FoodTypeFlags.CarnivoreOnly) != 0;
         }
 
-        /*
-        public static bool EdibleCarnivore(ThingDef foodDef)
-        {
-            return ((int)foodDef.ingestible.foodType & (int)CG_FoodTypeFlags.CarnivoreExclusion) == 0;
-        }
-
-        public static bool EdibleHerbivore(ThingDef foodDef)
-        {
-            return ((int)foodDef.ingestible.foodType & (int)CG_FoodTypeFlags.HerbivoreExclusion) == 0;
-        }
-        */
-
         public static CG_FoodKind GetCG_FoodKind(Thing food)
         {
             if (food == null) return CG_FoodKind.Any;
@@ -220,18 +208,28 @@ namespace CyanobotsGenes
         //whether their diet renders a food absolutely inedible
         public static bool DietForbids(Thing food, Pawn pawn)
         {
+            if (food.def.IsDrug) return false;
+
+            if (pawn.genes != null && pawn.genes.HasGene(CG_DefOf.ObligateCannibal))
+            {
+                if (FoodUtility.IsHumanlikeCorpseOrHumanlikeMeatOrIngredient(food) || food.def == ThingDefOf.HemogenPack)
+                    return false;
+                else return true;
+            }
+
             DietCategory dietCategory = GetDietCategory(pawn);
 
             //hay has been xml patched to be a vegetable
             //if they are NOT a strict herbivore, they still shouldn't eat it
             if (dietCategory != DietCategory.StrictHerbivore && food.def == ThingDefOf.Hay) return true;
 
-            //if it's something they would normally eat, check if their diet excludes it -- this exists for checking ingredients  of meals
             if (dietCategory == DietCategory.Hypercarnivore && GetCG_FoodKind(food) == CG_FoodKind.Vegan)
             {
                 return true;
             }
-            else if (dietCategory == DietCategory.StrictHerbivore && (GetCG_FoodKind(food) == CG_FoodKind.Meat || GetCG_FoodKind(food) == CG_FoodKind.AnimalProduct))
+            else if (dietCategory == DietCategory.StrictHerbivore && 
+                (GetCG_FoodKind(food) == CG_FoodKind.Meat || GetCG_FoodKind(food) == CG_FoodKind.AnimalProduct
+                || food.def == ThingDefOf.HemogenPack))
             {
                 return true;
             }
@@ -244,6 +242,9 @@ namespace CyanobotsGenes
             DietCategory dietCategory = GetDietCategory(pawn);
             //don't fuck with pawns without a genetic diet
             if (dietCategory == DietCategory.Default) return false;
+
+            if (food.def == ThingDefOf.HemogenPack && dietCategory == DietCategory.Herbivore)
+                return true;
 
             CG_FoodKind cg_foodKind = GetCG_FoodKind(food);
             if (cg_foodKind == CG_FoodKind.Any) return false;
@@ -264,9 +265,22 @@ namespace CyanobotsGenes
 
         public static float NutritionFactorFromGeneticDiet(Thing food, Pawn pawn)
         {
+            if (food.def.IsDrug || food.def.ingestible ==  null) return 1f;
+
+            if (pawn.genes != null && pawn.genes.HasGene(CG_DefOf.ObligateCannibal))
+            {
+                return ProportionHumanlike(food);
+            }
+
             DietCategory dietCategory = GetDietCategory(pawn);
-            //don't fuck with pawns without a genetic diet
+            //don't fuck with normal pawns
             if (dietCategory == DietCategory.Default) return 1f;
+
+            if (food.def == ThingDefOf.HemogenPack 
+                && dietCategory == DietCategory.Herbivore || dietCategory == DietCategory.StrictHerbivore)
+            {
+                return pawn.GetStatValue(CG_DefOf.AnimalNutritionFactor);
+            }
 
             CG_FoodKind cg_foodKind = GetCG_FoodKind(food);
             if (cg_foodKind == CG_FoodKind.Any) return 1f;
@@ -391,6 +405,41 @@ namespace CyanobotsGenes
             if (indigestionHediff.Severity > 1) indigestionHediff.Severity = 1;
         }
 
+        public static bool IsGeneticCannibal(Pawn pawn)
+        {
+            if (pawn.genes == null) return false;
+            if (pawn.genes.HasGene(CG_DefOf.Bodyfeeder) || pawn.genes.HasGene(CG_DefOf.ObligateCannibal)) 
+                return true;
+            return false;
+        }
+
+        //this is a bit of a hack and does not take into account what proportion of each ingredient was atually used
+        //but it's an approximation
+        public static float ProportionHumanlike(Thing food)
+        {
+            CompIngredients compIngredients = food.TryGetComp<CompIngredients>();
+            if (compIngredients == null)
+            {
+                return FoodUtility.IsHumanlikeCorpseOrHumanlikeMeat(food, food.def)
+                    ? 1f : 0f;
+            }
+            float countHumanlike = 0f;
+            float countNonHumanlike = 0f;
+            foreach (ThingDef ingredient in compIngredients.ingredients)
+            {
+                if (food.def.ingestible == null) continue;
+                if (FoodUtility.IsHumanlikeCorpseOrHumanlikeMeat(food, ingredient))
+                {
+                    countHumanlike += 1f;
+                }
+                else countNonHumanlike += 1f;
+            }
+            if (countHumanlike + countNonHumanlike != 0f)
+            {
+                return countHumanlike / (countHumanlike + countNonHumanlike);
+            }
+            return 0f;
+        }
     }
 
 }

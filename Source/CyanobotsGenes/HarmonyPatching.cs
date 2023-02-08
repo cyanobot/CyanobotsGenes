@@ -39,7 +39,7 @@ namespace CyanobotsGenes
     {
         static void Prefix(ThoughtDef mem, Pawn ___pawn)
         {
-            if (mem == ThoughtDef.Named("SoakingWet") && ___pawn.genes.HasGene(CG_DefOf.LightFur))
+            if (mem == ThoughtDef.Named("SoakingWet") && ___pawn.genes != null && ___pawn.genes.HasGene(CG_DefOf.LightFur))
             {
                 ___pawn.needs.mood.thoughts.memories.TryGainMemoryFast(CG_DefOf.WetFur);
             }
@@ -51,6 +51,8 @@ namespace CyanobotsGenes
     {
         public static IEnumerable<Toil> Postfix(IEnumerable<Toil> originalToils, JobDriver_Hunt __instance)
         {
+            __instance.job.ignoreJoyTimeAssignment = true;
+
             Pawn pawn = __instance.pawn;
             bool preyDrive = pawn.genes != null && pawn.genes.HasGene(CG_DefOf.PreyDrive);
 
@@ -80,5 +82,6 @@ namespace CyanobotsGenes
             return true;
         }
     }
+
 
 }

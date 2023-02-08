@@ -120,4 +120,133 @@
     </stages>
   </ThoughtDef>
   
+  <ThoughtDef>
+    <defName>BodyfeederStarvation</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>BodyfeederStarvation</hediff>
+    <stages>
+      <li>
+        <label>bodyfeeder starvation</label>
+        <description>I'm so hungry.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+      <li>
+        <label>bodyfeeder starvation</label>
+        <description>It hurts. Everyone looks like food. Everything gets on my nerves. I'm so hungry.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+      <li>
+        <label>bodyfeeder starvation</label>
+        <description>I must have flesh. I must.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+	<defName>BodyfeederAtePersonWhileBerserk</defName>
+	<durationDays>15</durationDays>
+	<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+	<stages>
+		<li>
+			<label>ate someone in a berserk frenzy</label>
+			<description>I lost control of my hunger and killed a person to eat them. I couldn't stop myself. I didn't want to stop.</description>
+			<baseMoodEffect>-10</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate colonist in a berserk frenzy</label>
+			<description>I ate {0}. I lost control of my hunger. I couldn't stop. I didn't want to. I'm afraid of what else I might do.</description>
+			<baseMoodEffect>-15</baseMoodEffect>
+		</li>
+		<li>
+			<!--someone I had a positive relationship with-->
+			<label>ate {0}</label>
+			<description>I killed them to eat their flesh. I am a monster.</description>
+			<baseMoodEffect>-20</baseMoodEffect>
+		</li>
+	</stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+	<defName>BodyfeederAteBodyPartWhileBerserk</defName>
+	<durationDays>10</durationDays>
+	<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+	<stages>
+		<li>
+			<label>ate a part of a live person</label>
+			<description>I lost control of my hunger and started chewing on a living person. They tasted so good.</description>
+			<baseMoodEffect>-6</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate a part of a colonist</label>
+			<description>I lost control of my hunger and started eating a fellow colonist. This is both horrifying and incredibly awkward.</description>
+			<baseMoodEffect>-9</baseMoodEffect>
+		</li>
+		<li>
+			<!--someone I had a positive relationship with-->
+			<label>ate a part of {0}</label>
+			<description>It was like our relationship didn't even matter. I don't know how we can go on after this.</description>
+			<baseMoodEffect>-12</baseMoodEffect>
+		</li>
+	</stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+	<defName>BodyfeederAteMyBodyPart</defName>
+	<thoughtClass>Thought_MemorySocial</thoughtClass>
+	<durationDays>15</durationDays>
+	<stackLimit>10</stackLimit>
+	<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+	<stages>
+		<li>
+			<label>body part eaten</label>
+			<description>{0} ate a part of me!</description>
+			<baseMoodEffect>-20</baseMoodEffect>
+			<baseOpinionOffset>-50</baseOpinionOffset>
+		</li>
+	</stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+	<defName>KnowBodyfeederAteBodyPart</defName>
+	<thoughtClass>Thought_MemorySocial</thoughtClass>
+	<durationDays>6</durationDays>
+	<stackLimit>300</stackLimit>
+	<stackLimitForSameOtherPawn>5</stackLimitForSameOtherPawn>
+	<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+	<nullifyingTraits>
+		<li>Psychopath</li>
+		<li>Bloodlust</li>
+	</nullifyingTraits>
+	<stages>
+		<li>
+			<!--enemy or guilty prisoner-->
+			<label>ate part of a live enemy</label>
+			<baseOpinionOffset>-3</baseOpinionOffset>
+		</li>
+		<li>
+			<!--guest or innocent prisoner-->
+			<label>ate part of a live person</label>
+			<baseOpinionOffset>-5</baseOpinionOffset>
+		</li>
+		<li>
+			<!--colonist, negative or neutral opinion-->
+			<label>ate part of a colonist</label>
+			<baseOpinionOffset>-10</baseOpinionOffset>
+		</li>
+		<li>
+			<!--positive opinion-->
+			<label>ate part  of  my friend</label>
+			<baseOpinionOffset>-15</baseOpinionOffset>
+		</li>
+	</stages>
+  </ThoughtDef>  
  </Defs>

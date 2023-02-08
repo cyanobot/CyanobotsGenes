@@ -53,13 +53,53 @@
   </GeneDef>
   
   <GeneDef>
+	<defName>Bodyfeeder</defName>
+	<label>bodyfeeder</label>
+	<iconPath>Genes/Gene_Bodyfeeder</iconPath>
+	<description>Bodyfeeder mechanites in the carrier's digestive system rapidly break down ingested human flesh into hemogen. The process unfortunately also digests hemogen if it's swallowed directly, making hemogen packs very inefficient. </description>
+	<geneClass>CyanobotsGenes.Gene_Bodyfeeder</geneClass>
+	<displayCategory>Hemogen</displayCategory>
+	<prerequisite>Hemogenic</prerequisite>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>0</biostatMet>
+    <minAgeActive>3</minAgeActive>
+	<exclusionTags>
+		<li>Herbivore</li>
+		<li>Bodyfeeder</li>
+	</exclusionTags>
+	<statFactors>
+		<HemogenGainFactor>0.2</HemogenGainFactor>
+	</statFactors>
+    <customEffectDescriptions>
+      <li>Gain lots of hemogen from human flesh, but only 20% hemogen from all other sources.</li>
+    </customEffectDescriptions>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>canni</symbol></li>
+			<li><symbol>necro</symbol></li>
+			<li><symbol>corpus</symbol></li>
+			<li><symbol>body</symbol></li>
+			<li><symbol>soma</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>vore</symbol></li>
+			<li><symbol>vour</symbol></li>
+			<li><symbol>ghoul</symbol></li>
+			<li><symbol>phage</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+  </GeneDef>
+  
+  <GeneDef>
 	<defName>Carnivore</defName>
 	<label>carnivore</label>
 	<description>Carriers of this gene have short guts and don't digest plant matter well. They don't enjoy eating vegetable matter, get less nutrition from it, and become unwell from eating too much of it.</description>
 	<iconPath>Genes/Gene_Carnivore</iconPath>
 	<displayCategory>Diet</displayCategory>
+    <displayOrderInCategory>3</displayOrderInCategory>
 	<exclusionTags>
 		<li>Diet</li>
+		<li>Carnivore</li>
 	</exclusionTags>
 	<biostatMet>2</biostatMet>
 	<statFactors>
@@ -86,8 +126,10 @@
 	<description>Carriers of this gene have short guts and a genetic deficiency in many enzymes associated with an omnivorous diet. They cannot digest plant matter at all, and must subsist on meat and other animal products. Their appetites make even raw meat appealing.</description>
 	<iconPath>Genes/Gene_Hypercarnivore</iconPath>
 	<displayCategory>Diet</displayCategory>
+    <displayOrderInCategory>4</displayOrderInCategory>
 	<exclusionTags>
 		<li>Diet</li>
+		<li>Carnivore</li>
 	</exclusionTags>
     <dontMindRawFood>true</dontMindRawFood>
 	<biostatMet>3</biostatMet>
@@ -115,8 +157,10 @@
 	<description>Carriers of this gene have digestive systems tuned to plant food. They don't enjoy eating animal  products, get less nutrition from them, and become unwell from eating too much of them.</description>
 	<iconPath>Genes/Gene_Herbivore</iconPath>
 	<displayCategory>Diet</displayCategory>
+    <displayOrderInCategory>2</displayOrderInCategory>
 	<exclusionTags>
 		<li>Diet</li>
+		<li>Herbivore</li>
 	</exclusionTags>
 	<biostatMet>2</biostatMet>
 	<statFactors>
@@ -143,8 +187,10 @@
 	<description>Carriers of this gene have multiple stomachs and support gut flora that digests only plant food. They cannot digest meat or other animal-derived food at all. If desperate, they can eat hay.</description>
 	<iconPath>Genes/Gene_StrictHerbivore</iconPath>
 	<displayCategory>Diet</displayCategory>
+    <displayOrderInCategory>1</displayOrderInCategory>
 	<exclusionTags>
 		<li>Diet</li>
+		<li>Herbivore</li>
 	</exclusionTags>
     <dontMindRawFood>true</dontMindRawFood>
 	<biostatMet>3</biostatMet>
@@ -166,6 +212,36 @@
         <li><symbol>sheep</symbol></li>
       </suffixSymbols>
     </symbolPack>
+  </GeneDef>
+  
+  <GeneDef>
+	<defName>ObligateCannibal</defName>
+	<label>obligate cannibal</label>
+	<description>Whether by a deeply unfortunate quirk of genetic drift or by purposeful engineering to some sick end, carriers of this gene are completely unable to synthesise many basic metabolic compounds key to human life. To survive, they depend on ingesting the flesh of fellow human beings -- the fresher the better.</description>
+	<iconPath>Genes/Gene_ObligateCannibal</iconPath>
+	<displayCategory>Diet</displayCategory>
+    <displayOrderInCategory>5</displayOrderInCategory>
+	<exclusionTags>
+		<li>Diet</li>
+	</exclusionTags>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>4</biostatMet>
+	<minAgeActive>3</minAgeActive>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>canni</symbol></li>
+			<li><symbol>necro</symbol></li>
+			<li><symbol>corpus</symbol></li>
+			<li><symbol>body</symbol></li>
+			<li><symbol>soma</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>vore</symbol></li>
+			<li><symbol>vour</symbol></li>
+			<li><symbol>ghoul</symbol></li>
+			<li><symbol>phage</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
   </GeneDef>
  
   <GeneDef Name="GeneJoyBase" Abstract="True">
@@ -478,6 +554,7 @@
     <symbolPack>
       <prefixSymbols>
         <li><symbol>agile</symbol></li>
+        <li><symbol>nimble</symbol></li>
       </prefixSymbols>
       <suffixSymbols>
         <li><symbol>tail</symbol></li>
@@ -558,7 +635,7 @@
 	<label>stealthy</label>
 	<description>Carriers of this gene have an innate instinct for stealth that makes them capable hunters.</description>
 	<iconPath>Genes/Gene_Stealthy</iconPath>
-	<displayCategory>Movement</displayCategory>
+	<!--<displayCategory>Misc</displayCategory>-->
     <displayOrderInCategory>600</displayOrderInCategory>
 	<biostatMet>-1</biostatMet>
     <exclusionTags>

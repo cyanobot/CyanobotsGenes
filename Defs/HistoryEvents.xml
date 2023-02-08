@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HistoryEventDef>
+		<defName>BodyfeederAteBodyPartEnemy</defName>
+		<label>ate enemy's body part</label>
+	</HistoryEventDef>
+
+	<HistoryEventDef>
+		<defName>BodyfeederAteBodyPartNeutral</defName>
+		<label>ate person's body part</label>
+	</HistoryEventDef>
+
+	<HistoryEventDef>
+		<defName>BodyfeederAteBodyPartColonist</defName>
+		<label>ate colonist's body part</label>
+	</HistoryEventDef>
+</Defs>

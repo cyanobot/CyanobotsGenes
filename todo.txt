@@ -1,11 +1,60 @@
-name lists
+addorreplace
+-hemogen pack edibility (cannibal, herbivore, etc)
+-wetfur fix
+*hunting during work hours is broken
+better food filters
 
+bodyfeeder mental state(s?)
+desperation rules for eating corpses
+	starvataion > mild : ignore forbidden/zoning/etc
+	starvation > moderate : eat rotting
+mental state
+	defend self
+	if any dead bodies/meat, eat by preference
+	if any downed pawns, just fucking start eating body parts
+	berserk but target humans only
+
+historyevent
+	existing:
+		AteHumanMeat
+		
+tale = things that art can be made about
+	existing: 
+		KilledMelee
+	want new:
+		KilledAndAte
+		AteBodyPart
+thoughts
+	ate a person
+	ate a person's body part
+	ate a fellow colonist
+	ate a fellow colonist's body part
+	ate a friend
+	ate a friend's body part
+	
+	they ate a person
+	they ate a person's body part
+	they ate a fellow colonist
+	they ate a fellow colonist's body part
+	they ate my friend
+	they ate my friend's body part
+	they ate my body part
+		
+	affected by traits: psychopath, cannibal, bloodlust
+
+how are history events linked to thoughts
+	by precept 
+	but in the absence of precept how?
+
+
+
+name lists
 figure out if there's a way to make the (requires restart) options not require restart
 test failure states for PatchOperationBySetting
 forcing backstories by xenotype
 toggles for each gene
 head attachments that vary by head shape
-
+nullifyingPrecepts for modded precepts for bodyfeeder thoughts eg death, sadism
 
 
 

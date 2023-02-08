@@ -47,8 +47,7 @@
 		</value>
 	</off>
   </Operation>
-  
-  
+    
   <Operation Class="CyanobotsGenes.PatchOperationBySetting">
 	<setting>moveVanillaGenes</setting>
 	<on Class="PatchOperationReplace">
@@ -63,6 +62,15 @@
 			<displayCategory>Miscellaneous</displayCategory>
 		</value>
 	</off>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+	<xpath>Defs/GeneDef[defName="Bloodfeeder"]</xpath>
+	<value>
+		<exclusionTags>
+			<li>Bodyfeeder</li>
+		</exclusionTags>
+	</value>
   </Operation>
   
 </Patch>

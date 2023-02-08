@@ -78,6 +78,49 @@
     </value>
   </Operation>
   
+  <Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThoughtDef[defName="AteHumanlikeMeatDirect"]</xpath>
+	<value>
+		<nullifyingGenes/>
+	</value>
+  </Operation>
   
+  <Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThoughtDef[defName="AteHumanlikeMeatDirect"]/nullifyingGenes</xpath>
+	<value>
+		<li>Bodyfeeder</li>
+		<li>ObligateCannibal</li>
+	</value>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThoughtDef[defName="AteHumanlikeMeatAsIngredient"]</xpath>
+	<value>
+		<nullifyingGenes/>
+	</value>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThoughtDef[defName="AteHumanlikeMeatAsIngredient"]/nullifyingGenes</xpath>
+	<value>
+		<li>Bodyfeeder</li>
+		<li>ObligateCannibal</li>
+	</value>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThoughtDef[defName="ObservedLayingCorpse"]</xpath>
+	<value>
+		<nullifyingGenes/>
+	</value>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThoughtDef[defName="ObservedLayingCorpse"]/nullifyingGenes</xpath>
+	<value>
+		<li>Bodyfeeder</li>
+		<li>ObligateCannibal</li>
+	</value>
+  </Operation>
   
 </Patch>

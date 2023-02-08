@@ -91,4 +91,90 @@
 	</stages>
   </HediffDef>
   
+  <HediffDef>
+    <defName>BodyfeederStarvation</defName>
+    <label>bodyfeeder starvation</label>
+    <description>Due to depleted hemogen reserves, the bodyfeeder mechanites in this person's body are beginning to feed on their own host. The result is pain, delirium, and increasingly powerful violent urges. Left unchecked, the hunger will eventually result in coma and death -- if they don't kill and eat someone first.</description>
+    <hediffClass>CyanobotsGenes.Hediff_BodyfeederStarvation</hediffClass>
+    <defaultLabelColor>(1, 0.2, 0.2)</defaultLabelColor>
+    <initialSeverity>0.01</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+	<lethalSeverity>1</lethalSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li>
+        <label>mild</label>
+        <painOffset>0.1</painOffset>
+		<hungerRateFactorOffset>0.2</hungerRateFactorOffset>
+        <socialFightChanceFactor>1.5</socialFightChanceFactor>
+		<statOffsets>
+			<MentalBreakThreshold>0.05</MentalBreakThreshold>
+		</statOffsets>
+      </li>
+      <li>
+        <label>moderate</label>
+        <minSeverity>0.3</minSeverity>
+        <painOffset>0.3</painOffset>
+		<hungerRateFactorOffset>0.4</hungerRateFactorOffset>
+        <socialFightChanceFactor>3.0</socialFightChanceFactor>
+		<statOffsets>
+			<MentalBreakThreshold>0.15</MentalBreakThreshold>
+			<PainShockThreshold>0.1</PainShockThreshold>
+		</statOffsets>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Berserk</mentalState>
+            <mtbDays>0.2</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+      <li>
+        <label>severe</label>
+        <minSeverity>0.65</minSeverity>
+        <painOffset>0.5</painOffset>
+		<hungerRateFactorOffset>0.6</hungerRateFactorOffset>
+        <socialFightChanceFactor>3.0</socialFightChanceFactor>
+		<statOffsets>
+			<MentalBreakThreshold>0.3</MentalBreakThreshold>
+			<PainShockThreshold>0.2</PainShockThreshold>
+		</statOffsets>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Berserk</mentalState>
+            <mtbDays>0.1</mtbDays>
+          </li>
+        </mentalStateGivers>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.8</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>extreme</label>
+        <minSeverity>0.9</minSeverity>
+        <painOffset>0.8</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_SeverityFromHemogen">
+        <severityPerHourEmpty>0.015</severityPerHourEmpty>
+        <severityPerHourHemogen>-0.1</severityPerHourHemogen>
+      </li>
+	  <!--
+	  <li Class="CyanobotsGenes.HediffCompProperties_GeneToggle">
+		<invert>false</invert>
+		<gene>Bodyfeeder</gene>
+	  </li>
+	  <-->
+    </comps>
+  </HediffDef>
+  
 </Defs>

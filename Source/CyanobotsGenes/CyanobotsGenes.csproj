@@ -55,14 +55,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs" />
+    <Compile Include="Bodyfeeder\BodyfeederUtility.cs" />
+    <Compile Include="Bodyfeeder\HarmonyPatching_Bodyfeeder.cs" />
+    <Compile Include="Bodyfeeder\Hediff_BodyfeederStarvation.cs" />
+    <Compile Include="Bodyfeeder\JobDriver_IngestDowned.cs" />
+    <Compile Include="Bodyfeeder\JobGiver_BodyfeederBerserk.cs" />
+    <Compile Include="Bodyfeeder\MentalState_BodyfeederBerserk.cs" />
     <Compile Include="CG_DefOf.cs" />
+    <Compile Include="Bodyfeeder\Gene_Bodyfeeder.cs" />
+    <Compile Include="Bodyfeeder\JobDriver_IngestForHemogen.cs" />
+    <Compile Include="HediffCompProperties_GeneToggle.cs" />
+    <Compile Include="HediffComp_GeneToggle.cs" />
     <Compile Include="PatchOperationBySetting.cs" />
     <Compile Include="CG_Settings.cs" />
     <Compile Include="HarmonyPatching.cs" />
-    <Compile Include="GeneticDietUtility.cs" />
-    <Compile Include="HarmonyPatching_GeneticDiet.cs" />
+    <Compile Include="GeneticDiet\GeneticDietUtility.cs" />
+    <Compile Include="GeneticDiet\HarmonyPatching_GeneticDiet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThoughtWorker_PackBond.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -23,7 +23,6 @@ namespace CyanobotsGenes
         }
     }
 
-
     [HarmonyPatch(typeof(Corpse), "IngestedCalculateAmounts")]
     class CorpseNutrition_Patch
     {
@@ -41,6 +40,23 @@ namespace CyanobotsGenes
         static void Postfix(ref List<FoodUtility.ThoughtFromIngesting> __result, Pawn ingester, Thing foodSource)
         {
             if (!ingester.RaceProps.Humanlike || ingester.genes == null) return;
+
+            if (GeneticDietUtility.IsGeneticCannibal(ingester) && FoodUtility.IsHumanlikeCorpseOrHumanlikeMeat(foodSource, foodSource.def))
+            {
+                if (foodSource is Corpse)
+                {
+                    FoodUtility.ThoughtFromIngesting thoughtAteCorpse = __result.Find(x => x.thought == ThoughtDefOf.AteCorpse);
+                    if (thoughtAteCorpse.thought != null)
+                    {
+                        __result.Remove(thoughtAteCorpse);
+                    }
+                }
+                FoodUtility.ThoughtFromIngesting thoughtRawFood = __result.Find(x => x.thought == ThoughtDefOf.AteRawFood);
+                if (thoughtRawFood.thought != null)
+                {
+                    __result.Remove(thoughtRawFood);
+                }
+            }
 
             DietCategory dietCategory = GeneticDietUtility.GetDietCategory(ingester);
             if (dietCategory == DietCategory.Default) return;
@@ -64,6 +80,7 @@ namespace CyanobotsGenes
                     __result.Add(new FoodUtility.ThoughtFromIngesting { thought = CG_DefOf.AteCorpseHypercarnivore, fromPrecept = null });
                 }
             }
+            
         }
     }
 
@@ -109,7 +126,7 @@ namespace CyanobotsGenes
         {
             if (allowCorpse || !eater.RaceProps.Humanlike || eater.genes == null) return;
 
-            if (GeneticDietUtility.GetDietCategory(eater) == DietCategory.Hypercarnivore)
+            if (GeneticDietUtility.GetDietCategory(eater) == DietCategory.Hypercarnivore || GeneticDietUtility.IsGeneticCannibal(eater))
             {
                 allowCorpse = desperate;
             }
@@ -299,6 +316,21 @@ namespace CyanobotsGenes
             else __result = 1;
 
             return false;
+        }
+    }
+
+    [HarmonyPatch(typeof(FoodUtility), nameof(FoodUtility.AddFoodPoisoningHediff))]
+    class AddFoodPoisoningHediff_Patch
+    {
+        static bool Prefix(Pawn pawn, Thing ingestible, FoodPoisonCause cause)
+        {
+            if (GeneticDietUtility.IsGeneticCannibal(pawn) 
+                && cause == FoodPoisonCause.DangerousFoodType
+                && FoodUtility.IsHumanlikeCorpseOrHumanlikeMeatOrIngredient(ingestible))
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
