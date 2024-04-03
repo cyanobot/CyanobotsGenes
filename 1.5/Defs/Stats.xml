@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>JoyFallRateFactor</defName>
+    <label>joy fall rate</label>
+    <description>A multiplier on the speed that a person's recreation need falls.</description>
+    <category>BasicsPawn</category>
+    <toStringStyle>PercentZero</toStringStyle>
+    <defaultBaseValue>1</defaultBaseValue>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0.0001</minValue>
+    <showOnAnimals>false</showOnAnimals>
+  </StatDef>
+  
+  <StatDef>
+    <defName>RelationshipWithAlliedFellowPackBond</defName>
+    <label>relationship with allied fellow pack bond</label>
+    <description>A modifier to the relationship between two pawns of the same faction sharing the gene Pack Bond.</description>
+    <category>BasicsPawn</category>
+    <toStringStyle>Integer</toStringStyle>
+    <defaultBaseValue>0</defaultBaseValue>
+    <alwaysHide>true</alwaysHide>
+    <minValue>0</minValue>
+  </StatDef>
+  
+  <StatDef>
+	<defName>VegetableNutritionFactor</defName>
+	<label>vegetable nutrition factor</label>
+	<description>A multiplier on how nutritious vegetables and vegetable-based foods are for this person. If a meal contains both vegetables and animal products, the effect is only partial.</description>
+	<category>BasicsPawn</category>
+	<toStringStyle>PercentZero</toStringStyle>
+	<defaultBaseValue>1</defaultBaseValue>
+	<hideAtValue>1</hideAtValue>
+	<minValue>0</minValue>
+  </StatDef>
+  
+  <StatDef>
+	<defName>AnimalNutritionFactor</defName>
+	<label>animal nutrition factor</label>
+	<description>A multiplier on how nutritious meat and animal product derived foods are for this person. If a meal contains both vegetables and animal products, the effect is only partial.</description>
+	<category>BasicsPawn</category>
+	<toStringStyle>PercentZero</toStringStyle>
+	<defaultBaseValue>1</defaultBaseValue>
+	<hideAtValue>1</hideAtValue>
+	<minValue>0</minValue>
+  </StatDef>
+  
+</Defs>

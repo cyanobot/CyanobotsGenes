@@ -1,0 +1,96 @@
+
+    
+  
+  <ThoughtDef>
+	<defName>KnowBodyfeeder_BerserkAteBodyPart</defName>
+	<thoughtClass>Thought_MemorySocial</thoughtClass>
+	<durationDays>30</durationDays>
+	<stackLimit>300</stackLimit>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+	<stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+	<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <nullifyingPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredStrong</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredRavenous</li>
+    </nullifyingPrecepts>
+	<nullifyingTraits>
+		<li>Psychopath</li>
+		<li>Bloodlust</li>
+	</nullifyingTraits>
+	<stages>
+		<li>
+			<!--positive opinion-->
+			<label>ate part  of  my friend</label>
+			<baseOpinionOffset>-15</baseOpinionOffset>
+		</li>
+	</stages>
+  </ThoughtDef>  
+  
+  
+  
+  <ThoughtDef>
+	<defName>KnowBodyfeederAteBodyPart</defName>
+	<thoughtClass>Thought_MemorySocial</thoughtClass>
+	<durationDays>6</durationDays>
+	<stackLimit>300</stackLimit>
+	<stackLimitForSameOtherPawn>5</stackLimitForSameOtherPawn>
+	<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+	<nullifyingTraits>
+		<li>Psychopath</li>
+		<li>Bloodlust</li>
+	</nullifyingTraits>
+	<stages>
+		<li>
+			<!--positive opinion-->
+			<label>ate part  of  my friend</label>
+			<baseOpinionOffset>-15</baseOpinionOffset>
+		</li>
+	</stages>
+  </ThoughtDef>  
+  
+  
+    
+  <ThoughtDef>
+    <defName>SawBodyfeeder_BerserkAteFriend</defName>
+    <durationDays>120</durationDays>
+    <stackLimit>300</stackLimit>
+    <stackLimitForSameOtherPawn>5</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <socialTargetDevelopmentalStageFilter>Child, Adult</socialTargetDevelopmentalStageFilter>
+    <nullifyingPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredRavenous</li>
+    </nullifyingPrecepts>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>ate my friend</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>SawBodyfeeder_BerserkAteFriendPart</defName>
+    <durationDays>120</durationDays>
+    <stackLimit>300</stackLimit>
+    <stackLimitForSameOtherPawn>5</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <socialTargetDevelopmentalStageFilter>Child, Adult</socialTargetDevelopmentalStageFilter>
+    <nullifyingPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredRavenous</li>
+    </nullifyingPrecepts>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>ate part of my friend</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  

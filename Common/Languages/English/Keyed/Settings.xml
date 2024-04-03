@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<CG_SettingLabel_UnaffectedInTraitPool>Add Unaffected trait to trait pool</CG_SettingLabel_UnaffectedInTraitPool>
+<CG_SettingDesc_UnaffectedInTraitPool>Whether the Unaffected trait should generate randomly on pawns, independently of the Asocial gene.</CG_SettingDesc_UnaffectedInTraitPool>
+
+<CG_SettingLabel_MoveVanillaGenes>Change vanilla gene categories (requires restart)</CG_SettingLabel_MoveVanillaGenes>
+<CG_SettingDesc_MoveVanillaGenes>Moves some vanilla genes out of Miscellaneous to group them with related genes from this mod, eg Robust Digestion into the Diet category.</CG_SettingDesc_MoveVanillaGenes>
+
+<CG_SettingLabel_ChangeMealStacking>Picky meal stacking (requires restart)</CG_SettingLabel_ChangeMealStacking>
+<CG_SettingDesc_ChangeMealStacking>Tighter restrictions on meal stacking by ingredient. If you have no herbivorous/carnivorous pawns and would prefer the vanilla logic, turn this off. NOTE: failure to restart after changing will cause errors and invisble meals.</CG_SettingDesc_ChangeMealStacking>
+
+<CG_SettingLabel_GenerationWeights>Xenotype Generation Weights (factionlessGenerationWeight)</CG_SettingLabel_GenerationWeights>
+
+
+</LanguageData>

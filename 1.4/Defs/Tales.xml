@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TaleDef>
+    <defName>TaleBodyfeederAtePerson</defName>
+    <label>person eaten by bodyfeeder</label>
+    <taleClass>Tale_DoublePawn</taleClass>
+    <type>Expirable</type>
+	<expireDays>120</expireDays>
+    <firstPawnSymbol>KILLER</firstPawnSymbol>
+    <secondPawnSymbol>VICTIM</secondPawnSymbol>
+    <baseInterest>5000</baseInterest>
+	<maxPerPawn>1</maxPerPawn>
+    <rulePack>
+      <rulesStrings>
+		<li>tale_noun->[KILLER_nameDef] eating [VICTIM_nameDef] alive</li>
+		<li>tale_noun->[VICTIM_nameDef] being eaten alive by [KILLER_nameDef]</li>
+		<li>image->[KILLER_nameFull] [eat_present] [VICTIM_nameFull] [circumstance_group]</li>
+		<li>image->[KILLER_nameFull] [eat_present] [VICTIM_nameFull]'s [body_part] [circumstance_group]</li>
+		<li>eat_present->consuming</li>
+		<li>eat_present->devouring</li>
+		<li>eat_present->feasting upon</li>
+		<li>eat_present->chewing on</li>
+		<li>eat_present->gnawing on</li>
+		<li>body_part->bones</li>
+		<li>body_part->skull</li>
+		<li>body_part->face</li>
+		<li>body_part->innards</li>
+		<li>body_part->flesh</li>
+		<li>body_part->heart</li>
+        <li>circumstance_phrase->with animalistic ferocity</li>
+		<li>circumstance_phrase->like a wild animal</li>
+		<li>circumstance_phrase->like a wild beast</li>
+        <li>circumstance_phrase->without pity</li>
+        <li>circumstance_phrase->with a knife and fork</li>
+		<li>circumstance_phrase->while crouched like a beast</li>
+        <li>circumstance_phrase->in a mad frenzy</li>
+		<li>circumstance_phrase->with wild abandon</li>
+		<li>circumstance_phrase->ferociously</li>
+		<li>circumstance_phrase->savagely</li>
+		<li>circumstance_phrase->messily</li>
+        <li>desc_sentence->[KILLER_nameDef] is drenched in [VICTIM_possessive] blood.</li>
+        <li>desc_sentence->[KILLER_nameDef] is snarling like a beast.</li>
+        <li>desc_sentence->[KILLER_nameDef] is weeping profusely.</li>
+        <li>desc_sentence->[KILLER_nameDef] is crouched on all fours.</li>
+        <li>desc_sentence->[KILLER_nameDef] has an expression of anguish.</li>
+        <li>desc_sentence->[KILLER_nameDef] has an expression of insane fury.</li>
+		<li>desc_sentence->[KILLER_nameDef] appears horrified by [KILLER_possessive] actions.</li>
+        <li>desc_sentence->[KILLER_possessive] eyes gleam.</li>
+		<li>desc_sentence->[KILLER_nameDef] looks inhuman.</li>
+		<li>desc_sentence->[KILLER_nameDef] is snarling ferociously.</li>
+		<li>desc_sentence->[KILLER_nameDef] is covered in [Gore].</li>
+        <li>desc_sentence->[KILLER_nameDef] sits at a table upon which [VICTIM_nameDef] is trussed like a roast pig.</li>
+		<li>desc_sentence->A cloud of mechanites surrounds [KILLER_nameDef].</li>
+		<li>desc_sentence->[VICTIM_nameDef] is screaming in agony.</li>
+		<li>desc_sentence->[VICTIM_nameDef] is in several parts.</li>
+        <li>desc_sentence->[VICTIM_nameDef] is weeping.</li>
+        <li>desc_sentence->[VICTIM_nameDef] writhes on the ground.</li>
+        <li>desc_sentence->[VICTIM_nameDef] tries to fight [KILLER_objective] off to no avail.</li>
+        <li>desc_sentence->[VICTIM_nameDef] looks resigned to [VICTIM_possessive] fate.</li>
+        <li>desc_sentence->[VICTIM_nameDef] is pleading with [KILLER_nameDef].</li>
+		<li>desc_sentence->[VICTIM_nameDef] looks [AdjectiveAngsty].</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <TaleDef>
+    <defName>TaleBodyfeederAteBodyPart</defName>
+    <label>body part eaten</label>
+    <taleClass>Tale_DoublePawnAndDef</taleClass>
+    <type>Expirable</type>
+	<expireDays>120</expireDays>
+    <firstPawnSymbol>EATER</firstPawnSymbol>
+    <secondPawnSymbol>VICTIM</secondPawnSymbol>
+    <defSymbol>BODYPART</defSymbol>
+    <baseInterest>5000</baseInterest>
+	<maxPerPawn>1</maxPerPawn>
+    <rulePack>
+      <rulesStrings>
+		<li>tale_noun->[EATER_nameDef] eating [VICTIM_nameDef]'s [BODYPART_label]</li>
+		<li>tale_noun->[EATER_nameDef] eating a part of [VICTIM_nameDef]</li>
+		<li>tale_noun->[VICTIM_nameDef]'s [BODYPART] being eaten by [EATER_nameDef]</li>
+		<li>image->[EATER_nameFull] [eat_partial_present] [VICTIM_nameFull] [circumstance_group]</li>
+		<li>image->[EATER_nameFull] [eat_full_present] [VICTIM_nameFull]'s [BODYPART_label] [circumstance_group]</li>
+        <li>image->[BODYFEEDER_nameFull] ripping pieces from [VICTIM_nameFull] [circumstance_group]</li>
+		<li>image->[EATER_nameFull] [eat_full_present] [VICTIM_nameFull]'s [BODYPART_label] [circumstance_group]</li>
+		<li>eat_full_present->consuming</li>
+		<li>eat_full_present->devouring</li>
+		<li>eat_full_present->swallowing</li>
+		<li>eat_partial_present->feasting upon</li>
+		<li>eat_partial_present->chewing on</li>
+		<li>eat_partial_present->gnawing on</li>
+		<li>eat_partial_present->biting</li>
+        <li>circumstance_phrase->with [BODYFEEDER_possessive] teeth</li>
+		<li>circumstance_phrase->with bestial ferocity</li>
+		<li>circumstance_phrase->in desperate hunger</li>
+        <li>circumstance_phrase->without pity</li>
+        <li>circumstance_phrase->with a knife and fork</li>
+        <li>circumstance_phrase->in a mad frenzy</li>
+		<li>circumstance_phrase->with bloody teeth</li>
+		<li>circumstance_phrase->with wild abandon</li>
+		<li>circumstance_phrase->ferociously</li>
+		<li>circumstance_phrase->savagely</li>
+		<li>circumstance_phrase->messily</li>
+		<li>desc_sentence->[EATER_nameDef] appears horrified by [EATER_possessive] actions.</li>
+        <li>desc_sentence->[EATER_nameDef] is drenched in [VICTIM_possessive] blood.</li>
+        <li>desc_sentence->[EATER_nameDef] is snarling like a beast.</li>
+        <li>desc_sentence->[EATER_nameDef] is weeping profusely.</li>
+        <li>desc_sentence->[EATER_nameDef] is crouched on all fours.</li>
+        <li>desc_sentence->[EATER_nameDef] has an expression of anguish.</li>
+        <li>desc_sentence->[EATER_nameDef] has an expression of insane fury.</li>
+        <li>desc_sentence->[EATER_nameDef] has an animalistic gleam to [EATER_possessive] eye.</li>
+		<li>desc_sentence->A cloud of mechanites surrounds [EATER_nameDef].</li>
+		<li>desc_sentence->[EATER_nameDef] looks [AdjectiveAngsty].</li>
+		<li>desc_sentence->[EATER_nameDef] appears horrified by [EATER_possessive] actions.</li>
+		<li>desc_sentence->[EATER_nameDef] is covered in [Gore].</li>
+        <li>desc_sentence->[VICTIM_nameDef] is weeping.</li>
+		<li>desc_sentence->[VICTIM_nameDef] is screaming in agony.</li>
+		<li>desc_sentence->[VICTIM_nameDef] looks on in horror.</li>
+		<li>desc_sentence->[VICTIM_nameDef] is pleading with [EATER_nameDef].</li>
+        <li>desc_sentence->[VICTIM_nameDef] is hitting [EATER_nameDef] over the head.</li>
+        <li>desc_sentence->[VICTIM_nameDef] is beating [VICTIM_possessive] fists against [EATER_nameDef].</li>
+		<li>desc_sentence->[VICTIM_nameDef] looks [AdjectiveAngsty].</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+</Defs>

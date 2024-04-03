@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/PreceptDef[defName="Cannibalism_Classic"]/comps</xpath>
+	<value>
+		<li Class="PreceptComp_KnowsMemoryThought">
+			<eventDef>BodyfeederAteEnemy</eventDef>
+			<thought>Bodyfeeder_Know_EnemyEaten</thought>
+		</li>
+		<li Class="PreceptComp_KnowsMemoryThought">
+			<eventDef>BodyfeederAteOutsider</eventDef>
+			<thought>Bodyfeeder_Know_OutsiderEaten</thought>
+		</li>
+		<li Class="PreceptComp_KnowsMemoryThought">
+			<eventDef>BodyfeederAteColonist</eventDef>
+			<thought>Bodyfeeder_Know_ColonistEaten</thought>
+		</li>
+		<li Class="PreceptComp_KnowsMemoryThought">
+			<eventDef>BodyfeederAteBodyPartEnemy</eventDef>
+			<thought>Bodyfeeder_Know_EnemyBodyPartEaten</thought>
+		</li>
+		<li Class="PreceptComp_KnowsMemoryThought">
+			<eventDef>BodyfeederAteBodyPartOutsider</eventDef>
+			<thought>Bodyfeeder_Know_OutsiderBodyPartEaten</thought>
+		</li>
+		<li Class="PreceptComp_KnowsMemoryThought">
+			<eventDef>BodyfeederAteBodyPartColonist</eventDef>
+			<thought>Bodyfeeder_Know_ColonistBodyPartEaten</thought>
+		</li>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Ideology</li>
+	</mods>
+	<match Class="PatchOperationAdd">
+		<xpath>Defs/PreceptDef[defName="Cannibalism_Disapproved" or 
+		defName="Cannibalism_Horrible" or 
+		defName="Cannibalism_Abhorrent"
+		]/comps</xpath>
+		<value>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteEnemy</eventDef>
+				<thought>Bodyfeeder_Know_EnemyEaten</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteOutsider</eventDef>
+				<thought>Bodyfeeder_Know_OutsiderEaten</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteColonist</eventDef>
+				<thought>Bodyfeeder_Know_ColonistEaten</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteBodyPartEnemy</eventDef>
+				<thought>Bodyfeeder_Know_EnemyBodyPartEaten</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteBodyPartOutsider</eventDef>
+				<thought>Bodyfeeder_Know_OutsiderBodyPartEaten</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteBodyPartColonist</eventDef>
+				<thought>Bodyfeeder_Know_ColonistBodyPartEaten</thought>
+			</li>
+		</value>
+	</match>
+</Operation>
+
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Ideology</li>
+	</mods>
+	<match Class="PatchOperationAdd">
+		<xpath>Defs/PreceptDef[defName="Cannibalism_Acceptable"]</xpath>
+		<value>
+			<comps/>
+		</value>
+	</match>
+</Operation>
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Ideology</li>
+	</mods>
+	<match Class="PatchOperationAdd">
+		<xpath>Defs/PreceptDef[defName="Cannibalism_Preferred" or defName="Cannibalism_Acceptable"]/comps</xpath>
+		<value>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteEnemy</eventDef>
+				<thought>Bodyfeeder_Know_EnemyEaten_CAcceptable</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteOutsider</eventDef>
+				<thought>Bodyfeeder_Know_OutsiderEaten_CAcceptable</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteColonist</eventDef>
+				<thought>Bodyfeeder_Know_ColonistEaten_CAcceptable</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteBodyPartEnemy</eventDef>
+				<thought>Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteBodyPartOutsider</eventDef>
+				<thought>Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteBodyPartColonist</eventDef>
+				<thought>Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</thought>
+			</li>
+		</value>
+	</match>
+</Operation>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Ideology</li>
+	</mods>
+	<match Class="PatchOperationAdd">
+		<xpath>Defs/PreceptDef[defName="Cannibalism_RequiredStrong" or defName="Cannibalism_RequiredRavenous"]/comps</xpath>
+		<value>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteEnemy</eventDef>
+				<thought>Bodyfeeder_Know_EnemyEaten_CRequired</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteOutsider</eventDef>
+				<thought>Bodyfeeder_Know_OutsiderEaten_CRequired</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteColonist</eventDef>
+				<thought>Bodyfeeder_Know_ColonistEaten_CRequired</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteBodyPartEnemy</eventDef>
+				<thought>Bodyfeeder_Know_EnemyBodyPartEaten_CRequired</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteBodyPartOutsider</eventDef>
+				<thought>Bodyfeeder_Know_OutsiderBodyPartEaten_CRequired</thought>
+			</li>
+			<li Class="PreceptComp_KnowsMemoryThought">
+				<eventDef>BodyfeederAteBodyPartColonist</eventDef>
+				<thought>Bodyfeeder_Know_ColonistBodyPartEaten_CRequired</thought>
+			</li>
+		</value>
+	</match>
+</Operation>
+
+</Patch>

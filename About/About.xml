@@ -5,11 +5,14 @@
     <packageId>cyanobot.CyanobotsGenes</packageId>
     <supportedVersions>
         <li>1.4</li>
+		<li>1.5</li>
     </supportedVersions>
 
-    <description>18 new genes and 2 new xenotypes to add to your gene pool. Requires Biotech.
+    <description>20 new genes and 2 new xenotypes to add to your gene pool. Requires Biotech.
         
 Genes:
+- Bodyfeeder : increased hemogen gain from human flesh, reduced from other sources
+- Obligate Cannibal : unable to survive on anything that isn't human flesh
 - Carnivore/Hypercarnivore/Herbivore/Strict Herbivore : reduced/no nutrition + ill effects from eating inappropriate food
 - Light Fur : cosmetic short fur, gets wet when it rains
 - Tabby : cosmetic stripy markings
@@ -39,12 +42,16 @@ Xenotypes:
 			<displayName>Biotech</displayName>
 			<downloadUrl>https://store.steampowered.com/app/1826140/RimWorld__Biotech/</downloadUrl>
 		</li>
-		<li>
-			<packageId>telardo.BetterGeneGraphicsFramework</packageId>
-			<displayName>Better Gene Graphics Framework</displayName>
-			<downloadUrl>https://steamcommunity.com/workshop/filedetails/?id=2880940958</downloadUrl>
-		</li>
 	</modDependencies>
+	<modDependenciesByVersion>
+		<v1.4>
+			<li>
+				<packageId>telardo.BetterGeneGraphicsFramework</packageId>
+				<displayName>Better Gene Graphics Framework</displayName>
+				<downloadUrl>https://steamcommunity.com/workshop/filedetails/?id=2880940958</downloadUrl>
+			</li>
+		</v1.4>
+	</modDependenciesByVersion>
 	<loadAfter>
 		<li>brrainz.harmony</li>
 		<li>Ludeon.RimWorld</li>
