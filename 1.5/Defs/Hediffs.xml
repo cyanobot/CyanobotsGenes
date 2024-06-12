@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+	<!--Indigestion-->
   <HediffDef ParentName="DiseaseBase">
     <defName>DietaryIndigestion</defName>
 	<label>indigestion</label>
@@ -91,6 +92,7 @@
 	</stages>
   </HediffDef>
 
+	<!--Bodyfeeder starvation-->
   <HediffDef>
     <defName>BodyfeederStarvation</defName>
     <label>bodyfeeder starvation</label>
@@ -174,5 +176,76 @@
 	  </li>
     </comps>
   </HediffDef>
-  
+    
+	<!--Endostimulant burst-->
+  <HediffDef>
+	<defName>CYB_EndostimulantBurst</defName>
+	<label>endostimulants</label>
+	<description>The bloodstream is flooded with endogenous stimulants that prevent tiredness and increase alertness.</description>
+	<isBad>false</isBad>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <maxSeverity>1.0</maxSeverity>
+	<initialSeverity>1.0</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-6</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+	<stages>
+		<li>
+			<capMods>
+				<li>
+					<capacity>Consciousness</capacity>
+					<offset>0.2</offset>
+				</li>
+			</capMods>
+            <statFactors>
+				<RestFallRateFactor>0.2</RestFallRateFactor>
+            </statFactors>
+		</li>
+	</stages>
+  </HediffDef>
+
+	<!--Psyche drained-->
+  <HediffDef>
+	<defName>CYB_PsycheDrained</defName>
+	<label>psyche drained</label>
+	<description>The psyche has been damaged by the predation of a psychic parasite.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<defaultLabelColor>(1, 0.2, 0.2)</defaultLabelColor>
+	<everCurableByItem>false</everCurableByItem>
+	<forceRemoveOnResurrection>true</forceRemoveOnResurrection>
+	<keepOnBodyPartRestoration>false</keepOnBodyPartRestoration>
+	<maxSeverity>2</maxSeverity>
+	<minSeverity>0</minSeverity>
+	<initialSeverity>0.001</initialSeverity>
+	<makesAlert>false</makesAlert>
+	<comps>
+		<li Class="CyanobotsGenes.HediffCompProperties_CapModsMultipliedBySeverity"/>
+		<li Class="HediffCompProperties_SeverityPerDay">
+			<severityPerDay>-0.2</severityPerDay>
+			<showHoursToRecover>true</showHoursToRecover>
+		</li>
+	</comps>
+	<stages>
+		<li>
+			<multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+			<restFallFactor>1.2</restFallFactor>
+			<statOffsets>
+				<PsychicSensitivity>-0.5</PsychicSensitivity>
+				<GlobalLearningFactor>-1</GlobalLearningFactor>
+				<SocialImpact>-0.5</SocialImpact>
+			</statOffsets>
+			<capMods>
+				<li>
+					<capacity>Consciousness</capacity>
+					<offset>-1</offset>
+				</li>
+			</capMods>
+		</li>
+	</stages>
+  </HediffDef>
+
 </Defs>

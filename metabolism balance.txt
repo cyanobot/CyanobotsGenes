@@ -1,0 +1,56 @@
+Metabolism balance
+
+wist
+	no mods: +1
+	outland: 0, body size (+1 vs 0)
+	seems fine
+	
+shulk
+	no mods: +5
+	wants to be +5 or better for every combination
+	lyc: +6, photophobia (+4 vs +5)
+	ig: +4, mute(+3 vs +2)
+	okay with these
+	
+changeling
+	lycan only: -4
+	should be pretty -ve
+	
+fairy
+	lycan only: -3
+	should be pretty -ve
+	pigskin: -2 evergrowing (-2 vs -3), gluttonous  (- vs +2)
+	ig: -4, low beauty standards (- vs -1)
+	fine with any of these values
+	
+thrallherd
+	archon only: 0
+	stoneborn: -1 irascible (+2 vs +1)
+	vrehussar: +1 abrasive (+1 vs +2)
+	
+thrall:
+	archon only: 0
+	want middle-line
+	
+glimmer
+	outland only: +1
+	lycan: +0 clumsy (+3 vs +2)
+	stoneborn: +2 longlived (-1 vs 0)
+	ig: 0, herd-minded (- vs -2)
+	vrehighmate: +3 distressed (- vs +2)
+	herd-minded and distressed offset each other if both present
+	if only herd-minded, weak melee damage added to partially offset
+	if only distressed, add productive to offset
+	
+neutral swaps:
+	vre lycan: mute +3
+	vre archon: toughskin -2, aggression high -> fast melee + aggression extreme
+	vre pigskin: low meat 0
+	vre highmate: hair 0
+	vre fungoid: _ -> telepathy -2 + slow maturation +2
+	vre saurid: _ -> eggs -1 + poor construction +1
+	outland: eggs 0, asexual 0, claws -1, bite -1, acid/toxic spray -2
+	stoneborn: undergrounder 0, _ -> narrow memory +1 + happy -1
+	bogleg: greedy +1
+	ig: greedy +1, blind +4, workspeed low +2
+	ebsg: blind +4

@@ -20,12 +20,11 @@ namespace CyanobotsGenes
 		{
 			get
 			{
-                if (Pawn.genes == null) return true;
                 if (Props.invert)
                 {
-                    return Pawn.genes.HasGene(Props.gene);
+                    return Pawn.HasActiveGene(Props.gene);
                 }
-                else return !Pawn.genes.HasGene(Props.gene);
+                else return !Pawn.HasActiveGene(Props.gene);
 			}
 		}
 

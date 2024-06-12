@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Blood Color Genes</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/XenotypeDef/genes/li[text()="CYB_Blood_Black"]</xpath>
+				<value>
+					<li>BloodBlack</li>
+				</value>
+				<success>Always</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="CYB_Blood_Black"]/modExtensions/li[@Class="VanillaGenesExpanded.GeneExtension"]</xpath>
+				<value>
+					<hideGene>true</hideGene>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/XenotypeDef/genes/li[text()="CYB_Blood_Lilac"]</xpath>
+				<value>
+					<li>BloodPeriwinkle</li>
+				</value>
+				<success>Always</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="CYB_Blood_Lilac"]/modExtensions/li[@Class="VanillaGenesExpanded.GeneExtension"]</xpath>
+				<value>
+					<hideGene>true</hideGene>
+				</value>
+			</li>
+			
+		</operations>
+	</match>
+</Operation>
+
+</Patch>

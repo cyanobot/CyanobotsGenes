@@ -2,16 +2,16 @@
 <Defs>
 
   <FurDef>
-    <defName>Tabby</defName>
+    <defName>CYB_Tabby</defName>
     <noGraphic>true</noGraphic>
     <bodyTypeGraphicPaths>
-      <Male>Bodies/Tabby_Male</Male>
-      <Female>Bodies/Tabby_Female</Female>
-      <Hulk>Bodies/Tabby_Hulk</Hulk>
-      <Fat>Bodies/Tabby_Fat</Fat>
-      <Thin>Bodies/Tabby_Thin</Thin>
-      <Child>Bodies/Tabby_Child</Child>
-      <Baby>Bodies/Tabby_Child</Baby><!-- Always covered by swaddled graphic -->
+      <Male>Bodies/CYB_Tabby_Male</Male>
+      <Female>Bodies/CYB_Tabby_Female</Female>
+      <Hulk>Bodies/CYB_Tabby_Hulk</Hulk>
+      <Fat>Bodies/CYB_Tabby_Fat</Fat>
+      <Thin>Bodies/CYB_Tabby_Thin</Thin>
+      <Child>Bodies/CYB_Tabby_Child</Child>
+      <Baby>Bodies/CYB_Tabby_Child</Baby><!-- Always covered by swaddled graphic -->
     </bodyTypeGraphicPaths>
   </FurDef>
 

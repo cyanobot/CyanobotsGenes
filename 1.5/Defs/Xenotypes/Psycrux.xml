@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<XenotypeDef>
+	<defName>CYB_Psycrux</defName>
+	<label>psycrux</label>
+	<description>The first Psycrux were a cabal of powerful psycasters who sought to further enhance their abilities with gene-editing. Dissatisfied with the xenogerms available, they commissioned ever more experimental solutions, culminating in the Psyphon gene. This grants the ability to drain psychic energy from the minds of others to refuel one's own psyfocus.\n\nTo facilitate a ready supply of minds to drain - not to mention laborers - Psycrux possess the ability to implant a Thrall xenogerm into others, turning them into slow, docile workers with limited ability to rebel against the Psycrux.\n\nDue to the high proportion of the brain devoted to psychic powers, Psycrux are all blind. They are also noted for their deeply unpleasant personalities.</description>
+	<descriptionShort>Blind psycasters with impressive powers and the ability to drain psychic energy from others.</descriptionShort>
+	<iconPath>Xenotypes/CYB_Psycrux</iconPath>
+	<inheritable>false</inheritable>
+	<genes>
+		<li MayRequire="vanillaracesexpanded.archon">PsychicAbility_Extreme</li>
+		<li MayRequire="vanillaracesexpanded.archon">VRE_InnatePsylink</li>
+		<li MayRequire="vanillaracesexpanded.archon">VRE_SwiftMeditation</li>
+		<li MayRequire="vanillaracesexpanded.archon">VRE_HighEntropyCapacity</li>
+		<li>AptitudePoor_Social</li>
+		<li>Aggression_Aggressive</li>
+		<!--<li>DV_Aggression_Irascible</li>-->		<!--replaces Aggressive with Stoneborn-->
+		<li>Unstable</li>
+		<li>CYB_Greedy</li>
+		<li>CYB_Abrasive</li>
+		<li MayRequire="Ludeon.RimWorld.Ideology">CYB_Domineering</li>
+		<li>CYB_Blind</li>
+		<li>CYB_Psyphon</li>
+		<li>CYB_ImplantXenotype_CYB_Thrall</li>
+		<li MayRequire="vanillaracesexpanded.fungoid">VRE_Telepathy</li>
+		<li MayRequire="vanillaracesexpanded.fungoid">CYB_SlowMaturation</li>		<!--to offset telepathy-->
+		<li>CYB_HeadFrill</li>
+		<li>CYB_Hair_Fringeless</li>
+		<li>CYB_Eyes_Cyan</li>
+		<li>CYB_Eyes_Magenta</li>
+		<li>CYB_Eyes_Yellow</li>
+		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Archon</li>
+		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Archotechist</li>
+		<!--<li>Gene_Puppeteer</li>-->			<!-- only if biotech integration and puppeteer both loaded-->
+	</genes>
+</XenotypeDef>
+
+<XenotypeDef>
+	<defName>CYB_Thrall</defName>
+	<label>thrall</label>
+	<description>The Thrall xenogerm is produced by Psycrux and implanted forcibly into others to make them easier to control and psychically parasitise. The victim becomes docile and easily controlled, and will work tirelessly without need for recreation and little need for sleep. However, the mental suppression renders them slow and stupid, and the quality of said work may not be particularly high.</description>
+	<descriptionShort>The mind is suppressed by a xenogerm implanted by a Psycrux, leaving the victim slow and docile.</descriptionShort>
+	<iconPath>Xenotypes/CYB_Thrall</iconPath>
+    <combatPowerFactor>0.8</combatPowerFactor>
+	<inheritable>false</inheritable>
+	<genes>
+		<li MayRequire="vanillaracesexpanded.archon">VRE_SlowMeleeHitter</li>
+		<li MayRequire="vanillaracesexpanded.archon">VRE_SlowShooter</li>
+		<li>LowSleep</li>
+		<li>Pain_Reduced</li>
+		<li>MoveSpeed_Slow</li>
+		<li>Learning_Slow</li>
+		<li>AptitudePoor_Social</li>
+		<li>AptitudePoor_Artistic</li>
+		<li>NeverBored</li>
+		<li MayRequire="Ludeon.RimWorld.Ideology">CYB_Docile</li>
+		<li>CYB_WorkSpeed_Low</li>
+	</genes>
+</XenotypeDef>
+
+</Defs>

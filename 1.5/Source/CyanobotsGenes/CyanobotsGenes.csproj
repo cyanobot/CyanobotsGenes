@@ -52,11 +52,15 @@
       <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbilityTemplateDef.cs" />
     <Compile Include="Bodyfeeder\GenerateMeatAdministerDefs.cs" />
     <Compile Include="Bodyfeeder\Alert_BodyfeederLowHemogen.cs" />
-    <Compile Include="Base.cs" />
+    <Compile Include="CG_Mod.cs" />
     <Compile Include="Bodyfeeder\BodyfeederUtility.cs" />
     <Compile Include="Bodyfeeder\HarmonyPatching_Bodyfeeder.cs" />
     <Compile Include="Bodyfeeder\Hediff_BodyfeederStarvation.cs" />
@@ -69,19 +73,69 @@
     <Compile Include="CG_DefOf.cs" />
     <Compile Include="Bodyfeeder\Gene_Bodyfeeder.cs" />
     <Compile Include="Bodyfeeder\JobDriver_IngestForHemogen.cs" />
+    <Compile Include="CG_Init.cs" />
+    <Compile Include="CG_Util.cs" />
+    <Compile Include="Graphic_VariantsOverTime.cs" />
+    <Compile Include="PawnRenderNodeProperties_ByHeadTypeCategory.cs" />
+    <Compile Include="PawnRenderNodeProperties_OffsetByBodyType.cs" />
+    <Compile Include="PawnRenderNodeProperties_VariantsOverTime.cs" />
+    <Compile Include="PawnRenderNodeWorker_ByHeadTypeCategory.cs" />
+    <None Include="PawnRenderNodeWorker_OffsetByBodyType.cs" />
+    <Compile Include="PawnRenderNodeWorker_Skeletal.cs" />
+    <Compile Include="PawnRenderNodeWorker_VariantsOverTime.cs" />
+    <Compile Include="PawnRenderNode_ByHeadTypeCategory.cs" />
+    <Compile Include="PawnRenderNode_OffsetByBodyType.cs" />
+    <Compile Include="PawnRenderNode_VariantsOverTime.cs" />
+    <Compile Include="GeneExtension_BlocksInteractions.cs" />
+    <Compile Include="GeneExtension_ReplacesInteractionRules.cs" />
+    <Compile Include="PawnRenderSubWorker_OffsetByBodyType.cs" />
+    <Compile Include="Precocious\PrecociousUtil.cs" />
+    <Compile Include="Psyphon\JobGiver_AutoPsyphon.cs" />
+    <Compile Include="Psyphon\HarmonyPatching_Psyphon.cs" />
+    <Compile Include="Psyphon\Gene_Psyphon.cs" />
+    <Compile Include="Psyphon\CompProperties_AbilityPsyphon.cs" />
+    <Compile Include="Psyphon\Gizmo_AutoPsyphon.cs" />
+    <Compile Include="HediffComp_CapModsMultipliedBySeverity.cs" />
+    <Compile Include="Psyphon\PsyphonUtility.cs" />
+    <Compile Include="TemplateGenes\CompProperties_AbilityImplantXenotype.cs" />
+    <Compile Include="TemplateGenes\Gene_Metamorphosis.cs" />
+    <Compile Include="TemplateGenes\HarmonyPatching_ImplantXenotype.cs" />
+    <Compile Include="TemplateGenes\Ability_ImplantXenotype.cs" />
+    <Compile Include="CompProperties_AbilityChemicalBite.cs" />
+    <Compile Include="CompProperties_AbilityOffsetNeed.cs" />
+    <Compile Include="LightSensitivity\ConditionalStatAffecter_BrightLight.cs" />
+    <Compile Include="LightSensitivity\ConditionalStatAffecter_DimLight.cs" />
+    <Compile Include="GeneExtension_Bundle.cs" />
+    <Compile Include="GeneExtension_DisabledWorkTypes.cs" />
+    <Compile Include="Gene_Bundle.cs" />
+    <Compile Include="Precocious\Gene_Precocious.cs" />
+    <Compile Include="TemplateGenes\Gene_Offspring.cs" />
+    <Compile Include="TemplateGenes\Gene_ImplantXenotype.cs" />
+    <Compile Include="TemplateGenes\HarmonyPatching_Offspring.cs" />
     <Compile Include="HediffCompProperties_GeneToggle.cs" />
     <Compile Include="HediffComp_GeneToggle.cs" />
     <None Include="Bodyfeeder\JobDriver_IngestForHemogen_Old.cs" />
-    <Compile Include="OffsetByBodyType.cs" />
+    <Compile Include="TemplateGenes\ImpliedGeneDefGenerator.cs" />
+    <Compile Include="InteractionWorker_DelightfulWords.cs" />
+    <None Include="OffsetByBodyType.cs" />
+    <Compile Include="TemplateGenes\GeneExtension_Xenotype.cs" />
+    <Compile Include="TemplateGenes\XenotypeGeneTemplateDef.cs" />
+    <Compile Include="TemplateGenes\OffspringUtility.cs" />
     <Compile Include="PatchOperationBySetting.cs" />
     <Compile Include="CG_Settings.cs" />
     <Compile Include="HarmonyPatching.cs" />
     <Compile Include="GeneticDiet\GeneticDietUtility.cs" />
     <Compile Include="GeneticDiet\HarmonyPatching_GeneticDiet.cs" />
     <Compile Include="PawnRenderNodeWorker_TailFlipWhenCrawling.cs" />
+    <Compile Include="Precocious\HarmonyPatching_Precocious.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="TestPatch.cs" />
     <Compile Include="Bodyfeeder\Recipe_AdministerHumanMeat.cs" />
+    <Compile Include="LightSensitivity\StatPart_LightSensitivity.cs" />
+    <Compile Include="Precocious\ThinkNode_ConditionalPrecocious.cs" />
+    <Compile Include="ThoughtWorker_CarryingWeapon.cs" />
+    <Compile Include="ThoughtWorker_Delightful_Opinion.cs" />
+    <Compile Include="LightSensitivity\ThoughtWorker_LightSensitivity.cs" />
     <Compile Include="ThoughtWorker_PackBond.cs" />
   </ItemGroup>
   <ItemGroup />

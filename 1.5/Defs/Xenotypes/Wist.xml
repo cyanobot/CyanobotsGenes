@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<XenotypeDef>
+	<defName>CYB_Wist</defName>
+	<label>wist</label>
+	<description>Wisteria Corporation's purpose-engineered battlefield medics possess an array of bio-abilities for rapid treatment of even the most greivous injuries, and come preloaded with an encyclopedic knowledge of medicine and anatomy. Trust them with your life, because no one has a better chance of saving it./n/nCoagulating secretions close open wounds in mere minutes, and a venom secreted from glands in the mouth possesses marvellous properties for protecting the lives and elevating the morale of wounded soldiers. This substance dulls pain, fights infection, and elevates mood, all in one efficiently distributed package. Any reports of addiction are grossly overstated./n/nBetween engagements you may notice that your battlefield medic spends a lot of time sleeping in order to engage energy, but you needn't fear a collapse in the middle of a crisis. All of the Wisteria Corporation battlefield medic's extraordinary abilities are fuelled by a resource that is typically available in abundance during active combat : the blood of your enemies./n/nDon't hesitate -- bring a medic aboard your ship, team, or colony today.</description>
+	<descriptionShort>Purpose-engineered battlefield medics with hemogen-fueled healing abilities.</descriptionShort>
+	<iconPath>Xenotypes/CYB_Wist</iconPath>
+	<inheritable>false</inheritable>
+	<genes>
+		<li>Hemogenic</li>
+		<li>Bloodfeeder</li>
+		<li>Coagulate</li>
+		<li>Immunity_Strong</li>
+		<li>VerySleepy</li>
+		<li>Delicate</li>
+		<li>AptitudeRemarkable_Medicine</li>
+		<li>CYB_BodySize_Small</li>
+		<li>CYB_WistVenomBite</li>
+		<li>CYB_EndostimulantBurst</li>
+		<li>Beard_NoBeardOnly</li>
+		<li>CYB_Blood_Lilac</li>
+		<li>CYB_SkinBundle_Purple</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_PalePurple</li>
+		<li MayRequire="milkman.biotechcosmeticgenesmm">MMSkin_PaleLilac</li>
+		<li MayRequire="milkman.biotechcosmeticgenesmm">MMSkin_Lilac</li>
+		<li MayRequire="milkman.biotechcosmeticgenesmm">MMSkin_PalePurple</li>
+		<li MayRequire="milkman.biotechcosmeticgenesmm">MMSkin_DeepPurple</li>
+		<li>Hair_LightPurple</li>
+		<li>CYB_HairBundle_Purple</li>
+		<!--
+		<li>CYB_Hair_Grackle</li>
+		<li>CYB_Hair_MidPurple</li>
+		<li>CYB_Hair_Violet</li>
+		<li>CYB_Hair_Aubergine</li>
+		<li>CYB_Hair_BluePurple</li>
+		<li>CYB_Hair_Lilac</li>
+		-->
+		<li MayRequire="neronix17.outland.genetics">Outland_HairColor_DarkPurple</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_HairColor_BrightPurple</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_HairColor_DarkMagenta</li>
+		<li MayRequire="milkman.biotechcosmeticgenesmm">MMHair_Dark Purple</li>
+		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Empath</li>
+		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Protector</li>
+	</genes>
+</XenotypeDef>
+
+</Defs>

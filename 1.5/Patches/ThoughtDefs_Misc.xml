@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThoughtDef[(
+		defName="EnvironmentDark" or
+		defName="UnnaturalDarkness" or
+		defName="SwallowedByDarkness" or
+		defName="AB_ForsakenNight" or
+		defName="AB_ForsakenRain" or
+		defName="AB_ForsakenThunderstorm"
+		) and not(nullifyingGenes)]</xpath>
+	<value>
+		<nullifyingGenes/>
+	</value>
+	<success>Always</success>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThoughtDef[
+		defName="EnvironmentDark" or
+		defName="AB_ForsakenNight" or
+		defName="AB_ForsakenRain" or
+		defName="AB_ForsakenThunderstorm"
+		]/nullifyingGenes</xpath>
+    <value>
+		<li>CYB_LightSensitivity</li>
+		<li MayRequire="Ludeon.RimWorld.Anomaly">CYB_Darkling</li>
+	</value>
+  </Operation>
+  <Operation MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationAdd">
+    <xpath>Defs/ThoughtDef[
+		defName="UnnaturalDarkness" or
+		defName="SwallowedByDarkness"
+		]/nullifyingGenes</xpath>
+    <value>
+		<li>CYB_Darkling</li>
+	</value>
+  </Operation>
+  
+  
+  <Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThoughtDef[(
+		defName="SoakingWet" or
+		defName="WetFur" or
+		defName="CYB_WetFur"
+		) and not(nullifyingGenes)]</xpath>
+	<value>
+		<nullifyingGenes/>
+	</value>
+	<success>Always</success>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThoughtDef[
+		defName="SoakingWet" or
+		defName="WetFur" or
+		defName="CYB_WetFur"
+		]/nullifyingGenes</xpath>
+    <value>
+		<li>CYB_DampAdaptation</li>
+	</value>
+  </Operation>
+</Patch>

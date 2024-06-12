@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<CG_SettingLabel_UnaffectedInTraitPool>Add Unaffected trait to trait pool</CG_SettingLabel_UnaffectedInTraitPool>
-<CG_SettingDesc_UnaffectedInTraitPool>Whether the Unaffected trait should generate randomly on pawns, independently of the Asocial gene.</CG_SettingDesc_UnaffectedInTraitPool>
+<CYB_SettingLabel_UnaffectedInTraitPool>Add Unaffected trait to trait pool</CYB_SettingLabel_UnaffectedInTraitPool>
+<CYB_SettingDesc_UnaffectedInTraitPool>Whether the Unaffected trait should generate randomly on pawns, independently of the Asocial gene.</CYB_SettingDesc_UnaffectedInTraitPool>
 
-<CG_SettingLabel_MoveVanillaGenes>Change vanilla gene categories (requires restart)</CG_SettingLabel_MoveVanillaGenes>
-<CG_SettingDesc_MoveVanillaGenes>Moves some vanilla genes out of Miscellaneous to group them with related genes from this mod, eg Robust Digestion into the Diet category.</CG_SettingDesc_MoveVanillaGenes>
+<CYB_SettingLabel_MoveVanillaGenes>Change vanilla gene categories (requires restart)</CYB_SettingLabel_MoveVanillaGenes>
+<CYB_SettingDesc_MoveVanillaGenes>Moves some vanilla genes out of Miscellaneous to group them with related genes from this mod, eg Robust Digestion into the Diet category.</CYB_SettingDesc_MoveVanillaGenes>
 
-<CG_SettingLabel_ChangeMealStacking>Picky meal stacking (requires restart)</CG_SettingLabel_ChangeMealStacking>
-<CG_SettingDesc_ChangeMealStacking>Tighter restrictions on meal stacking by ingredient. If you have no herbivorous/carnivorous pawns and would prefer the vanilla logic, turn this off. NOTE: failure to restart after changing will cause errors and invisble meals.</CG_SettingDesc_ChangeMealStacking>
+<CYB_SettingLabel_ChangeMealStacking>Picky meal stacking (requires restart)</CYB_SettingLabel_ChangeMealStacking>
+<CYB_SettingDesc_ChangeMealStacking>Tighter restrictions on meal stacking by ingredient. If you have no herbivorous/carnivorous pawns and would prefer the vanilla logic, turn this off. NOTE: failure to restart after changing will cause errors and invisble meals.</CYB_SettingDesc_ChangeMealStacking>
 
-<CG_SettingLabel_GenerationWeights>Xenotype Generation Weights (factionlessGenerationWeight)</CG_SettingLabel_GenerationWeights>
+<CYB_SettingLabel_BundleSkinHairColors>Bundle skin and hair color genes</CYB_SettingLabel_BundleSkinHairColors>
+<CYB_SettingDesc_BundleSkinHairColors>Combines skin and hair color genes into one gene per xenotype to reduce clutter. To see the colors as separate genes, turn this setting off.</CYB_SettingDesc_BundleSkinHairColors>
+
+<CYB_SettingLabel_NoOutlandGlimmer>Glimmer xenotype without Outland graphics</CYB_SettingLabel_NoOutlandGlimmer>
+<CYB_SettingDesc_NoOutlandGlimmer>The Glimmer xenotype relies on the mod Outland Genetics to provide most of its cosmetic genes. This setting enables a less-pretty but still functional version.</CYB_SettingDesc_NoOutlandGlimmer>
+
+<CYB_SettingLabel_GenerationWeights>Xenotype Generation Weights (factionlessGenerationWeight)</CYB_SettingLabel_GenerationWeights>
 
 
 </LanguageData>

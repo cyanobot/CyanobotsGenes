@@ -51,6 +51,14 @@ Xenotypes:
 				<downloadUrl>https://steamcommunity.com/workshop/filedetails/?id=2880940958</downloadUrl>
 			</li>
 		</v1.4>
+		<v1.5>
+			<li>
+				<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+				<displayName>Vanilla Expanded Framework</displayName>
+				<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
+				<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
+			</li>
+		</v1.5>
 	</modDependenciesByVersion>
 	<loadAfter>
 		<li>brrainz.harmony</li>
@@ -59,6 +67,8 @@ Xenotypes:
 		<li>Ludeon.RimWorld.Ideology</li>
 		<li>Ludeon.RimWorld.Biotech</li>
 		<li>telardo.BetterGeneGraphicsFramework</li>
+		<li>EBSG.Food</li>
+		<li>EBSG.AiO</li>
 	</loadAfter>	
 
 </ModMetaData>

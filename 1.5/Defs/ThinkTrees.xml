@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+ 
+  <ThinkTreeDef>
+    <defName>CYB_AbandonedPrecociousBehaviourCore</defName>
+	<insertTag>Humanlike_PostMain</insertTag>
+    <thinkRoot Class="CyanobotsGenes.ThinkNode_ConditionalPrecocious">
+		<subNodes>
+			<li Class="ThinkNode_Priority">
+			  <subNodes>
+				<!-- Leave the colony -->
+				<!--
+				<li Class="ThinkNode_ConditionalWildManNeedsToReachOutside">
+				  <subNodes>
+					<li Class="JobGiver_ReachOutside" />
+				  </subNodes>
+				</li>
+				-->
+
+				<!-- Satisfy needs -->
+				<li Class="ThinkNode_Tagger">
+				  <tagToGive>SatisfyingNeeds</tagToGive>
+				  <subNodes>
+					<li Class="ThinkNode_PrioritySorter">
+					  <subNodes>
+						<li Class="JobGiver_GetFood"/>
+						<li Class="JobGiver_GetRest"/>
+						<li Class="JobGiver_SatisfyChemicalNeed"/>
+						<li Class="JobGiver_SatifyChemicalDependency" MayRequire="Ludeon.RimWorld.Biotech" />
+						<li Class="ThinkNode_Priority_GetJoy">
+						  <subNodes>
+							<li Class="JobGiver_GetJoy"/>
+						  </subNodes>
+						</li>
+					  </subNodes>
+					</li>
+				  </subNodes>
+				</li>
+				
+				<li Class="ThinkNode_Tagger">
+				  <tagToGive>Idle</tagToGive>
+				  <subNodes>
+					<!-- Wander -->
+					<li Class="JobGiver_WanderAnywhere">
+					  <maxDanger>Deadly</maxDanger>
+					  <ticksBetweenWandersRange>120~240</ticksBetweenWandersRange>
+					</li>
+				  </subNodes>
+				</li>
+				
+			  </subNodes>
+			</li>
+		</subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+
+</Defs>

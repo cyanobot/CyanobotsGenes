@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Outland - Genetics</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+			<!--don't duplicate body size genes-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/XenotypeDef/genes/li[text()="CYB_BodySize_Small"]</xpath>
+				<value>
+					<li>Outland_BodyScale_Tiny</li>
+				</value>
+				<success>Always</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="CYB_BodySize_Small"]</xpath>
+				<value>
+					<modExtensions>
+						<li Class="VanillaGenesExpanded.GeneExtension">
+							<hideGene>true</hideGene>
+						</li>
+					</modExtensions>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/XenotypeDef/genes/li[text()="CYB_BodySize_Large"]</xpath>
+				<value>
+					<li>Outland_BodyScale_Massive</li>
+				</value>
+				<success>Always</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="CYB_BodySize_Large"]</xpath>
+				<value>
+					<modExtensions>
+						<li Class="VanillaGenesExpanded.GeneExtension">
+							<hideGene>true</hideGene>
+						</li>
+					</modExtensions>
+				</value>
+			</li>
+			
+			
+			<!--don't duplicate claws and bite-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/XenotypeDef/genes/li[text()="CYB_Claws"]</xpath>
+				<value>
+					<li>Outland_Hands_Talons</li>
+				</value>
+				<success>Always</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="CYB_Claws"]/modExtensions/li[@Class="VanillaGenesExpanded.GeneExtension"]</xpath>
+				<value>
+					<hideGene>true</hideGene>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/XenotypeDef/genes/li[text()="CYB_Fangs"]</xpath>
+				<value>
+					<li>Outland_Teeth_Fangs</li>
+				</value>
+				<success>Always</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="CYB_Fangs"]/modExtensions/li[@Class="VanillaGenesExpanded.GeneExtension"]</xpath>
+				<value>
+					<hideGene>true</hideGene>
+				</value>
+			</li>
+			
+			<!--don't duplicate black blood-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/XenotypeDef/genes/li[text()="CYB_Blood_Black"]</xpath>
+				<value>
+					<li>Outland_Blood_Black</li>
+				</value>
+				<success>Always</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="CYB_Blood_Black"]/modExtensions/li[@Class="VanillaGenesExpanded.GeneExtension"]</xpath>
+				<value>
+					<hideGene>true</hideGene>
+				</value>
+			</li>			
+			
+			<!--toxic spray for fairy-->
+			<!-- swap out for acid spray if possible-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/XenotypeDef[defName="CYB_Fairy"]/genes/li[text()="AcidSpray"]</xpath>
+				<value>
+					<li>Outland_ToxicSpray</li>
+				</value>
+			</li>
+			
+			
+			<!--move our genes into outland categories where relevant-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="CYB_Nose_Flat"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Outland_FacialFeatures</displayCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="CYB_Tusks"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Outland_Teeth</displayCategory>
+				</value>
+			</li>
+						
+		</operations>
+	</match>
+</Operation>
+
+
+</Patch>

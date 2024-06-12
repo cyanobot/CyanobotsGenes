@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<XenotypeDef>
+	<defName>CYB_Glimmer</defName>
+	<label>glimmer</label>
+	<description>Glimmers are the descendents of glitterworld utopists who redesigned themselves to better fit their moral (and aesthetic) ideals. These pleasant, colorful people are intelligent, cheerful, long-lived and empathic. They are also clumsy, innately distressed by violence, and unable to eat animal protein without getting ill. Life on the Rim can be extremely difficult for them as a result. However, the facility with which they forge strong, peaceful communities still allows them to scratch out a niche.</description>
+	<descriptionShort>Pleasant and highly sociable plant-eaters with a severe distaste for violence.</descriptionShort>
+	<inheritable>true</inheritable>
+	<iconPath>Xenotypes/CYB_Glimmer</iconPath>
+    <combatPowerFactor>0.7</combatPowerFactor>
+	<genes>
+		<li MayRequire="neronix17.outland.genetics">Outland_Empathic</li>
+		<li>Mood_Optimist</li>
+		<li>KindInstinct</li>
+		<li>AptitudeTerrible_Shooting</li>
+		<li>AptitudeTerrible_Melee</li>
+		<li>AptitudeStrong_Artistic</li>
+		<li>AptitudeRemarkable_Social</li>
+		<li>PackBond</li>
+		<li>Herbivore</li>
+		<li>Learning_Fast</li>
+		<li>CYB_Clumsy</li>
+		<li>CYB_ViolenceAverse</li>
+		<li>CYB_LongLived</li>
+		<li MayRequire="turnovus.biotech.integratedgenes">Turn_Gene_HerdMentality</li>
+		<li MayRequire="vanillaracesexpanded.highmate">VRE_Distressed</li>
+		<!--<li>MeleeDamage_Weak</li> --> 		<!--offsets Herd Mentality if Distressed not present-->
+		<!--<li>CYB_WorkSpeed_High</li>-->		<!--offsets Distressed if Herd Mentality not present-->
+		<li MayRequire="neronix17.outland.genetics">Outland_NeckRuffle_Curly</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_NeckRuffle_Spikey</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_NeckRuffle_Wavy</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_NeckRuffle_Fuzzy</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Ears_Wild</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Ears_Furred</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Ears_Fey</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Tail_Layered</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Tail_Pom</li>
+		<li MayRequire="milkman.biotechcosmeticgenesmm">MMHair_BrimstoneHair</li>
+		<li MayRequire="det.avaloi">Hair_PaleGreen</li>
+		<li MayRequire="det.avaloi">Hair_PaleOrange</li>
+		<li>Hair_LightBlue</li>
+		<li>Hair_LightTeal</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_HairColor_BrightRed</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_HairColor_BrightYellow</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_HairColor_BrightViridian</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_HairColor_DarkAzure</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_HairColor_BrightPurple</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_HairColor_DarkMagenta</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_HairColor_BrightMagenta</li>
+		<li>Skin_Purple</li>
+		<li>Skin_DeepRed</li>
+		<li>Skin_Orange</li>
+		<li MayRequire="milkman.biotechcosmeticgenesmm">MMSkin_DeepPurple</li>
+		<li MayRequire="milkman.biotechcosmeticgenesmm">MMSkin_Burgundy</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_PaleSage</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_DeepViridian</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_Viridian</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_DeepAzure</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_DeepMagenta</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_Copper</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_Gold</li>
+		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Protector</li>
+		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Skipmaster</li>
+		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Technomancer</li>
+	</genes>
+</XenotypeDef>
+
+</Defs>

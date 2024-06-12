@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Helltaker Cosmetic Genes</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+		
+		  <li Class="CyanobotsGenes.PatchOperationBySetting">
+			<setting>moveVanillaGenes</setting>
+			<on Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="LMFurSmooth"]</xpath>
+				<value>
+					<displayCategory>CYB_Fur</displayCategory>
+				</value>
+			</on>
+			<off Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="LMFurSmooth"]</xpath>
+				<value>
+					<displayCategory>Miscellaneous</displayCategory>
+				</value>
+			</off>
+		  </li>
+		
+		  <li Class="CyanobotsGenes.PatchOperationBySetting">
+			<setting>moveVanillaGenes</setting>
+			<on Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="LMChestFur"]</xpath>
+				<value>
+					<displayCategory>CYB_Fur</displayCategory>
+				</value>
+			</on>
+			<off Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="LMChestFur"]</xpath>
+				<value>
+					<displayCategory>Miscellaneous</displayCategory>
+				</value>
+			</off>
+		  </li>
+		  
+		</operations>
+	</match>
+</Operation>
+
+</Patch>

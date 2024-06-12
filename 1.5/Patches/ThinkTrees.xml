@@ -20,5 +20,12 @@
 	</value>
 </Operation>
 
+<Operation Class="PatchOperationInsert">
+	<xpath>Defs/ThinkTreeDef[defName="MainColonistBehaviorCore"]/thinkRoot/subNodes/li/subNodes/li[@Class="JobGiver_Meditate"]</xpath>
+	<value>
+		<li Class="CyanobotsGenes.JobGiver_AutoPsyphon"/>
+	</value>
+</Operation>
+
 
 </Patch>

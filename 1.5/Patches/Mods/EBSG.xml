@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>EBSG - Capacity Genes (Sight, Hearing, etc)</li>
+		<li>Expanded Biotech Style Genes - All in One</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+			<!--replace blind, unless it's already been replaced by Integrated Genes-->
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Integrated Genes</li>
+				</mods>
+				<nomatch Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/XenotypeDef/genes/li[text()="CYB_Blind"]</xpath>
+							<value>
+								<li>EBSG_Blind</li>
+							</value>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="CYB_Blind"]</xpath>
+							<value>
+								<modExtensions>
+									<li Class="VanillaGenesExpanded.GeneExtension">
+										<hideGene>true</hideGene>
+									</li>
+								</modExtensions>
+							</value>
+						</li>						
+					</operations>
+				</nomatch>
+			</li>
+		</operations>
+	</match>
+</Operation>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>EBSG - Expanded Food Genes</li>
+		<li>Expanded Biotech Style Genes - All in One</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+			<!--remove contracted stomach from shulk-->
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/XenotypeDef[defName="CYB_Shulk"]/genes/li[text()="EBSG_ContractedStomach"]</xpath>
+			</li>
+		
+			<!--move expansive stomach to the food/eating category-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="CYB_ExpansiveStomach"]/displayCategory</xpath>
+				<value>
+					<displayCategory>EBSG_Food</displayCategory>
+				</value>
+			</li>
+		</operations>
+	</match>
+</Operation>
+
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>EBSG - Expanded Lifespan Genes</li>
+		<li>Expanded Biotech Style Genes - All in One</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+			<!-- only if EBSG is patching growth points,
+				replace maturation genes-->
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/StatDef[defName="EBSG_GrowthPointRate"]</xpath>
+				<match Class="PatchOperationSequence">
+					<operations>
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/XenotypeDef/genes/li[text()="CYB_SlowMaturation"]</xpath>
+							<value>
+								<li>EBSG_SlowAging_Child</li>
+							</value>
+							<success>Always</success>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="CYB_SlowMaturation"]</xpath>
+							<value>
+								<modExtensions>
+									<li Class="VanillaGenesExpanded.GeneExtension">
+										<hideGene>true</hideGene>
+									</li>
+								</modExtensions>
+							</value>
+						</li>		
+						
+						<li Class="PatchOperationReplace">
+							<xpath>Defs/XenotypeDef/genes/li[text()="CYB_FastMaturation"]</xpath>
+							<value>
+								<li>EBSG_ExtremelyFastAging_Child</li>
+							</value>
+							<success>Always</success>
+						</li>
+						<li Class="PatchOperationAdd">
+							<xpath>Defs/GeneDef[defName="CYB_FastMaturation"]</xpath>
+							<value>
+								<modExtensions>
+									<li Class="VanillaGenesExpanded.GeneExtension">
+										<hideGene>true</hideGene>
+									</li>
+								</modExtensions>
+							</value>
+						</li>							
+					</operations>
+				</match>
+			</li>
+		
+			<!--move aging genes to the EBSG lifespan category-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef/displayCategory[text()="CYB_Aging"]</xpath>
+				<value>
+					<displayCategory>EBSG_Lifespan</displayCategory>
+				</value>
+			</li>
+		</operations>
+	</match>
+</Operation>
+
+</Patch>

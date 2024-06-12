@@ -158,7 +158,7 @@ namespace CyanobotsGenes
     }
 
     [HarmonyPatch(typeof(FloatMenuMakerMap),"AddHumanlikeOrders")]
-    class FloatMenu_Patch
+    class FloatMenu_Patch_Diet
     {
         static void Postfix(ref List<FloatMenuOption> opts, Pawn pawn, Vector3 clickPos)
         {
@@ -200,7 +200,7 @@ namespace CyanobotsGenes
                         if (consume.Disabled) continue;
                         if (GeneticDietUtility.DietForbids(t, pawn))
                         {
-                            consume.Label = text += " : " + "CG_Inedible".Translate();
+                            consume.Label = text += " : " + "CYB_Inedible".Translate();
                             consume.Disabled = true;
                         }
                     }
@@ -244,22 +244,22 @@ namespace CyanobotsGenes
             switch (displayKind)
             {
                 case (CG_FoodKind.AnimalProduct):
-                    __result = "CG_AnimalProduct".Translate().Colorize(ColorLibrary.Peach);
+                    __result = "CYB_AnimalProduct".Translate().Colorize(ColorLibrary.Peach);
                     break;
                 case (CG_FoodKind.AnimalProductAndVeg):
-                    __result = "CG_AnimalProduct".Translate().Colorize(ColorLibrary.Peach) + " + " + "veg".Colorize(Color.green);
+                    __result = "CYB_AnimalProduct".Translate().Colorize(ColorLibrary.Peach) + " + " + "CYB_Veg".Translate().Colorize(Color.green);
                     break;
                 case (CG_FoodKind.Any):
                     __result = "MealKindAny".Translate().Colorize(Color.white);
                     break;
                 case (CG_FoodKind.Meat):
-                    __result = "CG_Meat".Translate().Colorize(ColorLibrary.RedReadable);
+                    __result = "CYB_Meat".Translate().Colorize(ColorLibrary.RedReadable);
                     break;
                 case (CG_FoodKind.MeatAndVeg):
-                    __result = "CG_Meat".Translate().Colorize(ColorLibrary.RedReadable) + " + " + "veg".Colorize(Color.green);
+                    __result = "CYB_Meat".Translate().Colorize(ColorLibrary.RedReadable) + " + " + "CYB_Veg".Translate().Colorize(Color.green);
                     break;
                 case (CG_FoodKind.Vegetable):
-                    __result = "CG_Vegan".Translate().Colorize(Color.green);
+                    __result = "CYB_Vegan".Translate().Colorize(Color.green);
                     break;
                 default:
                     //if we fall through, default back to vanilla behaviour

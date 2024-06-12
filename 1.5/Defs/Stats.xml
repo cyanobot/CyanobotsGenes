@@ -46,4 +46,16 @@
 	<minValue>0</minValue>
   </StatDef>
   
+  <StatDef>
+    <defName>CYB_GrowthPointFactor</defName>
+    <label>growth point factor</label>
+    <description>Rate at which a child gains growth points from high learning.</description>
+    <category>BasicsPawn</category>
+    <defaultBaseValue>1</defaultBaseValue>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+  </StatDef>
+  
 </Defs>

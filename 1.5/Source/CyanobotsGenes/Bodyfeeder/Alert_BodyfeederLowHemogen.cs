@@ -55,7 +55,7 @@ namespace CyanobotsGenes
 
 		public override TaggedString GetExplanation()
 		{
-			return "CG_Alert_BodyfeederLowHemogenDesc".Translate() + ":\n" + targetLabels.ToLineList("  - ");
+			return "CYB_Alert_BodyfeederLowHemogenDesc".Translate() + ":\n" + targetLabels.ToLineList("  - ");
 		}
 
 		public override AlertReport GetReport()

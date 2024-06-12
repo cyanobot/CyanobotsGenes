@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<XenotypeDef>
+	<defName>Kitlin</defName>
+	<label>kitlin</label>
+	<description>The carnivorous kitlin xenotype originated among cat-loving glitterworld bodymodders. They have a reputation on the rim as lazy, useless, and easily distracted, and it's true that many of their feline-derived genes weren't chosen with a hard frontier life in mind. However, their agility and predatory instincts make them natural hunters and quite handy in a firefight.</description>
+	<descriptionShort>Despite a reputation on the rim as lazy, distractible cats, feline-derived kitlins have a niche as natural hunters.</descriptionShort>
+	<iconPath>Xenotypes/CYB_Kitlin</iconPath>
+	<inheritable>true</inheritable>
+	<factionlessGenerationWeight>1</factionlessGenerationWeight>
+	<combatPowerFactor>1.1</combatPowerFactor>
+	<genes>
+		<li>Stealthy</li>
+		<li>MoveSpeed_Quick</li>
+		<li>EasilyBored</li>
+		<li>PreyDrive</li>
+		<li>VerySleepy</li>
+		<li>Libido_High</li>
+		<li>Carnivore</li>
+		<li>Ears_Cat</li>
+		<li>LightFur</li>
+		<li>Tabby</li>
+		<li>Eyes_SlitPupil</li>
+		<li>Tail_Cat</li>
+		<li>DarkVision</li>
+		<li>AptitudeStrong_Shooting</li>
+		<li>Hair_BaldOnly</li>
+		<li>Beard_NoBeardOnly</li>
+		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Harmonist</li>
+		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Skipmaster</li>
+	</genes>
+</XenotypeDef>
+	
+</Defs>

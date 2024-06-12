@@ -28,7 +28,7 @@
     <defName>Asocial</defName>
     <label>asocial</label>
     <description>Carriers of this gene lack key neural pathways relating to complex social interaactions. They lack any concept of how to convince others of anything, and experience little interest in the words or opinions of others.</description>
-    <iconPath>Genes/Gene_Asocial</iconPath>
+    <iconPath>Genes/CYB_Asocial</iconPath>
     <displayCategory>Social</displayCategory>
     <displayOrderInCategory>50</displayOrderInCategory> 
     <forcedTraits>
@@ -55,7 +55,7 @@
   <GeneDef>
 	<defName>Bodyfeeder</defName>
 	<label>bodyfeeder</label>
-	<iconPath>Genes/Gene_Bodyfeeder</iconPath>
+	<iconPath>Genes/CYB_Bodyfeeder</iconPath>
 	<description>Bodyfeeder mechanites in the carrier's digestive system rapidly break down ingested human flesh into hemogen. The process unfortunately also digests hemogen if it's swallowed directly, making hemogen packs very inefficient. </description>
 	<geneClass>CyanobotsGenes.Gene_Bodyfeeder</geneClass>
 	<displayCategory>Hemogen</displayCategory>
@@ -94,7 +94,7 @@
 	<defName>Carnivore</defName>
 	<label>carnivore</label>
 	<description>Carriers of this gene have short guts and don't digest plant matter well. They don't enjoy eating vegetable matter, get less nutrition from it, and become unwell from eating too much of it.</description>
-	<iconPath>Genes/Gene_Carnivore</iconPath>
+	<iconPath>Genes/CYB_Carnivore</iconPath>
 	<displayCategory>Diet</displayCategory>
     <displayOrderInCategory>3</displayOrderInCategory>
 	<exclusionTags>
@@ -124,7 +124,7 @@
 	<defName>Hypercarnivore</defName>
 	<label>hypercarnivore</label>
 	<description>Carriers of this gene have short guts and a genetic deficiency in many enzymes associated with an omnivorous diet. They cannot digest plant matter at all, and must subsist on meat and other animal products. Their appetites make even raw meat appealing.</description>
-	<iconPath>Genes/Gene_Hypercarnivore</iconPath>
+	<iconPath>Genes/CYB_Hypercarnivore</iconPath>
 	<displayCategory>Diet</displayCategory>
     <displayOrderInCategory>4</displayOrderInCategory>
 	<exclusionTags>
@@ -155,7 +155,7 @@
 	<defName>Herbivore</defName>
 	<label>herbivore</label>
 	<description>Carriers of this gene have digestive systems tuned to plant food. They don't enjoy eating animal  products, get less nutrition from them, and become unwell from eating too much of them.</description>
-	<iconPath>Genes/Gene_Herbivore</iconPath>
+	<iconPath>Genes/CYB_Herbivore</iconPath>
 	<displayCategory>Diet</displayCategory>
     <displayOrderInCategory>2</displayOrderInCategory>
 	<exclusionTags>
@@ -185,7 +185,7 @@
 	<defName>StrictHerbivore</defName>
 	<label>strict herbivore</label>
 	<description>Carriers of this gene have multiple stomachs and support gut flora that digests only plant food. They cannot digest meat or other animal-derived food at all. If desperate, they can eat hay.</description>
-	<iconPath>Genes/Gene_StrictHerbivore</iconPath>
+	<iconPath>Genes/CYB_StrictHerbivore</iconPath>
 	<displayCategory>Diet</displayCategory>
     <displayOrderInCategory>1</displayOrderInCategory>
 	<exclusionTags>
@@ -218,7 +218,7 @@
 	<defName>ObligateCannibal</defName>
 	<label>obligate cannibal</label>
 	<description>Whether by a deeply unfortunate quirk of genetic drift or by purposeful engineering to some sick end, carriers of this gene are completely unable to synthesise many basic metabolic compounds key to human life. To survive, they depend on ingesting the flesh of fellow human beings : the fresher the better.</description>
-	<iconPath>Genes/Gene_ObligateCannibal</iconPath>
+	<iconPath>Genes/CYB_ObligateCannibal</iconPath>
 	<displayCategory>Diet</displayCategory>
     <displayOrderInCategory>5</displayOrderInCategory>
 	<exclusionTags>
@@ -256,7 +256,7 @@
     <defName>EasilyBored</defName>
     <label>easily bored</label>
     <description>Carriers of this gene need more recreation than others.</description>
-    <iconPath>Genes/Gene_EasilyBored</iconPath>
+    <iconPath>Genes/CYB_EasilyBored</iconPath>
     <displayOrderInCategory>0</displayOrderInCategory>
     <statFactors>
       <JoyFallRateFactor>1.5</JoyFallRateFactor>
@@ -283,7 +283,7 @@
     <defName>RarelyBored</defName>
     <label>rarely bored</label>
     <description>Carriers of this gene need less recreation than others.</description>
-    <iconPath>Genes/Gene_RarelyBored</iconPath>
+    <iconPath>Genes/CYB_RarelyBored</iconPath>
     <displayOrderInCategory>20</displayOrderInCategory>
     <statFactors>
       <JoyFallRateFactor>0.4</JoyFallRateFactor>
@@ -310,7 +310,7 @@
     <defName>NeverBored</defName>
     <label>never bored</label>
     <description>Carriers of this gene have infinite patience for their work, never feeling the need to engage in frivolous recreation.</description>
-    <iconPath>Genes/Gene_NeverBored</iconPath>
+    <iconPath>Genes/CYB_NeverBored</iconPath>
     <marketValueFactor>1.25</marketValueFactor>
     <displayOrderInCategory>30</displayOrderInCategory>
     <disablesNeeds>
@@ -344,7 +344,7 @@
     <defName>Unstable</defName>
     <label>unstable</label>
 	<description>Carriers of this gene are highly strung and sensitive to stress.</description>
-	<iconPath>Genes/Gene_Unstable</iconPath>
+	<iconPath>Genes/CYB_Unstable</iconPath>
 	<displayCategory>Mood</displayCategory>
     <displayOrderInCategory>110</displayOrderInCategory>
     <statOffsets>
@@ -372,7 +372,7 @@
     <defName>Stoic</defName>
     <label>stoic</label>
 	<description>Carriers of this gene are resilient to stress.</description>
-	<iconPath>Genes/Gene_Stoic</iconPath>
+	<iconPath>Genes/CYB_Stoic</iconPath>
 	<displayCategory>Mood</displayCategory>
     <displayOrderInCategory>120</displayOrderInCategory>
     <statOffsets>
@@ -393,7 +393,7 @@
 	<defName>LightFur</defName>
 	<label>light fur</label>
 	<labelShortAdj>lightfurred</labelShortAdj>
-    <iconPath>Genes/Gene_LightFur</iconPath>
+    <iconPath>Genes/CYB_LightFur</iconPath>
 	<description>Carriers of this gene grow a thin coat of fine, soft fur that provides little protection from the elements and gets soaked easily.</description>
 	<biostatCpx>1</biostatCpx>
 	<displayCategory>Fur</displayCategory>
@@ -423,7 +423,7 @@
 	<defName>Tabby</defName>
 	<label>tabby</label>
 	<labelShortAdj>tabby</labelShortAdj>
-	<iconPath>Genes/Gene_Tabby</iconPath>
+	<iconPath>Genes/CYB_Tabby</iconPath>
 	<description>Carriers of this gene express patterning genes taken from various feline species. Their light fur is tabby striped.</description>
 	<prerequisite>LightFur</prerequisite>
 	<displayCategory>Fur</displayCategory>
@@ -440,14 +440,14 @@
     </forcedHeadTypes>
 	<graphicData>
 		<graphicPaths>
-			<li>HeadAttachments/TabbyStripesA</li>
-			<li>HeadAttachments/TabbyStripesB</li>
-			<li>HeadAttachments/TabbyStripesC</li>
-			<li>HeadAttachments/TabbyStripesD</li>
-			<li>HeadAttachments/TabbyStripesE</li>
+			<li>HeadAttachments/CYB_TabbyStripesA</li>
+			<li>HeadAttachments/CYB_TabbyStripesB</li>
+			<li>HeadAttachments/CYB_TabbyStripesC</li>
+			<li>HeadAttachments/CYB_TabbyStripesD</li>
+			<li>HeadAttachments/CYB_TabbyStripesE</li>
 		</graphicPaths>
 		<layer>PostSkin</layer>
-		<fur>Tabby</fur>
+		<fur>CYB_Tabby</fur>
 		<colorType>Hair</colorType>
 		<narrowCrownHorizontalOffset>0.03</narrowCrownHorizontalOffset>
 	</graphicData>
@@ -469,7 +469,7 @@
 	<label>slit pupils</label>
 	<labelShortAdj>slit-pupiled</labelShortAdj>
 	<description>Carriers of this gene have slit pupils, like those of a cat or snake.</description>
-	<iconPath>Genes/Gene_Eyes_SlitPupil</iconPath>
+	<iconPath>Genes/CYB_Eyes_SlitPupil</iconPath>
 	<displayCategory>Cosmetic</displayCategory>
     <biostatCpx>0</biostatCpx>
     <exclusionTags>
@@ -480,7 +480,7 @@
       <colorType>Skin</colorType>
       <layer>PostTattoo</layer>
 	  <drawScale>0.28</drawScale>
-	  <graphicPath>HeadAttachments/Eyes_SlitPupil</graphicPath>
+	  <graphicPath>HeadAttachments/CYB_Eyes_SlitPupil</graphicPath>
 	</graphicData>
     <modExtensions>
       <li Class="BetterGeneGraphicsFramework.GraphicsWithAge">
@@ -489,8 +489,8 @@
           <li>18</li>
         </ages>
         <graphicPaths>
-		  <li>HeadAttachments/Eyes_SlitPupilChild</li>
-          <li>HeadAttachments/Eyes_SlitPupil</li>
+		  <li>HeadAttachments/CYB_Eyes_SlitPupilChild</li>
+          <li>HeadAttachments/CYB_Eyes_SlitPupil</li>
         </graphicPaths>
       </li>
     </modExtensions>
@@ -500,7 +500,7 @@
     <defName>Tail_Cat</defName>
     <label>cat tail</label>
     <description>Carriers of this gene grow a catlike tail that helps with balance.</description>
-    <iconPath>Genes/Gene_Tail_Cat</iconPath>
+    <iconPath>Genes/CYB_Tail_Cat</iconPath>
     <iconColor>(0.75, 0.75, 0.75)</iconColor>
     <displayOrderInCategory>1050</displayOrderInCategory>
     <biostatCpx>1</biostatCpx>
@@ -512,7 +512,7 @@
       <PawnTrapSpringChance>0.5</PawnTrapSpringChance>
       </statFactors>
     <graphicData>
-      <graphicPath>BodyAttachments/CatTail</graphicPath>
+      <graphicPath>BodyAttachments/CYB_CatTail</graphicPath>
       <colorType>Hair</colorType>
       <drawOffsetNorth>(0, 0.2, -0.15)</drawOffsetNorth>
       <drawOffsetSouth>(0, -0.1, -0.15)</drawOffsetSouth>
@@ -566,7 +566,7 @@
 	<defName>PackBond</defName>
 	<label>packbond</label>
 	<description>Carriers of this gene form a natural bond with each other when they work together as allies.</description>
-	<iconPath>Genes/Gene_PackBond</iconPath>
+	<iconPath>Genes/CYB_PackBond</iconPath>
 	<displayCategory>Social</displayCategory>
 	<statOffsets>
 		<RelationshipWithAlliedFellowPackBond>30</RelationshipWithAlliedFellowPackBond>
@@ -589,7 +589,7 @@
     <defName>PreyDrive</defName>
 	<label>prey drive</label>
 	<description>Carriers of this gene have predatory instincts originally derived from feline genomes. Hunting is a form of recreation for them.</description>
-	<iconPath>Genes/Gene_PreyDrive</iconPath>
+	<iconPath>Genes/CYB_PreyDrive</iconPath>
 	<displayCategory>Recreation</displayCategory>
 	<displayOrderInCategory>100</displayOrderInCategory>
 	<biostatCpx>2</biostatCpx>
@@ -609,7 +609,7 @@
     <defName>Psychopathic</defName>
 	<label>psychopathic</label>
 	<description>Carriers of this gene are naturally numb to violence and human suffering.</description>
-	<iconPath>Genes/Gene_Psychopathic</iconPath>
+	<iconPath>Genes/CYB_Psychopathic</iconPath>
     <displayCategory>Social</displayCategory>
     <displayOrderInCategory>50</displayOrderInCategory>
     <forcedTraits>
@@ -634,7 +634,7 @@
 	<defName>Stealthy</defName>
 	<label>stealthy</label>
 	<description>Carriers of this gene have an innate instinct for stealth that makes them capable hunters.</description>
-	<iconPath>Genes/Gene_Stealthy</iconPath>
+	<iconPath>Genes/CYB_Stealthy</iconPath>
 	<!--<displayCategory>Misc</displayCategory>-->
     <displayOrderInCategory>600</displayOrderInCategory>
 	<biostatMet>-1</biostatMet>

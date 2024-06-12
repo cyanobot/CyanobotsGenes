@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<GeneDef>
+		<defName>CYB_Blood_Black</defName>
+		<label>black blood</label>
+		<displayCategory>Cosmetic</displayCategory>
+		<description>Carriers of this gene secrete black proteins or pigments into their blood.</description>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<biostatCpx>0</biostatCpx>
+		<iconPath>Genes/CYB_Blood_Black</iconPath>
+		<exclusionTags>
+			<li>AG_BloodType</li>
+			<li>BloodType</li>
+			<li>Blood</li>
+			<li>BloodColor</li>
+		</exclusionTags>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<customBloodThingDef>CYB_Filth_Blood_Black</customBloodThingDef>
+				<!--<customBloodIcon>UI/CYB_Bleeding_Black</customBloodIcon>-->
+				<customBloodEffect>CYB_Damage_HitFlesh_Black</customBloodEffect>
+				<customWoundsFromFleshtype>CYB_Flesh_Black</customWoundsFromFleshtype>
+			</li>
+		</modExtensions>
+	</GeneDef>
+	<GeneDef>
+		<defName>CYB_Blood_Lilac</defName>
+		<label>lilac blood</label>
+		<displayCategory>Cosmetic</displayCategory>
+		<description>Carriers of this gene secrete pale lilac proteins or pigments into their blood.</description>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<biostatCpx>0</biostatCpx>
+		<iconPath>Genes/CYB_Blood_Lilac</iconPath>
+		<exclusionTags>
+			<li>AG_BloodType</li>
+			<li>BloodType</li>
+			<li>Blood</li>
+			<li>BloodColor</li>
+		</exclusionTags>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<customBloodThingDef>CYB_Filth_Blood_Lilac</customBloodThingDef>
+				<customBloodIcon>UI/CYB_Bleeding_Lilac</customBloodIcon>
+				<customBloodEffect>CYB_Damage_HitFlesh_Lilac</customBloodEffect>
+				<customWoundsFromFleshtype>CYB_Flesh_Lilac</customWoundsFromFleshtype>
+			</li>
+		</modExtensions>
+	</GeneDef>
+</Defs>

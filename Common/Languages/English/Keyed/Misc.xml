@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<CYB_WorkDisabledGene>Disabled by gene: {0}</CYB_WorkDisabledGene>
+
+<CYB_StatsReport_LightSensitivity>Light sensitivity</CYB_StatsReport_LightSensitivity>
+
+<CYB_AbilityNoPsyfocusWanted>Psyfocus already above target level</CYB_AbilityNoPsyfocusWanted>
+<CYB_MightKill>Might kill</CYB_MightKill>
+<CYB_Warning_PawnWillDieFromPsyphon>{PAWN_labelShort} will die from loss of consciousness if {PAWN_possessive} psyche is drained to this degree. To psyphon this person without killing them, go back and reduce desired psyfocus.\n\nContinue anyway?</CYB_Warning_PawnWillDieFromPsyphon>
+<CYB_Warning_PawnMightDieFromPsyphon>{PAWN_labelShort} may die from brain damage if {Pawn_possessive} psyche is drained to this degree. To reduce the risk of brain damage, go back and reduce desired psyfocus.\n\nContinue anyway?
+</CYB_Warning_PawnMightDieFromPsyphon>
+
+</LanguageData>

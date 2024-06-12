@@ -48,9 +48,7 @@ namespace CyanobotsGenes
 
         public static bool IsBodyFeeder(Pawn pawn)
         {
-            Gene gene = pawn?.genes?.GetGene(CG_DefOf.Bodyfeeder);
-            if (gene == null || !gene.Active) return false;
-            return true;
+            return pawn.HasActiveGene(CG_DefOf.Bodyfeeder);
         }
 
         public static float HemogenPerNutrition(Pawn pawn, Thing food)
@@ -119,7 +117,7 @@ namespace CyanobotsGenes
 
         public static float HemogenWanted(Pawn pawn)
         {
-            if (pawn.genes == null || !pawn.genes.HasGene(GeneDefOf.Hemogenic)) return 0f;
+            if (!pawn.HasActiveGene(GeneDefOf.Hemogenic)) return 0f;
             Gene_Hemogen gene_Hemogen = pawn.genes.GetFirstGeneOfType<Gene_Hemogen>();
             return gene_Hemogen.Max - gene_Hemogen.Value;
         }
@@ -137,7 +135,7 @@ namespace CyanobotsGenes
 
         public static float HemogenLevelPct(Pawn pawn)
         {
-            if (pawn.genes == null || !pawn.genes.HasGene(GeneDefOf.Hemogenic)) return 1f;
+            if (!pawn.HasActiveGene(GeneDefOf.Hemogenic)) return 1f;
             Gene_Hemogen gene_Hemogen = pawn.genes.GetFirstGeneOfType<Gene_Hemogen>();
             return gene_Hemogen.Value / gene_Hemogen.Max;
         }
@@ -337,7 +335,7 @@ namespace CyanobotsGenes
                 if (!victim.Dead)
                 {
                     int damageAmount = Mathf.Clamp((int)victim.health.hediffSet.GetPartHealth(bodyPartRecord) - 1, 1, 20);
-                    if (ModsConfig.BiotechActive && victim.genes != null && victim.genes.HasGene(GeneDefOf.Deathless))
+                    if (ModsConfig.BiotechActive && victim.HasActiveGene(GeneDefOf.Deathless))
                     {
                         damageAmount = 99999;
                         if (victim.health.hediffSet.HasHediff(HediffDefOf.MechlinkImplant))
@@ -438,7 +436,7 @@ namespace CyanobotsGenes
                 {
                     if (t.IsForbidden(pawn) || !pawn.RaceProps.CanEverEat(t)
                         || !t.IsSociallyProper(pawn) || FoodUtility.InappropriateForTitle(t.def, pawn, false)
-                        || (t is Corpse && !(pawn.story.traits.HasTrait(DefDatabase<TraitDef>.GetNamed("Cannibal")) || pawn.genes.HasGene(CG_DefOf.Hypercarnivore))))
+                        || (t is Corpse && !(pawn.story.traits.HasTrait(DefDatabase<TraitDef>.GetNamed("Cannibal")) || pawn.HasActiveGene(CG_DefOf.Hypercarnivore))))
                     {
                         return false;
                     }

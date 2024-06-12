@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--Bodyfeeder-->
+<GeneDef>
+	<defName>Bodyfeeder</defName>
+	<label>bodyfeeder</label>
+	<iconPath>Genes/CYB_Bodyfeeder</iconPath>
+	<description>Bodyfeeder mechanites in the carrier's digestive system rapidly break down ingested human flesh into hemogen. The process unfortunately also digests hemogen if it's swallowed directly, making hemogen packs very inefficient.</description>
+	<geneClass>CyanobotsGenes.Gene_Bodyfeeder</geneClass>
+	<displayCategory>Hemogen</displayCategory>
+    <displayOrderInCategory>10</displayOrderInCategory>
+	<prerequisite>Hemogenic</prerequisite>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>0</biostatMet>
+    <minAgeActive>3</minAgeActive>
+	<exclusionTags>
+		<li>Herbivore</li>
+		<li>Bodyfeeder</li>
+	</exclusionTags>
+	<statFactors>
+		<HemogenGainFactor>0.2</HemogenGainFactor>
+	</statFactors>
+    <customEffectDescriptions>
+      <li>Gain lots of hemogen from human flesh, but only 20% hemogen from all other sources.</li>
+    </customEffectDescriptions>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>canni</symbol></li>
+			<li><symbol>necro</symbol></li>
+			<li><symbol>corpus</symbol></li>
+			<li><symbol>body</symbol></li>
+			<li><symbol>soma</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>vore</symbol></li>
+			<li><symbol>vour</symbol></li>
+			<li><symbol>ghoul</symbol></li>
+			<li><symbol>phage</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+
+</Defs>

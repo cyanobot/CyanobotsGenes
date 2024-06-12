@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneDef ParentName="GeneSkinColorOverride" Name="CYB_GeneSkinColorOverride" Abstract="True">
+	<randomBrightnessFactor>0</randomBrightnessFactor>
+    <displayOrderInCategory>300</displayOrderInCategory>
+    <modExtensions>
+		<li Class="VanillaGenesExpanded.GeneExtension">
+			<hideGene>false</hideGene>
+		</li>
+	</modExtensions>
+  </GeneDef>
+  
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+	<defName>CYB_SkinBundle_BlueBlack</defName>
+	<label>blue-black tones</label>
+	<description>Carriers of this gene may have skin of a number of blue-black shades.</description>
+	<geneClass>CyanobotsGenes.Gene_Bundle</geneClass>
+	<iconPath>Genes/SkinBundles/SkinBundle_BlueBlack</iconPath>
+	<modExtensions>
+		<li Class="CyanobotsGenes.GeneExtension_Bundle">
+			<genes>
+				<li>CYB_Skin_AbyssBlue</li>
+				<li>CYB_Skin_MidnightBlue</li>
+				<li>CYB_Skin_SlateBlue</li>
+			</genes>
+		</li>
+	</modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_AbyssBlue</defName>
+    <label>abyss blue skin</label>
+    <labelShortAdj>abyss</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a dark blue reminiscent of the oceanic abyss.</description>
+    <skinColorOverride>(46, 57, 66)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>blue</symbol></li>
+        <li><symbol>dark</symbol></li>
+        <li><symbol>abyss</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_MidnightBlue</defName>
+    <label>midnight blue skin</label>
+    <labelShortAdj>midnight</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a dark blue reminiscent of a midnight sky.</description>
+    <skinColorOverride>(41, 45, 68)</skinColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_SlateBlue</defName>
+    <label>slate blue skin</label>
+    <labelShortAdj>slate</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a dull blue reminiscent of slate.</description>
+    <skinColorOverride>(70, 79, 81)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>blue</symbol></li>
+        <li><symbol>slate</symbol></li>
+        <li><symbol>gray</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+  
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+	<defName>CYB_SkinBundle_Extra</defName>
+	<label>brown tones</label>
+	<description>Carriers of this gene may have skin of a number of shades of brown.</description>
+	<geneClass>CyanobotsGenes.Gene_Bundle</geneClass>
+	<iconPath>Genes/SkinBundles/SkinBundle_Extra</iconPath>
+	<modExtensions>
+		<li Class="CyanobotsGenes.GeneExtension_Bundle">
+			<genes>
+				<li>CYB_Skin_PallidPink</li>
+				<li>CYB_Skin_Auburn</li>
+				<li>CYB_Skin_Hazel</li>
+				<li>CYB_Skin_Pine</li>
+				<li>CYB_Skin_Walnut</li>
+				<li>CYB_Skin_Mahogany</li>
+			</genes>
+		</li>
+	</modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_PallidPink</defName>
+    <label>pallid pink skin</label>
+    <labelShortAdj>pallid</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a pallid shade just shy of a natural human skin tone.</description>
+    <skinColorOverride>(232, 217, 211)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>pinki</symbol></li>
+        <li><symbol>pink</symbol></li>
+        <li><symbol>pale</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_Auburn</defName>
+    <label>auburn skin</label>
+    <labelShortAdj>auburn</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a warm reddish auburn.</description>
+    <skinColorOverride>(129, 74, 35)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>au</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_Hazel</defName>
+    <label>hazel skin</label>
+    <labelShortAdj>hazel</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a pale brown reminiscent of hazel wood.</description>
+    <skinColorOverride>(210, 195, 145)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>hazel</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_Pine</defName>
+    <label>pine skin</label>
+    <labelShortAdj>pine</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a pale brown reminiscent of pine wood.</description>
+    <skinColorOverride>(255, 241, 189)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>pine</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_Walnut</defName>
+    <label>walnut skin</label>
+    <labelShortAdj>walnut</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a dusty brown reminiscent of walnut wood.</description>
+    <skinColorOverride>(84, 72, 66)</skinColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_Mahogany</defName>
+    <label>mahogany skin</label>
+    <labelShortAdj>mahogany</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a rich dark brown reminiscent of mahogany wood.</description>
+    <skinColorOverride>(61, 32, 41)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>maho</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+  
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+	<defName>CYB_SkinBundle_Purple</defName>
+	<label>purple tones</label>
+	<description>Carriers of this gene may have skin of a number of shades of purple.</description>
+	<geneClass>CyanobotsGenes.Gene_Bundle</geneClass>
+	<iconPath>Genes/SkinBundles/SkinBundle_Purple</iconPath>
+	<modExtensions>
+		<li Class="CyanobotsGenes.GeneExtension_Bundle">
+			<genes>
+				<li>CYB_Skin_Thistle</li>
+				<li>CYB_Skin_Dove</li>
+				<li>CYB_Skin_Mauve</li>
+				<li>CYB_Skin_PaleLilac</li>
+				<li>CYB_Skin_Lilac</li>
+				<li>CYB_Skin_Lavender</li>
+				<li>CYB_Skin_Dusk</li>
+				<li>CYB_Skin_Iris</li>
+			</genes>
+		</li>
+	</modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_Thistle</defName>
+    <label>thistle skin</label>
+    <labelShortAdj>thistle</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin dusty purple.</description>
+    <skinColorOverride>(126, 117, 140)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>purp</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_Dove</defName>
+    <label>dove skin</label>
+    <labelShortAdj>dove</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin dusty purple.</description>
+    <skinColorOverride>(140, 127, 136)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>purp</symbol></li>
+        <li><symbol>grey</symbol></li>
+        <li><symbol>dust</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_Mauve</defName>
+    <label>mauve skin</label>
+    <labelShortAdj>mauve</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a shade of pink-purple.</description>
+    <skinColorOverride>(181, 130, 168)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>purp</symbol></li>
+        <li><symbol>mauve</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_PaleLilac</defName>
+    <label>pale lilac skin</label>
+    <labelShortAdj>lilac</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a pale purple.</description>
+    <skinColorOverride>(233, 206, 244)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>purp</symbol></li>
+        <li><symbol>lilac</symbol></li>
+        <li><symbol>lila</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_Lilac</defName>
+    <label>lilac skin</label>
+    <labelShortAdj>lilac</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a pale purple.</description>
+    <skinColorOverride>(180, 150, 186)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>purp</symbol></li>
+        <li><symbol>lilac</symbol></li>
+        <li><symbol>lila</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_Lavender</defName>
+    <label>lavender skin</label>
+    <labelShortAdj>lavender</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a pale purple.</description>
+    <skinColorOverride>(199, 176, 239)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>purp</symbol></li>
+        <li><symbol>lav</symbol></li>
+        <li><symbol>laven</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_Dusk</defName>
+    <label>dusk skin</label>
+    <labelShortAdj>dusk</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a dusty purple.</description>
+    <skinColorOverride>(69, 64, 99)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>purp</symbol></li>
+        <li><symbol>dusk</symbol></li>
+        <li><symbol>dust</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneSkinColorOverride">
+    <defName>CYB_Skin_Iris</defName>
+    <label>iris skin</label>
+    <labelShortAdj>iris</labelShortAdj>
+    <description>Carriers of this gene produce a pigment that turns their skin a shade of purple.</description>
+    <skinColorOverride>(101, 86, 130)</skinColorOverride>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>purp</symbol></li>
+        <li><symbol>iris</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+</Defs>

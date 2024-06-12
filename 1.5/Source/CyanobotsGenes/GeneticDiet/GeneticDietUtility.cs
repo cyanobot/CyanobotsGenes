@@ -153,10 +153,10 @@ namespace CyanobotsGenes
         public static DietCategory GetDietCategory(Pawn pawn)
         {
             if (pawn.genes == null) return DietCategory.Default;
-            if (pawn.genes.HasGene(CG_DefOf.Carnivore)) return DietCategory.Carnivore;
-            if (pawn.genes.HasGene(CG_DefOf.Hypercarnivore)) return DietCategory.Hypercarnivore;
-            if (pawn.genes.HasGene(CG_DefOf.Herbivore)) return DietCategory.Herbivore;
-            if (pawn.genes.HasGene(CG_DefOf.StrictHerbivore)) return DietCategory.StrictHerbivore;
+            if (pawn.HasActiveGene(CG_DefOf.Carnivore)) return DietCategory.Carnivore;
+            if (pawn.HasActiveGene(CG_DefOf.Hypercarnivore)) return DietCategory.Hypercarnivore;
+            if (pawn.HasActiveGene(CG_DefOf.Herbivore)) return DietCategory.Herbivore;
+            if (pawn.HasActiveGene(CG_DefOf.StrictHerbivore)) return DietCategory.StrictHerbivore;
             return DietCategory.Default;
         }
 
@@ -165,7 +165,7 @@ namespace CyanobotsGenes
             if (foodDef.IsDrug) return true;
 
             //hemogenic pawns can always eat hemogen packs
-            if (foodDef == ThingDefOf.HemogenPack && (pawn.genes?.HasGene(GeneDefOf.Hemogenic) ?? false)) return true;
+            if (foodDef == ThingDefOf.HemogenPack && pawn.HasActiveGene(GeneDefOf.Hemogenic)) return true;
 
             return false;
         }
@@ -181,7 +181,7 @@ namespace CyanobotsGenes
             // - corpses (can't check if human at this stage)
             // - things with ingredients (could have human meat in)
             // - human meat
-            if (pawn.genes?.HasGene(CG_DefOf.ObligateCannibal) ?? false)
+            if (pawn.HasActiveGene(CG_DefOf.ObligateCannibal))
             {
                 if (foodDef != ThingDefOf.HemogenPack
                     && !foodDef.IsCorpse 
@@ -224,7 +224,7 @@ namespace CyanobotsGenes
             if (DietForbids(food.def, pawn)) return true;
 
             //obligate cannibals
-            if (pawn.genes != null && pawn.genes.HasGene(CG_DefOf.ObligateCannibal))
+            if (pawn.HasActiveGene(CG_DefOf.ObligateCannibal))
             {
                 if (FoodUtility.IsHumanlikeCorpseOrHumanlikeMeatOrIngredient(food) || food.def == ThingDefOf.HemogenPack)
                     return false;
@@ -275,12 +275,12 @@ namespace CyanobotsGenes
         {
             if (food.def.IsDrug || food.def.ingestible ==  null) return 1f;
 
-            if (food.def == ThingDefOf.HemogenPack && pawn.genes != null && pawn.genes.HasGene(GeneDefOf.Hemogenic))
+            if (food.def == ThingDefOf.HemogenPack && pawn.HasActiveGene(GeneDefOf.Hemogenic))
             {
                 return 1f;
             }
 
-            if (pawn.genes != null && pawn.genes.HasGene(CG_DefOf.ObligateCannibal))
+            if (pawn.genes != null && pawn.HasActiveGene(CG_DefOf.ObligateCannibal))
             {
                 return ProportionHumanlike(food);
             }
@@ -392,7 +392,7 @@ namespace CyanobotsGenes
             {
                 if (cg_foodKind == CG_FoodKind.Vegetable) return null;
                 else if (cg_foodKind == CG_FoodKind.Meat || cg_foodKind == CG_FoodKind.MeatAndVeg ||
-                    (food.def == ThingDefOf.HemogenPack && !(pawn.genes != null && pawn.genes.HasGene(GeneDefOf.Hemogenic))))
+                    (food.def == ThingDefOf.HemogenPack && !pawn.HasActiveGene(GeneDefOf.Hemogenic)))
                 {
                     return CG_DefOf.AteMeatHerbivore;
                 }

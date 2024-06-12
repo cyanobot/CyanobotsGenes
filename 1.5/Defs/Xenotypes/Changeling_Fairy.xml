@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<XenotypeDef>
+	<defName>CYB_Changeling</defName>
+	<label>changeling</label>
+	<description>These beautiful, long-eared children always seem to be found without parents. People who take them in find that they eat a lot, sleep a lot, and barely seem to age. Few can find it in themselves to resent the cost of raising these children, as their natural charm endears them to all but the hardest of hearts.</description>
+	<descriptionShort>Beautiful, lovable children often found mysteriously without parents.</descriptionShort>
+	<iconPath>Xenotypes/CYB_Changeling</iconPath>
+	<inheritable>true</inheritable>
+	<genes>
+		<li>CYB_Metamorphosis_CYB_Fairy</li>
+		<li>ToxicEnvironmentResistance_Total</li>
+		<li>MoveSpeed_Quick</li>
+		<li>Sleepy</li>
+		<li>Delicate</li>
+		<li>Beauty_Beautiful</li>
+		<li>ElongatedFingers</li>
+		<li>CYB_Delightful</li>
+		<li>CYB_SlowMaturation</li>
+		<li>CYB_Afamilial</li>
+		<li>CYB_Precocious</li>
+		<li>CYB_WorkSpeed_Low</li>
+		<li MayRequire="det.stoneborn">DV_NarrowMemory</li>
+		<li MayRequire="det.stoneborn">Mood_Optimist</li>			<!--to offset narrow  memory-->
+		<li MayRequire="vanillaracesexpanded.highmate">VRE_HighmateHair</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_SvelteHead</li>
+		<li>Ears_Pointed</li>
+		<li>CYB_Blood_Black</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_ElvenEars</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Ears_FlatPointed</li>
+		<li>Skin_InkBlack</li>
+		<li>Skin_SheerWhite</li>
+		<li>Skin_PaleYellow</li>
+		<li>CYB_SkinBundle_Extra</li>
+		<!--
+		<li>CYB_Skin_PallidPink</li>
+		<li>CYB_Skin_Auburn</li>
+		<li>CYB_Skin_Hazel</li>
+		<li>CYB_Skin_Pine</li>
+		<li>CYB_Skin_Walnut</li>
+		<li>CYB_Skin_Mahogany</li>
+		-->
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_DeepBrown</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_Brown</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_PaleBrown</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_Sandstone</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_Limestone</li>
+		<li MayRequire="vanillaracesexpanded.pigskin">VRE_AuburnSkin</li>
+		<li MayRequire="vanillaracesexpanded.pigskin">VRE_HazelnutSkin</li>
+		<li>Hair_InkBlack</li>
+		<li>CYB_HairBundle_Pastel</li>
+		<!--
+		<li>CYB_Hair_DustyTeal</li>
+		<li>CYB_Hair_PredawnBlue</li>
+		<li>CYB_Hair_BabyBlue</li>
+		<li>CYB_Hair_MistGreen</li>
+		<li>CYB_Hair_DustyGreen</li>
+		<li>CYB_Hair_Peach</li>
+		<li>CYB_Hair_DustyGold</li>
+		-->
+		<li MayRequire="det.avaloi">Hair_PaleBlue</li>
+		<li MayRequire="milkman.biotechcosmeticgenesmm">MMHair_Peachy</li>
+		<li MayRequire="milkman.biotechcosmeticgenesmm">MMHair_LightBlue</li>
+		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Warlord</li>
+	</genes>
+</XenotypeDef>
+
+<XenotypeDef>
+	<defName>CYB_Fairy</defName>
+	<label>fairy</label>
+	<description>These hulking, aggressive carnivores get their ironic name for being the adult form of the fey and delicate Changeling children. Antisocial and thick-headed, they bear little resemblence in appearance or demeanour to the young. Their endless appetites are not diminished, but finally pay off in size, speed and brute strength.</description>
+	<descriptionShort>These hulking, aggressive carnivores are the adult form of the fey and delicate Changeling children.</descriptionShort>
+	<iconPath>Xenotypes/CYB_Fairy</iconPath>
+    <combatPowerFactor>2.0</combatPowerFactor>
+	<inheritable>true</inheritable>
+	<genes>
+		<li>Superclotting</li>
+		<li>MoveSpeed_Quick</li>
+		<li>Robust</li>
+		<li>Pain_Reduced</li>
+		<li>MeleeDamage_Strong</li>
+		<li>Aggression_HyperAggressive</li>
+		<!--<li>VRE_Aggression_ExtremelyAggressive</li>-->	<!--swaps for HyperAggressive with VRE Archon to offset fast melee-->
+		<li>Beauty_Ugly</li>
+		<li>Fertile</li>
+		<li>Learning_Slow</li>
+		<li>AptitudeRemarkable_Melee</li>
+		<li>AptitudePoor_Construction</li>
+		<li>AptitudePoor_Cooking</li>
+		<li>AptitudeTerrible_Crafting</li>
+		<li>AptitudePoor_Artistic</li>
+		<li>AptitudeTerrible_Social</li>
+		<li>AptitudeTerrible_Intellectual</li>
+		<li>ToxicEnvironmentResistance_Total</li>
+		<li>AcidSpray</li>
+		<!--<li>Outland_ToxicSpray</li>-->		<!--swaps for AcidSpray with Outland Genetics-->
+		<li>Unstoppable</li>
+		<li>Unstable</li>
+		<li>Carnivore</li>
+		<li>CYB_Afamilial</li>
+		<li>CYB_ToughSkin</li>
+		<li>CYB_ProdigiousGrowth</li>
+		<li>CYB_Offspring_CYB_Changeling</li>
+		<li MayRequire="vanillaracesexpanded.archon">VRE_FastMeleeHitter</li>
+		<li MayRequire="vanillaracesexpanded.pigskin">VRE_Gluttonous</li>
+		<li MayRequire="turnovus.biotech.integratedgenes">Turn_Gene_LowBeautyStandard</li>
+		<li>Hair_BaldOnly</li>
+		<li>Beard_NoBeardOnly</li>
+		<li>Brow_Heavy</li>
+		<li>Body_Fat</li>
+		<li>Body_Hulk</li>
+		<li>CYB_Blood_Black</li>
+		<li>CYB_Tusks</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_EyeVisual_Recessed</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Voice_Beastly</li>
+		<li>Ears_Pointed</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_ElvenEars</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Ears_FlatPointed</li>
+		<li>Skin_InkBlack</li>
+		<li>Skin_SheerWhite</li>
+		<li>Skin_PaleYellow</li>
+		<li>CYB_SkinBundle_Extra</li>
+		<!--
+		<li>CYB_Skin_PallidPink</li>
+		<li>CYB_Skin_Auburn</li>
+		<li>CYB_Skin_Hazel</li>
+		<li>CYB_Skin_Pine</li>
+		<li>CYB_Skin_Walnut</li>
+		<li>CYB_Skin_Mahogany</li>
+		-->
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_DeepBrown</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_Brown</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_PaleBrown</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_Sandstone</li>
+		<li MayRequire="vanillaracesexpanded.pigskin">VRE_AuburnSkin</li>
+		<li MayRequire="vanillaracesexpanded.pigskin">VRE_HazelnutSkin</li>
+		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Warlord</li>
+	</genes>
+</XenotypeDef>
+
+</Defs>

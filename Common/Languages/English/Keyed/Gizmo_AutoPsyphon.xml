@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<CYB_Command_AutoPsyphon_Label>Auto-Psyphon settings</CYB_Command_AutoPsyphon_Label>
+<CYB_Command_AutoPsyphon_Desc>Toggle:\n- whether this person should meditate for psyfocus.\n -whether this person should automatically use Psyphon to refill psyfocus, and if so who to target.</CYB_Command_AutoPsyphon_Desc>
+<CYB_MeditationDisabled>Meditation disabled</CYB_MeditationDisabled>
+<CYB_MeditationEnabled>Meditation enabled</CYB_MeditationEnabled>
+<CYB_LethalAllowed>Lethal drain allowed</CYB_LethalAllowed>
+<CYB_LethalDisallowed>Lethal drain disallowed</CYB_LethalDisallowed>
+<CYB_AutoPsyphonDisabled>Auto-Psyphon disabled</CYB_AutoPsyphonDisabled>
+<CYB_AutoPsyphonTargets>Auto-Psyphon targets</CYB_AutoPsyphonTargets>
+
+<CYB_Colonists>colonists</CYB_Colonists>
+<CYB_Slaves>slaves</CYB_Slaves>
+<CYB_Prisoners>prisoners</CYB_Prisoners>
+
+<CYB_Command_MeditationTurnOn_Label>Enable meditation</CYB_Command_MeditationTurnOn_Label>
+<CYB_Command_MeditationTurnOff_Label>Disable meditation</CYB_Command_MeditationTurnOff_Label>
+<CYB_Command_DisllowLethal_Label>Disallow lethal drain</CYB_Command_DisllowLethal_Label>
+<CYB_Command_AllowLethal_Label>Allow lethal drain</CYB_Command_AllowLethal_Label>
+<CYB_Command_SetAutoPsyphonTargets_None_Label>Disable auto-Psyphon</CYB_Command_SetAutoPsyphonTargets_None_Label>
+<CYB_Command_SetAutoPsyphonTargets_Prisoners_Label>Auto-Psyphon: prisoners only</CYB_Command_SetAutoPsyphonTargets_Prisoners_Label>
+<CYB_Command_SetAutoPsyphonTargets_Slaves_Label>Auto-Psyphon: slaves only</CYB_Command_SetAutoPsyphonTargets_Slaves_Label>
+<CYB_Command_SetAutoPsyphonTargets_Colonists_Label>Auto-Psyphon: colonists only</CYB_Command_SetAutoPsyphonTargets_Colonists_Label>
+<CYB_Command_SetAutoPsyphonTargets_PrisonersAndSlaves_Label>Auto-Psyphon: prisoners and slaves</CYB_Command_SetAutoPsyphonTargets_PrisonersAndSlaves_Label>
+<CYB_Command_SetAutoPsyphonTargets_PrisonersAndColonists_Label>Auto-Psyphon: prisoners and colonists</CYB_Command_SetAutoPsyphonTargets_PrisonersAndColonists_Label>
+<CYB_Command_SetAutoPsyphonTargets_SlavesAndColonists_Label>Auto-Psyphon: slaves and colonists</CYB_Command_SetAutoPsyphonTargets_SlavesAndColonists_Label>
+<CYB_Command_SetAutoPsyphonTargets_Anyone_Label>Auto-Psyphon from anyone</CYB_Command_SetAutoPsyphonTargets_Anyone_Label>
+
+</LanguageData>

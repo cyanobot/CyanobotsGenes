@@ -19,7 +19,7 @@ namespace CyanobotsGenes
     {
         static bool Prefix(ref Job __result, Pawn pawn)
         {
-            if (pawn.genes == null || !pawn.genes.HasGene(CG_DefOf.Bodyfeeder))
+            if (!pawn.HasActiveGene(CG_DefOf.Bodyfeeder))
                 return true;
 
             Gene_Hemogen gene_Hemogen = pawn.genes?.GetFirstGeneOfType<Gene_Hemogen>();
@@ -74,7 +74,7 @@ namespace CyanobotsGenes
 
         static float Postfix(float result, Pawn_GeneTracker __instance)
         {
-            if (__instance.HasGene(CG_DefOf.Bodyfeeder) && __instance.pawn.health != null 
+            if (__instance.pawn.HasActiveGene(CG_DefOf.Bodyfeeder) && __instance.pawn.health != null 
                 && __instance.pawn.health.hediffSet.HasHediff(CG_DefOf.BodyfeederStarvation))
             {
                 result *= 1f + (8f * __instance.pawn.health.hediffSet.GetFirstHediffOfDef(CG_DefOf.BodyfeederStarvation).Severity);
@@ -89,7 +89,7 @@ namespace CyanobotsGenes
         public static bool Prefix(IGeneResourceDrain drain, float oldValue)
         {
             Pawn pawn = drain.Pawn;
-            if (drain.Resource.GetType() == typeof(Gene_Hemogen) && pawn.genes.HasGene(CG_DefOf.Bodyfeeder))
+            if (drain.Resource.GetType() == typeof(Gene_Hemogen) && pawn.HasActiveGene(CG_DefOf.Bodyfeeder))
             {
                 if (oldValue > 0f && drain.Resource.Value <= 0f)
                 {

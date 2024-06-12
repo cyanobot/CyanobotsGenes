@@ -13,7 +13,19 @@ using System.Xml;
 
 namespace CyanobotsGenes
 {
-    class PatchOperationBySetting : PatchOperationPathed
+    [StaticConstructorOnStartup]
+    public static class PatchUtil
+    {
+        public static Dictionary<FieldInfo,List<PatchOperation>> patchesBySetting = new Dictionary<FieldInfo, List<PatchOperation>>();
+        public static CG_Settings settings;
+
+        static PatchUtil()
+        {
+            settings = LoadedModManager.GetMod<CG_Mod>().GetSettings<CG_Settings>();
+        }
+    }
+
+    public class PatchOperationBySetting : PatchOperationPathed
     {
         protected override bool ApplyWorker(XmlDocument xml)
         {
@@ -23,22 +35,32 @@ namespace CyanobotsGenes
 
             object val = null;
             bool flag = true;
+            FieldInfo f_setting = null;
             try
             {
-                CG_Settings settings = LoadedModManager.GetMod<CG_Mod>().GetSettings<CG_Settings>();
-                val = settings.GetType().GetField(setting, BindingFlags.Static | BindingFlags.Public).GetValue(settings);
-                flag = (bool)val;
+                f_setting = PatchUtil.settings.GetType().GetField(setting, BindingFlags.Static | BindingFlags.Public);
+                flag = (bool)f_setting.GetValue(PatchUtil.settings);
             }
-            catch (NullReferenceException e)
+            catch (Exception e)
             {
-                Log.Warning("XML worker attempted to read setting " + setting + " but couldn't find any such setting.");
+                if (e is NullReferenceException)
+                {
+                    Log.Warning("XML worker attempted to read setting " + setting + " but couldn't find any such setting.");
+                }
+                else if (e is InvalidCastException)
+                {
+                    Log.Warning("Only boolean settings can be used with PatchOperationBySetting. XML worker attempted to read setting " + setting + " but found type " + val.GetType().Name);
+                }
+                else
+                {
+                    Log.Warning("Exception caught while trying to apply PatchOperationBySetting with setting " + setting + ": " + e.Message);
+                }
                 return false;
             }
-            catch (InvalidCastException e)
-            {
-                Log.Warning("Only boolean settings can be used with PatchOperationBySetting. XML worker attempted to read setting " + setting + " but found type " + val.GetType().Name);
-                return false;
-            }
+
+            if (f_setting == null) return false;
+
+            if (!PatchUtil.patchesBySetting.ContainsKey(f_setting)) PatchUtil.patchesBySetting.Add(f_setting, new List<PatchOperation>());
 
             try
             {
@@ -65,9 +87,9 @@ namespace CyanobotsGenes
             }
         }
 
-        private string setting;
-        private PatchOperation on;
-        private PatchOperation off;
+        public string setting;
+        public PatchOperation on;
+        public PatchOperation off;
     }
 
     class PatchWorker

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<GeneDef>
+	<defName>CYB_BodySize_Small</defName>
+	<label>small</label>
+	<description>Carriers develop small stature. They can carry less, and are more vulnerable to drugs, toxins and physical damage.</description>
+	<displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>605</displayOrderInCategory>
+	<iconPath>Genes/CYB_BodySize_Small</iconPath>
+	<biostatMet>1</biostatMet>
+	<statOffsets>
+		<VEF_BodySize_Multiplier>-0.2</VEF_BodySize_Multiplier>
+		<VEF_CosmeticBodySize_Offset>-0.1</VEF_CosmeticBodySize_Offset>
+	</statOffsets>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>lil</symbol></li>
+        <li><symbol>lilli</symbol></li>
+        <li><symbol>mini</symbol></li>
+        <li><symbol>micro</symbol></li>
+        <li><symbol>minu</symbol></li>
+        <li><symbol>dimini</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>putian</symbol></li>
+        <li><symbol>titch</symbol></li>
+        <li><symbol>squeak</symbol></li>
+        <li><symbol>kid</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<GeneDef>
+	<defName>CYB_BodySize_Large</defName>
+	<label>large</label>
+	<description>Carriers develop large stature. They can carry more, and are less vulnerable to drugs, toxins and physical damage.</description>
+	<displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>606</displayOrderInCategory>
+	<iconPath>Genes/CYB_BodySize_Large</iconPath>
+	<biostatMet>-1</biostatMet>
+	<statOffsets>
+		<VEF_BodySize_Multiplier>0.2</VEF_BodySize_Multiplier>
+		<VEF_CosmeticBodySize_Offset>0.1</VEF_CosmeticBodySize_Offset>
+	</statOffsets>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>grand</symbol></li>
+        <li><symbol>gros</symbol></li>
+        <li><symbol>macro</symbol></li>
+        <li><symbol>vast</symbol></li>
+        <li><symbol>huge</symbol></li>
+        <li><symbol>big</symbol></li>
+        <li><symbol>mass</symbol></li>
+        <li><symbol>loom</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>dingnag</symbol></li>
+        <li><symbol>hulk</symbol></li>
+        <li><symbol>tank</symbol></li>
+        <li><symbol>hulker</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Prodigious Growth-->
+<GeneDef>
+	<defName>CYB_ProdigiousGrowth</defName>
+	<label>prodigious growth</label>
+	<description>Carriers of this gene continue to grow into adulthood, and can reach prodigious sizes in their advanced years.</description>
+	<iconPath>Genes/CYB_ProdigiousGrowth</iconPath>
+    <displayOrderInCategory>607</displayOrderInCategory>
+	<biostatCpx>2</biostatCpx>
+	<biostatMet>-2</biostatMet>
+	<modExtensions>
+		<li Class="VanillaGenesExpanded.GeneExtension">
+			<sizeByAge>
+			  <minOffset>0</minOffset>
+			  <maxOffset>4</maxOffset>
+			  <range>18~218</range>
+			</sizeByAge>
+		</li>
+	</modExtensions>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>grand</symbol></li>
+        <li><symbol>gros</symbol></li>
+        <li><symbol>macro</symbol></li>
+        <li><symbol>vast</symbol></li>
+        <li><symbol>huge</symbol></li>
+        <li><symbol>big</symbol></li>
+        <li><symbol>mass</symbol></li>
+        <li><symbol>loom</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>hulk</symbol></li>
+        <li><symbol>tank</symbol></li>
+        <li><symbol>hulker</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+</Defs>

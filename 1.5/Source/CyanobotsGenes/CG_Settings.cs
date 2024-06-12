@@ -9,23 +9,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using static CyanobotsGenes.CG_Mod;
 
 namespace CyanobotsGenes
 {
 
-    class CG_Settings : ModSettings
+    public class CG_Settings : ModSettings
     {
         //default values
         public static bool unaffectedInTraitPool = true;
         public static bool moveVanillaGenes = true;
         public static bool changeMealStacking = true;
+        public static bool bundleSkinHairColors = true;
+        public static bool noOutlandGlimmer = false;
 
         public static float generationWeight_Biodrone = 1f;
+        public static float generationWeight_Changeling = 1f;
+        public static float generationWeight_Fairy = 1f;
+        public static float generationWeight_Glimmer = 1f;
         public static float generationWeight_Kitlin = 1f;
-
-        //public static bool[] geneToggles = Enumerable.Repeat<bool>(true,CyanobotsGenes_Mod.geneList.Count).ToArray<bool>();
-
-        //public static Dictionary<string,>
+        public static float generationWeight_Psycrux = 0f;
+        public static float generationWeight_Shulk = 1f;
+        public static float generationWeight_Wist = 1f;
 
         public override void ExposeData()
         {
@@ -34,14 +39,17 @@ namespace CyanobotsGenes
             Scribe_Values.Look(ref unaffectedInTraitPool, "unaffectedInTraitPool", unaffectedInTraitPool, true);
             Scribe_Values.Look(ref moveVanillaGenes, "moveVanillaGenes", moveVanillaGenes, true);
             Scribe_Values.Look(ref changeMealStacking, "changeMealStacking", changeMealStacking, true);
+            Scribe_Values.Look(ref bundleSkinHairColors, "bundleSkinHairColors", bundleSkinHairColors, true);
+            Scribe_Values.Look(ref noOutlandGlimmer, "noOutlandGlimmer", noOutlandGlimmer, true);
             Scribe_Values.Look(ref generationWeight_Biodrone, "generationWeight_Biodrone", generationWeight_Biodrone, true);
+            Scribe_Values.Look(ref generationWeight_Changeling, "generationWeight_Changeling", generationWeight_Changeling, true);
+            Scribe_Values.Look(ref generationWeight_Fairy, "generationWeight_Fairy", generationWeight_Fairy, true);
+            Scribe_Values.Look(ref generationWeight_Glimmer, "generationWeight_Glimmer", generationWeight_Glimmer, true);
             Scribe_Values.Look(ref generationWeight_Kitlin, "generationWeight_Kitlin", generationWeight_Kitlin, true);
-            /*
-            foreach (KeyValuePair<int, string> kvp in CyanobotsGenes_Mod.geneDict)
-                {
-                Scribe_Values.Look(ref geneToggles[kvp.Key], kvp.Value + "_toggle", geneToggles[kvp.Key], true);
-                }
-            */
+            Scribe_Values.Look(ref generationWeight_Psycrux, "generationWeight_Psycrux", generationWeight_Psycrux, true);
+            Scribe_Values.Look(ref generationWeight_Shulk, "generationWeight_Shulk", generationWeight_Shulk, true);
+            Scribe_Values.Look(ref generationWeight_Wist, "generationWeight_Wist", generationWeight_Wist, true);
+
         }
 
         public static void DoSettingsWindowContents(Rect rect)
@@ -53,30 +61,47 @@ namespace CyanobotsGenes
 
             l.Begin(rect);
 
-            l.CheckboxLabeled("CG_SettingLabel_UnaffectedInTraitPool".Translate(), ref unaffectedInTraitPool, "CG_SettingDesc_UnaffectedInTraitPool".Translate());
-            l.CheckboxLabeled("CG_SettingLabel_MoveVanillaGenes".Translate(), ref moveVanillaGenes, "CG_SettingDesc_MoveVanillaGenes".Translate());
-            l.CheckboxLabeled("CG_SettingLabel_ChangeMealStacking".Translate(), ref changeMealStacking, "CG_SettingDesc_ChangeMealStacking".Translate());
+            l.CheckboxLabeled("CYB_SettingLabel_UnaffectedInTraitPool".Translate(), ref unaffectedInTraitPool, "CYB_SettingDesc_UnaffectedInTraitPool".Translate());
+            l.CheckboxLabeled("CYB_SettingLabel_MoveVanillaGenes".Translate(), ref moveVanillaGenes, "CYB_SettingDesc_MoveVanillaGenes".Translate());
+            l.CheckboxLabeled("CYB_SettingLabel_ChangeMealStacking".Translate(), ref changeMealStacking, "CYB_SettingDesc_ChangeMealStacking".Translate());
+            l.CheckboxLabeled("CYB_SettingLabel_BundleSkinHairColors".Translate(), ref bundleSkinHairColors, "CYB_SettingDesc_BundleSkinHairColors".Translate());
+            l.CheckboxLabeled("CYB_SettingLabel_NoOutlandGlimmer".Translate(), ref noOutlandGlimmer, "CYB_SettingDesc_NoOutlandGlimmer".Translate());
 
             l.Gap();
 
-            l.Label("CG_SettingLabel_GenerationWeights".Translate());
+            l.Label("CYB_SettingLabel_GenerationWeights".Translate());
             l.GapLine();
 
             l.Label(CG_DefOf.Biodrone.LabelCap + " : " + generationWeight_Biodrone.ToString("F2"));
             generationWeight_Biodrone = l.Slider(generationWeight_Biodrone, 0f, 100f);
 
+            l.Label(CG_DefOf.CYB_Changeling.LabelCap + " : " + generationWeight_Changeling.ToString("F2"));
+            generationWeight_Changeling = l.Slider(generationWeight_Changeling, 0f, 100f);
+
+            l.Label(CG_DefOf.CYB_Fairy.LabelCap + " : " + generationWeight_Fairy.ToString("F2"));
+            generationWeight_Fairy = l.Slider(generationWeight_Fairy, 0f, 100f);
+
+            if (outlandGeneticsLoaded || noOutlandGlimmer)
+            {
+                l.Label(CG_DefOf.CYB_Glimmer.LabelCap + " : " + generationWeight_Glimmer.ToString("F2"));
+                generationWeight_Glimmer = l.Slider(generationWeight_Glimmer, 0f, 100f);
+            }
+
             l.Label(CG_DefOf.Kitlin.LabelCap + " : " + generationWeight_Kitlin.ToString("F2"));
             generationWeight_Kitlin = l.Slider(generationWeight_Kitlin, 0f, 100f);
 
-            /*
-            l.Label("Individual gene toggles (requires restart)");
-
-            foreach (KeyValuePair<int, string> kvp in CyanobotsGenes_Mod.geneDict)
+            if (vreArchonLoaded)
             {
-                string label = CyanobotsGenes_Mod.geneLabelDict[kvp.Key].CapitalizeFirst();
-                l.CheckboxLabeled(label, ref geneToggles[kvp.Key], label);
+                l.Label(CG_DefOf.CYB_Psycrux.LabelCap + " : " + generationWeight_Psycrux.ToString("F2"));
+                generationWeight_Psycrux = l.Slider(generationWeight_Psycrux, 0f, 100f);
             }
-            */
+
+            l.Label(CG_DefOf.CYB_Shulk.LabelCap + " : " + generationWeight_Shulk.ToString("F2"));
+            generationWeight_Shulk = l.Slider(generationWeight_Shulk, 0f, 100f);
+
+            l.Label(CG_DefOf.CYB_Wist.LabelCap + " : " + generationWeight_Wist.ToString("F2"));
+            generationWeight_Wist = l.Slider(generationWeight_Wist, 0f, 100f);
+
             l.End();
 
             CG_Init.ApplySettingsToDefs();

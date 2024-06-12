@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <InteractionDef>
+    <defName>CYB_DelightfulWords</defName>
+    <label>charming words</label>
+    <workerClass>CyanobotsGenes.InteractionWorker_DelightfulWords</workerClass>
+    <symbol>Things/Mote/SpeechSymbols/KindWords</symbol>
+    <recipientThought>CYB_Delighted_Opinion</recipientThought>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [complimented] [RECIPIENT_nameDef]'s [characteristic].</li>
+		<li>r_logentry->[INITIATOR_nameDef] [positivetalkedabout] [subject].</li>
+		<li>r_logentry->[INITIATOR_nameDef] [positivetalk] to [RECIPIENT_nameDef].</li>
+
+        <li>characteristic->[PersonalCharacteristic]</li>
+		<li>subject->[TalkTopicHeavy]</li>
+
+        <li>complimented(p=3)->complimented</li>
+        <li>complimented->praised</li>
+        <li>complimented->spoke kindly of</li>
+        <li>complimented->expressed appreciation for</li>
+        <li>complimented->said good things about</li>
+		
+		<li>positivetalkedabout->quipped about</li>
+		<li>positivetalkedabout->joked about</li>
+		<li>positivetalkedabout->shared a nice thought about</li>
+		<li>positivetalkedabout->offered advice on</li>
+		
+		<li>positivetalk->made a funny joke</li>
+		<li>positivetalk->offered words of comfort</li>
+		<li>positivetalk->chattered happily</li>
+		<li>positivetalk->made a thoughtful comment</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+</Defs>

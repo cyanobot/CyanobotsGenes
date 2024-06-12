@@ -1,22 +1,28 @@
-balance thought numbers
+swap Psychically Dead for Deaf if no Anomaly
+check 1.4 image file  names updated
+	
+	
+psycrux/thrall for alternate psy mods
+	require: innate psylink
+		archon	(swift meditation, high entropy capcacity)
+		alpha genes	(none)
+		ebsg psychic (focus gain, neural heat max) sensitivity is in mbsg
+	thrall also relies on slow shooter / slow melee for most of its metabolism
+	
 
-testing
-	slit pupils
-		eye size for children/babies
 
-
-
+kitlin glo-up
+	floofy faces
+	stripes change colour with hair color?
+	little pointy kitten tail
+	better eyes
+refactor to fix names of early genes
 better food filters
 name lists
 figure out if there's a way to make the (requires restart) options not require restart
 test failure states for PatchOperationBySetting
 forcing backstories by xenotype
-toggles for each gene
-head attachments that vary by head shape
 workaround for bodyfeeder unable to detect friend while hostile for body part eating purposes
-now that rendering is simpler, consider moving tabby out of fur so that the stripes can change color with hair color?
-little pointy kitten tail?
 dbh/wetncold compat for wet fur
 compat for gourmet meal taste thought
-skeletal tail
 optional tail render worker for yttakin

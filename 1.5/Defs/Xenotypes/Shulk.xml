@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<XenotypeDef>
+	<defName>CYB_Shulk</defName>
+	<label>shulk</label>
+	<description>Rarely seen outside of the deepest cave systems, shulks are often seen as more animal than human due to their bestial aspect and lack of spoken language. Usually found alone or in small groups, they carve out lightless settlements in their underground habitats. Most are opportunistic scavengers, equipping themselves with whatever technology they can get their hands on, but some few prefer to live as wild people, reliant only on their tough hides for protection and hunting with the natural weapons their genes provide./n/nShulks were intended as subterranean pioneers for the colonisation of caveworlds and deep cavern systems, but the severe side downsides of the xenotype made it unappealing to all but the most desperate and the most eccentrically reclusive. The xenogenetics company behind the initiative failed in under a decade -- but enough settlers accepted the bargain to establish sparse populations in cave systems across the Rim./n/nThe greatest strength of the shulk xenotype is the ultra efficient metabolism that allows them to thrive in food scarce environments. They eat almost anything, and are equipped to kill their own food with sharp claws and fangs. Enhanced immune systems and coagulation protect them against a harsh and often humid environment, even in the absence of decent medical care./n/nLooks, however, were not a priority, and nor were technical skills. Temperature tolerance was neglected, given the quite stable temperature of most cave systems, and the adaptations that equip them to function normally in darkness leave them highly sensitive to light.</description>
+	<descriptionShort>Mute subterrannean pioneers, hardy and independent but light averse and incapable of speech.</descriptionShort>
+	<iconPath>Xenotypes/CYB_Shulk</iconPath>
+    <combatPowerFactor>1.2</combatPowerFactor>
+	<inheritable>true</inheritable>
+	<genes>
+		<li>StrongStomach</li>
+		<li>RobustDigestion</li>
+		<li>Immunity_Strong</li>
+		<li>Superclotting</li>
+		<li>DarkVision</li>
+		<li>MinTemp_SmallIncrease</li>
+		<li>MaxTemp_SmallDecrease</li>
+		<li>UVSensitivity_Mild</li>
+		<li>Beauty_Ugly</li>
+		<li>FireTerror</li>
+		<!--<li>VRE_Photophobia</li>-->			<!--swaps for FireTerror with VRE Lycan-->		
+		<li>AptitudeStrong_Mining</li>
+		<li>AptitudeTerrible_Cooking</li>
+		<li>AptitudePoor_Crafting</li>
+		<li>CYB_ToughSkin</li>
+		<li>CYB_Claws</li>
+		<li>CYB_Fangs</li>
+		<li>CYB_FastMaturation</li>
+		<li>CYB_Undergrounder</li>
+		<li>CYB_DampAdaptation</li>
+		<li>CYB_Solitary</li>
+		<li>CYB_Mute</li>
+		<li>CYB_ExpansiveStomach</li>
+		<li>CYB_LightSensitivity</li>
+		<li MayRequire="Ludeon.RimWorld.Anomaly">CYB_Darkling</li>
+		<li>CYB_Nose_Flat</li>
+		<li>CYB_Tail_Leathery</li>
+		<li MayRequire="vanillaracesexpanded.pigskin">VRE_LowMeat</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_EggLayer</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_AsexualReproduction</li>
+		<!--<li>VRESaurids_Oviparous</li>-->		<!--only if VRE Saurid but not Outland Genetics-->
+		<!--<li>AptitudePoor_Construction</li>-->		<!--only if VRE Saurid but not Outland Genetics, to offset oviparous-->
+		<!--<li>VRE_Parthenogenesis</li>-->				<!--only if VRE Insector but not Outland-->
+		<li>Hair_BaldOnly</li>
+		<li>Beard_NoBeardOnly</li>
+		<li>Body_Thin</li>
+		<li>Skin_InkBlack</li>
+		<li>Skin_SlateGray</li>
+		<li>CYB_SkinBundle_BlueBlack</li>
+		<!--
+		<li>CYB_Skin_AbyssBlue</li>
+		<li>CYB_Skin_MidnightBlue</li>
+		<li>CYB_Skin_SlateBlue</li>
+		-->
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_DeepSage</li>
+		<li MayRequire="neronix17.outland.genetics">Outland_Skin_DeepBrown</li>
+		<li MayRequire="det.boglegs">Skin_CyanMuddy</li>
+		<li MayRequire="det.boglegs">Skin_GreenMuddy</li>
+		<li MayRequire="det.boglegs">Skin_OliveMuddy</li>
+		<li MayRequire="rimsenal.askbarn">Skin_BlueGray</li>
+		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Nightstalker</li>
+	</genes>
+</XenotypeDef>
+
+</Defs>

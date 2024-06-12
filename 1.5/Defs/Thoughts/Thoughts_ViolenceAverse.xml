@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>CYB_ViolenceAverse_KilledHumanlike</defName>
+    <icon>Things/Mote/ThoughtSymbol/Skull</icon>
+    <showBubble>true</showBubble>
+    <durationDays>10</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>killed someone</label>
+        <description>I killed someone. It's so awful.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+	<requiredGenes>
+		<li>CYB_ViolenceAverse</li>
+	</requiredGenes>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>CYB_ViolenceAverse_Violence</defName>
+    <icon>Things/Mote/ThoughtSymbol/Skull</icon>
+    <showBubble>true</showBubble>
+    <durationDays>10</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>hurt someone</label>
+        <description>I hurt someone. I don't like it.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+	<requiredGenes>
+		<li>CYB_ViolenceAverse</li>
+	</requiredGenes>
+  </ThoughtDef>
+   
+  <ThoughtDef>
+    <defName>CYB_ViolenceAverse_KnowExecuted</defName>
+    <icon>Things/Mote/ThoughtSymbol/Skull</icon>
+    <showBubble>true</showBubble>
+    <durationDays>9</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>execution</label>
+        <description>We killed someone in cold blood, who wasn't fighting back. There had to be another way.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+	<requiredGenes>
+		<li>CYB_ViolenceAverse</li>
+	</requiredGenes>
+  </ThoughtDef>
+   
+  <ThoughtDef>
+    <defName>CYB_ViolenceAverse_ViolentDeaths</defName>
+    <icon>Things/Mote/ThoughtSymbol/Skull</icon>
+    <showBubble>true</showBubble>
+    <durationDays>5</durationDays>
+    <stackLimit>6</stackLimit>
+    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>violent death</label>
+        <description>Killing people is horrible, no matter the circumstances.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+	<requiredGenes>
+		<li>CYB_ViolenceAverse</li>
+	</requiredGenes>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>CYB_ViolenceAverse_WitnessedDowned</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>witnessed violence</label>
+        <description>I hate watching people get hurt.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+	<requiredGenes>
+		<li>CYB_ViolenceAverse</li>
+	</requiredGenes>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>CYB_ViolenceAverse_CarryingWeapon</defName>
+    <workerClass>CyanobotsGenes.ThoughtWorker_CarryingWeapon</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+	<requiredGenes>
+		<li>CYB_ViolenceAverse</li>
+	</requiredGenes>
+    <stages>
+      <li>
+        <label>weapon</label>
+        <description>This is a tool of death.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!--Copies-->
+  
+  <ThoughtDef>
+    <defName>CYB_ViolenceAverse_WitnessedDeathAlly</defName>
+    <icon>Things/Mote/ThoughtSymbol/Skull</icon>
+    <showBubble>true</showBubble>
+    <durationDays>3</durationDays>
+    <stackLimit>10</stackLimit>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>witnessed ally's death</label>
+        <description>I saw one of my people die. They were alive one moment, and dead the next.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+	<requiredGenes>
+		<li>CYB_ViolenceAverse</li>
+	</requiredGenes>
+  </ThoughtDef>
+   
+  <ThoughtDef>
+    <defName>CYB_ViolenceAverse_WitnessedDeathNonAlly</defName>
+    <icon>Things/Mote/ThoughtSymbol/Skull</icon>
+    <showBubble>true</showBubble>
+    <durationDays>1.5</durationDays>
+    <stackLimit>5</stackLimit>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>witnessed outsider's death</label>
+        <description>I saw someone die. They were alive one moment, and dead the next.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+	<requiredGenes>
+		<li>CYB_ViolenceAverse</li>
+	</requiredGenes>
+  </ThoughtDef>
+   
+  <ThoughtDef>
+    <defName>CYB_ViolenceAverse_KnowOrganHarvested</defName>
+    <icon>Things/Mote/ThoughtSymbol/Skull</icon>
+    <showBubble>true</showBubble>
+    <durationDays>8</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>someone's organ harvested</label>
+        <description>The colony took body parts from someone. It's horrible, breaking someone down for parts when they have no choice.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+	<requiredGenes>
+		<li>CYB_ViolenceAverse</li>
+	</requiredGenes>
+  </ThoughtDef>
+   
+  <ThoughtDef>
+    <defName>CYB_ViolenceAverse_HarmedMe</defName>
+    <durationDays>15</durationDays>
+    <stackLimit>300</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>harmed me</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+    </stages>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+	<requiredGenes>
+		<li>CYB_ViolenceAverse</li>
+	</requiredGenes>
+  </ThoughtDef>
+
+
+</Defs>

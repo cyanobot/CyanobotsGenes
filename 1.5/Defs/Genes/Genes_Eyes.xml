@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--Eyes_SlitPupil-->
+<GeneDef ParentName="GeneEyeColor">
+	<defName>Eyes_SlitPupil</defName>
+	<label>slit pupils</label>
+	<labelShortAdj>slit-pupiled</labelShortAdj>
+	<description>Carriers of this gene have slit pupils, like those of a cat or snake.</description>
+	<iconPath>Genes/CYB_Eyes_SlitPupil</iconPath>
+	<displayCategory>Cosmetic</displayCategory>
+    <biostatCpx>0</biostatCpx>
+	<displayOrderInCategory>2</displayOrderInCategory>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_SlitPupil</texPath>
+		<colorType>Skin</colorType>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+		<useSkinShader>true</useSkinShader>
+		<useRottenColor>true</useRottenColor>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.255)</offset>
+            <flip>false</flip>
+          </defaultData>
+		  <dataEast>
+			<offset>(-0.03, 0, -0.25)</offset>
+		  </dataEast>
+        </drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_SlitPupil</texPath>
+		<colorType>Skin</colorType>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+		<useSkinShader>true</useSkinShader>
+		<useRottenColor>true</useRottenColor>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.255)</offset>
+            <flip>true</flip>
+          </defaultData>
+          <dataWest>
+            <flip>false</flip>
+			<offset>(0.03, 0, -0.25)</offset>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+</GeneDef>
+
+  <GeneDef ParentName="GeneEyeColor">
+    <defName>CYB_Eyes_Cyan</defName>
+    <label>cyan eyes</label>
+    <labelShortAdj>cyan-eyed</labelShortAdj>
+    <description>Carriers of this gene have aggressively cyan-pigmented eyes.</description>
+    <displayOrderInCategory>3</displayOrderInCategory>
+	<iconPath>Genes/CYB_Eyes_Cyan</iconPath>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Cyan_Male</texPath>
+        <texPathFemale>HeadAttachments/CYB_Eyes_Cyan_Female</texPathFemale>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+          </defaultData>
+        </drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Cyan_Male</texPath>
+        <texPathFemale>HeadAttachments/CYB_Eyes_Cyan_Female</texPathFemale>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+            <flip>true</flip>
+          </defaultData>
+          <dataWest>
+            <flip>false</flip>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneEyeColor">
+    <defName>CYB_Eyes_Magenta</defName>
+    <label>magenta eyes</label>
+    <labelShortAdj>magenta-eyed</labelShortAdj>
+    <description>Carriers of this gene have aggressively magenta-pigmented eyes.</description>
+    <displayOrderInCategory>3</displayOrderInCategory>
+	<iconPath>Genes/CYB_Eyes_Magenta</iconPath>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Magenta_Male</texPath>
+        <texPathFemale>HeadAttachments/CYB_Eyes_Magenta_Female</texPathFemale>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+          </defaultData>
+        </drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Magenta_Male</texPath>
+        <texPathFemale>HeadAttachments/CYB_Eyes_Magenta_Female</texPathFemale>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+            <flip>true</flip>
+          </defaultData>
+          <dataWest>
+            <flip>false</flip>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneEyeColor">
+    <defName>CYB_Eyes_Yellow</defName>
+    <label>yellow eyes</label>
+    <labelShortAdj>yellow-eyed</labelShortAdj>
+    <description>Carriers of this gene have aggressively yellow-pigmented eyes.</description>
+    <displayOrderInCategory>3</displayOrderInCategory>
+	<iconPath>Genes/CYB_Eyes_Yellow</iconPath>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Yellow_Male</texPath>
+        <texPathFemale>HeadAttachments/CYB_Eyes_Yellow_Female</texPathFemale>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+          </defaultData>
+        </drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Yellow_Male</texPath>
+        <texPathFemale>HeadAttachments/CYB_Eyes_Yellow_Female</texPathFemale>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+            <flip>true</flip>
+          </defaultData>
+          <dataWest>
+            <flip>false</flip>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+
+
+</Defs>

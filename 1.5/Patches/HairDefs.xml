@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<!--core-->
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/HairDef[
+		defName="BriefPonytail" or
+		defName="Scatman" or
+		defName="GreasySwoop" or
+		defName="Messy" or
+		defName="Curly" or
+		defName="Frozen" or
+		defName="Bravo" or
+		defName="Firestarter" or
+		defName="Junkie" or
+		defName="Rookie" or
+		defName="Spikes" or
+		defName="ShaveTopBraid" or
+		defName="BraidedKnot" or
+		defName="Primal" or
+		defName="Locks" or
+		defName="Bald" or
+		defName="Shaved" or
+		defName="Tuft" or
+		defName="ScorpionTail" or
+		defName="Topdog" or
+		defName="Mohawk"
+		]/styleTags</xpath>
+	<value>
+		<li>CYB_Fringeless</li>
+	</value>
+</Operation>
+
+<!-- Royalty -->
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/HairDef[
+		defName="Elisabeth" or
+		defName="Jane"
+		]/styleTags</xpath>
+	<value>
+		<li>CYB_Fringeless</li>
+	</value>
+	<success>Always</success>
+</Operation>
+
+<!-- Anomaly -->
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/HairDef[(
+		defName="DoubleTuft" or
+		defName="LargeTuft" or
+		defName="PatchyShave" or
+		defName="RoughShave" or
+		defName="ShavedMohawk" or
+		defName="ShortCut"
+		) and not(styleTags)
+		]</xpath>
+	<value>
+		<styleTags/>
+	</value>
+	<success>Always</success>
+</Operation>
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/HairDef[
+		defName="DoubleTuft" or
+		defName="LargeTuft" or
+		defName="PatchyShave" or
+		defName="RoughShave" or
+		defName="ShavedMohawk" or
+		defName="ShortCut"
+		]/styleTags</xpath>
+	<value>
+		<li>CYB_Fringeless</li>
+	</value>
+	<success>Always</success>
+</Operation>
+
+<!-- Vanilla Hair Expanded -->
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/HairDef[
+		defName="VHE_Queen" or
+		defName="VHE_Mortimer" or
+		defName="VHE_Jerry" or
+		defName="VHE_Shelby" or
+		defName="VHE_Private" or
+		defName="VHE_Sarge" or
+		defName="VHE_Corporal" or
+		defName="VHE_Major" or
+		defName="VHE_General" or
+		defName="VHE_Pearson" or
+		defName="VHE_Librarian" or
+		defName="VHE_ShortAfro" or
+		defName="VHE_Smith" or
+		defName="VHE_Dreadlock" or
+		defName="VHE_Wrap" or
+		defName="VHE_BattleBraids" or
+		defName="VHE_ScorpionKing" or
+		defName="VHE_TuftHawk" or
+		defName="VHE_FireKeeper" or
+		defName="VHE_BattleBraid" or
+		defName="VHE_DoubleHawk" or
+		defName="VHE_Tower"
+		]/styleTags</xpath>
+	<value>
+		<li>CYB_Fringeless</li>
+	</value>
+	<success>Always</success>
+</Operation>
+
+<!-- VRE Archon -->
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/HairDef[
+		defName="VRE_Hair_Cosmos" or
+		defName="VRE_Hair_Exoplanet" or
+		defName="VRE_Hair_Expanse" or
+		defName="VRE_Hair_Horizon" or
+		defName="VRE_Hair_Neutron" or
+		defName="VRE_Hair_Quasar" or
+		defName="VRE_Hair_Redshift" or
+		defName="VRE_Hair_Relativity"
+		]/styleTags</xpath>
+	<value>
+		<li>CYB_Fringeless</li>
+	</value>
+	<success>Always</success>
+</Operation>
+
+<!-- Useless Hair -->
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/HairDef[
+		defName="woolhairM" or
+		defName="woolhairP" or
+		defName="woolhairS"
+		]/styleTags</xpath>
+	<value>
+		<li>CYB_Fringeless</li>
+	</value>
+	<success>Always</success>
+</Operation>
+
+<!-- Hard Times -->
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/HairDef[
+		defName="HT_Backswept" or
+		defName="HT_Patchy" or
+		defName="HT_Denial" or
+		defName="HT_Veteran" or
+		defName="HT_Raider"
+		]/styleTags</xpath>
+	<value>
+		<li>CYB_Fringeless</li>
+	</value>
+	<success>Always</success>
+</Operation>
+
+<!-- 
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/HairDef[
+		defName="" or
+		defName="" or
+		defName="" or
+		defName="" or
+		defName="" or
+		defName="" or
+		defName="" or
+		defName="" or
+		defName="" or
+		defName="" or
+		defName="" or
+		defName="" or
+		defName=""
+		]/styleTags</xpath>
+	<value>
+		<li>CYB_Fringeless</li>
+	</value>
+	<success>Always</success>
+</Operation>
+-->
+
+</Patch>

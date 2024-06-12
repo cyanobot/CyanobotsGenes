@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--Tail_Cat-->
+<GeneDef ParentName="GeneTailBase">
+    <defName>Tail_Cat</defName>
+    <label>cat tail</label>
+    <description>Carriers of this gene grow a catlike tail that helps with balance.</description>
+    <iconPath>Genes/CYB_Tail_Cat</iconPath>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <displayOrderInCategory>1050</displayOrderInCategory>
+    <biostatCpx>0</biostatCpx>
+    <biostatMet>-1</biostatMet>
+	<statOffsets>
+		<MeleeDodgeChance>10</MeleeDodgeChance>
+	</statOffsets>
+    <statFactors>
+      <PawnTrapSpringChance>0.5</PawnTrapSpringChance>
+    </statFactors>
+    <renderNodeProperties>
+      <li Class="CyanobotsGenes.PawnRenderNodeProperties_OffsetByBodyType">
+		<workerClass>CyanobotsGenes.PawnRenderNodeWorker_TailFlipWhenCrawling</workerClass>
+        <texPath>BodyAttachments/CYB_CatTail</texPath>
+        <colorType>Hair</colorType>
+        <overrideMeshSize>(1, 1)</overrideMeshSize>
+        <parentTagDef>Body</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+		  <bodyTypeScales>
+			<Hulk>1.1</Hulk>
+			<Child>0.6</Child>
+			<Baby>0.5</Baby>
+		  </bodyTypeScales>
+          <defaultData>
+            <layer>-2</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, 0.2, -0.15)</offset>
+			<pivot>(0.5,0.73)</pivot>
+            <layer>90</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, -0.1, -0.15)</offset>
+			<pivot>(0.5,0.73)</pivot>
+          </dataSouth>
+          <dataEast>
+            <offset>(-0.5, -0.1, -0.15)</offset>
+			<pivot>(0.17,0.68)</pivot>
+          </dataEast>
+          <dataWest>
+            <offset>(0.5, -0.1, -0.15)</offset>
+			<pivot>(0.83,0.68)</pivot>
+          </dataWest>
+        </drawData>
+		<bodyTypeOffsetsEast>
+			<Hulk>(-0.08,0,-0.17)</Hulk>
+			<Thin>(-0.07,0,-0.02)</Thin>
+			<Fat>(-0.07,0,0)</Fat>
+			<Female>(0,0,-0.07)</Female>
+			<Child>(-0.12,0,0.11)</Child>
+			<Baby>(-0.15,0,0.11)</Baby>
+		</bodyTypeOffsetsEast>
+		<bodyTypeOffsetsNorth>
+			<Hulk>(0, 0, -0.15)</Hulk>
+			<Female>(0, 0, -0.03)</Female>
+			<Child>(0, 0, 0.15)</Child>
+			<Baby>(0, 0, 0.15)</Baby>
+		</bodyTypeOffsetsNorth>
+		<bodyTypeOffsetsSouth>
+			<Child>(0,0,0.11)</Child>
+			<Baby>(0,0,0.11)</Baby>
+		</bodyTypeOffsetsSouth>
+      </li>
+		<li>
+			<workerClass>CyanobotsGenes.PawnRenderNodeWorker_Skeletal</workerClass>
+			<texPath>BodyAttachments/CYB_CatTail_Dessicated</texPath>
+			<parentTagDef>Body</parentTagDef>
+			<useSkinShader>true</useSkinShader>
+			<useRottenColor>true</useRottenColor>
+			<rotDrawMode>Dessicated</rotDrawMode>
+			<drawData>
+				<scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+				<!--
+				<bodyTypeScales>
+					<Male>1.2</Male>
+					<Female>1.2</Female>
+					<Hulk>1.4</Hulk>
+					<Fat>1.3</Fat>
+					<Child>0.8</Child>
+					<Baby>0.6</Baby>
+				</bodyTypeScales>
+				-->
+				<defaultData>
+					<layer>-2</layer>
+				</defaultData>
+				<dataNorth>
+					<layer>90</layer>
+					<!--<offset>(0, 0, 0.1)</offset>-->
+				</dataNorth>
+				<dataSouth>
+					<!--<offset>(0, 0, 0.1)</offset>-->
+				</dataSouth>
+				<dataEast>
+					<!--<offset>(0, 0, 0.1)</offset>-->
+				</dataEast>
+			</drawData>
+		</li>
+    </renderNodeProperties>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>agile</symbol></li>
+        <li><symbol>nimble</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>tail</symbol></li>
+      </suffixSymbols>
+    </symbolPack>	
+</GeneDef>
+
+<!--Tail_Leathery-->
+<GeneDef ParentName="GeneTailBase">
+	<defName>CYB_Tail_Leathery</defName>
+	<label>leathery tail</label>
+	<description>Carriers of this gene grow a thick, leathery tail.</description>
+	<iconPath>Genes/CYB_Tail_Leathery</iconPath>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <displayOrderInCategory>1051</displayOrderInCategory>
+	<biostatCpx>0</biostatCpx>
+	<renderNodeProperties>
+		<li Class="CyanobotsGenes.PawnRenderNodeProperties_VariantsOverTime">
+			<texPath>BodyAttachments/CYB_LeatheryTail</texPath>
+			<colorType>Skin</colorType>
+			<useSkinShader>true</useSkinShader>
+			<useRottenColor>true</useRottenColor>
+			<parentTagDef>Body</parentTagDef>
+			<overrideMeshSize>(2.5, 2.5)</overrideMeshSize>
+			<baseInterval>240</baseInterval>
+			<intervalModifiers>
+				<li Class="CyanobotsGenes.IntervalModifier_Sleep">
+					<factor>3</factor>
+				</li>
+				<li Class="CyanobotsGenes.IntervalModifier_Hediff">
+					<hediff>GoJuiceHigh</hediff>
+					<factor>0.3</factor>
+				</li>
+				<li Class="CyanobotsGenes.IntervalModifier_Hediff">
+					<hediff>FlakeHigh</hediff>
+					<factor>0.3</factor>
+				</li>
+				<li Class="CyanobotsGenes.IntervalModifier_Hediff">
+					<hediff>PsychiteTeaHigh</hediff>
+					<factor>0.9</factor>
+				</li>
+				<li Class="CyanobotsGenes.IntervalModifier_Hediff">
+					<hediff>YayoHigh</hediff>
+					<factor>0.5</factor>
+				</li>
+				<li Class="CyanobotsGenes.IntervalModifier_Hediff">
+					<hediff>SmokeleafHigh</hediff>
+					<factor>3</factor>
+				</li>
+				<li Class="CyanobotsGenes.IntervalModifier_Hediff">
+					<hediff>WakeUpHigh</hediff>
+					<factor>0.6</factor>
+				</li>
+			</intervalModifiers>
+			<variantPathsNorth>
+				<li>BodyAttachments/CYB_LeatheryTail_northA</li>
+				<li>BodyAttachments/CYB_LeatheryTail_northB</li>
+				<li>BodyAttachments/CYB_LeatheryTail_northC</li>
+			</variantPathsNorth>
+			<variantPathsEast>
+				<li>BodyAttachments/CYB_LeatheryTail_eastA</li>
+				<li>BodyAttachments/CYB_LeatheryTail_eastB</li>
+				<li>BodyAttachments/CYB_LeatheryTail_eastC</li>
+			</variantPathsEast>
+			<variantPathsSouth>
+				<li>BodyAttachments/CYB_LeatheryTail_southA</li>
+				<li>BodyAttachments/CYB_LeatheryTail_southB</li>
+			</variantPathsSouth>
+			<rotDrawMode>Fresh, Rotting</rotDrawMode>
+			<drawData>
+				<scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+				<bodyTypeScales>
+					<Male>1.2</Male>
+					<Female>1.2</Female>
+					<Hulk>1.4</Hulk>
+					<Fat>1.3</Fat>
+					<Child>0.8</Child>
+					<Baby>0.6</Baby>
+				</bodyTypeScales>
+				<defaultData>
+					<layer>-2</layer>
+				</defaultData>
+				<dataNorth>
+					<layer>90</layer>
+					<offset>(0, 0, 0.1)</offset>
+				</dataNorth>
+				<dataSouth>
+					<offset>(0, 0, 0.1)</offset>
+				</dataSouth>
+				<dataEast>
+					<offset>(0, 0, 0.1)</offset>
+				</dataEast>
+			</drawData>
+			<bodyTypeOffsetsEast>
+				<Male>(0.065,0,0.05)</Male>
+				<Hulk>(0,0,-0.06)</Hulk>
+				<Fat>(0.05,0,0.06)</Fat>
+				<Child>(0.06,0,0.11)</Child>
+				<Baby>(0.06,0,0.11)</Baby>
+			</bodyTypeOffsetsEast>
+			<bodyTypeOffsetsNorth>
+				<Male>(0,0,0.05)</Male>
+				<Hulk>(0,0,-0.08)</Hulk>
+				<Child>(0,0,0.11)</Child>
+				<Baby>(0,0,0.11)</Baby>
+			</bodyTypeOffsetsNorth>
+			<bodyTypeOffsetsSouth>
+				<Male>(0,0,0.15)</Male>
+				<Female>(0,0,0.1)</Female>
+				<Hulk>(0,0,0.02)</Hulk>
+				<Child>(0,0,0.16)</Child>
+				<Baby>(0,0,0.16)</Baby>
+			</bodyTypeOffsetsSouth>
+		</li>
+		<li>
+			<workerClass>CyanobotsGenes.PawnRenderNodeWorker_Skeletal</workerClass>
+			<texPath>BodyAttachments/CYB_LeatheryTail_Dessicated</texPath>
+			<parentTagDef>Body</parentTagDef>
+			<useSkinShader>true</useSkinShader>
+			<useRottenColor>true</useRottenColor>
+			<rotDrawMode>Dessicated</rotDrawMode>
+			<drawData>
+				<scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+				<!--
+				<bodyTypeScales>
+					<Male>1.2</Male>
+					<Female>1.2</Female>
+					<Hulk>1.4</Hulk>
+					<Fat>1.3</Fat>
+					<Child>0.8</Child>
+					<Baby>0.6</Baby>
+				</bodyTypeScales>
+				-->
+				<defaultData>
+					<layer>-2</layer>
+				</defaultData>
+				<dataNorth>
+					<layer>90</layer>
+					<!--<offset>(0, 0, 0.1)</offset>-->
+				</dataNorth>
+				<dataSouth>
+					<!--<offset>(0, 0, 0.1)</offset>-->
+				</dataSouth>
+				<dataEast>
+					<!--<offset>(0, 0, 0.1)</offset>-->
+				</dataEast>
+			</drawData>
+		</li>
+	</renderNodeProperties>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>liz</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>tail</symbol></li>
+			<li><symbol>snake</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+
+<!--Claws-->
+<GeneDef ParentName="GeneHandsBase">
+	<defName>CYB_Claws</defName>
+	<label>claws</label>
+	<description>Carriers of this gene develop claws on their hands, strong and sharp enough to use as weapons.</description>
+	<iconPath>Genes/CYB_Claws</iconPath>
+	<biostatMet>-1</biostatMet>
+	<displayCategory>Violence</displayCategory>
+    <displayOrderInCategory>620</displayOrderInCategory> 
+	<capMods>
+		<li>
+			<capacity>Manipulation</capacity>
+			<postFactor>0.9</postFactor>
+		</li>
+	</capMods>
+	<modExtensions>
+		<li Class="VanillaGenesExpanded.GeneExtension">
+			<hediffsToBodyParts>
+				<li>
+					<hediff>CYB_Claws</hediff>
+					<bodyparts>
+						<li>Hand</li>
+						<li>Hand</li>
+					</bodyparts>
+				</li>
+			</hediffsToBodyParts>
+		</li>
+	</modExtensions>
+	<descriptionHyperlinks>
+		<HediffDef>CYB_Claws</HediffDef>
+	</descriptionHyperlinks>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>rip</symbol></li>
+			<li><symbol>shred</symbol></li>
+			<li><symbol>sav</symbol></li>
+			<li><symbol>sharp</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>claw</symbol></li>
+			<li><symbol>talon</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+<HediffDef>
+	<defName>CYB_Claws</defName>
+	<label>claws</label>
+	<description>Claws strong and sharp enough to use as weapons. They get in the way of fine manipulation.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<maxSeverity>1.0</maxSeverity>
+	<isBad>false</isBad>
+	<comps>
+		<li Class="HediffCompProperties_VerbGiver">
+			<tools>
+				<li>
+					<label>claws</label>
+					<capacities>
+						<li>Cut</li>
+					</capacities>
+					<power>16</power>
+					<cooldownTime>2</cooldownTime>
+				</li>
+			</tools>
+		</li>
+	</comps>
+</HediffDef>
+
+<!--Bite-->
+<GeneDef>
+	<defName>CYB_Fangs</defName>
+	<label>fangs</label>
+	<description>Carriers of this gene grow a mouthful of sharp carnivore teeth, large and sturdy enough to use as weapons.</description>
+	<iconPath>Genes/CYB_Fangs</iconPath>
+	<biostatMet>-1</biostatMet>
+	<displayCategory>Violence</displayCategory>
+    <displayOrderInCategory>621</displayOrderInCategory> 
+	<capMods>
+		<li>
+			<capacity>Talking</capacity>
+			<postFactor>0.9</postFactor>
+		</li>
+	</capMods>
+	<modExtensions>
+		<li Class="VanillaGenesExpanded.GeneExtension">
+			<hediffsToBodyParts>
+				<li>
+					<hediff>CYB_Fangs</hediff>
+					<bodyparts>
+						<li>Jaw</li>
+					</bodyparts>
+				</li>
+			</hediffsToBodyParts>
+		</li>
+	</modExtensions>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>rip</symbol></li>
+			<li><symbol>shred</symbol></li>
+			<li><symbol>sav</symbol></li>
+			<li><symbol>sharp</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>chomper</symbol></li>
+			<li><symbol>tooth</symbol></li>
+			<li><symbol>teeth</symbol></li>
+			<li><symbol>bite</symbol></li>
+			<li><symbol>fang</symbol></li>
+			<li><symbol>gnash</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+	<descriptionHyperlinks>
+		<HediffDef>CYB_Fangs</HediffDef>
+	</descriptionHyperlinks>
+</GeneDef>
+<HediffDef>
+	<defName>CYB_Fangs</defName>
+	<label>fangs</label>
+	<description>A mouthful of sharp carnivore teeth, large and sturdy enough to use as weapons.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<maxSeverity>1.0</maxSeverity>
+	<isBad>false</isBad>
+	<comps>
+		<li Class="HediffCompProperties_VerbGiver">
+			<tools>
+				<li>
+					<label>teeth</label>
+					<capacities>
+					  <li>Bite</li>
+					</capacities>
+					<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+					<armorPenetration>0.1</armorPenetration>
+					<power>16</power>
+					<cooldownTime>2</cooldownTime>
+				</li>
+			</tools>
+		</li>
+	</comps>
+</HediffDef>
+
+<!--Flat nose-->
+<GeneDef>
+	<defName ParentName="GeneNoseBase">CYB_Nose_Flat</defName>
+	<label>nostril slits</label>
+	<description>Carriers of this gene develop no external nose, only two nostril slits. This is widely considered to give them a somewhat skull-like appearance.</description>
+	<iconPath>Genes/CYB_Nose_Flat</iconPath>
+	<displayCategory>Cosmetic</displayCategory>
+    <displayOrderInCategory>82</displayOrderInCategory> 
+	<biostatCpx>0</biostatCpx>
+    <renderNodeProperties>
+      <li Class="CyanobotsGenes.PawnRenderNodeProperties_ByHeadTypeCategory">
+        <texPath>HeadAttachments/CYB_Nose_Flat</texPath>
+        <useSkinShader>true</useSkinShader>
+        <parentTagDef>Head</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <visibleFacing>
+          <li>East</li>
+          <li>South</li>
+          <li>West</li>
+        </visibleFacing>
+        <drawData>
+          <defaultData>
+            <layer>66</layer>
+          </defaultData>
+        </drawData>
+		<headTypeCategoryDataEast>
+			<li>
+				<category>Male</category>
+				<offset>(-0.00,0,-0.01)</offset>
+			</li>
+			<li>
+				<category>Female</category>
+				<offset>(-0.035,0,-0.005)</offset>
+			</li>
+			<li>
+				<category>FemaleNarrow</category>
+				<offset>(-0.08, 0, -0.025)</offset>
+			</li>
+			<li>
+				<category>MaleNarrow</category>
+				<offset>(-0.08, 0, -0.025)</offset>
+			</li>
+			<li>
+				<category>HeavyJaw</category>
+				<offset>(-0.005,0,-0.01)</offset>
+			</li>
+		</headTypeCategoryDataEast>
+		<headTypeCategoryDataSouth>
+			<li>
+				<category>MaleNarrow</category>
+				<scale>(0.85,1,1)</scale>
+			</li>
+			<li>
+				<category>FemaleNarrow</category>
+				<scale>(0.85,1,1)</scale>
+			</li>
+		</headTypeCategoryDataSouth>
+      </li>
+    </renderNodeProperties>
+    <missingGeneRomanceChanceFactor>0.4</missingGeneRomanceChanceFactor>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>skull</symbol></li>
+			<li><symbol>ug</symbol></li>
+		</prefixSymbols>
+	</symbolPack>
+</GeneDef>
+
+<!--Head frill-->
+<GeneDef ParentName="GeneHeadboneBase">
+	<defName>CYB_HeadFrill</defName>
+	<label>head frill</label>
+	<description>Carriers grow a large, prominent pair of frills from their foreheads.</description>
+	<iconPath>Genes/CYB_HeadFrill</iconPath>
+    <displayOrderInCategory>115</displayOrderInCategory>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>HeadAttachments/CYB_HeadFrill</texPath>
+        <useSkinShader>true</useSkinShader>
+        <useRottenColor>true</useRottenColor>
+        <colorType>Skin</colorType>
+        <parentTagDef>Head</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <defaultData>
+            <layer>65</layer>
+          </defaultData>
+          <dataNorth>
+            <layer>10</layer>
+          </dataNorth>
+        </drawData>
+      </li>
+	  <li>
+			<workerClass>CyanobotsGenes.PawnRenderNodeWorker_Skeletal</workerClass>
+			<texPath>HeadAttachments/CYB_HeadFrill_Dessicated</texPath>
+			<parentTagDef>Head</parentTagDef>
+			<useSkinShader>true</useSkinShader>
+			<useRottenColor>true</useRottenColor>
+			<rotDrawMode>Dessicated</rotDrawMode>
+			<drawData>
+				<defaultData>
+					<layer>65</layer>
+				</defaultData>
+				<dataNorth>
+					<layer>10</layer>
+				</dataNorth>
+			</drawData>
+		</li>
+    </renderNodeProperties>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>frill</symbol></li>
+			<li><symbol>crest</symbol></li>
+			<li><symbol>fan</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>fish</symbol></li>
+			<li><symbol>lizard</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+
+<GeneDef ParentName="GeneHairStyleBase">
+	<defName>CYB_Hair_Fringeless</defName>
+	<label>fringeless</label>
+	<description>Carriers will only grow hairstyles that leave the forehead bare, suitable for pairing with genes such as head frills.</description>
+	<displayCategory>Cosmetic</displayCategory>
+	<iconPath>Genes/CYB_Hair_Fringeless</iconPath>
+    <displayOrderInCategory>59</displayOrderInCategory>
+	<biostatCpx>0</biostatCpx>
+	<hairTagFilter>
+		<whitelist>true</whitelist>
+		<tags>
+			<li>CYB_Fringeless</li>
+		</tags>
+	</hairTagFilter>
+</GeneDef>
+
+        
+<!--Tusks-->
+<GeneDef>
+	<defName>CYB_Tusks</defName>
+	<label>tusks</label>
+	<description>Carriers' lower canines grow very large, protruding visibly from the mouth.</description>
+	<iconPath>Genes/CYB_Tusks</iconPath>
+	<biostatCpx>0</biostatCpx>
+	<displayCategory>Cosmetic</displayCategory>
+    <displayOrderInCategory>89</displayOrderInCategory>
+	<exclusionTags>
+		<li>Teeth</li>
+	</exclusionTags>
+    <renderNodeProperties>
+      <li Class="CyanobotsGenes.PawnRenderNodeProperties_ByHeadTypeCategory">
+        <texPath>HeadAttachments/CYB_Tusks</texPath>
+        <parentTagDef>Head</parentTagDef>
+        <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
+        <drawData>
+          <defaultData>
+            <layer>67</layer>
+          </defaultData>
+          <dataNorth>
+            <layer>10</layer>
+          </dataNorth>
+        </drawData>
+		<headTypeCategoryDataEast>
+			<li>
+				<category>Female</category>
+				<offset>(-0.04,0,-0.02)</offset>
+			</li>
+			<li>
+				<category>FemaleNarrow</category>
+				<offset>(-0.08, 0, -0.04)</offset>
+			</li>
+			<li>
+				<category>MaleNarrow</category>
+				<offset>(-0.08, 0, -0.04)</offset>
+			</li>
+			<li>
+				<category>HeavyJaw</category>
+				<offset>(0.02, 0, -0.02)</offset>
+			</li>
+		</headTypeCategoryDataEast>
+		<headTypeCategoryDataSouth>
+			<li>
+				<category>MaleNarrow</category>
+				<scale>(0.85,1,1)</scale>
+			</li>
+			<li>
+				<category>FemaleNarrow</category>
+				<scale>(0.85,1,1)</scale>
+			</li>
+		</headTypeCategoryDataSouth>
+      </li>
+    </renderNodeProperties>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>tusk</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>boar</symbol></li>
+			<li><symbol>orc</symbol></li>
+			<li><symbol>toof</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+
+</Defs>

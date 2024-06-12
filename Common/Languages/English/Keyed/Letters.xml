@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<CYB_LetterLabel_PsyphonRemovedPassion>Passion lost</CYB_LetterLabel_PsyphonRemovedPassion>
+<CYB_LetterText_PsyphonRemovedPassion>As a result of having {PAWN_possessive} psyche drained, {PAWN} has lost a level of passion in {SKILL_label}.</CYB_LetterText_PsyphonRemovedPassion>
+
+<CYB_LetterLabel_PsyphonCausedPsychicallyDead>Psychically dead</CYB_LetterLabel_PsyphonCausedPsychicallyDead>
+<CYB_LetterText_PsyphonCausedPsychicallyDead>The psyphon has burned out {PAWN}'s psychic presence altogether, leaving {PAWN_objective} psychically dead.</CYB_LetterText_PsyphonCausedPsychicallyDead>
+
+<CYB_LetterLabel_Metamorphosis>{PAWN_labelShort} metamorphosed</CYB_LetterLabel_Metamorphosis>
+<CYB_LetterText_Metamorphosis>{PAWN} has reached puberty and as a result of {PAWN_possessive} Metamorphosis gene {PAWN_pronoun} has transformed into {XENOTYPE_indefinite}.</CYB_LetterText_Metamorphosis>
+
+<CYB_LetterText_RefugeePodCrashPrecociousBaby>A baby named {PAWN_nameDef} is crashing in a transport pod nearby. Due to {PAWN_possessive} augmented genetics, {PAWN_pronoun} is mobile and semi-independent, but {PAWN_pronoun} is still unlikely to survive for long without help.\n\nYou may choose to adopt {PAWN_objective} with the 'adopt' command or ignore {PAWN_objective}.</CYB_LetterText_RefugeePodCrashPrecociousBaby>
+
+</LanguageData>

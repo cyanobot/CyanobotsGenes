@@ -48,16 +48,5 @@ namespace CyanobotsGenes
 			return vector * ((bodyGraphicScale.x + bodyGraphicScale.y) / 2f);
 		}
 		*/
-
-		public override Vector3 OffsetFor(PawnRenderNode node, PawnDrawParms parms, out Vector3 pivot)
-        {
-			Vector3 offset = base.OffsetFor(node, parms, out pivot);
-			OffsetByBodyType offsetByBodyType = node.gene?.def.GetModExtension<OffsetByBodyType>();
-			if (offsetByBodyType != null)
-            {
-				offset += offsetByBodyType.Offset(parms.pawn);
-            }
-			return offset;
-        }
 	}
 }

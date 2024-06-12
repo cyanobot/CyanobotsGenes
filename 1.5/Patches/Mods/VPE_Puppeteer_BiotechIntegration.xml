@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Vanilla Psycast Expanded - Biotech Integration</li>
+	</mods>
+	<match  Class="PatchOperationFindMod">
+	
+		<mods>
+			<li>Vanilla Psycasts Expanded - Puppeteer</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/XenotypeDef[defName="CYB_Psycrux"]/genes</xpath>
+			<value>
+				<li>Gene_Puppeteer</li>
+			</value>
+		</match>
+
+	</match>
+</Operation>
+
+</Patch>

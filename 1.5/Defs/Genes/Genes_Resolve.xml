@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--GeneResolveBase-->
+<GeneDef Name="GeneResolveBase" Abstract="True">
+    <exclusionTags>
+      <li>Resolve</li>
+    </exclusionTags>
+</GeneDef>
+
+<!--Unstable-->
+<GeneDef>
+    <defName>Unstable</defName>
+    <label>unstable</label>
+	<description>Carriers of this gene are highly strung and sensitive to stress.</description>
+	<iconPath>Genes/CYB_Unstable</iconPath>
+	<displayCategory>Mood</displayCategory>
+    <displayOrderInCategory>110</displayOrderInCategory>
+    <statOffsets>
+        <MentalBreakThreshold>0.1</MentalBreakThreshold>
+    </statOffsets>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>drama</symbol></li>
+        <li><symbol>sensi</symbol></li>
+        <li><symbol>nerve</symbol></li>
+        <li><symbol>jit</symbol></li>
+        <li><symbol>jitter</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>wimp</symbol></li>
+        <li><symbol>lily</symbol></li>
+        <li><symbol>shy</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Stoic-->
+<GeneDef>
+    <defName>Stoic</defName>
+    <label>stoic</label>
+	<description>Carriers of this gene are resilient to stress.</description>
+	<iconPath>Genes/CYB_Stoic</iconPath>
+	<displayCategory>Mood</displayCategory>
+    <displayOrderInCategory>120</displayOrderInCategory>
+    <statOffsets>
+        <MentalBreakThreshold>-0.1</MentalBreakThreshold>
+    </statOffsets>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>-2</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>stead</symbol></li>
+        <li><symbol>calm</symbol></li>
+        <li><symbol>brave</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+</GeneDef> 
+
+</Defs>

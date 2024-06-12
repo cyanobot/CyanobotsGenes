@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="CyanobotsGenes.PatchOperationBySetting">
+	<setting>moveVanillaGenes</setting>
+	<on Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="RobustDigestion"]/displayCategory</xpath>
+		<value>
+			<displayCategory>CYB_Diet</displayCategory>
+		</value>
+	</on>
+	<off Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="RobustDigestion"]/displayCategory</xpath>
+		<value>
+			<displayCategory>Miscellaneous</displayCategory>
+		</value>
+	</off>
+</Operation>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>EBSG - Expanded Food Genes</li>
+		<li>Expanded Biotech Style Genes - All in One</li>
+	</mods>
+	<nomatch Class="PatchOperationSequence">
+		<operations>
+				  
+		  <li Class="CyanobotsGenes.PatchOperationBySetting">
+			<setting>moveVanillaGenes</setting>
+			<on Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="StrongStomach"]/displayCategory</xpath>
+				<value>
+					<displayCategory>CYB_Diet</displayCategory>
+				</value>
+			</on>
+			<off Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="RobustDigestion"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Miscellaneous</displayCategory>
+				</value>
+			</off>
+		  </li>
+		
+		</operations>
+	</nomatch>
+  </Operation>
+  
+  <Operation Class="CyanobotsGenes.PatchOperationBySetting">
+	<setting>moveVanillaGenes</setting>
+	<on Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="KindInstinct"]/displayCategory</xpath>
+		<value>
+			<displayCategory>CYB_Social</displayCategory>
+		</value>
+	</on>
+	<off Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="KindInstinct"]/displayCategory</xpath>
+		<value>
+			<displayCategory>Violence</displayCategory>
+		</value>
+	</off>
+  </Operation>
+    
+  <Operation Class="CyanobotsGenes.PatchOperationBySetting">
+	<setting>moveVanillaGenes</setting>
+	<on Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="Furskin"]/displayCategory</xpath>
+		<value>
+			<displayCategory>CYB_Fur</displayCategory>
+		</value>
+	</on>
+	<off Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="Furskin"]/displayCategory</xpath>
+		<value>
+			<displayCategory>Miscellaneous</displayCategory>
+		</value>
+	</off>
+  </Operation>
+    
+  <Operation Class="CyanobotsGenes.PatchOperationBySetting">
+	<setting>moveVanillaGenes</setting>
+	<on Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="Unstoppable"]/displayCategory</xpath>
+		<value>
+			<displayCategory>Violence</displayCategory>
+		</value>
+	</on>
+	<off Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="Unstoppable"]/displayCategory</xpath>
+		<value>
+			<displayCategory>Miscellaneous</displayCategory>
+		</value>
+	</off>
+  </Operation>
+    
+  <Operation Class="CyanobotsGenes.PatchOperationBySetting">
+	<setting>moveVanillaGenes</setting>
+	<on Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="Nose_Pig"]/displayCategory</xpath>
+		<value>
+			<displayCategory>Cosmetic</displayCategory>
+		</value>
+	</on>
+	<off Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="Nose_Pig"]/displayCategory</xpath>
+		<value>
+			<displayCategory>Miscellaneous</displayCategory>
+		</value>
+	</off>
+  </Operation>
+    
+  <Operation Class="CyanobotsGenes.PatchOperationBySetting">
+	<setting>moveVanillaGenes</setting>
+	<on Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="Nose_Pig"]/displayOrderInCategory</xpath>
+		<value>
+			<displayOrderInCategory>81</displayOrderInCategory>
+		</value>
+	</on>
+	<off Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="Nose_Pig"]/displayOrderInCategory</xpath>
+		<value>
+			<displayOrderInCategory>410</displayOrderInCategory>
+		</value>
+	</off>
+  </Operation>
+    
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>EBSG - Expanded Lifespan Genes</li>
+		<li>Expanded Biotech Style Genes - All in One</li>
+	</mods>
+	<nomatch Class="PatchOperationSequence">
+		<operations>
+				  
+		  <li Class="CyanobotsGenes.PatchOperationBySetting">
+			<setting>moveVanillaGenes</setting>
+			<on Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[@Name="CellInstabilityBase"]/displayCategory</xpath>
+				<value>
+					<displayCategory>CYB_Aging</displayCategory>
+				</value>
+			</on>
+			<off Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[@Name="CellInstabilityBase"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Miscellaneous</displayCategory>
+				</value>
+			</off>
+		  </li>
+		
+		</operations>
+	</nomatch>
+  </Operation>
+      
+</Patch>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
- <TraitDef>
+<TraitDef>
     <defName>Unaffected</defName>
     <commonality>0.5</commonality>
     <degreeDatas>
@@ -13,6 +13,17 @@
         </statFactors>
       </li>
     </degreeDatas>
-  </TraitDef>
+ </TraitDef>
+  
+<TraitDef>
+	<defName>CYB_Delightful</defName>
+	<commonality>0</commonality>
+	<degreeDatas>
+		<li>
+			<label>delightful</label>
+			<description>{PAWN_nameDef} is charming and charismatic. Others are inclined to like {PAWN_objective}, and {PAWN_possessive} knows how to lift their spirits with well-placed words.</description>
+		</li>
+	</degreeDatas>
+</TraitDef>
 
 </Defs>

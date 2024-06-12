@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/HediffDef[defName="HemogenCraving"]/comps</xpath>
-		<value>
-			<li Class="CyanobotsGenes.HediffCompProperties_GeneToggle">
-				<invert>true</invert>
-				<gene>Bodyfeeder</gene>
-			</li>
-		</value>
-	</Operation>
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/HediffDef[defName="HemogenCraving"]/comps</xpath>
+	<value>
+		<li Class="CyanobotsGenes.HediffCompProperties_GeneToggle">
+			<invert>true</invert>
+			<gene>Bodyfeeder</gene>
+		</li>
+	</value>
+</Operation>
+
 
 </Patch>
