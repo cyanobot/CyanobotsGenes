@@ -22,9 +22,9 @@ namespace CyanobotsGenes
     {
         Any = 0,
         Meat = 1,
-        AnimalProduct = 2,
-        Vegetable = 4,
-        MeatAndVeg = 5,
+        Vegetable = 2,
+        MeatAndVeg = 3,
+        AnimalProduct = 4,
         AnimalProductAndVeg = 6
     }
 

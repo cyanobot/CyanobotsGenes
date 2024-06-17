@@ -22,6 +22,7 @@ namespace CyanobotsGenes
         public static GeneDef Asocial;
         public static GeneDef Bodyfeeder;
         public static GeneDef Carnivore;
+        [MayRequireAnomaly]
         public static GeneDef CYB_Darkling;
         public static GeneDef Hypercarnivore;
         public static GeneDef Herbivore;

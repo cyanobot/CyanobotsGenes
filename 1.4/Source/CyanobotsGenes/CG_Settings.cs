@@ -53,13 +53,13 @@ namespace CyanobotsGenes
 
             l.Begin(rect);
 
-            l.CheckboxLabeled("CG_SettingLabel_UnaffectedInTraitPool".Translate(), ref unaffectedInTraitPool, "CG_SettingDesc_UnaffectedInTraitPool".Translate());
-            l.CheckboxLabeled("CG_SettingLabel_MoveVanillaGenes".Translate(), ref moveVanillaGenes, "CG_SettingDesc_MoveVanillaGenes".Translate());
-            l.CheckboxLabeled("CG_SettingLabel_ChangeMealStacking".Translate(), ref changeMealStacking, "CG_SettingDesc_ChangeMealStacking".Translate());
+            l.CheckboxLabeled("CYB_SettingLabel_UnaffectedInTraitPool".Translate(), ref unaffectedInTraitPool, "CYB_SettingDesc_UnaffectedInTraitPool".Translate());
+            l.CheckboxLabeled("CYB_SettingLabel_MoveVanillaGenes".Translate(), ref moveVanillaGenes, "CYB_SettingDesc_MoveVanillaGenes".Translate());
+            l.CheckboxLabeled("CYB_SettingLabel_ChangeMealStacking".Translate(), ref changeMealStacking, "CYB_SettingDesc_ChangeMealStacking".Translate());
 
             l.Gap();
 
-            l.Label("CG_SettingLabel_GenerationWeights".Translate());
+            l.Label("CYB_SettingLabel_GenerationWeights".Translate());
             l.GapLine();
 
             l.Label(CG_DefOf.Biodrone.LabelCap + " : " + generationWeight_Biodrone.ToString("F2"));

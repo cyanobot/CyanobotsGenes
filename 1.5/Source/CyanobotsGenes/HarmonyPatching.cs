@@ -390,9 +390,14 @@ namespace CyanobotsGenes
     [HarmonyPatch]
     public static class UnnaturalDarkness_Patch
     {
+        public static bool Prepare(MethodBase original)
+        {
+            if (!ModLister.AnomalyInstalled) return false;
+            return true;
+        }
+
         public static MethodBase TargetMethod()
         {
-            if (!ModLister.AnomalyInstalled) return null;
             return AccessTools.Method(typeof(GameCondition_UnnaturalDarkness), nameof(GameCondition_UnnaturalDarkness.InUnnaturalDarkness));
         }
 

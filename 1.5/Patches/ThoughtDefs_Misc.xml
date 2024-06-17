@@ -26,7 +26,7 @@
 		<li MayRequire="Ludeon.RimWorld.Anomaly">CYB_Darkling</li>
 	</value>
   </Operation>
-  <Operation MayRequire="Ludeon.RimWorld.Anomaly" Class="PatchOperationAdd">
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThoughtDef[
 		defName="UnnaturalDarkness" or
 		defName="SwallowedByDarkness"
@@ -34,6 +34,7 @@
     <value>
 		<li>CYB_Darkling</li>
 	</value>
+	<success>Always</success>
   </Operation>
   
   

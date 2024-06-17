@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+<!--
   <Operation Class="CyanobotsGenes.PatchOperationBySetting">
 	<setting>changeMealStacking</setting>
 	<on Class="PatchOperationReplace">
@@ -96,6 +97,5 @@
 	</off>
   </Operation>
   
-  
-  
+  -->
 </Patch>

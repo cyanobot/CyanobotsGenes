@@ -200,7 +200,7 @@ namespace CyanobotsGenes
                         if (consume.Disabled) continue;
                         if (GeneticDietUtility.DietForbids(t, pawn))
                         {
-                            consume.Label = text += " : " + "CG_Inedible".Translate();
+                            consume.Label = text += " : " + "CYB_Inedible".Translate();
                             consume.Disabled = true;
                         }
                     }
@@ -244,22 +244,22 @@ namespace CyanobotsGenes
             switch (displayKind)
             {
                 case (CG_FoodKind.AnimalProduct):
-                    __result = "CG_AnimalProduct".Translate().Colorize(ColorLibrary.Peach);
+                    __result = "CYB_AnimalProduct".Translate().Colorize(ColorLibrary.Peach);
                     break;
                 case (CG_FoodKind.AnimalProductAndVeg):
-                    __result = "CG_AnimalProduct".Translate().Colorize(ColorLibrary.Peach) + " + " + "veg".Colorize(Color.green);
+                    __result = "CYB_AnimalProduct".Translate().Colorize(ColorLibrary.Peach) + " + " + "veg".Colorize(Color.green);
                     break;
                 case (CG_FoodKind.Any):
                     __result = "MealKindAny".Translate().Colorize(Color.white);
                     break;
                 case (CG_FoodKind.Meat):
-                    __result = "CG_Meat".Translate().Colorize(ColorLibrary.RedReadable);
+                    __result = "CYB_Meat".Translate().Colorize(ColorLibrary.RedReadable);
                     break;
                 case (CG_FoodKind.MeatAndVeg):
-                    __result = "CG_Meat".Translate().Colorize(ColorLibrary.RedReadable) + " + " + "veg".Colorize(Color.green);
+                    __result = "CYB_Meat".Translate().Colorize(ColorLibrary.RedReadable) + " + " + "veg".Colorize(Color.green);
                     break;
                 case (CG_FoodKind.Vegetable):
-                    __result = "CG_Vegan".Translate().Colorize(Color.green);
+                    __result = "CYB_Vegan".Translate().Colorize(Color.green);
                     break;
                 default:
                     //if we fall through, default back to vanilla behaviour
@@ -291,7 +291,9 @@ namespace CyanobotsGenes
 
             if (CG_Settings.changeMealStacking)
             {
-
+                CG_FoodKind foodKind = GetCG_FoodKind(thing);
+                __result = (int)foodKind;
+                /*
                 CG_FoodKind displayKind = CG_FoodKindForDisplay(GetCG_FoodKind(thing));
                 switch (displayKind)
                 {
@@ -317,7 +319,7 @@ namespace CyanobotsGenes
                         __result = 2;
                         break;
                 }
-
+                */
             }
             else
             {

@@ -292,6 +292,9 @@ namespace CyanobotsGenes
             if (CG_Settings.changeMealStacking)
             {
 
+                CG_FoodKind foodKind = GetCG_FoodKind(thing);
+                __result = (int)foodKind;
+                /*
                 CG_FoodKind displayKind = CG_FoodKindForDisplay(GetCG_FoodKind(thing));
                 switch (displayKind)
                 {
@@ -317,7 +320,7 @@ namespace CyanobotsGenes
                         __result = 2;
                         break;
                 }
-
+                */
             }
             else
             {
