@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using static CyanobotsGenes.CG_Mod;
 
 namespace CyanobotsGenes
 {
@@ -64,15 +65,15 @@ namespace CyanobotsGenes
 
             try
             {
-                CG_Mod.patchDict[setting].Add(new PatchWorker(setting, xml, this.on, this.off));
+                patchDict[setting].Add(new PatchWorker(setting, xml, this.on, this.off));
                 //Log.Message("Try successful : " + setting);
                 //Log.Message("list length " + CG_Mod.patchDict[setting].Count());
             }
             catch (KeyNotFoundException e)
             {
                 //Log.Message("KeyNotFoundException caught: " + setting);
-                CG_Mod.patchDict.Add(setting, new List<PatchWorker>());
-                CG_Mod.patchDict[setting].Add(new PatchWorker(setting, xml, this.on, this.off));
+                patchDict.Add(setting, new List<PatchWorker>());
+                patchDict[setting].Add(new PatchWorker(setting, xml, this.on, this.off));
             }
             
             if (flag)

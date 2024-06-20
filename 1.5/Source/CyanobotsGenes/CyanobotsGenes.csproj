@@ -134,6 +134,7 @@
     <Compile Include="Bodyfeeder\Recipe_AdministerHumanMeat.cs" />
     <Compile Include="LightSensitivity\StatPart_LightSensitivity.cs" />
     <Compile Include="Precocious\ThinkNode_ConditionalPrecocious.cs" />
+    <Compile Include="TemplateGenes\XenotypeGeneTemplateDefOf.cs" />
     <Compile Include="ThoughtWorker_CarryingWeapon.cs" />
     <Compile Include="ThoughtWorker_Delightful_Opinion.cs" />
     <Compile Include="LightSensitivity\ThoughtWorker_LightSensitivity.cs" />

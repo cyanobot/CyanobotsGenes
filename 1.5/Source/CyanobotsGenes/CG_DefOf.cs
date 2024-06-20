@@ -58,7 +58,7 @@ namespace CyanobotsGenes
         public static StatDef JoyFallRateFactor;
         public static StatDef VegetableNutritionFactor;
         public static StatDef AnimalNutritionFactor;
-        public static StatDef CYB_GrowthPointFactor;
+        //public static StatDef CYB_GrowthPointFactor;
 
         public static TaleDef TaleBodyfeederAtePerson;
         public static TaleDef TaleBodyfeederAteBodyPart;

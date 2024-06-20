@@ -208,8 +208,8 @@ namespace CyanobotsGenes
         {
             if (pawn.HasActiveGene(CG_DefOf.CYB_Precocious))
             {
-                TaggedString title = "PRECOCIOUS";
-                //TaggedString title = "LetterLabelRefugeePodCrash".Translate();
+                //TaggedString title = "PRECOCIOUS";
+                TaggedString title = "LetterLabelRefugeePodCrash".Translate();
                 TaggedString letterText = "CYB_LetterText_RefugeePodCrashPrecociousBaby".Translate(pawn.Named("PAWN")).AdjustedFor(pawn);
 
                 if (QuestGen.slate.Get("hasParent", defaultValue: false))

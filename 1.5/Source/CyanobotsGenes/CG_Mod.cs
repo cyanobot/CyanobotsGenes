@@ -16,8 +16,6 @@ namespace CyanobotsGenes
         public static ModContentPack mcp;
         public static Harmony harmony;
 
-        public static Texture2D autoPsyphonIcon;
-
         public static bool geologicalLandformsLoaded;
         public static bool forsakenNightLoaded;
         public static bool outlandGeneticsLoaded;
@@ -28,7 +26,7 @@ namespace CyanobotsGenes
         public static float default_unaffectedCommonality;
 
         public static Dictionary<string, List<PatchWorker>> patchDict = new Dictionary<string, List<PatchWorker>>();
-        public static Dictionary<XenotypeDef,List<GeneDef>> removedXenotypes = new Dictionary<XenotypeDef, List<GeneDef>>();
+        public static Dictionary<XenotypeDef, List<GeneDef>> removedXenotypes = new Dictionary<XenotypeDef, List<GeneDef>>();
 
         public static Type t_VEFGeneExtension = AccessTools.TypeByName("VanillaGenesExpanded.GeneExtension");
         public static Type t_VEFStaticCollectionsClass = AccessTools.TypeByName("VanillaGenesExpanded.StaticCollectionsClass");

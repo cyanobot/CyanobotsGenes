@@ -72,7 +72,7 @@
 	<description>These hulking, aggressive carnivores get their ironic name for being the adult form of the fey and delicate Changeling children. Antisocial and thick-headed, they bear little resemblence in appearance or demeanour to the young. Their endless appetites are not diminished, but finally pay off in size, speed and brute strength.</description>
 	<descriptionShort>These hulking, aggressive carnivores are the adult form of the fey and delicate Changeling children.</descriptionShort>
 	<iconPath>Xenotypes/CYB_Fairy</iconPath>
-    <combatPowerFactor>2.0</combatPowerFactor>
+    <combatPowerFactor>4.0</combatPowerFactor>
 	<inheritable>true</inheritable>
 	<genes>
 		<li>Superclotting</li>

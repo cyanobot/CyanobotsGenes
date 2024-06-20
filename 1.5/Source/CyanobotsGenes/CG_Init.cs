@@ -4,15 +4,18 @@ using Verse;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
-using static CyanobotsGenes.CG_Mod;
 using static CyanobotsGenes.CG_Settings;
+using static CyanobotsGenes.CG_Mod;
 using UnityEngine;
+using System;
 
 namespace CyanobotsGenes
 {
     [StaticConstructorOnStartup]
     static class CG_Init
     {
+        public static Texture2D autoPsyphonIcon;
+
         static CG_Init()
         {
             autoPsyphonIcon = ContentFinder<Texture2D>.Get("UI/Icons/AutoPsyphon");
@@ -39,7 +42,7 @@ namespace CyanobotsGenes
         public static void PopulateDefaults()
         {
             TraitDef unaffectedDef = CG_DefOf.Unaffected;
-            CG_Mod.default_unaffectedCommonality = (float) unaffectedDef.GetType().GetField("commonality", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(unaffectedDef);
+            default_unaffectedCommonality = (float) unaffectedDef.GetType().GetField("commonality", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(unaffectedDef);
 
         }
 
@@ -48,19 +51,19 @@ namespace CyanobotsGenes
             TraitDef unaffectedDef = CG_DefOf.Unaffected;
             float unaffectedCommonality;
 
-            if (CG_Settings.unaffectedInTraitPool) unaffectedCommonality = CG_Mod.default_unaffectedCommonality;
+            if (CG_Settings.unaffectedInTraitPool) unaffectedCommonality = default_unaffectedCommonality;
             else unaffectedCommonality = 0f;
             unaffectedDef.GetType().GetField("commonality", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(unaffectedDef, unaffectedCommonality);
 
             List<GeneDef> bundleGenes = DefDatabase<GeneDef>.AllDefsListForReading.Where(g => g.geneClass == typeof(Gene_Bundle)).ToList();
             //Log.Message("bundleGenes: " + bundleGenes.ToStringSafeEnumerable());
-            HashSet<GeneDef> hidden_genes = (HashSet<GeneDef>)CG_Mod.f_hidden_genes.GetValue(null);
+            HashSet<GeneDef> hidden_genes = (HashSet<GeneDef>)f_hidden_genes.GetValue(null);
             foreach (GeneDef bundle in bundleGenes)
             {
-                DefModExtension bundle_VEFGeneExtension = bundle.modExtensions?.Find(e => e.GetType() == CG_Mod.t_VEFGeneExtension);
+                DefModExtension bundle_VEFGeneExtension = bundle.modExtensions?.Find(e => e.GetType() == t_VEFGeneExtension);
                 //Log.Message("bundle gene: " + bundle + ", bundle_VEFGeneExtension: " + bundle_VEFGeneExtension);
                 if (bundle_VEFGeneExtension == null) continue;
-                CG_Mod.f_hideGene.SetValue(bundle_VEFGeneExtension, !CG_Settings.bundleSkinHairColors);
+                f_hideGene.SetValue(bundle_VEFGeneExtension, !CG_Settings.bundleSkinHairColors);
                 //Log.Message("Attempted setValue for bundle gene, current value: " + CG_Mod.f_hideGene.GetValue(bundle_VEFGeneExtension));
 
                 if (CG_Settings.bundleSkinHairColors && hidden_genes.Contains(bundle))
@@ -78,10 +81,10 @@ namespace CyanobotsGenes
                 if (bundleExtension == null || bundleExtension.genes.NullOrEmpty()) continue;
                 foreach (GeneDef member in bundleExtension.genes)
                 {
-                    DefModExtension member_VEFGeneExtension = member.modExtensions?.Find(e => e.GetType() == CG_Mod.t_VEFGeneExtension);
+                    DefModExtension member_VEFGeneExtension = member.modExtensions?.Find(e => e.GetType() == t_VEFGeneExtension);
                     //Log.Message("member gene: " + member + ", member_VEFGeneExtension: " + member_VEFGeneExtension);
                     if (member_VEFGeneExtension == null) continue;
-                    CG_Mod.f_hideGene.SetValue(member_VEFGeneExtension, CG_Settings.bundleSkinHairColors);
+                    f_hideGene.SetValue(member_VEFGeneExtension, CG_Settings.bundleSkinHairColors);
                     //Log.Message("Attempted setValue for member gene, current value: " + CG_Mod.f_hideGene.GetValue(member_VEFGeneExtension));
                     
                     if (CG_Settings.bundleSkinHairColors && !hidden_genes.Contains(member))
@@ -123,9 +126,9 @@ namespace CyanobotsGenes
             CG_DefOf.CYB_Wist.factionlessGenerationWeight = generationWeight_Wist;
 
             
-            foreach (string key in CG_Mod.patchDict.Keys)
+            foreach (string key in patchDict.Keys)
             {
-                List<PatchWorker> patchList = CG_Mod.patchDict[key];
+                List<PatchWorker> patchList = patchDict[key];
 
                 int i = 0;
                 foreach (PatchWorker patchWorker in patchList)

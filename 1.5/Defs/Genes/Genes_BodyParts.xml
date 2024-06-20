@@ -283,7 +283,7 @@
 	<capMods>
 		<li>
 			<capacity>Manipulation</capacity>
-			<postFactor>0.9</postFactor>
+			<postFactor>0.97</postFactor>
 		</li>
 	</capMods>
 	<modExtensions>
@@ -331,7 +331,7 @@
 					<capacities>
 						<li>Cut</li>
 					</capacities>
-					<power>16</power>
+					<power>18</power>
 					<cooldownTime>2</cooldownTime>
 				</li>
 			</tools>
@@ -351,7 +351,7 @@
 	<capMods>
 		<li>
 			<capacity>Talking</capacity>
-			<postFactor>0.9</postFactor>
+			<postFactor>0.95</postFactor>
 		</li>
 	</capMods>
 	<modExtensions>
@@ -404,7 +404,7 @@
 					</capacities>
 					<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
 					<armorPenetration>0.1</armorPenetration>
-					<power>16</power>
+					<power>18</power>
 					<cooldownTime>2</cooldownTime>
 				</li>
 			</tools>

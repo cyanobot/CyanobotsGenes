@@ -8,27 +8,42 @@
 		<li>1.5</li>
     </supportedVersions>
 
-    <description>20 new genes and 2 new xenotypes to add to your gene pool. Requires Biotech.
+    <description>7 new xenotypes and 46 new genes (15 cosmetic, 31 functional) to add to your gene pool. Requires Biotech.
         
 Genes:
-- Bodyfeeder : increased hemogen gain from human flesh, reduced from other sources
-- Obligate Cannibal : unable to survive on anything that isn't human flesh
-- Carnivore/Hypercarnivore/Herbivore/Strict Herbivore : reduced/no nutrition + ill effects from eating inappropriate food
-- Light Fur : cosmetic short fur, gets wet when it rains
-- Tabby : cosmetic stripy markings
-- Slit Pupils : cosmetic cat/snake eyes
-- Cat Tail : stripy tail grants bonuses similar to Nimble trait
-- Prey Drive : recreation from hunting
-- Stealthy : + hunting stealth
-- Psychopathic
-- Asocial : cannot Social, unaffected by insults
-- Pack Bond : relationship bonus between allies who share the gene
-- Stoic/Unstable : mental break threshould up/down
-- Easily/Rarely/Never Bored : recreation need up/down/absent
+- 3 templates that generate genes dynamically from loaded xenotypes
+--- Offspring: carriers have offspring of a different xenotype to themselves
+--- Metamorphosis: carriers transform into a different xenotype at adulthood
+--- Implanter: carriers can implant a specific xenotype into others (not necessarily their own)
+- 2 hemogen-powered abilities
+- Bodyfeeder gene for getting hemogen primarily from human flesh
+- 5 diet genes: herbivores, carnivores, and obligate cannibals
+- more/less/no Recreation need
+- mental break threshold raised/lowered
+- 3 body size genes
+- 3 aging genes
+- Precocious gene that allows infants to take care of themselves from birth
+- genetic blindness/mutism
+- 7 trait-forcing genes including 2 new traits
+- claws, fangs, and tough skin
+- 14 more miscellaneous
+- head frills, tusks, and nostril slits
+- tabby-patterned fur
+- 2 tails
+- 2 blood colors, 3 eye colors, 1 alternative eye graphic
+- 2 hair bundles containing 13 hair colors
+- 3 skin bundles containing 17 skin colors
 
 Xenotypes:
-- Kitlin : Useless cat people. Quick, agile and good at hunting, but spend most of their time sleeping or playing.
-- Biodrone : Disciplined, emotionally dampened supersoldiers, not quite as potent as Hussars but far more controllable. Exceptionally stoic and resilient to harsh conditions, but inept at most other tasks.
+- Biodrone : Emotionally dampened supersoldiers. Not quite as potent as Hussars, but far more controllable. Stoic and resilient, but inept at most non combat tasks.
+- Changeling : Beautiful, flighty children found mysteriously without parents. They eat a lot, sleep a lot, and don’t work hard, but everyone loves them.
+- Fairy : The ironically named adult form of the changeling. Hulking, highly aggressive brutes with toxic spittle and great strength and speed.
+- Glimmer (requires Outland - Genetics) : Hopelessly lost glitterworlders unsuited for life on the Rim. Intelligent, cheerful, intensely sociable, clumsy, herbivorous, and extremely distressed by violence.
+- Kitlin : Useless cat people who spend all their time sleeping or playing. They are quick and agile and have a knack for shooting.
+- Psycrux (requires VRE - Archon) : Intensely powerful psycasters and psychic parasites, able to implant others with a Thrall xenogerm to more readily enslave them and feed on their psyches.
+- Thrall (requires VRE - Archon) : Created by Psycrux, thralls are easily controlled. They work most hours of the day, needing no recreation and little sleep, but they are slow in everything they do.
+- Shulk : Highly specialised pioneers for settling remote cave systems. Self-sufficient with natural weapons for hunting, tough skin, strong immune systems and the ability to eat pretty much anything, but mute and extremely light sensitive.
+- Wist : Hemogen-powered battlefield medics who use bloodfeeding to power coagulation and a potent, addictive, venomous bite that dulls pain, fights infection, and elevates mood.
     </description>
 	<modDependencies>
 		<li>

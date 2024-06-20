@@ -189,6 +189,7 @@ namespace CyanobotsGenes
         }
     }
 
+    /*
     [HarmonyPatch(typeof(Pawn_AgeTracker), "GrowthPointsPerDayAtLearningLevel")]
     class GrowthPointsPerDayAtLearningLevel_Patch
     {
@@ -198,6 +199,7 @@ namespace CyanobotsGenes
             return result;
         }
     }
+    */
 
     [HarmonyPatch(typeof(PawnDiedOrDownedThoughtsUtility),"AppendThoughts_ForHumanlike")]
     static public class DiedOrDownedThoughts_AppendThoughts_ForHumanlike_Patch
@@ -472,19 +474,20 @@ namespace CyanobotsGenes
         }
     }
 
-    //changelings should only generate as babies/children, fairies only as adults
+    //if a xenotype has metamorphosis, it should only generate as babies/children
+    //if it has an offspring gene, it should only generate as adults
     //if tried to generate a factionless otherwise, reset to baseliner
-    //so that changelings/fairies are not generated above the factionlessGenerationWeight from settings
+    //so that xenotypes are not generated above the factionlessGenerationWeight from settings
     [HarmonyPatch(typeof(PawnGenerator),nameof(PawnGenerator.AdjustXenotypeForFactionlessPawn))]
     public static class AdjustXenotypeForFactionlessPawn_Patch
     {
         public static void Postfix(Pawn pawn, ref PawnGenerationRequest request, ref XenotypeDef xenotype)
         {
-            if (xenotype == CG_DefOf.CYB_Changeling && pawn.DevelopmentalStage == DevelopmentalStage.Adult)
+            if (pawn.DevelopmentalStage == DevelopmentalStage.Adult && xenotype.AllGenes.Any(g => g.geneClass == typeof(Gene_Metamorphosis)))
             {
                 xenotype = XenotypeDefOf.Baseliner;
             }
-            else if (xenotype == CG_DefOf.CYB_Fairy && pawn.DevelopmentalStage != DevelopmentalStage.Adult)
+            else if (pawn.DevelopmentalStage != DevelopmentalStage.Adult && xenotype.AllGenes.Any(g => g.geneClass == typeof(Gene_Offspring)))
             {
                 xenotype = XenotypeDefOf.Baseliner;
             }
@@ -501,36 +504,44 @@ namespace CyanobotsGenes
         {
             //Log.Message("TryGenerateNewPawnInternal_Patch Postfix - __result: " + __result + ", Xenotype: " + __result?.genes?.Xenotype);
             if (__result == null) return;
-            if (__result.genes?.Xenotype == CG_DefOf.CYB_Changeling && __result.DevelopmentalStage == DevelopmentalStage.Adult)
+            if (__result.DevelopmentalStage == DevelopmentalStage.Adult)
             {
-                if (!__result.genes.Endogenes.NullOrEmpty())
-                { 
-                    foreach (Gene gene in __result.genes.Endogenes.ToList())
-                    {
-                        if (gene.def.endogeneCategory == EndogeneCategory.Melanin || (gene.Active && gene.def.endogeneCategory == EndogeneCategory.HairColor))
-                        {
-                            continue;
-                        }
-                        __result.genes.RemoveGene(gene);
-                    }
-                }
-                __result.genes.SetXenotype(CG_DefOf.CYB_Fairy);
-            }
-            else if (__result.genes?.Xenotype == CG_DefOf.CYB_Fairy && __result.DevelopmentalStage != DevelopmentalStage.Adult)
-            {
-                if (!__result.genes.Endogenes.NullOrEmpty())
+                Gene_Metamorphosis gene_Metamorphosis = (Gene_Metamorphosis)__result.genes?.GenesListForReading.Find(g => g.GetType() == typeof(Gene_Metamorphosis) && g.Active);
+                if (gene_Metamorphosis != null)
                 {
-                    foreach (Gene gene in __result.genes.Endogenes.ToList())
+                    if (!__result.genes.Endogenes.NullOrEmpty())
                     {
-                        if (gene.def.endogeneCategory == EndogeneCategory.Melanin)
+                        foreach (Gene gene in __result.genes.Endogenes.ToList())
                         {
-                            continue;
+                            if (gene.def.endogeneCategory == EndogeneCategory.Melanin || (gene.Active && gene.def.endogeneCategory == EndogeneCategory.HairColor))
+                            {
+                                continue;
+                            }
+                            __result.genes.RemoveGene(gene);
                         }
-                        __result.genes.RemoveGene(gene);
                     }
+                    __result.genes.SetXenotype(gene_Metamorphosis.Xenotype);
                 }
-                __result.genes.SetXenotype(CG_DefOf.CYB_Changeling);
-                __result.story.hairDef = PawnStyleItemChooser.RandomHairFor(__result);
+            }
+            else if  (__result.DevelopmentalStage != DevelopmentalStage.Adult)
+            {
+                Gene_Offspring gene_Offspring = (Gene_Offspring)__result.genes?.GenesListForReading.Find(g => g.GetType() == typeof(Gene_Offspring) && g.Active);
+                if (gene_Offspring != null)
+                {
+                    if (!__result.genes.Endogenes.NullOrEmpty())
+                    {
+                        foreach (Gene gene in __result.genes.Endogenes.ToList())
+                        {
+                            if (gene.def.endogeneCategory == EndogeneCategory.Melanin)
+                            {
+                                continue;
+                            }
+                            __result.genes.RemoveGene(gene);
+                        }
+                    }
+                    __result.genes.SetXenotype(gene_Offspring.Xenotype);
+                    __result.story.hairDef = PawnStyleItemChooser.RandomHairFor(__result);  //for changelings
+                }
             }
         }
     }

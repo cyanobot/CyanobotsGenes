@@ -17,7 +17,7 @@ namespace CyanobotsGenes
 
         public override IEnumerable<Gizmo> GetGizmos()
         {
-            Log.Message("GetGizmos");
+            //Log.Message("GetGizmos");
             if (!pawn.HasPsylink)
             {
                 yield break;

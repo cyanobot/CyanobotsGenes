@@ -20,7 +20,7 @@ namespace CyanobotsGenes
             this.pawn = pawn;
             this.defaultLabel = "CYB_Command_AutoPsyphon_Label".Translate();
             this.defaultDesc = "CYB_Command_AutoPsyphon_Desc".Translate();
-            this.icon = CG_Mod.autoPsyphonIcon;
+            this.icon = CG_Init.autoPsyphonIcon;
         }
 
         public override bool Visible => !pawn.Drafted;

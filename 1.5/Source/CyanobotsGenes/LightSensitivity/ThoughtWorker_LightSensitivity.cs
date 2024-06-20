@@ -9,6 +9,7 @@ using RimWorld.Planet;
 using HarmonyLib;
 using System.Reflection;
 using System.Collections;
+using static CyanobotsGenes.CG_Mod;
 
 namespace CyanobotsGenes
 {
@@ -92,7 +93,7 @@ namespace CyanobotsGenes
         
         public static bool IsLightlessBiomeVariant(int tile)
         {
-            if (!CG_Mod.geologicalLandformsLoaded) return false;
+            if (!geologicalLandformsLoaded) return false;
             //Log.Message("geologicalLandformsLoaded. t_WorldTileInfo: " + t_WorldTileInfo
             //    + ", m_WorldTileInfo_Get: " + m_WorldTileInfo_Get
             //    + ", p_BiomeVariants: " + p_BiomeVariants);

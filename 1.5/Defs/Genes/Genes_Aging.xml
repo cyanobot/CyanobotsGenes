@@ -18,7 +18,7 @@
 	  </points>
 	</biologicalAgeTickFactorFromAgeCurve>
 	<statFactors>
-		<CYB_GrowthPointFactor>0.5</CYB_GrowthPointFactor>
+		<VEF_GrowthPointMultiplier>0.5</VEF_GrowthPointMultiplier>
 	</statFactors>
 	<symbolPack>
 		<prefixSymbols>
@@ -48,7 +48,7 @@
 	  </points>
 	</biologicalAgeTickFactorFromAgeCurve>
 	<statFactors>
-		<CYB_GrowthPointFactor>2</CYB_GrowthPointFactor>
+		<VEF_GrowthPointMultiplier>2</VEF_GrowthPointMultiplier>
 	</statFactors>
 	<symbolPack>
 		<prefixSymbols>
@@ -64,7 +64,7 @@
 	<label>long-lived</label>
 	<description>Carriers of this gene are resilient to the effects of senescence, remaining fit and healthy for longer than baseliners.</description>
 	<displayCategory>CYB_Aging</displayCategory>
-    <displayOrderInCategory>200</displayOrderInCategory>
+    <displayOrderInCategory>500</displayOrderInCategory>
 	<iconPath>Genes/CYB_LongLived</iconPath>
 	<biostatCpx>1</biostatCpx>
 	<biostatMet>-1</biostatMet>
