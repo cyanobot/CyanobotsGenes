@@ -1,6 +1,5 @@
-swap Psychically Dead for Deaf if no Anomaly
-check 1.4 image file  names updated
-	
+icon for autopsyphon settings
+screenshots
 	
 psycrux/thrall for alternate psy mods
 	require: innate psylink
@@ -16,6 +15,7 @@ kitlin glo-up
 	stripes change colour with hair color?
 	little pointy kitten tail
 	better eyes
+	trade in better cat ears from cosmetic mods if available
 refactor to fix names of early genes
 better food filters
 name lists
@@ -26,3 +26,4 @@ workaround for bodyfeeder unable to detect friend while hostile for body part ea
 dbh/wetncold compat for wet fur
 compat for gourmet meal taste thought
 optional tail render worker for yttakin
+swap Psychically Dead for Deaf if no Anomaly

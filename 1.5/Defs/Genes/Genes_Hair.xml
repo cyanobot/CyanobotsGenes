@@ -130,6 +130,60 @@
     <hairColorOverride>(155, 134, 222)</hairColorOverride>
   </GeneDef>
   
-  
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+	<defName>CYB_HairBundle_CoolBrown</defName>
+	<label>cool brown hair</label>
+	<description>Carriers of this gene may have hair of a handful of shades of cool brown.</description>
+	<geneClass>CyanobotsGenes.Gene_Bundle</geneClass>
+	<iconPath>Genes/HairBundles/CYB_HairBundle_CoolBrown</iconPath>
+    <modExtensions>
+		<li Class="CyanobotsGenes.GeneExtension_Bundle">
+			<genes>
+				<li>CYB_Hair_Pearl</li>
+				<li>CYB_Hair_Fawn</li>
+				<li>CYB_Hair_Mouse</li>
+				<li>CYB_Hair_Licorice</li>
+			</genes>
+		</li>
+	</modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Pearl</defName>
+    <label>pearl grey hair</label>
+    <hairColorOverride>(184, 178, 178)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Fawn</defName>
+    <label>fawn hair</label>
+    <hairColorOverride>(169, 152, 144)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Mouse</defName>
+    <label>mouse brown hair</label>
+    <hairColorOverride>(112, 92, 84)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Licorice</defName>
+    <label>licorice hair</label>
+    <hairColorOverride>(37, 29, 24)</hairColorOverride>
+  </GeneDef>
+
+<!--
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Wolf</defName>
+    <label>wolf grey hair</label>
+    <hairColorOverride>(68, 78, 88)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Bone</defName>
+    <label>bone white hair</label>
+    <hairColorOverride>(231, 228, 205)</hairColorOverride>
+  </GeneDef>
+ -->
   
 </Defs>

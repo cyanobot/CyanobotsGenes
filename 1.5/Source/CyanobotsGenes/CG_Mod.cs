@@ -20,6 +20,7 @@ namespace CyanobotsGenes
         public static bool forsakenNightLoaded;
         public static bool outlandGeneticsLoaded;
         public static bool vreArchonLoaded;
+        public static bool vreSauridLoaded;
         public static bool ebsgPsychicLoaded;
         public static bool ebsgAllInOneLoaded;
 

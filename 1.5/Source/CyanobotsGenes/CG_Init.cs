@@ -19,11 +19,12 @@ namespace CyanobotsGenes
         static CG_Init()
         {
             autoPsyphonIcon = ContentFinder<Texture2D>.Get("UI/Icons/AutoPsyphon");
-
+       
             geologicalLandformsLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Geological Landforms");
             forsakenNightLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Alpha Biomes: Forsaken Night Unofficial Add-On");
             outlandGeneticsLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Outland - Genetics");
             vreArchonLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Vanilla Races Expanded - Archon");
+            vreSauridLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Vanilla Races Expanded - Saurid");
             ebsgPsychicLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "EBSG - Expanded Psychic Genes");
             ebsgAllInOneLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Expanded Biotech Style Genes - All in One");
 

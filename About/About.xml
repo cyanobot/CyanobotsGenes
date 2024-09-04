@@ -8,7 +8,7 @@
 		<li>1.5</li>
     </supportedVersions>
 
-    <description>7 new xenotypes and 46 new genes (15 cosmetic, 31 functional) to add to your gene pool. Requires Biotech.
+    <description>7 new xenotypes and 47 new genes (16 cosmetic, 31 functional) to add to your gene pool. Requires Biotech.
         
 Genes:
 - 3 templates that generate genes dynamically from loaded xenotypes
@@ -31,7 +31,7 @@ Genes:
 - tabby-patterned fur
 - 2 tails
 - 2 blood colors, 3 eye colors, 1 alternative eye graphic
-- 2 hair bundles containing 13 hair colors
+- 3 hair bundles containing 17 hair colors
 - 3 skin bundles containing 17 skin colors
 
 Xenotypes:
@@ -81,6 +81,7 @@ Xenotypes:
 		<li>Ludeon.RimWorld.Royalty</li>
 		<li>Ludeon.RimWorld.Ideology</li>
 		<li>Ludeon.RimWorld.Biotech</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 		<li>telardo.BetterGeneGraphicsFramework</li>
 		<li>EBSG.Food</li>
 		<li>EBSG.AiO</li>

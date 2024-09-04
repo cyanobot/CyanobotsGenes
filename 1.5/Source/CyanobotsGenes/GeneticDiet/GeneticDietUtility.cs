@@ -234,12 +234,14 @@ namespace CyanobotsGenes
             DietCategory dietCategory = GetDietCategory(pawn);
             CG_FoodKind cg_FoodKind = GetCG_FoodKind(food);
 
+            if (cg_FoodKind == CG_FoodKind.Any) return false;
+
             if (dietCategory == DietCategory.Hypercarnivore && cg_FoodKind == CG_FoodKind.Vegetable)
             {
                 return true;
             }
             else if (dietCategory == DietCategory.StrictHerbivore && 
-                (cg_FoodKind == CG_FoodKind.Meat || cg_FoodKind == CG_FoodKind.AnimalProduct))
+                !cg_FoodKind.HasFlag(CG_FoodKind.Vegetable))
             {
                 return true;
             }
@@ -259,8 +261,8 @@ namespace CyanobotsGenes
 
             if (dietCategory == DietCategory.Carnivore || dietCategory == DietCategory.Hypercarnivore)
             {
-                if (cg_foodKind == CG_FoodKind.Meat || cg_foodKind == CG_FoodKind.AnimalProduct) return false;
-                else return true;
+                if (cg_foodKind.HasFlag(CG_FoodKind.Vegetable)) return true;
+                else return false;
             }
             if (dietCategory == DietCategory.Herbivore || dietCategory == DietCategory.StrictHerbivore)
             {
@@ -300,7 +302,7 @@ namespace CyanobotsGenes
 
             if (dietCategory == DietCategory.Carnivore || dietCategory == DietCategory.Hypercarnivore)
             {
-                if (cg_foodKind == CG_FoodKind.Meat || cg_foodKind == CG_FoodKind.AnimalProduct) return 1f;
+                if (!cg_foodKind.HasFlag(CG_FoodKind.Vegetable)) return 1f;
                 else
                 {
                     float nutritionFactor = pawn.GetStatValue(CG_DefOf.VegetableNutritionFactor);
@@ -316,7 +318,7 @@ namespace CyanobotsGenes
                 {
                     float nutritionFactor = pawn.GetStatValue(CG_DefOf.AnimalNutritionFactor);
                     //if there are some vegetables, halve the effect
-                    if (cg_foodKind == CG_FoodKind.AnimalProductAndVeg || cg_foodKind == CG_FoodKind.MeatAndVeg)
+                    if (cg_foodKind.HasFlag(CG_FoodKind.Vegetable))
                     {
                         nutritionFactor += (1 - nutritionFactor) / 2;
                     }
@@ -333,43 +335,28 @@ namespace CyanobotsGenes
             //don't mess with pawns without a genetic diet
             if (dietCategory == DietCategory.Default) return 0f;
 
+            //don't mess with generic food
             CG_FoodKind cg_foodKind = GetCG_FoodKind(food);
+            if (cg_foodKind == CG_FoodKind.Any) return 0f;
 
             switch (dietCategory)
             {
                 case (DietCategory.Carnivore):
-                    switch (cg_foodKind) {
-                        case CG_FoodKind.Vegetable: return -150f;
-                        case CG_FoodKind.MeatAndVeg: return -75f;
-                        case CG_FoodKind.AnimalProductAndVeg: return -75f;
-                        default: return 0f;
-                    }
+                    if (cg_foodKind == CG_FoodKind.Vegetable) return -150f;
+                    else if (cg_foodKind.HasFlag(CG_FoodKind.Vegetable)) return -75f;
+                    else return 0f;
                 case (DietCategory.Hypercarnivore):
-                    switch (cg_foodKind)
-                    {
-                        case CG_FoodKind.Vegetable: return -9999999f;
-                        case CG_FoodKind.MeatAndVeg: return -150f;
-                        case CG_FoodKind.AnimalProductAndVeg: return -150f;
-                        default: return 0f;
-                    }
+                    if (cg_foodKind == CG_FoodKind.Vegetable) return -9999999f;
+                    else if (cg_foodKind.HasFlag(CG_FoodKind.Vegetable)) return -150f;
+                    else return 0f;
                 case (DietCategory.Herbivore):
-                    switch (cg_foodKind)
-                    {
-                        case CG_FoodKind.Meat: return -150f;
-                        case CG_FoodKind.AnimalProduct: return -150f;
-                        case CG_FoodKind.MeatAndVeg: return -75f;
-                        case CG_FoodKind.AnimalProductAndVeg: return -75f;
-                        default: return 0f;
-                    }
+                    if (cg_foodKind == CG_FoodKind.Vegetable) return 0f;
+                    else if (cg_foodKind.HasFlag(CG_FoodKind.Vegetable)) return -75f;
+                    else return -150f;
                 case (DietCategory.StrictHerbivore):
-                    switch (cg_foodKind)
-                    {
-                        case CG_FoodKind.Meat: return -9999999f;
-                        case CG_FoodKind.AnimalProduct: return -9999999f;
-                        case CG_FoodKind.MeatAndVeg: return -150f;
-                        case CG_FoodKind.AnimalProductAndVeg: return -150f;
-                        default: return 0f;
-                    }
+                    if (cg_foodKind == CG_FoodKind.Vegetable) return 0f;
+                    else if (cg_foodKind.HasFlag(CG_FoodKind.Vegetable)) return -150f;
+                    else return -9999999f;
                 default: return 0f;
             }  
         }
@@ -385,13 +372,13 @@ namespace CyanobotsGenes
 
             if (dietCategory == DietCategory.Carnivore || dietCategory == DietCategory.Hypercarnivore)
             {
-                if (cg_foodKind == CG_FoodKind.Meat || cg_foodKind == CG_FoodKind.AnimalProduct) return null;
+                if (!cg_foodKind.HasFlag(CG_FoodKind.Vegetable)) return null;
                 else return CG_DefOf.AtePlantCarnivore;
             }
             if (dietCategory == DietCategory.Herbivore || dietCategory == DietCategory.StrictHerbivore)
             {
                 if (cg_foodKind == CG_FoodKind.Vegetable) return null;
-                else if (cg_foodKind == CG_FoodKind.Meat || cg_foodKind == CG_FoodKind.MeatAndVeg ||
+                else if (cg_foodKind.HasFlag(CG_FoodKind.Meat) ||
                     (food.def == ThingDefOf.HemogenPack && !pawn.HasActiveGene(GeneDefOf.Hemogenic)))
                 {
                     return CG_DefOf.AteMeatHerbivore;

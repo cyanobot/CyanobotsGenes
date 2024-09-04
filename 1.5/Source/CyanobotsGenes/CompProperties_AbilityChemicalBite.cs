@@ -34,6 +34,7 @@ namespace CyanobotsGenes
 			{
 				GiveHigh(pawn);
 				AddictionEffects(pawn);
+				SatisfyChemicalDependency(pawn);
 			}
 		}
 
@@ -82,6 +83,15 @@ namespace CyanobotsGenes
 				}
 			}
 		}
+
+		public void SatisfyChemicalDependency(Pawn targetPawn)
+        {
+			if (targetPawn.genes == null || targetPawn.genes.GenesListForReading.NullOrEmpty()) return;
+			Gene_ChemicalDependency gene = (Gene_ChemicalDependency)targetPawn.genes.GenesListForReading.Find(
+				g => g is Gene_ChemicalDependency gcd && gcd.def.chemical == Props.chemical
+				);
+			gene?.Reset();
+        }
 
 		public override bool CanApplyOn(LocalTargetInfo target, LocalTargetInfo dest)
 		{
