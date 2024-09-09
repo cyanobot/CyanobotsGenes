@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RimWorld;
 using Verse;
+using static CyanobotsGenes.CG_Mod;
 
 namespace CyanobotsGenes
 {
@@ -31,22 +32,120 @@ namespace CyanobotsGenes
 
         public static XenotypeDef GetOffspringXenotype(Pawn mother, Pawn father)
         {
+            
             XenotypeDef xenotype;
-            if (mother?.genes != null)
+
+            bool motherDominant = HasDominantGene(mother);
+            bool fatherDominant = HasDominantGene(father);
+            bool motherRecessive = HasRecessiveGene(mother);
+            bool fatherRecessive = HasRecessiveGene(father);
+
+            //no dominance relation / equivalent dominance
+            if (!vreHighmateLoaded
+                || (!(motherDominant ^ fatherDominant) && (!(motherRecessive ^ fatherRecessive))))
             {
-                xenotype = ((Gene_Offspring)mother.genes.GenesListForReading.Find(x => IsActiveOffspringGene(x)))?.Xenotype;
-                if (xenotype != null) return xenotype;
-            }
-            if (father?.genes != null)
-            {
-                xenotype = ((Gene_Offspring)father.genes.GenesListForReading.Find(x => IsActiveOffspringGene(x)))?.Xenotype;
-                if (xenotype != null) return xenotype;
+                //mother gets first shot at determining offspring xenotype
+                if (mother?.genes != null)
+                {
+                    xenotype = GetOffspringXenotype(mother);
+                    if (xenotype != null) return xenotype;
+                }
+                //if mother doesn't have an Offspring gene, father's overrides her genes
+                if (father?.genes != null)
+                {
+                    xenotype = GetOffspringXenotype(father);
+                    if (xenotype != null) return xenotype;
+                }
             }
 
+            //mother dominant over father
+            else if ((motherDominant && !fatherDominant)
+                || (fatherRecessive && !motherRecessive))
+            {
+                if (mother?.genes != null)
+                {
+                    xenotype = GetOffspringXenotype(mother);
+                    if (xenotype != null) return xenotype;
+                }
+                return null;    //dominant mother's regular genes (inheritance defined in VRE Highmate) override father's potential Offspring gene
+            }
+
+            //father dominance over mother
+            else
+            {
+                if (father?.genes != null)
+                {
+                    xenotype = GetOffspringXenotype(father);
+                    if (xenotype != null) return xenotype;
+                }
+
+                return null;    //dominant father's regular genes (inheritance defined in VRE Highmate) override mother's potential Offspring gene
+            }
+                              
+            //falling through indicates neither parent has Offspring gene, should  never have called this method
             Log.Error("[CyanobotsGenes] Attempted to get offspring xenotype [parents: " + mother + ", " + father
                     + "] but found no Offspring gene.");
             return null;
 
+        }
+
+        public static XenotypeDef GetOffspringXenotype(Pawn parent)
+        {
+            if (parent?.genes == null)
+                Log.Error("[CyanobotsGenes] Attempted to get offspring xenotype from invalid parent: " + parent);
+
+            List<XenotypeDef> potentialXenotypes = new List<XenotypeDef>(); 
+            
+            foreach (Gene xenogene in parent.genes.Xenogenes)
+            {
+                if (IsActiveOffspringGene(xenogene))
+                {
+                    potentialXenotypes.Add(((Gene_Offspring)xenogene).Xenotype);
+                }
+            }
+            if (potentialXenotypes.Count == 0)
+            {
+                foreach (Gene endogene in parent.genes.Endogenes)
+                {
+                    if (IsActiveOffspringGene(endogene))
+                    {
+                        potentialXenotypes.Add(((Gene_Offspring)endogene).Xenotype);
+                    }
+                }
+            }
+
+            if (potentialXenotypes.Count > 0) return potentialXenotypes.RandomElement();
+
+            //falling through indicates no Offspring gene found
+            return null;
+        }
+
+        public static bool HasDominantGene(Pawn pawn)
+        {
+            if (pawn == null) return false;
+            if (!vreHighmateLoaded) return false;
+            if (pawn.genes == null) return false;
+            if (pawn.genes.GenesListForReading.Any(
+                g => g.Active && g.def.defName == "VRE_DominantGenome"
+                ))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool HasRecessiveGene(Pawn pawn)
+        {
+            if (pawn == null) return false;
+            if (!vreHighmateLoaded) return false;
+            if (pawn.genes == null) return false;
+            if (pawn.genes.GenesListForReading.Any(
+                g => g.Active && g.def.defName == "VRE_RecessiveGenome"
+                ))
+            {
+                return true;
+            }
+            return false;
         }
 
         public static List<GeneDef> GetInheritedEndogenes(Pawn mother, Pawn father, XenotypeDef overridingXenotype)

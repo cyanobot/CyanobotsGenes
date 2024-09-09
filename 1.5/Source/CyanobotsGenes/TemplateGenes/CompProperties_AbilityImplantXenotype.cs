@@ -48,6 +48,14 @@ namespace CyanobotsGenes
 			{
 				return base.Valid(target, throwMessages);
 			}
+			if (targetPawn.genes == null)
+            {
+				if (throwMessages)
+                {
+					Messages.Message("CYB_MessageTargetRequiresGenes".Translate(), targetPawn, MessageTypeDefOf.RejectInput, historical: false);
+                }
+				return false;
+            }
 			if (targetPawn.IsQuestLodger())
 			{
 				if (throwMessages)
@@ -198,7 +206,12 @@ namespace CyanobotsGenes
 
 		public void Implant(Pawn target)
         {
-            Log.Message("Calling implant on " + target + ", xenotype: " + Xenotype);
+            LogUtil.DebugLog("Calling implant on " + target + ", xenotype: " + Xenotype);
+			if (Xenotype == null)
+            {
+				Log.Error("[Cyanobot's Genes] CompProperties_AbilityImplantXenotype was unable to determine which xenotype it should be implanting.");
+				return;
+            }
             target.genes.SetXenotypeDirect(Xenotype);
             target.genes.xenotypeName = Xenotype.label;
             target.genes.ClearXenogenes();

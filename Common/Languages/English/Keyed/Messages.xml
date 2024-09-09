@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
+<CYB_MessageTargetRequiresGenes>Target must have genes.</CYB_MessageTargetRequiresGenes>
 <CYB_Message_CantUseOnNonFlesh>Target must have flesh.</CYB_Message_CantUseOnNonFlesh>
 <CYB_MessageNoPsychicSensitivity>Target cannot be psychically deaf.</CYB_MessageNoPsychicSensitivity>
 <CYB_MessageNoBrain>Target must have a brain.</CYB_MessageNoBrain>

@@ -13,6 +13,18 @@
 <CYB_SettingLabel_BundleSkinHairColors>Bundle skin and hair color genes</CYB_SettingLabel_BundleSkinHairColors>
 <CYB_SettingDesc_BundleSkinHairColors>Combines skin and hair color genes into one gene per xenotype to reduce clutter. To see the colors as separate genes, turn this setting off.</CYB_SettingDesc_BundleSkinHairColors>
 
+<CYB_SettingsHeader_OffspringAffects>Offspring genes affect:</CYB_SettingsHeader_OffspringAffects>
+<CYB_SettingsHeaderDesc_OffspringAffects>Use these toggles to control whether the non-standard means of reproduction below are affected by the Offspring line of genes, which force the carrier's children to be a specific xenotype.</CYB_SettingsHeaderDesc_OffspringAffects>
+
+<CYB_SettingLabel_OffspringAffects_AsexualFission>Asexual Fission</CYB_SettingLabel_OffspringAffects_AsexualFission>
+<CYB_SettingDesc_OffspringAffects_AsexualFission>Asexual reproduction that uses the Vanilla Expanded Framework mechanism. Includes Alpha Genes' Asexual Fission, and possibly others.</CYB_SettingDesc_OffspringAffects_AsexualFission>
+
+<CYB_SettingLabel_OffspringAffects_AG_ParasiticEndogenes>Alpha Genes' Parasitic Stinger Implanter, Endogenes</CYB_SettingLabel_OffspringAffects_AG_ParasiticEndogenes>
+<CYB_SettingDesc_OffspringAffects_AG_ParasiticEndogenes>With this setting on, the chestburster babies generated from the corresponding parasitic stinger will be born with the genes of the Offspring-gene-specified xenotype, as endogenes regardless of whether that xenotype is normally heritable or not.</CYB_SettingDesc_OffspringAffects_AG_ParasiticEndogenes>
+
+<CYB_SettingLabel_OffspringAffects_AG_ParasiticXenogenes>Alpha Genes' Parasitic Stinger Implanter, Xenogenes</CYB_SettingLabel_OffspringAffects_AG_ParasiticXenogenes>
+<CYB_SettingDesc_OffspringAffects_AG_ParasiticXenogenes>With this setting on, the chestburster babies generated from the corresponding parasitic stinger will be born with the genes of the Offspring-gene-specified xenotype, as xenogenes regardless of whether that xenotype is normally heritable or not.</CYB_SettingDesc_OffspringAffects_AG_ParasiticXenogenes>
+
 <CYB_SettingLabel_NoOutlandGlimmer>Glimmer xenotype without Outland graphics</CYB_SettingLabel_NoOutlandGlimmer>
 <CYB_SettingDesc_NoOutlandGlimmer>The Glimmer xenotype relies on the mod Outland Genetics to provide most of its cosmetic genes. This setting enables a less-pretty but still functional version.</CYB_SettingDesc_NoOutlandGlimmer>
 

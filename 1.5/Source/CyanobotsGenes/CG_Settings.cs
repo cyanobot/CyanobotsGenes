@@ -21,6 +21,11 @@ namespace CyanobotsGenes
         public static bool moveVanillaGenes = true;
         public static bool changeMealStacking = true;
         public static bool bundleSkinHairColors = true;
+
+        public static bool offspringAffects_AsexualFission = false;
+        public static bool offspringAffects_AG_ParasiticEndogenes = false;
+        public static bool offspringAffects_AG_ParasiticXenogenes = false;
+
         public static bool noOutlandGlimmer = false;
 
         public static float generationWeight_Biodrone = 1f;
@@ -40,7 +45,13 @@ namespace CyanobotsGenes
             Scribe_Values.Look(ref moveVanillaGenes, "moveVanillaGenes", moveVanillaGenes, true);
             Scribe_Values.Look(ref changeMealStacking, "changeMealStacking", changeMealStacking, true);
             Scribe_Values.Look(ref bundleSkinHairColors, "bundleSkinHairColors", bundleSkinHairColors, true);
+
+            Scribe_Values.Look(ref offspringAffects_AsexualFission, "offspringAffects_AsexualFission", offspringAffects_AsexualFission, true);
+            Scribe_Values.Look(ref offspringAffects_AG_ParasiticEndogenes, "offspringAffects_AG_ParasiticEndogenes", offspringAffects_AG_ParasiticEndogenes, true);
+            Scribe_Values.Look(ref offspringAffects_AG_ParasiticXenogenes, "offspringAffects_AG_ParasiticXenogenes", offspringAffects_AG_ParasiticXenogenes, true);
+
             Scribe_Values.Look(ref noOutlandGlimmer, "noOutlandGlimmer", noOutlandGlimmer, true);
+
             Scribe_Values.Look(ref generationWeight_Biodrone, "generationWeight_Biodrone", generationWeight_Biodrone, true);
             Scribe_Values.Look(ref generationWeight_Changeling, "generationWeight_Changeling", generationWeight_Changeling, true);
             Scribe_Values.Look(ref generationWeight_Fairy, "generationWeight_Fairy", generationWeight_Fairy, true);
@@ -67,6 +78,18 @@ namespace CyanobotsGenes
             l.CheckboxLabeled("CYB_SettingLabel_BundleSkinHairColors".Translate(), ref bundleSkinHairColors, "CYB_SettingDesc_BundleSkinHairColors".Translate());
             l.CheckboxLabeled("CYB_SettingLabel_NoOutlandGlimmer".Translate(), ref noOutlandGlimmer, "CYB_SettingDesc_NoOutlandGlimmer".Translate());
 
+            l.Gap();
+            l.Gap();
+
+            l.Label("CYB_SettingsHeader_OffspringAffects".Translate(), tooltip: "CYB_SettingsHeaderDesc_OffspringAffects".Translate());
+
+            l.GapLine();
+
+            l.CheckboxLabeled("CYB_SettingLabel_OffspringAffects_AsexualFission".Translate(), ref offspringAffects_AsexualFission, "CYB_SettingDesc_OffspringAffects_AsexualFission".Translate());
+            l.CheckboxLabeled("CYB_SettingLabel_OffspringAffects_AG_ParasiticEndogenes".Translate(), ref offspringAffects_AG_ParasiticEndogenes, "CYB_SettingDesc_OffspringAffects_AG_ParasiticEndogenes".Translate());
+            l.CheckboxLabeled("CYB_SettingLabel_OffspringAffects_AG_ParasiticXenogenes".Translate(), ref offspringAffects_AG_ParasiticXenogenes, "CYB_SettingDesc_OffspringAffects_AG_ParasiticXenogenes".Translate());
+
+            l.Gap();
             l.Gap();
 
             l.Label("CYB_SettingLabel_GenerationWeights".Translate());

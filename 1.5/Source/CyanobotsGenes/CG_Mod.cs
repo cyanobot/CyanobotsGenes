@@ -16,10 +16,13 @@ namespace CyanobotsGenes
         public static ModContentPack mcp;
         public static Harmony harmony;
 
+        public static bool alphaGenesLoaded;
         public static bool geologicalLandformsLoaded;
         public static bool forsakenNightLoaded;
         public static bool outlandGeneticsLoaded;
         public static bool vreArchonLoaded;
+        public static bool vreHighmateLoaded;
+        public static bool vreInsectorLoaded;
         public static bool vreSauridLoaded;
         public static bool ebsgPsychicLoaded;
         public static bool ebsgAllInOneLoaded;
@@ -29,10 +32,10 @@ namespace CyanobotsGenes
         public static Dictionary<string, List<PatchWorker>> patchDict = new Dictionary<string, List<PatchWorker>>();
         public static Dictionary<XenotypeDef, List<GeneDef>> removedXenotypes = new Dictionary<XenotypeDef, List<GeneDef>>();
 
-        public static Type t_VEFGeneExtension = AccessTools.TypeByName("VanillaGenesExpanded.GeneExtension");
-        public static Type t_VEFStaticCollectionsClass = AccessTools.TypeByName("VanillaGenesExpanded.StaticCollectionsClass");
-        public static FieldInfo f_hideGene = AccessTools.Field(t_VEFGeneExtension, "hideGene");
-        public static FieldInfo f_hidden_genes = AccessTools.Field(t_VEFStaticCollectionsClass, "hidden_genes");
+        //public static Type t_VEFGeneExtension = AccessTools.TypeByName("VanillaGenesExpanded.GeneExtension");
+        //public static Type t_VEFStaticCollectionsClass = AccessTools.TypeByName("VanillaGenesExpanded.StaticCollectionsClass");
+        //public static FieldInfo f_hideGene = AccessTools.Field(t_VEFGeneExtension, "hideGene");
+        //public static FieldInfo f_hidden_genes = AccessTools.Field(t_VEFStaticCollectionsClass, "hidden_genes");
         public static FieldInfo f_cachedGeneDefsInOrder = AccessTools.Field(typeof(GeneUtility), "cachedGeneDefsInOrder");
 
         public CG_Mod(ModContentPack mcp) : base(mcp)

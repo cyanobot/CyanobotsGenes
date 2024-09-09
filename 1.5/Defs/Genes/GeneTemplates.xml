@@ -9,9 +9,6 @@
 	<description>Carriers of this gene carry a latent copy of an entirely separate genome. At puberty (13) they will metamorphose permanently into the other xenotype.</description>
 	<biostatCpx>3</biostatCpx>
 	<displayCategory>CYB_Metamorphosis</displayCategory>
-	<exclusionTags>
-		<li>CYB_Metamorphosis</li>
-	</exclusionTags>
 	<modExtensions>
 		<li Class="VanillaGenesExpanded.GeneExtension">
 			<backgroundPathEndogenes>Genes/TemplateBackgrounds/Metamorphosis_Endogene</backgroundPathEndogenes>
@@ -28,9 +25,6 @@
 	<description>Carriers of this gene carry an entirely separate genome in their gametes. As a result, their offspring will be of a different xenotype to the parent.</description>
 	<biostatCpx>3</biostatCpx>
 	<displayCategory>CYB_Offspring</displayCategory>
-	<exclusionTags>
-		<li>CYB_Offspring</li>
-	</exclusionTags>
 	<modExtensions>
 		<li Class="VanillaGenesExpanded.GeneExtension">
 			<backgroundPathEndogenes>Genes/TemplateBackgrounds/Offspring_Endogene</backgroundPathEndogenes>

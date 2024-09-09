@@ -18,30 +18,75 @@ namespace CyanobotsGenes
         public const int tickInterval = 2500;       //1 hour
         public XenotypeDef Xenotype => this.def.GetModExtension<GeneExtension_Xenotype>()?.xenotype;
 
+        public bool alreadyMetamorphosed = false;
+
+        public override bool Active
+        {
+            get
+            {
+                if (!base.Active) return false;
+                if (alreadyMetamorphosed) return false;
+                return true;
+            }
+        }
+
         public override void Tick()
         {
             base.Tick();
             if (pawn.IsHashIntervalTick(tickInterval) && pawn.DevelopmentalStage == DevelopmentalStage.Adult)
             {
-                Metamorphose();
-                CG_DefOf.CYB_Metamorphosis.SpawnMaintained(pawn, pawn.MapHeld);
-                if (PawnUtility.ShouldSendNotificationAbout(pawn))
-                {
-                    string letterText = "CYB_LetterText_Metamorphosis".Translate().Formatted(pawn.Named("PAWN"), Xenotype.Named("XENOTYPE"));
-                    Find.LetterStack.ReceiveLetter(LetterMaker.MakeLetter("CYB_LetterLabel_Metamorphosis".Translate().Formatted(pawn.Named("PAWN")), letterText, LetterDefOf.NeutralEvent));
+                TriggerMetamorphosis();
+            }
+        }
 
+        public void TriggerMetamorphosis()
+        {
+            List<Gene_Metamorphosis> geneOptions = new List<Gene_Metamorphosis>();
+
+            foreach (Gene xenogene in pawn.genes.Xenogenes)
+            {
+                if (xenogene is Gene_Metamorphosis xenogene_Met)
+                {
+                    if (xenogene_Met.Active) geneOptions.Add(xenogene_Met);
+                    xenogene_Met.alreadyMetamorphosed = true;
                 }
             }
+            bool considerEndogenes = geneOptions.Count <= 0;
+            foreach (Gene endogene in pawn.genes.Endogenes)
+            {
+                if (endogene is Gene_Metamorphosis endogene_Met)
+                {
+                    if (considerEndogenes && endogene.Active) geneOptions.Add(endogene_Met);
+                    endogene_Met.alreadyMetamorphosed = true;
+                }
+            }
+
+            if (geneOptions.Count == 0)
+            {
+                Log.Error("[Cyanobot's Genes] Attempted to initiate metamorphosis for pawn: " + pawn + ", but could not find any Metamorphosis gene.");
+                pawn.genes.RemoveGene(this);
+                return;
+            }
+
+            Gene_Metamorphosis selected = geneOptions.RandomElement();
+            selected.Metamorphose();
         }
 
         public void Metamorphose()
         {
+            CG_DefOf.CYB_Metamorphosis.SpawnMaintained(pawn, pawn.MapHeld);
+            if (PawnUtility.ShouldSendNotificationAbout(pawn))
+            {
+                string letterText = "CYB_LetterText_Metamorphosis".Translate().Formatted(pawn.Named("PAWN"), Xenotype.Named("XENOTYPE"));
+                Find.LetterStack.ReceiveLetter(LetterMaker.MakeLetter("CYB_LetterLabel_Metamorphosis".Translate().Formatted(pawn.Named("PAWN")), letterText, LetterDefOf.NeutralEvent));
+
+            }
+
             //remember current skin and hair colors
             GeneDef oldSkinColorOverrideDef = pawn.genes.GenesListForReading.Find(g => g.def.skinColorOverride != null && g.Active)?.def;
             GeneDef oldHairColorDef = pawn.genes.GenesListForReading.Find(g => g.def.endogeneCategory == EndogeneCategory.HairColor && g.Active)?.def;
             Color oldHairColor = pawn.story.HairColor;
             Log.Message("curSkinColorOverride: " + oldSkinColorOverrideDef + ", curHairColor: " + oldHairColorDef);
-
 
             //remove current xenotype
             //xenogenes or endogenes removed based on whether the metamorphosis gene is a xenogene or endogene
