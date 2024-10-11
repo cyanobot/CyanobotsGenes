@@ -36,7 +36,7 @@ namespace CyanobotsGenes
             if (geologicalLandformsLoaded)
             {
                 ThoughtWorker_LightSensitivity.t_WorldTileInfo = AccessTools.TypeByName("GeologicalLandforms.WorldTileInfo");
-                ThoughtWorker_LightSensitivity.m_WorldTileInfo_Get = AccessTools.Method(ThoughtWorker_LightSensitivity.t_WorldTileInfo, "Get");
+                ThoughtWorker_LightSensitivity.m_WorldTileInfo_Get = AccessTools.Method(ThoughtWorker_LightSensitivity.t_WorldTileInfo, "Get", new Type[] { typeof(int), typeof(bool) });
                 ThoughtWorker_LightSensitivity.p_BiomeVariants = AccessTools.Property(ThoughtWorker_LightSensitivity.t_WorldTileInfo, "BiomeVariants");
             }
 
