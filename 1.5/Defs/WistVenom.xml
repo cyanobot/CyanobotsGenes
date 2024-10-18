@@ -24,12 +24,12 @@
     </verbProperties>
     <comps>
       <li Class="CompProperties_AbilityHemogenCost">
-        <hemogenCost>0.15</hemogenCost>
+        <hemogenCost>0.2</hemogenCost>
       </li>
       <li Class="CyanobotsGenes.CompProperties_AbilityChemicalBite">
 		<chemical>CYB_WistVenom</chemical>
 		<existingAddictionSeverityOffset>1</existingAddictionSeverityOffset>
-		<addictiveness>0.5</addictiveness>
+		<addictiveness>0.3</addictiveness>
 		<needLevelOffset>1</needLevelOffset>
 		<hediffHigh>CYB_WistVenomHigh</hediffHigh>
       </li>

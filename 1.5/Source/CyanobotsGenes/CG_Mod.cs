@@ -26,6 +26,7 @@ namespace CyanobotsGenes
         public static bool vreSauridLoaded;
         public static bool ebsgPsychicLoaded;
         public static bool ebsgAllInOneLoaded;
+        public static bool bigAndSmallFrameworkLoaded;
 
         public static float default_unaffectedCommonality;
 
@@ -47,11 +48,25 @@ namespace CyanobotsGenes
             harmony.Patch(
                 AccessTools.Method(typeof(RecipeDefGenerator), nameof(RecipeDefGenerator.ImpliedRecipeDefs)), 
                 postfix: new HarmonyMethod(AccessTools.Method(typeof(ImpliedRecipeDefs_Patch),nameof(ImpliedRecipeDefs_Patch.Postfix)))
-           );
+            );
             harmony.Patch(
                 AccessTools.Method(typeof(GeneDefGenerator), "ImpliedGeneDefs"),
                 postfix: new HarmonyMethod(AccessTools.Method(typeof(ImpliedGeneDefs_Patch), nameof(ImpliedGeneDefs_Patch.Postfix)))
-           );
+            );
+            
+            /*
+            bigAndSmallFrameworkLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Big and Small - Framework");
+            LogUtil.DebugLog("bigAndSmallFrameworkLoaded: " + bigAndSmallFrameworkLoaded);
+            if (bigAndSmallFrameworkLoaded)
+            {
+                Type t_PregnancyPatches = AccessTools.TypeByName("BigAndSmall.PregnancyPatches");
+                harmony.Patch(
+                    AccessTools.Method(t_PregnancyPatches, ""),
+                    postfix: new HarmonyMethod(AccessTools.Method(typeof(),nameof()))
+                );
+
+            }
+            */
         }
 
         public override string SettingsCategory()

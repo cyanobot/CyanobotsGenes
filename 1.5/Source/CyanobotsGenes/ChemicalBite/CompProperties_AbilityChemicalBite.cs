@@ -29,12 +29,26 @@ namespace CyanobotsGenes
 		public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
 		{
 			base.Apply(target, dest);
-			Pawn pawn = target.Pawn;
-			if (pawn != null)
+			Pawn targetPawn = target.Pawn;
+			Pawn biter = parent.pawn;
+			if (targetPawn != null)
 			{
-				GiveHigh(pawn);
-				AddictionEffects(pawn);
-				SatisfyChemicalDependency(pawn);
+				GiveHigh(targetPawn);
+				AddictionEffects(targetPawn);
+				SatisfyChemicalDependency(targetPawn);
+
+				Find.HistoryEventsManager.RecordEvent(new HistoryEvent(HistoryEventDefOf.IngestedDrug, targetPawn.Named(HistoryEventArgsNames.Doer)));
+				Find.HistoryEventsManager.RecordEvent(new HistoryEvent(HistoryEventDefOf.AdministeredDrug, biter.Named(HistoryEventArgsNames.Doer)));
+
+
+				Faction targetFaction = targetPawn.Faction;
+				if (targetFaction != null && !targetPawn.IsSlaveOfColony && !targetPawn.IsPrisonerOfColony
+					&& (targetPawn.IsQuestLodger() || targetFaction != biter.Faction)
+					&& biter.Faction == Faction.OfPlayer && !targetFaction.HostileTo(biter.Faction)
+					&& !IdeoUtility.DoerWillingToDo(HistoryEventDefOf.IngestedDrug, targetPawn))
+				{
+					Faction.OfPlayer.TryAffectGoodwillWith(targetFaction, -20, canSendMessage: true, !targetFaction.temporary, HistoryEventDefOf.AdministeredDrug);
+				}
 			}
 		}
 
@@ -128,11 +142,14 @@ namespace CyanobotsGenes
 				}
 				else if (targetPawn.IsQuestLodger() || targetPawn.Faction != parent.pawn.Faction)
 				{
-					if (throwMessages)
+					if (!targetPawn.Downed && !IdeoUtility.DoerWillingToDo(HistoryEventDefOf.IngestedDrug, targetPawn))
 					{
-						Messages.Message("MessageCannotUseOnOtherFactions".Translate(parent.def.Named("ABILITY")), targetPawn, MessageTypeDefOf.RejectInput, historical: false);
+						if (throwMessages)
+						{
+							Messages.Message("IdeoligionForbids".Translate(parent.def.Named("ABILITY")), targetPawn, MessageTypeDefOf.RejectInput, historical: false);
+						}
+						return false;
 					}
-					return false;
 				}
 			}
 			if (targetPawn.IsWildMan() && !targetPawn.IsPrisonerOfColony && !targetPawn.Downed)
@@ -164,9 +181,24 @@ namespace CyanobotsGenes
 				{
 					text += "CYB_Message_CantUseOnNonFlesh".Translate(parent.def.Named("ABILITY"));
 				}
-				else if (targetPawn.HostileTo(parent.pawn) && !targetPawn.Downed)
+				else if ((targetPawn.HostileTo(parent.pawn) || targetPawn.IsWildMan()) && !(targetPawn.Downed || targetPawn.IsPrisonerOfColony))
 				{
 					text += "MessageCantUseOnResistingPerson".Translate(parent.def.Named("ABILITY"));
+				}
+				else if (!IdeoUtility.DoerWillingToDo(HistoryEventDefOf.IngestedDrug, targetPawn))
+                {
+					if (targetPawn.Faction == Faction.OfPlayer)
+                    {
+						text += "IdeoligionForbids".Translate();
+					}
+					else if ((targetPawn.Downed || targetPawn.IsPrisonerOfColony) && !targetPawn.Faction.HostileTo(Faction.OfPlayer))
+                    {
+						text += "AngersFaction".Translate().CapitalizeFirst();
+					}
+                    else
+                    {
+						text += "IdeoligionForbids".Translate();
+					}
 				}
 				return text;
 			}

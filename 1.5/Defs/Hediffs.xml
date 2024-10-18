@@ -189,7 +189,7 @@
 	<initialSeverity>1.0</initialSeverity>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-6</severityPerDay>
+        <severityPerDay>-3</severityPerDay>
         <showHoursToRecover>true</showHoursToRecover>
       </li>
     </comps>

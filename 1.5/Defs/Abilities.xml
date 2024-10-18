@@ -30,7 +30,7 @@
       </li>
 	  <li Class="CyanobotsGenes.CompProperties_AbilityOffsetNeed">
 		<need>Rest</need>
-		<offset>0.2</offset>
+		<offset>0.4</offset>
 	  </li>
       <li Class="CompProperties_AbilityGiveHediff">
         <compClass>CompAbilityEffect_GiveHediff</compClass>
