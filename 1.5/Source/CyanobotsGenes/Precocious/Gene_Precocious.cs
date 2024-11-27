@@ -10,9 +10,10 @@ namespace CyanobotsGenes
 {
     public class Gene_Precocious : Gene
     {
-        public LifeStageAge lsa0;
-        public LifeStageAge lsaChild;
-        public int indexChild = -1;
+        private LifeStageAge lsa0;
+        private LifeStageAge lsaChild;
+        private int indexChild = -1;
+        private float minAgeChild = -1f;
 
         public LifeStageAge Lsa0
         {
@@ -31,7 +32,8 @@ namespace CyanobotsGenes
             {
                 if (lsaChild == null)
                 {
-                    lsaChild = pawn.RaceProps.lifeStageAges.Find(lsa => lsa.def == LifeStageDefOf.HumanlikeChild);
+                    lsaChild = pawn.RaceProps.lifeStageAges.First(lsa => lsa.def.developmentalStage == DevelopmentalStage.Child);
+                    if (lsaChild == null) lsaChild = Lsa0;
                 }
                 return lsaChild;
             }
@@ -48,8 +50,21 @@ namespace CyanobotsGenes
             }
         }
 
-        public bool CurrentlyPrecocious => pawn.ageTracker.AgeBiologicalYears < LsaChild.minAge;
+        public float MinAgeChild
+        {
+            get 
+            { 
+                if (minAgeChild == -1f)
+                {
+                    minAgeChild = LsaChild.minAge;
+                }
+                return minAgeChild;
+            }
+        }
 
+        public bool CurrentlyPrecocious => pawn.ageTracker.AgeBiologicalYears < MinAgeChild;
+
+        /*
         public void ApplyPrecociousEffects()
         {
             //skip if we've already done
@@ -60,33 +75,37 @@ namespace CyanobotsGenes
             //pawn.story.bodyType = bodyType;
             pawn.Drawer.renderer.SetAllGraphicsDirty();
         }
+        */
 
         public void RemovePrecociousEffects()
         {
             if (pawn.ageTracker.lockedLifeStageIndex == IndexChild)
             {
                 pawn.ageTracker.LockCurrentLifeStageIndex(-1);
-                //pawn.story.bodyType = PawnGenerator.GetBodyTypeFor(pawn);
                 pawn.Drawer.renderer.SetAllGraphicsDirty();
             }
         }
 
+        /*
         public override void PostAdd()
         {
             base.PostAdd();
             if (Active && CurrentlyPrecocious)
             {
-                ApplyPrecociousEffects();
+
+                //ApplyPrecociousEffects();
             }
         }
+        */
 
         public override void Tick()
         {
             base.Tick();
             if (pawn.IsHashIntervalTick(60))
             {
-                if (Active && CurrentlyPrecocious) ApplyPrecociousEffects();
-                else RemovePrecociousEffects();
+                //if (Active && CurrentlyPrecocious) ApplyPrecociousEffects();
+                //else RemovePrecociousEffects();
+                RemovePrecociousEffects();
             }
         }
 

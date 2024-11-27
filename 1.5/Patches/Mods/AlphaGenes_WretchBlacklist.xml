@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+<Operation Class="PatchOperationConditional">
+	<xpath>Defs/AlphaGenes.WretchBlacklistDef</xpath>
+	<match Class="PatchOperationAdd">
+		<xpath>Defs/AlphaGenes.WretchBlacklistDef/blackListedDefNameStrings</xpath>
+		<value>
+			<li>CYB_Metamorphosis_</li>
+			<li>CYB_Caste_</li>
+		</value>
+	</match>
+</Operation>
+
+</Patch>

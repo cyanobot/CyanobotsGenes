@@ -45,6 +45,7 @@ namespace CyanobotsGenes
 
             if (!HasActiveOffspringGene(progenitor)) return;
             XenotypeDef offspringXenotype = GetOffspringXenotype(progenitor, null);
+            if (offspringXenotype == null) return;
 
             HediffDef hediffDef = (HediffDef)f_hediffDef.GetValue(___props);
             Pawn targetPawn = target.Pawn;

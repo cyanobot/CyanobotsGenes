@@ -22,8 +22,10 @@ namespace CyanobotsGenes
             autoPsyphonIcon = ContentFinder<Texture2D>.Get("UI/Icons/AutoPsyphon");
 
             alphaGenesLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Alpha Genes");
+            betterGeneInheritanceLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Better Gene Inheritance");
             geologicalLandformsLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Geological Landforms");
             forsakenNightLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Alpha Biomes: Forsaken Night Unofficial Add-On");
+            harLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Humanoid Alien Races");
             outlandGeneticsLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Outland - Genetics");
             vreArchonLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Vanilla Races Expanded - Archon");
             vreHighmateLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Vanilla Races Expanded - Highmate");
@@ -31,6 +33,7 @@ namespace CyanobotsGenes
             vreSauridLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Vanilla Races Expanded - Saurid");
             ebsgPsychicLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "EBSG - Expanded Psychic Genes");
             ebsgAllInOneLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Expanded Biotech Style Genes - All in One");
+            bigAndSmallFrameworkLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Big and Small - Framework");
 
             if (forsakenNightLoaded) ThoughtWorker_LightSensitivity.lightlessBiomes.Add("AB_RockyCrags");
             if (geologicalLandformsLoaded)

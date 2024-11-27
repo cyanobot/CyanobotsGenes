@@ -3,6 +3,9 @@ using Verse;
 using RimWorld;
 using static CyanobotsGenes.OffspringUtility;
 using VanillaGenesExpanded;
+using System.Collections;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace CyanobotsGenes
 {
@@ -13,142 +16,101 @@ namespace CyanobotsGenes
         {
             CompHumanHatcher comphumanHatcher = __result.TryGetComp<CompHumanHatcher>();
             if (comphumanHatcher == null) return;
-            
-            if (HasActiveOffspringGene(comphumanHatcher.hatcheeParent))
-            {
-                comphumanHatcher.femaleDominant = true;
-                XenotypeDef xenotype = GetOffspringXenotype(comphumanHatcher.hatcheeParent, null);
 
-                comphumanHatcher.motherGenes = xenotype.AllGenes;
-            }
-            else if (HasActiveOffspringGene(comphumanHatcher.otherParent))
-            {
-                comphumanHatcher.maleDominant = true;
-                XenotypeDef xenotype = GetOffspringXenotype(comphumanHatcher.otherParent, null);
+            Pawn mother = comphumanHatcher.hatcheeParent;
+            Pawn father = comphumanHatcher.otherParent;
 
-                comphumanHatcher.fatherGenes = xenotype.AllGenes;
-            }
+            XenotypeDef offspringXenotype = GetOffspringXenotype(mother, father);
+            if (offspringXenotype == null) return;
+
+            comphumanHatcher.femaleDominant = true;
+            comphumanHatcher.maleDominant = false;
+            comphumanHatcher.motherGenes = offspringXenotype.AllGenes;
         }
     }
 
-        /*
-        [HarmonyPatch]
-        public static class AlphaGenes_HediffComp_Parasites_Hatch
+    /*
+    [HarmonyPatch(typeof(HediffComp),nameof(HediffComp.CompGetGizmos))]
+    public static class HediffComp_CompGetGizmos_Patch
+    {
+        public static FieldInfo f_eggProgress = AccessTools.Field(typeof(HediffComp_HumanEggLayer), "eggProgress");
+        public static FieldInfo f_fertilizationCount = AccessTools.Field(typeof(HediffComp_HumanEggLayer), "fertilizationCount");
+        public static FieldInfo f_fertilizedBy = AccessTools.Field(typeof(HediffComp_HumanEggLayer), "fertilizedBy");
+
+        public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> result, HediffComp __instance)
         {
-            public static bool Prepare()
+            if (!result.EnumerableNullOrEmpty())
             {
-                if (!CG_Mod.alphaGenesLoaded) return false;
-                return true;
-            }
-
-            public  static MethodBase TargetMethod()
-            {
-                return AccessTools.Method(AccessTools.TypeByName("AlphaGenes.HediffComp_Parasites"), "Hatch");
-            }
-
-            static MethodInfo m_TrySpawnHatchedOrBornPawn = AccessTools.Method(typeof(PawnUtility), nameof(PawnUtility.TrySpawnHatchedOrBornPawn));
-            static FieldInfo f_mother = AccessTools.Field(AccessTools.TypeByName("AlphaGenes.HediffComp_Parasites"), "mother");
-            static FieldInfo f_endogenes= AccessTools.Field(AccessTools.TypeByName("AlphaGenes.HediffComp_Parasites"), "endogenes");
-            static MethodInfo m_ShouldRun = AccessTools.Method(typeof(AlphaGenes_HediffComp_Parasites_Hatch), nameof(AlphaGenes_HediffComp_Parasites_Hatch.ShouldRun));
-            static MethodInfo m_ApplyOffspringXenotype = AccessTools.Method(typeof(AlphaGenes_HediffComp_Parasites_Hatch), nameof(AlphaGenes_HediffComp_Parasites_Hatch.ApplyOffspringXenotype));
-
-            public static bool ShouldRun(Pawn progenitor, bool endogenes)
-            {
-                if (endogenes)
+                foreach (Gizmo gizmo in result)
                 {
-                    if (!offspringAffects_AG_ParasiticEndogenes) return false;
+                    yield return gizmo;
                 }
-                else
-                {
-                    if (!offspringAffects_AG_ParasiticXenogenes) return false;
-                }
-
-                if (HasActiveOffspringGene(progenitor)) return true;
-                return false;
             }
 
-            public static bool ApplyOffspringXenotype(Pawn progenitor, Pawn pawnCreated, bool endogenes)
+            if (__instance is HediffComp_HumanEggLayer compEggLayer)
             {
-                XenotypeDef xenotype = GetOffspringXenotype(progenitor, null);
-                if (xenotype == null || pawnCreated.genes == null) return false;
-
-                if (endogenes)
-
-                return true;
-            }
-
-            public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator iLGenerator)
-            {
-                bool finished = false;
-                int generatedPawnIndex = 1;         //not future-proof but I can't figure out how to work it out dynamically
-                bool foundTrySpawn = false;
-                bool foundBrToEnd = false;
-                object brToEndOperand = null;
-
-                Label endOfCustomCode = iLGenerator.DefineLabel();
-
-                CodeInstruction[] instructions_array = instructions.ToArray();
-
-                for (int i = 0; i < instructions_array.Length; i++)
+                Command_Action logInfo = new Command_Action();
+                logInfo.defaultLabel = "Log Info";
+                logInfo.action = delegate
                 {
-                    CodeInstruction cur = instructions_array[i];
-                    yield return cur;
+                    Log.Message("HediffComp_HumanEggLayer - "
+                        + "pawn - " + __instance.parent.pawn
+                        + ", eggProgress: " + f_eggProgress.GetValue(compEggLayer)
+                        + ", fertilizationCount: " + f_fertilizationCount.GetValue(compEggLayer)
+                        + ", fertilizedBy: " + f_fertilizedBy.GetValue(compEggLayer)
+                        + ", motherGenes: [" + compEggLayer.motherGenes.ToStringSafeEnumerable()
+                        + "], fatherGenes: [" + compEggLayer.fatherGenes.ToStringSafeEnumerable()
+                        + "]"
+                        );
+                };
+                yield return logInfo;
 
-                    if (!finished)
+
+                Command_Action layNow = new Command_Action();
+                layNow.defaultLabel = "Lay Now";
+                layNow.action = delegate
+                {
+                    f_eggProgress.SetValue(compEggLayer, 1f);
+                };
+                yield return layNow;
+
+                Command_Target fertilize = new Command_Target();
+                fertilize.defaultLabel = "Fertilize...";
+                fertilize.targetingParams = new TargetingParameters
+                {
+                    canTargetPawns = true,
+                    canTargetBuildings = false,
+                    canTargetHumans = true,
+                    canTargetAnimals = false,
+                    canTargetMechs = false
+                };
+                fertilize.action = delegate(LocalTargetInfo target)
+                {
+                    Pawn mother = __instance.parent.pawn;
+                    if (target.TryGetPawn(out Pawn targetPawn))
                     {
-                        if (!foundTrySpawn)
+                        compEggLayer.Fertilize(targetPawn);
+                        if (targetPawn?.genes != null)
                         {
-                            if (cur.Calls(m_TrySpawnHatchedOrBornPawn))
+                            foreach (Gene endogene in targetPawn.genes.Endogenes)
                             {
-                                foundTrySpawn = true;
+                                compEggLayer.fatherGenes.Add(endogene.def);
                             }
                         }
-                        else if (!foundBrToEnd)
+                        if (mother.genes == null)
                         {
-                            if (cur.opcode == OpCodes.Brfalse || cur.opcode == OpCodes.Brfalse_S)
-                            {
-                                foundBrToEnd = true;
-                                brToEndOperand = cur.operand;
-                            }
+                            return;
                         }
-                        else
+                        foreach (Gene endogene2 in mother.genes.Endogenes)
                         {
-                            CodeInstruction prev = instructions_array[i - 1];
-                            if (prev.opcode == OpCodes.Newobj && prev.operand is ConstructorInfo constructorInfo && constructorInfo == AccessTools.Constructor(typeof(List<GeneDef>)))
-                            {
-                                LogUtil.DebugLog("found newobj List<GeneDef>");
-
-                                //if (ShouldRun(mother, endogenes))
-                                yield return new CodeInstruction(OpCodes.Ldarg_0);      //get HediffComp instance
-                                yield return new CodeInstruction(OpCodes.Ldfld, f_mother);      //get value of field mother
-
-                                yield return new CodeInstruction(OpCodes.Ldarg_0);      //get HediffComp  instance
-                                yield return new CodeInstruction(OpCodes.Ldfld, f_endogenes);   //get value of field endogenes
-
-                                yield return new CodeInstruction(OpCodes.Call, m_ShouldRun);
-                                yield return new CodeInstruction(OpCodes.Brfalse, endOfCustomCode);
-
-                                //ApplyOffspringXenotype(mother,pawnCreated,endogenes)
-                                yield return new CodeInstruction(OpCodes.Ldarg_0);      //get HediffComp instance
-                                yield return new CodeInstruction(OpCodes.Ldfld, f_mother);      //get value of field mother
-
-                                yield return new CodeInstruction(OpCodes.Ldloc, generatedPawnIndex);    //get generated pawn
-
-                                yield return new CodeInstruction(OpCodes.Ldarg_0);      //get HediffComp  instance
-                                yield return new CodeInstruction(OpCodes.Ldfld, f_endogenes);   //get value of field endogenes
-
-                                yield return new CodeInstruction(OpCodes.Call, m_ApplyOffspringXenotype);
-                                yield return new CodeInstruction(OpCodes.Brtrue, brToEndOperand);       //if successful, skip original gene-granting code
-
-                                CodeInstruction next = instructions_array[i + 1];
-                                next.labels.Add(endOfCustomCode);
-
-                                finished = true;
-                            }
+                            compEggLayer.motherGenes.Add(endogene2.def);
                         }
-                    }
-                }
+                    }                    
+                };
+                yield return fertilize;
+
             }
         }
-        */
     }
+    */
+}

@@ -17,8 +17,10 @@ namespace CyanobotsGenes
         public static Harmony harmony;
 
         public static bool alphaGenesLoaded;
+        public static bool betterGeneInheritanceLoaded;
         public static bool geologicalLandformsLoaded;
         public static bool forsakenNightLoaded;
+        public static bool harLoaded;
         public static bool outlandGeneticsLoaded;
         public static bool vreArchonLoaded;
         public static bool vreHighmateLoaded;
@@ -41,6 +43,8 @@ namespace CyanobotsGenes
 
         public CG_Mod(ModContentPack mcp) : base(mcp)
         {
+            LogUtil.DebugLog("CG_Mod initializing");
+
             CG_Mod.mcp = mcp;
             GetSettings<CG_Settings>();
 
@@ -53,20 +57,6 @@ namespace CyanobotsGenes
                 AccessTools.Method(typeof(GeneDefGenerator), "ImpliedGeneDefs"),
                 postfix: new HarmonyMethod(AccessTools.Method(typeof(ImpliedGeneDefs_Patch), nameof(ImpliedGeneDefs_Patch.Postfix)))
             );
-            
-            /*
-            bigAndSmallFrameworkLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Big and Small - Framework");
-            LogUtil.DebugLog("bigAndSmallFrameworkLoaded: " + bigAndSmallFrameworkLoaded);
-            if (bigAndSmallFrameworkLoaded)
-            {
-                Type t_PregnancyPatches = AccessTools.TypeByName("BigAndSmall.PregnancyPatches");
-                harmony.Patch(
-                    AccessTools.Method(t_PregnancyPatches, ""),
-                    postfix: new HarmonyMethod(AccessTools.Method(typeof(),nameof()))
-                );
-
-            }
-            */
         }
 
         public override string SettingsCategory()

@@ -66,6 +66,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TemplateGenes\Caste\CasteUtility.cs" />
+    <Compile Include="TemplateGenes\Caste\GeneExtension_Caste.cs" />
+    <Compile Include="Precocious\Harmony\GenerateTraits_Patch.cs" />
+    <Compile Include="Precocious\Harmony\GenerateSkills_Patch.cs" />
+    <Compile Include="Precocious\Harmony\GrowthTierTooltip_Patch.cs" />
+    <Compile Include="Precocious\Harmony\RecalculateLifeStageIndex_Patch.cs" />
+    <Compile Include="Precocious\Harmony\TrySimulateGrowthPoints_Patch.cs" />
     <Compile Include="TemplateGenes\AbilityTemplateDef.cs" />
     <Compile Include="Bodyfeeder\Harmony\AddHumanlikeOrders_Bodyfeeder_Patch.cs" />
     <Compile Include="Bodyfeeder\Harmony\AggroMentalBreakSelectionChanceFactor_Patch.cs" />
@@ -107,6 +114,9 @@
     <Compile Include="CG_Util.cs" />
     <Compile Include="GeneExtension_DisabledWorkTypes\Gene_DisabledWorkTypes_Patch.cs" />
     <Compile Include="GeneExtension_DisabledWorkTypes\GetReasonsForDisabledWorkType_Patch.cs" />
+    <Compile Include="TemplateGenes\Metamorphosis\GeneTrackerTick_Patch.cs" />
+    <Compile Include="TemplateGenes\Offspring\Harmony\BigAndSmall_MultipleBabies_Patch.cs" />
+    <Compile Include="TemplateGenes\Offspring\Harmony\TrySpawnHatchedOrBornPawn_Patch.cs" />
     <Compile Include="ViolenceAverse\Harmony\DiedOrDownedThoughts_AppendThoughts_ForHumanlike_Patch.cs" />
     <Compile Include="GeneGraphics\Graphic_VariantsOverTime.cs" />
     <Compile Include="Harmony_Joy\HuntToils_Patch.cs" />
@@ -140,8 +150,7 @@
     <Compile Include="Precocious\Harmony\GrowthPointsFactor_Patch.cs" />
     <Compile Include="Precocious\Harmony\BirthdayBiological_Patch.cs" />
     <Compile Include="Precocious\Harmony\Hair_GraphicFor_Patch.cs" />
-    <Compile Include="Precocious\Harmony\CurLifeStage_Patch.cs" />
-    <Compile Include="Precocious\Harmony\IsGrowthBirthday_Patch.cs" />
+    <Compile Include="Precocious\Harmony\TryChildGrowthMoment_Patch.cs" />
     <Compile Include="Precocious\PrecociousUtil.cs" />
     <Compile Include="Precocious\Harmony\RefugeePodCrash_Baby_SendLetter_Patch.cs" />
     <Compile Include="Precocious\Harmony\ThreatDisabled_Patch.cs" />

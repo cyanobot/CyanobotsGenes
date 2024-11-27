@@ -29,7 +29,9 @@ namespace CyanobotsGenes
         {
             if (HasActiveOffspringGene(mother))
             {
-                __result.SetNameDirect(GetOffspringXenotype(mother, null).label);
+                XenotypeDef xenotype = GetOffspringXenotype(mother, null);
+                if (xenotype == null) return;
+                __result.SetNameDirect(xenotype.label);
             }
         }
     }

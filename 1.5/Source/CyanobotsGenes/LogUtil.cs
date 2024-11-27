@@ -12,5 +12,10 @@ namespace CyanobotsGenes
     {
         [Conditional("DEBUG")]
         public static void DebugLog(string message) => Log.Message(message);
+
+        public static void OffspringLog(string message)
+        {
+            if (OffspringUtility.OFFSPRING_LOG) Log.Message(message);
+        }
     }
 }

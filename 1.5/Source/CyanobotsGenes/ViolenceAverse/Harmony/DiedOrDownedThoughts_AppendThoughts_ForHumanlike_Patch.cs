@@ -13,7 +13,7 @@ namespace CyanobotsGenes
         static void Postfix(Pawn victim, DamageInfo? dinfo, ref PawnDiedOrDownedThoughtsKind thoughtsKind, ref List<IndividualThoughtToAdd> outIndividualThoughts, List<ThoughtToAddToAll> outAllColonistsThoughts)
         {
             bool isExecution = dinfo.HasValue && dinfo.Value.Def.execution;
-            Pawn instigator = dinfo.HasValue ? (Pawn)dinfo.Value.Instigator : null;
+            Pawn instigator = dinfo.HasValue ? dinfo.Value.Instigator as Pawn : null;
             if (instigator != null && !instigator.Dead && instigator.needs.mood != null && instigator.story != null && instigator != victim && PawnUtility.ShouldGetThoughtAbout(instigator, victim))
             {
                 if (thoughtsKind == PawnDiedOrDownedThoughtsKind.Died)

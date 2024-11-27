@@ -18,14 +18,15 @@ namespace CyanobotsGenes
         public const int tickInterval = 2500;       //1 hour
         public XenotypeDef Xenotype => this.def.GetModExtension<GeneExtension_Xenotype>()?.xenotype;
 
-        public bool alreadyMetamorphosed = false;
+        //public bool alreadyMetamorphosed = false;
+        public bool? chosenGene = null;
 
         public override bool Active
         {
             get
             {
                 if (!base.Active) return false;
-                if (alreadyMetamorphosed) return false;
+                if (chosenGene == false) return false;
                 return true;
             }
         }
@@ -41,6 +42,8 @@ namespace CyanobotsGenes
 
         public void TriggerMetamorphosis()
         {
+            if (chosenGene != null) return;
+
             List<Gene_Metamorphosis> geneOptions = new List<Gene_Metamorphosis>();
 
             foreach (Gene xenogene in pawn.genes.Xenogenes)
@@ -48,7 +51,6 @@ namespace CyanobotsGenes
                 if (xenogene is Gene_Metamorphosis xenogene_Met)
                 {
                     if (xenogene_Met.Active) geneOptions.Add(xenogene_Met);
-                    xenogene_Met.alreadyMetamorphosed = true;
                 }
             }
             bool considerEndogenes = geneOptions.Count <= 0;
@@ -57,7 +59,6 @@ namespace CyanobotsGenes
                 if (endogene is Gene_Metamorphosis endogene_Met)
                 {
                     if (considerEndogenes && endogene.Active) geneOptions.Add(endogene_Met);
-                    endogene_Met.alreadyMetamorphosed = true;
                 }
             }
 
@@ -68,8 +69,16 @@ namespace CyanobotsGenes
                 return;
             }
 
-            Gene_Metamorphosis selected = geneOptions.RandomElement();
-            selected.Metamorphose();
+            Gene_Metamorphosis selected;
+            geneOptions.TryRandomElementByWeight(g => CasteUtility.CasteCommonality(g.Xenotype), out selected);
+            selected.chosenGene = true;
+
+            foreach (Gene_Metamorphosis geneOption in geneOptions)
+            {
+                if (geneOption.chosenGene != true) geneOption.chosenGene = false;
+            }
+
+            //selected.Metamorphose();
         }
 
         public void Metamorphose()
@@ -86,7 +95,7 @@ namespace CyanobotsGenes
             GeneDef oldSkinColorOverrideDef = pawn.genes.GenesListForReading.Find(g => g.def.skinColorOverride != null && g.Active)?.def;
             GeneDef oldHairColorDef = pawn.genes.GenesListForReading.Find(g => g.def.endogeneCategory == EndogeneCategory.HairColor && g.Active)?.def;
             Color oldHairColor = pawn.story.HairColor;
-            Log.Message("curSkinColorOverride: " + oldSkinColorOverrideDef + ", curHairColor: " + oldHairColorDef);
+            LogUtil.DebugLog("curSkinColorOverride: " + oldSkinColorOverrideDef + ", curHairColor: " + oldHairColorDef);
 
             //remove current xenotype
             //xenogenes or endogenes removed based on whether the metamorphosis gene is a xenogene or endogene
@@ -117,14 +126,14 @@ namespace CyanobotsGenes
 
             foreach (GeneDef geneDef in Xenotype.AllGenes)
             {
-                Log.Message("Looping Xenotype.AllGenes, geneDef: " + geneDef);
+                LogUtil.DebugLog("Looping Xenotype.AllGenes, geneDef: " + geneDef);
                 GeneExtension_Bundle bundle = geneDef.GetModExtension<GeneExtension_Bundle>();
                 if (bundle != null && bundle.Matches(toRemove.Select<Gene,GeneDef>(g => g.def)))
                 {
                     toAdd.Remove(geneDef);
                     foreach(GeneDef bundleGeneDef in bundle.genes)
                     {
-                        Log.Message("Looping bundle.genes, bundleGene: " + bundleGeneDef);
+                        LogUtil.DebugLog("Looping bundle.genes, bundleGene: " + bundleGeneDef);
                         toRemove.RemoveAll(g => g.def == bundleGeneDef);
                     }
                 }
@@ -137,7 +146,7 @@ namespace CyanobotsGenes
 
             foreach (Gene gene in toRemove)
             {
-                Log.Message("Looping toRemove, gene: " + gene.def);
+                LogUtil.DebugLog("Looping toRemove, gene: " + gene.def);
                 pawn.genes.RemoveGene(gene);
             }
 
@@ -148,7 +157,7 @@ namespace CyanobotsGenes
             pawn.genes.iconDef = null;
             foreach (GeneDef geneDef in toAdd)
             {
-                Log.Message("Looping toAdd, geneDef: " + geneDef);
+                LogUtil.DebugLog("Looping toAdd, geneDef: " + geneDef);
                 pawn.genes.AddGene(geneDef, xenogene);
             }
 
@@ -162,7 +171,7 @@ namespace CyanobotsGenes
                     Gene oldSkinColorGene = newSkinColorOverrides.Find(g => g.def == oldSkinColorOverrideDef);
                     if (oldSkinColorGene != null)
                     {
-                        Log.Message("Attempting to set skin color to " + oldSkinColorGene.def);
+                        LogUtil.DebugLog("Attempting to set skin color to " + oldSkinColorGene.def);
                         oldSkinColorGene.OverrideBy(null);
                         foreach (Gene gene in pawn.genes.GenesListForReading)
                         {
@@ -183,7 +192,7 @@ namespace CyanobotsGenes
                     Gene oldHairColorGene = newHairColors.Find(g => g.def == oldHairColorDef);
                     if (oldHairColorGene != null)
                     {
-                        Log.Message("Attempting to set hair color to " + oldHairColorGene.def);
+                        LogUtil.DebugLog("Attempting to set hair color to " + oldHairColorGene.def);
                         oldHairColorGene.OverrideBy(null);
                         pawn.story.HairColor = oldHairColor;
                         foreach (Gene gene in pawn.genes.GenesListForReading)

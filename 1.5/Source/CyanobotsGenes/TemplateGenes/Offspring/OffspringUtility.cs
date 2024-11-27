@@ -11,6 +11,8 @@ namespace CyanobotsGenes
 {
     public static class OffspringUtility
     {
+        public const bool OFFSPRING_LOG = false;
+
         private static List<GeneDef> tmpGenes = new List<GeneDef>();
         private static List<GeneDef> tmpGenesShuffled = new List<GeneDef>();
         private static Dictionary<GeneDef, float> tmpGeneChances = new Dictionary<GeneDef, float>();
@@ -32,61 +34,11 @@ namespace CyanobotsGenes
 
         public static XenotypeDef GetOffspringXenotype(Pawn mother, Pawn father)
         {
-            
-            XenotypeDef xenotype;
+            Pawn primary = PrimaryParent(mother, father);
+            if (primary == null) return null;
+            XenotypeDef xenotype = GetOffspringXenotype(primary);
 
-            bool motherDominant = HasDominantGene(mother);
-            bool fatherDominant = HasDominantGene(father);
-            bool motherRecessive = HasRecessiveGene(mother);
-            bool fatherRecessive = HasRecessiveGene(father);
-
-            //no dominance relation / equivalent dominance
-            if (!vreHighmateLoaded
-                || (!(motherDominant ^ fatherDominant) && (!(motherRecessive ^ fatherRecessive))))
-            {
-                //mother gets first shot at determining offspring xenotype
-                if (mother?.genes != null)
-                {
-                    xenotype = GetOffspringXenotype(mother);
-                    if (xenotype != null) return xenotype;
-                }
-                //if mother doesn't have an Offspring gene, father's overrides her genes
-                if (father?.genes != null)
-                {
-                    xenotype = GetOffspringXenotype(father);
-                    if (xenotype != null) return xenotype;
-                }
-            }
-
-            //mother dominant over father
-            else if ((motherDominant && !fatherDominant)
-                || (fatherRecessive && !motherRecessive))
-            {
-                if (mother?.genes != null)
-                {
-                    xenotype = GetOffspringXenotype(mother);
-                    if (xenotype != null) return xenotype;
-                }
-                return null;    //dominant mother's regular genes (inheritance defined in VRE Highmate) override father's potential Offspring gene
-            }
-
-            //father dominance over mother
-            else
-            {
-                if (father?.genes != null)
-                {
-                    xenotype = GetOffspringXenotype(father);
-                    if (xenotype != null) return xenotype;
-                }
-
-                return null;    //dominant father's regular genes (inheritance defined in VRE Highmate) override mother's potential Offspring gene
-            }
-                              
-            //falling through indicates neither parent has Offspring gene, should  never have called this method
-            Log.Error("[CyanobotsGenes] Attempted to get offspring xenotype [parents: " + mother + ", " + father
-                    + "] but found no Offspring gene.");
-            return null;
-
+            return xenotype;
         }
 
         public static XenotypeDef GetOffspringXenotype(Pawn parent)
@@ -94,8 +46,110 @@ namespace CyanobotsGenes
             if (parent?.genes == null)
                 Log.Error("[CyanobotsGenes] Attempted to get offspring xenotype from invalid parent: " + parent);
 
-            List<XenotypeDef> potentialXenotypes = new List<XenotypeDef>(); 
-            
+            List<XenotypeDef> potentialXenotypes = GetPotentialOffspringXenotypes(parent);
+
+            if (potentialXenotypes.Count > 0) return CasteUtility.SelectXenotypeFromOptions(potentialXenotypes);
+
+            //falling through indicates no Offspring gene found
+            return null;
+        }
+
+        /*
+        public static XenotypeDef GetXenotypeForGeneratedOffspring(Pawn mother, Pawn father, List<GeneDef> genes)
+        {
+            List<XenotypeDef> potentialXenotypes = GetPotentialOffspringXenotypes(mother, father);
+            foreach (XenotypeDef xenotype in potentialXenotypes)
+            {
+                if (genes.SequenceEqual(xenotype.AllGenes))
+                {
+                    return xenotype;
+                }
+            }
+
+            LogUtil.OffspringLog("Failed to GetXenotypeForGeneratedOffspring - mother: " + mother
+                + ", father: " + father
+                + ", genes: " + genes.ToStringSafeEnumerable());
+            return null;
+        }
+        */       
+
+        public static Pawn PrimaryParent(Pawn mother, Pawn father)
+        {
+            bool motherDominant = HasDominantGene(mother);
+            bool fatherDominant = HasDominantGene(father);
+            bool motherRecessive = HasRecessiveGene(mother);
+            bool fatherRecessive = HasRecessiveGene(father);
+
+            LogUtil.OffspringLog("PrimaryParent - mother: " + mother
+                + ", father: " + father
+                + ", motherDominant: " + motherDominant
+                + ", fatherDominant: " + fatherDominant
+                + ", motherRecessive: " + motherRecessive
+                + ", fatherRecessive: " + fatherRecessive
+                + ", vreHighmateLoaded: " + vreHighmateLoaded
+                + ", betterGeneInheritanceLoaded: " + betterGeneInheritanceLoaded
+                );
+
+            //no dominance relation / equivalent dominance
+            if ((!vreHighmateLoaded && !betterGeneInheritanceLoaded)
+                || (!(motherDominant ^ fatherDominant) && (!(motherRecessive ^ fatherRecessive))))
+            {
+                LogUtil.OffspringLog("no/equivalent dominance");
+                //mother gets first shot at determining offspring xenotype
+                if (HasActiveOffspringGene(mother))
+                {
+                    return mother;
+                }
+                //if mother doesn't have an Offspring gene, father's overrides her genes
+                if (HasActiveOffspringGene(father))
+                {
+                    return father;
+                }
+                //fall-through
+                return null;
+            }
+
+            //mother dominant over father
+            else if ((motherDominant && !fatherDominant)
+                || (fatherRecessive && !motherRecessive))
+            {
+                LogUtil.OffspringLog("mother dominant");
+                if (HasActiveOffspringGene(mother))
+                {
+                    return mother;
+                }
+                return null;    //dominant mother's regular genes override father's potential Offspring gene
+            }
+
+            //father dominance over mother
+            else
+            {
+                LogUtil.OffspringLog("father dominant");
+                if (HasActiveOffspringGene(father))
+                {
+                    return father;
+                }
+
+                return null;    //dominant father's regular genes override mother's potential Offspring gene
+            }
+        }
+
+        public static List<XenotypeDef> GetPotentialOffspringXenotypes(Pawn mother, Pawn father)
+        {
+            Pawn primary = PrimaryParent(mother, father);
+            return GetPotentialOffspringXenotypes(primary);
+        }
+
+        public static List<XenotypeDef> GetPotentialOffspringXenotypes(Pawn parent)
+        {
+            List<XenotypeDef> potentialXenotypes = new List<XenotypeDef>();
+
+            if (parent?.genes == null)
+                //occurs when a dominant partner overrides offspring gene
+                //also potentially in other edge cases
+                //return empty list
+                return potentialXenotypes;
+
             foreach (Gene xenogene in parent.genes.Xenogenes)
             {
                 if (IsActiveOffspringGene(xenogene))
@@ -114,19 +168,17 @@ namespace CyanobotsGenes
                 }
             }
 
-            if (potentialXenotypes.Count > 0) return potentialXenotypes.RandomElement();
-
-            //falling through indicates no Offspring gene found
-            return null;
+            return potentialXenotypes;
         }
 
         public static bool HasDominantGene(Pawn pawn)
         {
             if (pawn == null) return false;
-            if (!vreHighmateLoaded) return false;
+            if (!vreHighmateLoaded && !betterGeneInheritanceLoaded) return false;
             if (pawn.genes == null) return false;
             if (pawn.genes.GenesListForReading.Any(
-                g => g.Active && g.def.defName == "VRE_DominantGenome"
+                g => g.Active && 
+                (g.def.defName == "VRE_DominantGenome" || g.def.defName == "BGI_DominantGenes")
                 ))
             {
                 return true;
@@ -137,10 +189,11 @@ namespace CyanobotsGenes
         public static bool HasRecessiveGene(Pawn pawn)
         {
             if (pawn == null) return false;
-            if (!vreHighmateLoaded) return false;
+            if (!vreHighmateLoaded && !betterGeneInheritanceLoaded) return false;
             if (pawn.genes == null) return false;
             if (pawn.genes.GenesListForReading.Any(
-                g => g.Active && g.def.defName == "VRE_RecessiveGenome"
+                g => g.Active && 
+                (g.def.defName == "VRE_RecessiveGenome" || g.def.defName == "BGI_RecessiveGenes")
                 ))
             {
                 return true;
@@ -152,6 +205,8 @@ namespace CyanobotsGenes
         {
             tmpGenes.Clear();
             tmpGenesShuffled.Clear();
+
+            /*
             if (mother?.genes != null)
             {
                 foreach (Gene endogene in mother.genes.Endogenes)
@@ -201,6 +256,7 @@ namespace CyanobotsGenes
                 }
             }
             tmpGenes.RemoveAll((GeneDef x) => x.prerequisite != null && !tmpGenes.Contains(x.prerequisite));
+            */
 
             //don't calculate skin color if overridden by xenotype
             if (!overridingXenotype.AllGenes.Any(g => g.endogeneCategory == EndogeneCategory.Melanin
@@ -240,6 +296,7 @@ namespace CyanobotsGenes
                 }
             }
 
+            LogUtil.OffspringLog("InbredChanceFromParents: " + PregnancyUtility.InbredChanceFromParents(mother, father, out var _));
             if (!tmpGenes.Contains(GeneDefOf.Inbred) && Rand.Value < PregnancyUtility.InbredChanceFromParents(mother, father, out var _))
             {
                 tmpGenes.Add(GeneDefOf.Inbred);
