@@ -12,7 +12,7 @@
       <li>
         <label>killed someone</label>
         <description>I killed someone. It's so awful.</description>
-        <baseMoodEffect>-10</baseMoodEffect>
+        <baseMoodEffect>-12</baseMoodEffect>
       </li>
     </stages>
 	<requiredGenes>
@@ -30,7 +30,7 @@
       <li>
         <label>hurt someone</label>
         <description>I hurt someone. I don't like it.</description>
-        <baseMoodEffect>-4</baseMoodEffect>
+        <baseMoodEffect>-6</baseMoodEffect>
       </li>
     </stages>
 	<requiredGenes>
@@ -67,7 +67,7 @@
     <showBubble>true</showBubble>
     <durationDays>5</durationDays>
     <stackLimit>6</stackLimit>
-    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+    <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
     <nullifyingHediffs>
       <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
     </nullifyingHediffs>
@@ -75,7 +75,7 @@
       <li>
         <label>violent death</label>
         <description>Killing people is horrible, no matter the circumstances.</description>
-        <baseMoodEffect>-5</baseMoodEffect>
+        <baseMoodEffect>-6</baseMoodEffect>
       </li>
     </stages>
     <developmentalStageFilter>Child, Adult</developmentalStageFilter>
@@ -96,7 +96,7 @@
       <li>
         <label>witnessed violence</label>
         <description>I hate watching people get hurt.</description>
-        <baseMoodEffect>-3</baseMoodEffect>
+        <baseMoodEffect>-5</baseMoodEffect>
       </li>
     </stages>
     <developmentalStageFilter>Child, Adult</developmentalStageFilter>
@@ -116,7 +116,7 @@
       <li>
         <label>weapon</label>
         <description>This is a tool of death.</description>
-        <baseMoodEffect>-2</baseMoodEffect>
+        <baseMoodEffect>-4</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
