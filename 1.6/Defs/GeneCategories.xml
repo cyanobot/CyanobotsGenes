@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<GeneCategoryDef>
+    <defName>CYB_Recreation</defName>
+    <label>recreation</label>
+    <displayPriorityInXenotype>428</displayPriorityInXenotype>
+</GeneCategoryDef>
+   
+<GeneCategoryDef>
+    <defName>CYB_Social</defName>
+    <label>social</label>
+    <displayPriorityInXenotype>432</displayPriorityInXenotype>
+</GeneCategoryDef>
+  
+<GeneCategoryDef>
+	<defName>CYB_Diet</defName>
+	<label>diet</label>
+	<displayPriorityInXenotype>390</displayPriorityInXenotype>
+</GeneCategoryDef>
+
+<GeneCategoryDef>
+	<defName>CYB_Aging</defName>
+	<label>aging</label>
+	<displayPriorityInXenotype>389</displayPriorityInXenotype>
+</GeneCategoryDef>
+  
+<GeneCategoryDef>
+	<defName>CYB_Fur</defName>
+	<label>fur</label>
+	<displayPriorityInXenotype>203</displayPriorityInXenotype>
+</GeneCategoryDef>
+
+<GeneCategoryDef>
+	<defName>CYB_ImplantXenotype</defName>
+	<label>xenotype implanters</label>
+	<displayPriorityInXenotype>-5</displayPriorityInXenotype>
+</GeneCategoryDef>
+
+<GeneCategoryDef>
+	<defName>CYB_Metamorphosis</defName>
+	<label>metamorphosis</label>
+	<displayPriorityInXenotype>-6</displayPriorityInXenotype>
+</GeneCategoryDef>
+
+<GeneCategoryDef>
+	<defName>CYB_Offspring</defName>
+	<label>offspring</label>
+	<displayPriorityInXenotype>-7</displayPriorityInXenotype>
+</GeneCategoryDef>
+
+</Defs>

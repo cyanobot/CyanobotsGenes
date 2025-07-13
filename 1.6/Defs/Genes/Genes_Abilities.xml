@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--Wist venom bite-->
+<GeneDef>
+	<defName>CYB_WistVenomBite</defName>
+	<label>wist venom</label>
+	<description>Carriers of this gene possess hollow fangs and venom glands that secrete a potent pharmaceutical venom. The effects are euphoric, analgesic, and antibiotic. The venom is somewhat addictive.</description>
+	<iconPath>Genes/CYB_WistVenomBite</iconPath>
+	<biostatMet>-1</biostatMet>
+	<biostatCpx>1</biostatCpx>
+    <displayCategory>Hemogen</displayCategory>
+	<displayOrderInCategory>90</displayOrderInCategory>
+	<prerequisite>Hemogenic</prerequisite>
+    <minAgeActive>3</minAgeActive>
+	<abilities>
+		<li>CYB_WistVenomBite</li>
+	</abilities>
+	<descriptionHyperlinks>
+		<AbilityDef>CYB_WistVenomBite</AbilityDef>
+		<HediffDef>CYB_WistVenomHigh</HediffDef>
+	</descriptionHyperlinks>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>ven</symbol></li>
+			<li><symbol>venom</symbol></li>
+			<li><symbol>pharma</symbol></li>
+			<li><symbol>bio</symbol></li>
+			<li><symbol>euphori</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>bite</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+
+<!--Endostimulant Burst-->
+<GeneDef>
+	<defName>CYB_EndostimulantBurst</defName>
+	<label>endostimulant burst</label>
+	<labelShortAdj>endostimulant</labelShortAdj>
+	<description>Carriers of this gene are able to release a burst of endogenous stimulants from specialised cells in the nervous and glandular tissues. These stimulant neurohormones provide a short-lived but potent boost to alertness.</description>
+	<iconPath>Genes/CYB_EndostimulantBurst</iconPath>
+	<biostatMet>-1</biostatMet>
+	<biostatCpx>1</biostatCpx>
+	<displayCategory>Hemogen</displayCategory>
+	<displayOrderInCategory>91</displayOrderInCategory>
+	<prerequisite>Hemogenic</prerequisite>
+    <minAgeActive>3</minAgeActive>
+	<abilities>
+		<li>CYB_EndostimulantBurst</li>
+	</abilities>
+	<descriptionHyperlinks>
+		<AbilityDef>CYB_EndostimulantBurst</AbilityDef>
+		<HediffDef>CYB_EndostimulantBurst</HediffDef>
+	</descriptionHyperlinks>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>speed</symbol></li>
+			<li><symbol>buzz</symbol></li>
+			<li><symbol>whiz</symbol></li>
+			<li><symbol>stim</symbol></li>
+		</prefixSymbols>
+	</symbolPack>
+</GeneDef>
+
+<!--Psyphon-->
+<GeneDef>
+	<defName>CYB_Psyphon</defName>
+	<geneClass>CyanobotsGenes.Gene_Psyphon</geneClass>
+	<label>psyphon</label>
+	<description>This gene provides the latent ability - activated if and when the carrier gains a psylink - to siphon psychic energy from others. The carrier may refill their own psyfocus by sapping the mind and brain of the donor. This process is debilitating and sometimes lethal. Victims with psyfocus of their own are partially protected as their psyfocus will be drained first, potentially sparing them the more unpleasant effects of the psyphon.</description>
+	<biostatMet>-1</biostatMet>
+	<biostatCpx>1</biostatCpx>
+	<iconPath>Genes/CYB_Psyphon</iconPath>
+	<displayCategory>Psychic</displayCategory>
+	<displayOrderInCategory>101</displayOrderInCategory>
+	<abilities>
+		<li>CYB_Psyphon</li>
+	</abilities>
+	<descriptionHyperlinks>
+		<AbilityDef>CYB_Psyphon</AbilityDef>
+	</descriptionHyperlinks>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>psy</symbol></li>
+			<li><symbol>para</symbol></li>
+			<li><symbol>sap</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>drainer</symbol></li>
+			<li><symbol>drinker</symbol></li>
+			<li><symbol>siphon</symbol></li>
+			<li><symbol>leech</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+
+</Defs>

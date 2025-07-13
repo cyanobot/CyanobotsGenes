@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Vanilla Races Expanded - Pigskin</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+			<!-- prodigious growth and evergrowing are close enough we don't need both-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/XenotypeDef/genes/li[text()="CYB_ProdigiousGrowth"]</xpath>
+				<value>
+					<li>VRE_EverGrowing</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="CYB_ProdigiousGrowth"]/modExtensions/li[@Class="VanillaGenesExpanded.GeneExtension"]</xpath>
+				<value>
+					<hideGene>true</hideGene>
+				</value>
+			</li>
+			
+			<!--move aging genes to aging category, gluttonous to diet-->
+			<li Class="CyanobotsGenes.PatchOperationBySetting">
+				<setting>moveVanillaGenes</setting>
+				<on Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[
+						defName="VRE_RapidAging" or
+						defName="VRE_FastAging" or
+						defName="VRE_SlowAging"
+						]/displayCategory</xpath>
+					<value>
+						<displayCategory>CYB_Aging</displayCategory>
+					</value>
+				</on>
+				<off Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="RobustDigestion"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Healing</displayCategory>
+					</value>
+				</off>
+			</li>
+			<li Class="CyanobotsGenes.PatchOperationBySetting">
+				<setting>moveVanillaGenes</setting>
+				<on Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[
+						defName="VRE_Gluttonous"
+						]/displayCategory</xpath>
+					<value>
+						<displayCategory>CYB_Diet</displayCategory>
+					</value>
+				</on>
+				<off Class="PatchOperationReplace">
+					<xpath>Defs/GeneDef[defName="RobustDigestion"]/displayCategory</xpath>
+					<value>
+						<displayCategory>Healing</displayCategory>
+					</value>
+				</off>
+			</li>
+			
+		</operations>
+	</match>
+</Operation>
+
+</Patch>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<!--
+<FactionDef ParentName="OutlanderRoughBase">
+	<defName>CYB_TestFaction_Fairies</defName>
+	<label>fairies</label>
+	<description>fairies</description>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances>
+        <CYB_Fairy>999</CYB_Fairy>
+      </xenotypeChances>
+    </xenotypeSet>
+</FactionDef>
+
+<FactionDef ParentName="OutlanderRoughBase">
+	<defName>CYB_TestFaction_Changelings</defName>
+	<label>changelings</label>
+	<description>changelings</description>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances>
+        <CYB_Changeling>999</CYB_Changeling>
+      </xenotypeChances>
+    </xenotypeSet>
+</FactionDef>
+
+<XenotypeDef>
+	<defName>CYB_TestXenotype_Metamorphosis</defName>
+	<label>metamorphoses</label>
+	<description>???</description>
+	<iconPath>Xenotypes/CYB_Changeling</iconPath>
+	<genes>
+		<li>CYB_Metamorphosis_Dirtmole</li>
+	</genes>
+</XenotypeDef>
+
+<FactionDef ParentName="OutlanderRoughBase">
+	<defName>CYB_TestFaction_Metamorphosis</defName>
+	<label>metamorphoses</label>
+	<description>metamorphoses</description>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances>
+        <CYB_TestXenotype_Metamorphosis>999</CYB_TestXenotype_Metamorphosis>
+      </xenotypeChances>
+    </xenotypeSet>
+</FactionDef>
+
+<XenotypeDef>
+	<defName>CYB_TestXenotype_Offspring</defName>
+	<label>offsprings</label>
+	<description>???</description>
+	<iconPath>Xenotypes/CYB_Changeling</iconPath>
+	<genes>
+		<li>CYB_Offspring_Highmate</li>
+	</genes>
+</XenotypeDef>
+
+<FactionDef ParentName="OutlanderRoughBase">
+	<defName>CYB_TestFaction_Offspring</defName>
+	<label>offsprings</label>
+	<description>offsprings</description>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances>
+        <CYB_TestXenotype_Offspring>999</CYB_TestXenotype_Offspring>
+      </xenotypeChances>
+    </xenotypeSet>
+</FactionDef>
+-->
+
+</Defs>

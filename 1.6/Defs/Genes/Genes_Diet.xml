@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--Carnivore-->
+<GeneDef>
+	<defName>Carnivore</defName>
+	<label>carnivore</label>
+	<description>Carriers of this gene have short guts and don't digest plant matter well. They don't enjoy eating vegetable matter, get less nutrition from it, and become unwell from eating too much of it.</description>
+	<iconPath>Genes/CYB_Carnivore</iconPath>
+	<displayCategory>CYB_Diet</displayCategory>
+    <displayOrderInCategory>3</displayOrderInCategory>
+	<exclusionTags>
+		<li>Diet</li>
+		<li>Carnivore</li>
+	</exclusionTags>
+	<biostatMet>2</biostatMet>
+	<statFactors>
+		<VegetableNutritionFactor>0.5</VegetableNutritionFactor>
+	</statFactors>
+    <minAgeActive>3</minAgeActive>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>carni</symbol></li>
+        <li><symbol>carno</symbol></li>
+        <li><symbol>predat</symbol></li>
+        <li><symbol>meat</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>ripper</symbol></li>
+        <li><symbol>chomper</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Hypercarnivore-->
+<GeneDef>
+	<defName>Hypercarnivore</defName>
+	<label>hypercarnivore</label>
+	<description>Carriers of this gene have short guts and a genetic deficiency in many enzymes associated with an omnivorous diet. They cannot digest plant matter at all, and must subsist on meat and other animal products. Their appetites make even raw meat appealing.</description>
+	<iconPath>Genes/CYB_Hypercarnivore</iconPath>
+	<displayCategory>CYB_Diet</displayCategory>
+    <displayOrderInCategory>4</displayOrderInCategory>
+	<exclusionTags>
+		<li>Diet</li>
+		<li>Carnivore</li>
+	</exclusionTags>
+    <dontMindRawFood>true</dontMindRawFood>
+	<biostatMet>3</biostatMet>
+	<statFactors>
+		<VegetableNutritionFactor>0</VegetableNutritionFactor>
+	</statFactors>
+    <minAgeActive>3</minAgeActive>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>carni</symbol></li>
+        <li><symbol>carno</symbol></li>
+        <li><symbol>predat</symbol></li>
+        <li><symbol>meat</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>ripper</symbol></li>
+        <li><symbol>chomper</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Herbivore-->
+<GeneDef>
+	<defName>Herbivore</defName>
+	<label>herbivore</label>
+	<description>Carriers of this gene have digestive systems tuned to plant food. They don't enjoy eating animal  products, get less nutrition from them, and become unwell from eating too much of them.</description>
+	<iconPath>Genes/CYB_Herbivore</iconPath>
+	<displayCategory>CYB_Diet</displayCategory>
+    <displayOrderInCategory>2</displayOrderInCategory>
+	<exclusionTags>
+		<li>Diet</li>
+		<li>Herbivore</li>
+	</exclusionTags>
+	<biostatMet>2</biostatMet>
+	<statFactors>
+		<AnimalNutritionFactor>0.5</AnimalNutritionFactor>
+	</statFactors>
+    <minAgeActive>3</minAgeActive>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>herbi</symbol></li>
+        <li><symbol>herbo</symbol></li>
+        <li><symbol>leaf</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>grazer</symbol></li>
+        <li><symbol>muncher</symbol></li>
+        <li><symbol>sheep</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--StrictHerbivore-->
+<GeneDef>
+	<defName>StrictHerbivore</defName>
+	<label>strict herbivore</label>
+	<description>Carriers of this gene have multiple stomachs and support gut flora that digests only plant food. They cannot digest meat or other animal-derived food at all. If desperate, they can eat hay.</description>
+	<iconPath>Genes/CYB_StrictHerbivore</iconPath>
+	<displayCategory>CYB_Diet</displayCategory>
+    <displayOrderInCategory>1</displayOrderInCategory>
+	<exclusionTags>
+		<li>Diet</li>
+		<li>Herbivore</li>
+	</exclusionTags>
+    <dontMindRawFood>true</dontMindRawFood>
+	<biostatMet>3</biostatMet>
+	<statFactors>
+		<AnimalNutritionFactor>0</AnimalNutritionFactor>
+	</statFactors>
+    <minAgeActive>3</minAgeActive>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>herbi</symbol></li>
+        <li><symbol>herbo</symbol></li>
+        <li><symbol>leaf</symbol></li>
+        <li><symbol>grass</symbol></li>
+        <li><symbol>hay</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>grazer</symbol></li>
+        <li><symbol>muncher</symbol></li>
+        <li><symbol>sheep</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--ObligateCannibal-->
+<GeneDef>
+	<defName>ObligateCannibal</defName>
+	<label>obligate cannibal</label>
+	<description>Whether by a deeply unfortunate quirk of genetic drift or by purposeful engineering to some sick end, carriers of this gene are completely unable to synthesise many basic metabolic compounds key to human life. To survive, they depend on ingesting the flesh of fellow human beings : the fresher the better.</description>
+	<iconPath>Genes/CYB_ObligateCannibal</iconPath>
+	<displayCategory>CYB_Diet</displayCategory>
+    <displayOrderInCategory>5</displayOrderInCategory>
+	<exclusionTags>
+		<li>Diet</li>
+	</exclusionTags>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>4</biostatMet>
+	<minAgeActive>3</minAgeActive>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>canni</symbol></li>
+			<li><symbol>necro</symbol></li>
+			<li><symbol>corpus</symbol></li>
+			<li><symbol>body</symbol></li>
+			<li><symbol>soma</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>vore</symbol></li>
+			<li><symbol>vour</symbol></li>
+			<li><symbol>ghoul</symbol></li>
+			<li><symbol>gul</symbol></li>
+			<li><symbol>phage</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+
+<!--Expansive Stomach-->
+<GeneDef>
+	<defName>CYB_ExpansiveStomach</defName>
+	<label>expansive stomach</label>
+	<description>Carriers of this gene possess a large, stretchy stomach that permits them to eat huge meals and then digest them slowly.</description>
+	<displayCategory>CYB_Diet</displayCategory>
+	<iconPath>Genes/CYB_ExpansiveStomach</iconPath>
+    <displayOrderInCategory>100</displayOrderInCategory>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>-1</biostatMet>
+	<statFactors>
+		<MaxNutrition>5</MaxNutrition>
+	</statFactors>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>glut</symbol></li>
+			<li><symbol>feast</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>vore</symbol></li>
+			<li><symbol>vour</symbol></li>
+			<li><symbol>phage</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+
+</Defs>

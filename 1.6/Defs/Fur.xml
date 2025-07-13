@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FurDef>
+    <defName>CYB_Tabby</defName>
+    <noGraphic>true</noGraphic>
+    <bodyTypeGraphicPaths>
+      <Male>Bodies/CYB_Tabby_Male</Male>
+      <Female>Bodies/CYB_Tabby_Female</Female>
+      <Hulk>Bodies/CYB_Tabby_Hulk</Hulk>
+      <Fat>Bodies/CYB_Tabby_Fat</Fat>
+      <Thin>Bodies/CYB_Tabby_Thin</Thin>
+      <Child>Bodies/CYB_Tabby_Child</Child>
+      <Baby>Bodies/CYB_Tabby_Child</Baby><!-- Always covered by swaddled graphic -->
+    </bodyTypeGraphicPaths>
+  </FurDef>
+
+</Defs>

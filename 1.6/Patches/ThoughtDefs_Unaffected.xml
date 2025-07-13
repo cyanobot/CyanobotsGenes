@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThoughtDef[defName="Slighted"]/nullifyingTraits</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThoughtDef[defName="Slighted"]</xpath>
+      <value>
+        <nullifyingTraits/>
+      </value>
+    </nomatch>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThoughtDef[defName="Slighted"]/nullifyingTraits</xpath>
+    <value>
+      <li>Unaffected</li>
+    </value>
+  </Operation>
+  
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThoughtDef[defName="Insulted"]/nullifyingTraits</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThoughtDef[defName="Insulted"]</xpath>
+      <value>
+        <nullifyingTraits/>
+      </value>
+    </nomatch>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThoughtDef[defName="Insulted"]/nullifyingTraits</xpath>
+    <value>
+      <li>Unaffected</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThoughtDef[defName="InsultedMood"]/nullifyingTraits</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThoughtDef[defName="InsultedMood"]</xpath>
+      <value>
+        <nullifyingTraits/>
+      </value>
+    </nomatch>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThoughtDef[defName="InsultedMood"]/nullifyingTraits</xpath>
+    <value>
+      <li>Unaffected</li>
+    </value>
+  </Operation>  
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThoughtDef[defName="KindWords"]/nullifyingTraits</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThoughtDef[defName="KindWords"]</xpath>
+      <value>
+        <nullifyingTraits/>
+      </value>
+    </nomatch>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThoughtDef[defName="KindWords"]/nullifyingTraits</xpath>
+    <value>
+      <li>Unaffected</li>
+    </value>
+  </Operation>  
+ 
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThoughtDef[defName="KindWordsMood"]/nullifyingTraits</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThoughtDef[defName="KindWordsMood"]</xpath>
+      <value>
+        <nullifyingTraits/>
+      </value>
+    </nomatch>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThoughtDef[defName="KindWordsMood"]/nullifyingTraits</xpath>
+    <value>
+      <li>Unaffected</li>
+    </value>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThoughtDef[defName="AteRawFood"]/nullifyingGenes</xpath>
+    <value>
+      <li>Hypercarnivore</li>
+	  <li>StrictHerbivore</li>
+    </value>
+  </Operation>
+    
+</Patch>

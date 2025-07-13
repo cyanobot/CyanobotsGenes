@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Pack bond-->
+  <ThoughtDef>
+    <defName>PackBond</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>CyanobotsGenes.ThoughtWorker_PackBond</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>pack bond</label>
+        <baseOpinionOffset>+30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+   
+  <!--Wet Fur-->
+  <ThoughtDef>
+    <defName>WetFur</defName>
+    <durationDays>0.1</durationDays>
+    <stackLimit>1</stackLimit>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <nullifyingPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">RoughLiving_Welcomed</li>
+    </nullifyingPrecepts>
+	<requiredGenes>
+		<li>LightFur</li>
+	</requiredGenes>
+    <stages>
+      <li>
+        <label>wet fur</label>
+        <description>My fur is soaked through. Ugh.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!--Delightful-->
+  <ThoughtDef>
+	<defName>CYB_Delightful_Opinion</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+	<workerClass>CyanobotsGenes.ThoughtWorker_Delightful_Opinion</workerClass>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>delightful</label>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+	<defName>CYB_Delighted_Opinion</defName>
+    <showBubble>true</showBubble>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>20</durationDays>
+    <stackLimit>300</stackLimit>
+    <stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <socialTargetDevelopmentalStageFilter>Baby, Child, Adult</socialTargetDevelopmentalStageFilter>
+	<nullifyingTraits>
+		<li>Unaffected</li>
+	</nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>delighted</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+    </stages>
+    <thoughtToMake>CYB_Delighted_Mood</thoughtToMake>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>CYB_Delighted_Mood</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+	<nullifyingTraits>
+		<li>Unaffected</li>
+	</nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>charmed</label>
+        <description>That was just what I needed to hear.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!--Light sensitivity-->
+  <ThoughtDef>
+	<defName>CYB_LightSensitivity</defName>
+	<workerClass>CyanobotsGenes.ThoughtWorker_LightSensitivity</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+	<validWhileDespawned>true</validWhileDespawned>
+	<requiredGenes>
+		<li>CYB_LightSensitivity</li>
+	</requiredGenes>
+	<stages>
+		<li>
+			<label>light</label>
+			<description>The light is uncomfortable.</description>
+			<baseMoodEffect>-3</baseMoodEffect>
+		</li>
+		<li>
+			<label>bright light</label>
+			<description>My eyes!</description>
+			<baseMoodEffect>-8</baseMoodEffect>
+		</li>
+	</stages>
+  </ThoughtDef>
+  <!--dummy thought just for the gene description-->
+  <ThoughtDef>
+	<defName>CYB_LightSensitivity_Dummy</defName>
+	<requiredGenes>
+		<li>CYB_LightSensitivity</li>
+	</requiredGenes>
+	<stages>
+		<li>
+			<label>bright light</label>
+			<description>My eyes!</description>
+			<baseMoodEffect>-8</baseMoodEffect>
+		</li>
+	</stages>
+  </ThoughtDef>
+  
+  <!--Endostimulant burst-->
+  <ThoughtDef>
+	<defName>CYB_EndostimulantBurst</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+	<hediff>CYB_EndostimulantBurst</hediff>
+	<validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+	<stages>
+		<li>
+			<label>endostimulant burst</label>
+			<description>I am so alert right now.</description>
+			<baseMoodEffect>6</baseMoodEffect>
+		</li>
+	</stages>
+  </ThoughtDef>
+  
+  <!--Psyphon-->
+  <ThoughtDef>
+	<defName>CYB_PsycheDrained</defName>
+	<workerClass>ThoughtWorker_Hediff</workerClass>
+	<hediff>CYB_PsycheDrained</hediff>
+	<validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+	<stages>
+		<li>
+			<label>psyche drained</label>
+			<description>Something is missing. I don't know what. I think it was important.</description>
+			<baseMoodEffect>-8</baseMoodEffect>
+		</li>
+	</stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+	<defName>CYB_Psyphon_Opinion</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>15</durationDays>
+	<stackLimit>300</stackLimit>
+	<stackLimitForSameOtherPawn>4</stackLimitForSameOtherPawn>
+	<stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+	<stages>
+		<li>
+			<label>psyphon</label>
+			<baseOpinionOffset>-25</baseOpinionOffset>
+		</li>
+	</stages>
+  </ThoughtDef>
+  
+ </Defs>

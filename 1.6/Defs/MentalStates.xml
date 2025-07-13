@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<MentalStateDef ParentName="BaseMentalState">
+    <defName>BodyfeederBeserk</defName>
+    <stateClass>CyanobotsGenes.MentalState_BodyfeederBerserk</stateClass>
+    <label>feeding frenzy</label>
+    <category>Aggro</category>
+	<blockRandomInteraction>true</blockRandomInteraction>
+    <minTicksBeforeRecovery>99999999</minTicksBeforeRecovery>
+    <nameColor>(0.9,0.2,0.5)</nameColor>
+    <beginLetter>{0} has entered a berserk feeding frenzy!\n\nIf [PAWN_pronoun] cannot find dead human flesh to consume, [PAWN_pronoun] will take it from the living.</beginLetter>
+    <beginLetterDef>ThreatSmall</beginLetterDef>
+    <blockNormalThoughts>false</blockNormalThoughts>
+    <stateEffecter>Berserk</stateEffecter>
+	<recoveryMessage>{0}'s feeding frenzy has come to an end.</recoveryMessage>
+	<baseInspectLine>Mental state: Feeding frenzy</baseInspectLine>
+    <inCaravanCanDo>true</inCaravanCanDo>
+  </MentalStateDef>
+</Defs>

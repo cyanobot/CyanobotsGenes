@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<AbilityDef ParentName="AbilityTouchBase">
+	<defName>CYB_WistVenomBite</defName>
+	<label>venom bite</label>
+	<description>Bite the target and inject a venom with powerful pharmaceutical properties. The venom numbs pain, fights infections, and causes temporary euphoria.</description>
+	<category>Sanguophage</category>
+	<iconPath>Genes/CYB_WistVenomBite</iconPath>
+	<displayOrder>200</displayOrder>
+	<hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>2</warmupTime>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBloodfeeders>true</canTargetBloodfeeders>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityHemogenCost">
+        <hemogenCost>0.2</hemogenCost>
+      </li>
+      <li Class="CyanobotsGenes.CompProperties_AbilityChemicalBite">
+		<chemical>CYB_WistVenom</chemical>
+		<existingAddictionSeverityOffset>1</existingAddictionSeverityOffset>
+		<addictiveness>0.3</addictiveness>
+		<needLevelOffset>1</needLevelOffset>
+		<hediffHigh>CYB_WistVenomHigh</hediffHigh>
+      </li>
+    </comps>
+</AbilityDef>
+
+<HediffDef>
+	<defName>CYB_WistVenomHigh</defName>
+	<hediffClass>Hediff_High</hediffClass>
+	<label>wist venom</label>
+	<description>Wist venom in the bloodstream. Analgesic, antibiotic, and (briefly) euphoric.</description>
+	<defaultLabelColor>(0.8, 0.62, 0.84)</defaultLabelColor>
+	<maxSeverity>1.0</maxSeverity>
+	<initialSeverity>1.0</initialSeverity>
+	<isBad>false</isBad>
+	<comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.8</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+	</comps>
+	<stages>
+		<li>
+			<painFactor>0.5</painFactor>
+			<statOffsets>
+				<ImmunityGainSpeed>1.5</ImmunityGainSpeed>
+			</statOffsets>
+		</li>
+		<li>
+			<minSeverity>0.7</minSeverity>
+			<painFactor>0.3</painFactor>
+			<statOffsets>
+				<ImmunityGainSpeed>2.5</ImmunityGainSpeed>
+			</statOffsets>
+		</li>
+	</stages>
+</HediffDef>
+
+<ThoughtDef>
+	<defName>CYB_WistVenomHigh</defName>
+	<workerClass>ThoughtWorker_Hediff</workerClass>
+	<hediff>CYB_WistVenomHigh</hediff>
+	<validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+	  <li>
+		<visible>false</visible>
+	  </li>
+      <li>
+        <label>wist venom</label>
+        <description>I feel good. Alert, clear-headed, capable and unafraid.</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+</ThoughtDef>
+
+<ChemicalDef>
+	<defName>CYB_WistVenom</defName>
+	<label>wist venom</label>
+	<addictionHediff>CYB_WistVenomAddiction</addictionHediff>
+</ChemicalDef>
+
+<NeedDef ParentName="DrugAddictionNeedBase">
+	<defName>Chemical_CYB_WistVenom</defName>
+	<needClass>Need_Chemical</needClass>
+	<label>wist venom</label>
+    <description>Because of a wist venom addiction, this person needs regularly doses to avoid withdrawal symptoms.</description>
+	<fallPerDay>0.4</fallPerDay>
+	<listPriority>45</listPriority>
+</NeedDef>
+  
+<HediffDef ParentName="AddictionBase">
+	<defName>CYB_WistVenomAddiction</defName>
+	<label>wist venom addiction</label>
+	<description>A chemical addiction to wist venom. Long-term presence of wist venom has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of wake-up, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+	<hediffClass>Hediff_Addiction</hediffClass>
+	<causesNeed>Chemical_CYB_WistVenom</causesNeed>
+	
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.067</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li/>
+      <li>
+        <label>withdrawal</label>
+        <socialFightChanceFactor>1.5</socialFightChanceFactor>
+		<painFactor>1.2</painFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.10</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.10</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Wander_Sad</mentalState>
+            <mtbDays>15</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+</HediffDef>	
+
+<ThoughtDef>
+	<defName>CYB_WistVenomWithdrawal</defName>
+	<workerClass>ThoughtWorker_Hediff</workerClass>
+	<hediff>CYB_WistVenomAddiction</hediff>
+	<validWhileDespawned>true</validWhileDespawned>
+	<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+	<stages>
+		<li>
+			<visible>false</visible>
+		</li>
+		<li>
+			<label>wist venom withdrawal</label>
+			<description>I feel lousy and I have a headache all the time. The world's a harsh and gloomy place.</description>
+			<baseMoodEffect>-12</baseMoodEffect>
+		</li>
+	</stages>
+</ThoughtDef>
+	
+ </Defs>

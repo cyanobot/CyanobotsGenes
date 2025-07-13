@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--Asocial-->
+<GeneDef>
+    <defName>Asocial</defName>
+    <label>asocial</label>
+    <description>Carriers of this gene lack key neural pathways relating to complex social interactions. They lack any concept of how to convince others of anything, and experience little interest in the words or opinions of others.</description>
+    <iconPath>Genes/CYB_Asocial</iconPath>
+    <displayCategory>CYB_Social</displayCategory>
+    <displayOrderInCategory>10</displayOrderInCategory> 
+    <forcedTraits>
+      <li>
+        <def>Unaffected</def>
+      </li>
+    </forcedTraits>
+    <disabledWorkTags>
+      <li>Social</li>
+    </disabledWorkTags>
+    <biostatMet>3</biostatMet>
+    <exclusionTags>
+      <li>Aptitude_Social</li>
+    </exclusionTags>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>soli</symbol></li>
+        <li><symbol>lone</symbol></li>
+        <li><symbol>isol</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+</GeneDef>
+
+
+<!--PackBond-->
+<GeneDef>
+	<defName>PackBond</defName>
+	<label>packbond</label>
+	<description>Carriers of this gene form a natural bond with each other when they work together as allies.</description>
+	<iconPath>Genes/CYB_PackBond</iconPath>
+	<displayCategory>CYB_Social</displayCategory>
+    <displayOrderInCategory>20</displayOrderInCategory> 
+	<statOffsets>
+		<RelationshipWithAlliedFellowPackBond>30</RelationshipWithAlliedFellowPackBond>
+	</statOffsets>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>pack</symbol></li>
+        <li><symbol>gang</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>wolf</symbol></li>
+        <li><symbol>pal</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Afamilial-->
+<GeneDef>
+	<defName>CYB_Afamilial</defName>
+	<label>afamilial</label>
+	<displayCategory>CYB_Social</displayCategory>
+	<description>Carriers of this gene lack the instincts that form emotional bonds between family members, including the potent bond between parent and child.</description>
+	<iconPath>Genes/CYB_Afamilial</iconPath>
+    <displayOrderInCategory>11</displayOrderInCategory> 
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>1</biostatMet>
+	<customEffectDescriptions>
+		<li>Incapable of: Childcare</li>
+		<li>No relationship bonus with blood relatives</li>
+	</customEffectDescriptions>
+	<modExtensions>
+		<li Class="CyanobotsGenes.GeneExtension_DisabledWorkTypes">
+			<workTypes>
+				<li>Childcare</li>
+			</workTypes>
+		</li>
+	</modExtensions>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>soli</symbol></li>
+        <li><symbol>lone</symbol></li>
+        <li><symbol>isol</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Mute-->
+<GeneDef>
+	<defName>CYB_Mute</defName>
+	<label>mute</label>
+	<description>Carriers of this gene lack the neural pathways required to generate language. They can still understand the words of others.</description>
+	<iconPath>Genes/CYB_Mute</iconPath>
+	<displayCategory>CYB_Social</displayCategory>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>3</biostatMet>
+    <exclusionTags>
+      <li>Aptitude_Social</li>
+    </exclusionTags>
+	<capMods>
+		<li>
+			<capacity>Talking</capacity>
+			<setMax>0</setMax>
+		</li>
+	</capMods>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>sil</symbol></li>
+        <li><symbol>mute</symbol></li>
+        <li><symbol>qui</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Docile-->
+<GeneDef MayRequire="Ludeon.RimWorld.Ideology">
+	<defName>CYB_Docile</defName>
+	<label>docile</label>
+	<description>Carriers of this gene lack key psychological pathways driving self-determination and independence. The creation and distribution of such genepacks and xenogerms is illegal in most of civilised space.</description>
+	<iconPath>Genes/CYB_Docile</iconPath>
+	<displayCategory>CYB_Social</displayCategory>
+    <displayOrderInCategory>30</displayOrderInCategory> 
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>-1</biostatMet>
+	<prisonBreakMTBFactor>10</prisonBreakMTBFactor>
+	<socialFightChanceFactor>0.5</socialFightChanceFactor>
+	<statFactors>
+		<CertaintyLossFactor>2</CertaintyLossFactor>
+		<SlaveSuppressionFallRate>0.2</SlaveSuppressionFallRate>
+		<SuppressionPower>0.2</SuppressionPower>
+	</statFactors>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>tame</symbol></li>
+        <li><symbol>sub</symbol></li>
+        <li><symbol>timi</symbol></li>
+        <li><symbol>weak</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>mutt</symbol></li>
+        <li><symbol>slave</symbol></li>
+        <li><symbol>mark</symbol></li>
+        <li><symbol>worm</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Domineering-->
+<GeneDef MayRequire="Ludeon.RimWorld.Ideology">
+	<defName>CYB_Domineering</defName>
+	<label>domineering</label>
+	<description>Carriers of this gene possess a certain intimidating charisma that predisposes others to do as they say, particularly in moments of tension.</description>
+	<iconPath>Genes/CYB_Domineering</iconPath>
+	<displayCategory>CYB_Social</displayCategory>
+    <displayOrderInCategory>32</displayOrderInCategory> 
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>-1</biostatMet>
+	<statFactors>
+		<ArrestSuccessChance>1.5</ArrestSuccessChance>
+		<SuppressionPower>1.5</SuppressionPower>
+	</statFactors>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>dom</symbol></li>
+        <li><symbol>domini</symbol></li>
+        <li><symbol>intimi</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>glare</symbol></li>
+        <li><symbol>master</symbol></li>
+        <li><symbol>sneer</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+
+</Defs>

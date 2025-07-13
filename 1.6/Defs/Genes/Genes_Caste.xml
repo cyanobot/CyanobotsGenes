@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<GeneDef Name="CYB_Caste_Base" Abstract="True">
+	<displayCategory>Reproduction</displayCategory>
+	<displayOrderInCategory>7500</displayOrderInCategory>
+	<biostatMet>0</biostatMet>
+	<biostatCpx>0</biostatCpx>
+	<exclusionTags>
+		<li>CYB_Caste</li>
+	</exclusionTags>
+	<canGenerateInGeneSet>false</canGenerateInGeneSet>
+</GeneDef>
+
+<GeneDef ParentName="CYB_Caste_Base">
+	<defName>CYB_Caste_Rare</defName>
+	<label>Caste: Rare</label>
+	<iconPath>Genes/CYB_Caste_Rare</iconPath>
+	<description>This gene only has an effect under very specific circumstances : when a pawn with multiple Offspring genes reproduces, or when a pawn with multiple Metamorphosis genes metamorphoses.\n\nIf any of the potential resulting xenotypes include this gene, then that xenotype is only 25% as likely to be chosen as it would otherwise be.\n\nInclude this gene in xenotypes you want to be rare outcomes of birth/metamorphosis. By including other caste genes in the other options, you can further adjust the ratios.</description>
+	<modExtensions>
+		<li Class="CyanobotsGenes.GeneExtension_Caste">
+			<casteCommonality>0.25</casteCommonality>
+		</li>
+	</modExtensions>
+</GeneDef>
+
+<GeneDef ParentName="CYB_Caste_Base">
+	<defName>CYB_Caste_Uncommon</defName>
+	<label>Caste: Uncommon</label>
+	<iconPath>Genes/CYB_Caste_Uncommon</iconPath>
+	<description>This gene only has an effect under very specific circumstances : when a pawn with multiple Offspring genes reproduces, or when a pawn with multiple Metamorphosis genes metamorphoses.\n\nIf any of the potential resulting xenotypes include this gene, then that xenotype is only 50% as likely to be chosen as it would otherwise be.\n\nInclude this gene in xenotypes you want to be uncommon outcomes of birth/metamorphosis. By including other caste genes in the other options, you can further adjust the ratios.</description>
+	<modExtensions>
+		<li Class="CyanobotsGenes.GeneExtension_Caste">
+			<casteCommonality>0.5</casteCommonality>
+		</li>
+	</modExtensions>
+</GeneDef>
+
+<GeneDef ParentName="CYB_Caste_Base">
+	<defName>CYB_Caste_Common</defName>
+	<label>Caste: Common</label>
+	<iconPath>Genes/CYB_Caste_Common</iconPath>
+	<description>This gene only has an effect under very specific circumstances : when a pawn with multiple Offspring genes reproduces, or when a pawn with multiple Metamorphosis genes metamorphoses.\n\nIf any of the potential resulting xenotypes include this gene, then that xenotype is 2x as likely to be chosen as it would otherwise be.\n\nInclude this gene in xenotypes you want to be common outcomes of birth/metamorphosis. By including other caste genes in the other options, you can further adjust the ratios.</description>
+	<modExtensions>
+		<li Class="CyanobotsGenes.GeneExtension_Caste">
+			<casteCommonality>2</casteCommonality>
+		</li>
+	</modExtensions>
+</GeneDef>
+
+<GeneDef ParentName="CYB_Caste_Base">
+	<defName>CYB_Caste_Abundant</defName>
+	<label>Caste: Abundant</label>
+	<iconPath>Genes/CYB_Caste_Abundant</iconPath>
+	<description>This gene only has an effect under very specific circumstances : when a pawn with multiple Offspring genes reproduces, or when a pawn with multiple Metamorphosis genes metamorphoses.\n\nIf any of the potential resulting xenotypes include this gene, then that xenotype is 4x as likely to be chosen as it would otherwise be.\n\nInclude this gene in xenotypes you want to be very common outcomes of birth/metamorphosis. By including other caste genes in the other options, you can further adjust the ratios.</description>
+	<modExtensions>
+		<li Class="CyanobotsGenes.GeneExtension_Caste">
+			<casteCommonality>4</casteCommonality>
+		</li>
+	</modExtensions>
+</GeneDef>
+
+</Defs>

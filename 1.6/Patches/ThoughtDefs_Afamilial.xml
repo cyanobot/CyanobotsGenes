@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThoughtDef[not(nullifyingGenes) and (
+		defName="MyBirthMotherDied" or
+		defName="MyFatherDied" or
+		defName="MyMotherDied" or
+		defName="MySonDied" or
+		defName="MyDaughterDied" or
+		defName="MyBrotherDied" or
+		defName="MySisterDied" or
+		defName="MyHalfSiblingDied" or
+		defName="MyGrandparentDied" or
+		defName="MyGrandchildDied" or
+		defName="MyNephewDied" or
+		defName="MyNieceDied" or
+		defName="MyUncleDied" or
+		defName="MyAuntDied" or
+		defName="MyCousinDied" or
+		defName="MyKinDied" or
+		defName="MyFatherLost" or
+		defName="MyMotherLost" or
+		defName="MySonLost" or
+		defName="MyDaughterLost" or
+		defName="MyBrotherLost" or
+		defName="MySisterLost" or
+		defName="MyHalfSiblingLost" or
+		defName="MyGrandparentLost" or
+		defName="MyGrandchildLost" or
+		defName="MyNephewLost" or
+		defName="MyNieceLost" or
+		defName="MyUncleLost" or
+		defName="MyAuntLost" or
+		defName="MyCousinLost" or
+		defName="MyKinLost" or
+		defName="KilledMyBirthMother" or
+		defName="KilledMyFather" or
+		defName="KilledMyMother" or
+		defName="KilledMySon" or
+		defName="KilledMyDaughter" or
+		defName="KilledMyBrother" or
+		defName="KilledMySister" or
+		defName="KilledMyKin" or
+		defName="WitnessedDeathFamily" or
+		defName="GigglingBaby" or
+		defName="MyGigglingBaby" or
+		defName="BreastfedBaby" or
+		defName="BreastfedMe" or
+		defName="FedBaby" or
+		defName="FedMe" or
+		defName="BabyGiggledSocial" or
+		defName="MyChildHappy" or
+		defName="MyChildrenHappy" or
+		defName="MyChildSad" or
+		defName="MyChildrenSad" or
+		defName="YoungstersHappy" or
+		defName="YoungstersSad" or
+		defName="EnslavedChild" or
+		defName="BabySick" or
+		defName="ChildInGrowthVat" or
+		defName="MyParentHappy" or
+		defName="MyParentsHappy" or
+		defName="GrowthVat_Essential_Pregnant" or
+		defName="GrowthVat_Essential_ChildNotInGrowthVat" or
+		defName="GrowthVat_Prohibited_ChildNotInGrowthVat" or
+		defName="GrowthVat_Prohibited_ChildInGrowthVat" or
+		defName="PregnancyTerminated" or
+		defName="Stillbirth" or
+		defName="Miscarried" or
+		defName="PartnerMiscarried" or
+		defName="BabyBorn"
+		)]</xpath>
+	<value>
+		<nullifyingGenes/>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThoughtDef[
+		defName="MyBirthMotherDied" or
+		defName="MyFatherDied" or
+		defName="MyMotherDied" or
+		defName="MySonDied" or
+		defName="MyDaughterDied" or
+		defName="MyBrotherDied" or
+		defName="MySisterDied" or
+		defName="MyHalfSiblingDied" or
+		defName="MyGrandparentDied" or
+		defName="MyGrandchildDied" or
+		defName="MyNephewDied" or
+		defName="MyNieceDied" or
+		defName="MyUncleDied" or
+		defName="MyAuntDied" or
+		defName="MyCousinDied" or
+		defName="MyKinDied" or
+		defName="MyFatherLost" or
+		defName="MyMotherLost" or
+		defName="MySonLost" or
+		defName="MyDaughterLost" or
+		defName="MyBrotherLost" or
+		defName="MySisterLost" or
+		defName="MyHalfSiblingLost" or
+		defName="MyGrandparentLost" or
+		defName="MyGrandchildLost" or
+		defName="MyNephewLost" or
+		defName="MyNieceLost" or
+		defName="MyUncleLost" or
+		defName="MyAuntLost" or
+		defName="MyCousinLost" or
+		defName="MyKinLost" or
+		defName="KilledMyBirthMother" or
+		defName="KilledMyFather" or
+		defName="KilledMyMother" or
+		defName="KilledMySon" or
+		defName="KilledMyDaughter" or
+		defName="KilledMyBrother" or
+		defName="KilledMySister" or
+		defName="KilledMyKin" or
+		defName="WitnessedDeathFamily" or
+		defName="GigglingBaby" or
+		defName="MyGigglingBaby" or
+		defName="BreastfedBaby" or
+		defName="BreastfedMe" or
+		defName="FedBaby" or
+		defName="FedMe" or
+		defName="BabyGiggledSocial" or
+		defName="MyChildHappy" or
+		defName="MyChildrenHappy" or
+		defName="MyChildSad" or
+		defName="MyChildrenSad" or
+		defName="YoungstersHappy" or
+		defName="YoungstersSad" or
+		defName="EnslavedChild" or
+		defName="BabySick" or
+		defName="ChildInGrowthVat" or
+		defName="MyParentHappy" or
+		defName="MyParentsHappy" or
+		defName="GrowthVat_Essential_Pregnant" or
+		defName="GrowthVat_Essential_ChildNotInGrowthVat" or
+		defName="GrowthVat_Prohibited_ChildNotInGrowthVat" or
+		defName="GrowthVat_Prohibited_ChildInGrowthVat" or
+		defName="PregnancyTerminated" or
+		defName="Stillbirth" or
+		defName="Miscarried" or
+		defName="PartnerMiscarried" or
+		defName="BabyBorn"
+		]/nullifyingGenes</xpath>
+	<value>
+		<li>CYB_Afamilial</li>
+	</value>
+</Operation>
+
+</Patch>

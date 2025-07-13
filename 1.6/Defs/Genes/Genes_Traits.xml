@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--Psychopathic-->
+<GeneDef>
+    <defName>Psychopathic</defName>
+	<label>psychopathic</label>
+	<description>Carriers of this gene are naturally numb to violence and human suffering.</description>
+	<iconPath>Genes/CYB_Psychopathic</iconPath>
+    <displayCategory>CYB_Social</displayCategory>
+    <displayOrderInCategory>41</displayOrderInCategory>
+    <forcedTraits>
+      <li>
+        <def>Psychopath</def>
+      </li>
+    </forcedTraits>
+	<descriptionHyperlinks>
+		<TraitDef>Psychopath</TraitDef>
+	</descriptionHyperlinks>
+    <biostatCpx>1</biostatCpx>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>psycho</symbol></li>
+        <li><symbol>cold</symbol></li>
+        <li><symbol>numb</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>killer</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Delightful-->
+<GeneDef>
+	<defName>CYB_Delightful</defName>
+	<label>delightful</label>
+    <displayCategory>CYB_Social</displayCategory>
+    <displayOrderInCategory>45</displayOrderInCategory> 
+	<description>Carriers of this gene possess a natural charm and charisma and tend to be liked by everyone they meet. The right thing to say comes easily to them, and they will often lift the spirits of those around them with a quip or compliment.</description>
+	<iconPath>Genes/CYB_Delightful</iconPath>
+    <forcedTraits>
+      <li>
+        <def>CYB_Delightful</def>
+      </li>
+    </forcedTraits>
+	<descriptionHyperlinks>
+		<TraitDef>CYB_Delightful</TraitDef>
+	</descriptionHyperlinks>
+    <biostatCpx>2</biostatCpx>
+	<biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>bright</symbol></li>
+        <li><symbol>glee</symbol></li>
+        <li><symbol>joy</symbol></li>
+        <li><symbol>love</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>light</symbol></li>
+        <li><symbol>love</symbol></li>
+        <li><symbol>shine</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+
+<!--Undergrounder-->
+<GeneDef>
+	<defName>CYB_Undergrounder</defName>
+	<label>undergrounder</label>
+	<description>Carriers of this gene are psychologically predisposed to prefer enclosed spaces.</description>
+	<iconPath>Genes/CYB_Undergrounder</iconPath>
+	<biostatMet>0</biostatMet>
+	<biostatCpx>1</biostatCpx>
+	<displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>700</displayOrderInCategory>
+	<forcedTraits>
+	  <li>
+		<def>Undergrounder</def>
+	  </li>
+	</forcedTraits>
+	<descriptionHyperlinks>
+		<TraitDef>Undergrounder</TraitDef>
+	</descriptionHyperlinks>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>deep</symbol></li>
+        <li><symbol>tunnel</symbol></li>
+        <li><symbol>ground</symbol></li>
+        <li><symbol>earth</symbol></li>
+        <li><symbol>troglo</symbol></li>
+        <li><symbol>cave</symbol></li>
+        <li><symbol>claustro</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>dyte</symbol></li>
+        <li><symbol>hide</symbol></li>
+        <li><symbol>lurker</symbol></li>
+        <li><symbol>dweller</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Greedy-->
+<GeneDef>
+	<defName>CYB_Greedy</defName>
+	<label>greedy</label>
+	<description>Carriers of this gene are highly motivated by material riches as a result of the characteristics of the reward circuits in their brains.</description>
+	<iconPath>Genes/CYB_Greedy</iconPath>
+	<displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>701</displayOrderInCategory>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>1</biostatMet>
+	<forcedTraits>
+	  <li>
+		<def>Greedy</def>
+	  </li>
+	</forcedTraits>
+	<descriptionHyperlinks>
+		<TraitDef>Greedy</TraitDef>
+	</descriptionHyperlinks>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>cash</symbol></li>
+        <li><symbol>money</symbol></li>
+        <li><symbol>rich</symbol></li>
+        <li><symbol>greed</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>grabber</symbol></li>
+        <li><symbol>phile</symbol></li>
+        <li><symbol>grinch</symbol></li>
+        <li><symbol>grab</symbol></li>
+        <li><symbol>hoarder</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Abrasive-->
+<GeneDef>
+	<defName>CYB_Abrasive</defName>
+	<label>abrasive</label>
+	<description>Carriers of this gene have underdeveloped social skills in the specific area of minding their words and predicting the reactions of others.</description>
+	<iconPath>Genes/CYB_Abrasive</iconPath>
+    <displayCategory>CYB_Social</displayCategory>
+    <displayOrderInCategory>40</displayOrderInCategory> 
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>1</biostatMet>
+	<forcedTraits>
+	  <li>
+		<def>Abrasive</def>
+	  </li>
+	</forcedTraits>
+	<descriptionHyperlinks>
+		<TraitDef>Abrasive</TraitDef>
+	</descriptionHyperlinks>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>rude</symbol></li>
+        <li><symbol>rough</symbol></li>
+        <li><symbol>snap</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>snark</symbol></li>
+        <li><symbol>gripe</symbol></li>
+        <li><symbol>slag</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Reclusive-->
+<GeneDef>
+	<defName>CYB_Solitary</defName>
+	<label>solitary</label>
+	<description>Carriers of this gene are naturally introverted to the point of reclusion. They're comfortable alone and easily stressed by large groups of people.</description>
+    <displayCategory>CYB_Social</displayCategory>
+    <displayOrderInCategory>12</displayOrderInCategory> 
+	<iconPath>Genes/CYB_Solitary</iconPath>
+    <biostatCpx>1</biostatCpx>
+	<forcedTraits>
+		<li>
+			<def>Recluse</def>
+		</li>
+	</forcedTraits>
+	<descriptionHyperlinks>
+		<TraitDef>Recluse</TraitDef>
+	</descriptionHyperlinks>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>lone</symbol></li>
+        <li><symbol>sole</symbol></li>
+        <li><symbol>soli</symbol></li>
+        <li><symbol>isol</symbol></li>
+        <li><symbol>shy</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>hermit</symbol></li>
+        <li><symbol>cluse</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+</Defs>

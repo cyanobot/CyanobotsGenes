@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<GeneDef>
+	<defName>CYB_SlowMaturation</defName>
+	<label>slow maturation</label>
+	<description>Carriers of this gene mature to adulthood more slowly.</description>
+	<displayCategory>CYB_Aging</displayCategory>
+    <displayOrderInCategory>100</displayOrderInCategory>
+	<iconPath>Genes/CYB_SlowMaturation</iconPath>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>2</biostatMet>
+	<biologicalAgeTickFactorFromAgeCurve>
+	  <points>
+		<li>(0, 0.5)</li>
+		<li>(13, 0.5)</li>
+		<li>(18, 1)</li>
+	  </points>
+	</biologicalAgeTickFactorFromAgeCurve>
+	<statFactors>
+		<VEF_GrowthPointMultiplier>0.5</VEF_GrowthPointMultiplier>
+	</statFactors>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>slow</symbol></li>
+			<li><symbol>long</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>child</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+
+<GeneDef>
+	<defName>CYB_FastMaturation</defName>
+	<label>fast maturation</label>
+	<description>Carriers of this gene mature to adulthood more quickly.</description>
+	<displayCategory>CYB_Aging</displayCategory>
+    <displayOrderInCategory>101</displayOrderInCategory>
+	<iconPath>Genes/CYB_FastMaturation</iconPath>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>-2</biostatMet>
+	<biologicalAgeTickFactorFromAgeCurve>
+	  <points>
+		<li>(0, 2)</li>
+		<li>(13, 2)</li>
+		<li>(18, 1)</li>
+	  </points>
+	</biologicalAgeTickFactorFromAgeCurve>
+	<statFactors>
+		<VEF_GrowthPointMultiplier>2</VEF_GrowthPointMultiplier>
+	</statFactors>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>quick</symbol></li>
+			<li><symbol>grow</symbol></li>
+			<li><symbol>matu</symbol></li>
+		</prefixSymbols>
+	</symbolPack>
+</GeneDef>
+
+<GeneDef>
+	<defName>CYB_LongLived</defName>
+	<label>long-lived</label>
+	<description>Carriers of this gene are resilient to the effects of senescence, remaining fit and healthy for longer than baseliners.</description>
+	<displayCategory>CYB_Aging</displayCategory>
+    <displayOrderInCategory>500</displayOrderInCategory>
+	<iconPath>Genes/CYB_LongLived</iconPath>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>-1</biostatMet>
+	<statFactors>
+	  <LifespanFactor>1.5</LifespanFactor>
+	</statFactors>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>elder</symbol></li>
+			<li><symbol>wise</symbol></li>
+			<li><symbol>long</symbol></li>
+			<li><symbol>endu</symbol></li>
+			<li><symbol>hearty</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>crone</symbol></li>
+			<li><symbol>elf</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+
+<GeneDef>
+	<defName>CYB_Precocious</defName>
+	<label>precocious</label>
+	<description>Children with this gene are born with basic sensorimotor patterns already established in the brain and with substantially more developed limbs and senses than baseliner babies.</description>
+	<iconPath>Genes/CYB_Precocious</iconPath>
+	<displayCategory>CYB_Aging</displayCategory>
+    <displayOrderInCategory>0</displayOrderInCategory>
+	<biostatCpx>2</biostatCpx>
+	<biostatMet>-3</biostatMet>
+	<geneClass>CyanobotsGenes.Gene_Precocious</geneClass>
+	<customEffectDescriptions>
+		<li>Infants count as a Child rather than a Baby from birth. They can walk, feed themselves, and begin to acquire skills and growth points. They are incapable of work or combat until age 3.</li>
+	</customEffectDescriptions>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>precoci</symbol></li>
+			<li><symbol>insta</symbol></li>
+		</prefixSymbols>
+	</symbolPack>
+</GeneDef>
+
+</Defs>

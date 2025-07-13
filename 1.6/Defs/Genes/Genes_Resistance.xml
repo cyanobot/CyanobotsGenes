@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--Light sensitivity-->
+<GeneDef>
+	<defName>CYB_LightSensitivity</defName>
+	<label>light sensitivity</label>
+	<description>Carriers of this gene are very sensitive to light. Bright light overloads the visual cortex, causing disorientation and discomfort.</description>
+	<iconPath>Genes/CYB_LightSensitivity</iconPath>
+	<biostatMet>4</biostatMet>
+	<biostatCpx>1</biostatCpx>
+	<exclusionTags>
+		<li>CYB_LightSensitivity</li>
+		<li>VRE_LightSensitivity</li>
+	</exclusionTags>
+	<customEffectDescriptions>
+		<li>Work speed x80% (in bright light)</li>
+	</customEffectDescriptions>
+	<dislikesSunlight>true</dislikesSunlight>
+	<displayCategory>ResistanceAndWeakness</displayCategory>
+    <displayOrderInCategory>58</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>gloom</symbol></li>
+        <li><symbol>squint</symbol></li>
+        <li><symbol>dark</symbol></li>
+        <li><symbol>dim</symbol></li>
+        <li><symbol>shade</symbol></li>
+        <li><symbol>night</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>lurk</symbol></li>
+        <li><symbol>skulk</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Darkling-->
+<GeneDef MayRequire="Ludeon.RimWorld.Anomaly">
+	<defName>CYB_Darkling</defName>
+	<label>darkling</label>
+	<description>Carriers of this gene are at home in darkness. Even unnatural darkness holds no terrors for them, as their psyches lack any trace of the ancestral fear of the dark that such phenomena prey upon.</description>
+	<iconPath>Genes/CYB_Darkling</iconPath>
+	<displayCategory>ResistanceAndWeakness</displayCategory>
+    <displayOrderInCategory>59</displayOrderInCategory>
+	<customEffectDescriptions>
+		<li>Negates damage from Unnatural Darkness</li>
+	</customEffectDescriptions>
+	<biostatCpx>0</biostatCpx>
+	<biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>gloom</symbol></li>
+        <li><symbol>squint</symbol></li>
+        <li><symbol>dark</symbol></li>
+        <li><symbol>dim</symbol></li>
+        <li><symbol>shade</symbol></li>
+        <li><symbol>night</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>lurk</symbol></li>
+        <li><symbol>skulk</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Damp adaptation-->
+<GeneDef>
+	<defName>CYB_DampAdaptation</defName>
+	<label>damp adaptation</label>
+	<description>Subtle changes in the skin and nerve endings of carriers protect them from the discomfort of being damp or soaked.</description>
+	<iconPath>Genes/CYB_DampAdaptation</iconPath>
+	<displayCategory>ResistanceAndWeakness</displayCategory>
+    <displayOrderInCategory>500</displayOrderInCategory>
+	<biostatCpx>1</biostatCpx>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>damp</symbol></li>
+			<li><symbol>sog</symbol></li>
+			<li><symbol>humid</symbol></li>
+			<li><symbol>mud</symbol></li>
+		</prefixSymbols>
+	</symbolPack>
+</GeneDef>
+
+</Defs>

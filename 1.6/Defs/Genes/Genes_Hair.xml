@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneDef ParentName="GeneHairColorBase" Name="CYB_GeneColorHairBase" Abstract="True">
+	<selectionWeight>0</selectionWeight>
+    <displayOrderInCategory>330</displayOrderInCategory>
+    <modExtensions>
+		<li Class="VanillaGenesExpanded.GeneExtension">
+			<hideGene>false</hideGene>
+		</li>
+	</modExtensions>
+  </GeneDef>
+  
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+	<defName>CYB_HairBundle_Pastel</defName>
+	<label>pastel hair</label>
+	<description>Carriers of this gene may have hair of a number of pastel shades.</description>
+	<geneClass>CyanobotsGenes.Gene_Bundle</geneClass>
+	<iconPath>Genes/HairBundles/CYB_HairBundle_Pastel</iconPath>
+    <modExtensions>
+		<li Class="CyanobotsGenes.GeneExtension_Bundle">
+			<genes>
+				<li>CYB_Hair_DustyTeal</li>
+				<li>CYB_Hair_PredawnBlue</li>
+				<li>CYB_Hair_BabyBlue</li>
+				<li>CYB_Hair_MistGreen</li>
+				<li>CYB_Hair_DustyGreen</li>
+				<li>CYB_Hair_Peach</li>
+				<li>CYB_Hair_DustyGold</li>
+			</genes>
+		</li>
+	</modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_DustyTeal</defName>
+    <label>dusty teal hair</label>
+    <hairColorOverride>(80, 126, 127)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_PredawnBlue</defName>
+    <label>predawn blue hair</label>
+    <hairColorOverride>(177, 201, 220)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_BabyBlue</defName>
+    <label>baby blue hair</label>
+    <hairColorOverride>(146, 173, 205)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_MistGreen</defName>
+    <label>mist green hair</label>
+    <hairColorOverride>(157, 206, 188)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_DustyGreen</defName>
+    <label>dusty green hair</label>
+    <hairColorOverride>(106, 140, 113)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Peach</defName>
+    <label>peach hair</label>
+    <hairColorOverride>(237, 201, 180)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_DustyGold</defName>
+    <label>dusty gold hair</label>
+    <hairColorOverride>(205, 183, 126)</hairColorOverride>
+  </GeneDef>
+  
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+	<defName>CYB_HairBundle_Purple</defName>
+	<label>varipurple hair</label>
+	<description>Carriers of this gene may have hair of a number of purple hues.</description>
+	<geneClass>CyanobotsGenes.Gene_Bundle</geneClass>
+	<iconPath>Genes/HairBundles/CYB_HairBundle_Purple</iconPath>
+    <modExtensions>
+		<li Class="CyanobotsGenes.GeneExtension_Bundle">
+			<genes>
+				<li>CYB_Hair_Grackle</li>
+				<li>CYB_Hair_MidPurple</li>
+				<li>CYB_Hair_Violet</li>
+				<li>CYB_Hair_Aubergine</li>
+				<li>CYB_Hair_BluePurple</li>
+				<li>CYB_Hair_Lilac</li>
+			</genes>
+		</li>
+	</modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Grackle</defName>
+    <label>grackle hair</label>
+    <hairColorOverride>(27, 22, 58)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_MidPurple</defName>
+    <label>mid purple hair</label>
+    <hairColorOverride>(112, 67, 154)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Violet</defName>
+    <label>violet hair</label>
+    <hairColorOverride>(96, 79, 161)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Aubergine</defName>
+    <label>aubergine hair</label>
+    <hairColorOverride>(54, 28, 110)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_BluePurple</defName>
+    <label>blue purple hair</label>
+    <hairColorOverride>(81, 54, 255)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Lilac</defName>
+    <label>lilac hair</label>
+    <hairColorOverride>(155, 134, 222)</hairColorOverride>
+  </GeneDef>
+  
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+	<defName>CYB_HairBundle_CoolBrown</defName>
+	<label>cool brown hair</label>
+	<description>Carriers of this gene may have hair of a handful of shades of cool brown.</description>
+	<geneClass>CyanobotsGenes.Gene_Bundle</geneClass>
+	<iconPath>Genes/HairBundles/CYB_HairBundle_CoolBrown</iconPath>
+    <modExtensions>
+		<li Class="CyanobotsGenes.GeneExtension_Bundle">
+			<genes>
+				<li>CYB_Hair_Pearl</li>
+				<li>CYB_Hair_Fawn</li>
+				<li>CYB_Hair_Mouse</li>
+				<li>CYB_Hair_Licorice</li>
+			</genes>
+		</li>
+	</modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Pearl</defName>
+    <label>pearl grey hair</label>
+    <hairColorOverride>(184, 178, 178)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Fawn</defName>
+    <label>fawn hair</label>
+    <hairColorOverride>(169, 152, 144)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Mouse</defName>
+    <label>mouse brown hair</label>
+    <hairColorOverride>(112, 92, 84)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Licorice</defName>
+    <label>licorice hair</label>
+    <hairColorOverride>(37, 29, 24)</hairColorOverride>
+  </GeneDef>
+
+<!--
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Wolf</defName>
+    <label>wolf grey hair</label>
+    <hairColorOverride>(68, 78, 88)</hairColorOverride>
+  </GeneDef>
+
+  <GeneDef ParentName="CYB_GeneColorHairBase">
+    <defName>CYB_Hair_Bone</defName>
+    <label>bone white hair</label>
+    <hairColorOverride>(231, 228, 205)</hairColorOverride>
+  </GeneDef>
+ -->
+  
+</Defs>

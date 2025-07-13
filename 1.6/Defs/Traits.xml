@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<TraitDef>
+    <defName>Unaffected</defName>
+    <commonality>0.5</commonality>
+    <degreeDatas>
+      <li>
+        <label>unaffected</label>
+        <description>{PAWN_nameDef} just doesn't give a shit what others think. {PAWN_pronoun} is unaffected by slights and insults, but also by kind words.</description>
+        <statFactors>
+          <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.5</CertaintyLossFactor>
+        </statFactors>
+      </li>
+    </degreeDatas>
+ </TraitDef>
+  
+<TraitDef>
+	<defName>CYB_Delightful</defName>
+	<commonality>0</commonality>
+	<degreeDatas>
+		<li>
+			<label>delightful</label>
+			<description>{PAWN_nameDef} is charming and charismatic. Others are inclined to like {PAWN_objective}, and {PAWN_possessive} knows how to lift their spirits with well-placed words.</description>
+		</li>
+	</degreeDatas>
+</TraitDef>
+
+</Defs>

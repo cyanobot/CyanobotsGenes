@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot/subNodes</xpath>
+	<value>
+        <li Class="ThinkNode_ConditionalMentalState">
+          <state>BodyfeederBeserk</state>
+          <subNodes>
+            <li Class="ThinkNode_Priority">
+              <subNodes>
+                <li Class="CyanobotsGenes.JobGiver_BodyfeederBerserk" />
+                <li Class="JobGiver_WanderAnywhere">
+                  <maxDanger>Deadly</maxDanger>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>	
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationInsert">
+	<xpath>Defs/ThinkTreeDef[defName="MainColonistBehaviorCore"]/thinkRoot/subNodes/li/subNodes/li[@Class="JobGiver_Meditate"]</xpath>
+	<value>
+		<li Class="CyanobotsGenes.JobGiver_AutoPsyphon"/>
+	</value>
+</Operation>
+
+
+</Patch>

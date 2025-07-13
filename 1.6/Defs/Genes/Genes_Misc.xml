@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--Stealthy-->
+<GeneDef>
+	<defName>Stealthy</defName>
+	<label>stealthy</label>
+	<description>Carriers of this gene have an innate instinct for stealth that makes them capable hunters.</description>
+	<iconPath>Genes/CYB_Stealthy</iconPath>
+    <displayOrderInCategory>600</displayOrderInCategory>
+	<biostatMet>-1</biostatMet>
+    <exclusionTags>
+      <li>Stealth</li>
+    </exclusionTags>
+	<statOffsets>
+		<HuntingStealth>0.5</HuntingStealth>
+	</statOffsets>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>soft</symbol></li>
+        <li><symbol>quiet</symbol></li>
+        <li><symbol>hush</symbol></li>
+        <li><symbol>pad</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>sneak</symbol></li>
+        <li><symbol>stalker</symbol></li>
+        <li><symbol>shadow</symbol></li>
+        <li><symbol>ghost</symbol></li>
+        <li><symbol>paw</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Blind-->
+<GeneDef>
+	<defName>CYB_Blind</defName>
+	<label>blind</label>
+	<description>Carriers of this gene lack a visual cortex, or else the brain areas have been respecialised into another function.</description>
+	<displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>59</displayOrderInCategory>
+	<iconPath>Genes/CYB_Blind</iconPath>
+	<exclusionTags>
+		<li>CYB_Nearsighted</li>
+		<li>CYB_DarkVision</li>
+		<li>CYB_LightSensitivity</li>
+		<li>ShootingAccuracy</li>		<!-- More Vision Genes-->
+	</exclusionTags>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>4</biostatMet>
+	<capMods>
+		<li>
+			<capacity>Sight</capacity>
+			<setMax>0</setMax>
+		</li>
+	</capMods>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>blind</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>fumble</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<!--Work speed-->
+<GeneDef>
+	<defName>CYB_WorkSpeed_High</defName>
+	<label>Productive</label>
+	<description>Carriers of this gene experience high intrinsic reward for working hard and have little difficulty focusing their attention on their work.</description>
+	<iconPath>Genes/CYB_WorkSpeed_High</iconPath>
+    <displayOrderInCategory>29</displayOrderInCategory>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>-2</biostatMet>
+	<statFactors>
+		<WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+	</statFactors>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>effi</symbol></li>
+        <li><symbol>prod</symbol></li>
+        <li><symbol>quick</symbol></li>
+        <li><symbol>focus</symbol></li>
+        <li><symbol>patient</symbol></li>
+        <li><symbol>busy</symbol></li>
+        <li><symbol>work</symbol></li>
+        <li><symbol>toil</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>drone</symbol></li>
+        <li><symbol>worker</symbol></li>
+        <li><symbol>drudge</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+<GeneDef>
+	<defName>CYB_WorkSpeed_Low</defName>
+	<label>Unproductive</label>
+	<description>Carriers of this gene experience little intrinsic reward for working hard and have difficulty focusing attention on their work.</description>
+	<iconPath>Genes/CYB_WorkSpeed_Low</iconPath>
+    <displayOrderInCategory>28</displayOrderInCategory>
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>2</biostatMet>
+	<statFactors>
+		<WorkSpeedGlobal>0.8</WorkSpeedGlobal>
+	</statFactors>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>laze</symbol></li>
+        <li><symbol>lazy</symbol></li>
+        <li><symbol>dull</symbol></li>
+        <li><symbol>slo</symbol></li>
+        <li><symbol>distract</symbol></li>
+        <li><symbol>fidget</symbol></li>
+        <li><symbol>idle</symbol></li>
+        <li><symbol>lacka</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>slack</symbol></li>
+        <li><symbol>slacker</symbol></li>
+        <li><symbol>shirk</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+</GeneDef>
+
+</Defs>
+  

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Integrated Genes</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+			<!--replace mute, unless it's already been replaced by the VRE version-->
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Vanilla Races Expanded - Lycanthrope</li>
+				</mods>
+				<nomatch Class="PatchOperationSequence">
+					<operations>
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/XenotypeDef/genes/li[text()="CYB_Mute"]</xpath>
+						<value>
+							<li>Turn_Gene_Speechless</li>
+						</value>
+					</li>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/GeneDef[defName="CYB_Mute"]</xpath>
+						<value>
+							<modExtensions>
+								<li Class="VanillaGenesExpanded.GeneExtension">
+									<hideGene>true</hideGene>
+								</li>
+							</modExtensions>
+						</value>
+					</li>
+					</operations>
+				</nomatch>
+			</li>
+			
+			<!--replaces blind-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/XenotypeDef/genes/li[text()="CYB_Blind"]</xpath>
+				<value>
+					<li>Turn_Gene_Blindness</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="CYB_Blind"]</xpath>
+				<value>
+					<modExtensions>
+						<li Class="VanillaGenesExpanded.GeneExtension">
+							<hideGene>true</hideGene>
+						</li>
+					</modExtensions>
+				</value>
+			</li>
+			
+			<!-- replace greedy, unless it's already been replaced by Det's Boglegs-->
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Det's Xenotypes - Boglegs</li>
+				</mods>
+				<nomatch Class="PatchOperationSequence">
+					<operations>
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/XenotypeDef/genes/li[text()="CYB_Greedy"]</xpath>
+						<value>
+							<li>Turn_Gene_TraitGrandeur</li>
+						</value>
+					</li>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/GeneDef[defName="CYB_Greedy"]</xpath>
+						<value>
+							<modExtensions>
+								<li Class="VanillaGenesExpanded.GeneExtension">
+									<hideGene>true</hideGene>
+								</li>
+							</modExtensions>
+						</value>
+					</li>
+					</operations>
+				</nomatch>
+			</li>
+			
+			<!--replace work speed genes-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/XenotypeDef/genes/li[text()="CYB_WorkSpeed_Low"]</xpath>
+				<value>
+					<li>Turn_Gene_MotivationLow</li>
+				</value>
+				<success>Always</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="CYB_WorkSpeed_Low"]</xpath>
+				<value>
+					<modExtensions>
+						<li Class="VanillaGenesExpanded.GeneExtension">
+							<hideGene>true</hideGene>
+						</li>
+					</modExtensions>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/XenotypeDef/genes/li[text()="CYB_WorkSpeed_High"]</xpath>
+				<value>
+					<li>Turn_Gene_MotivationHigh</li>
+				</value>
+				<success>Always</success>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[defName="CYB_WorkSpeed_High"]</xpath>
+				<value>
+					<modExtensions>
+						<li Class="VanillaGenesExpanded.GeneExtension">
+							<hideGene>true</hideGene>
+						</li>
+					</modExtensions>
+				</value>
+			</li>
+			
+			<!--add Weak Melee Damage to Glimmer to (partially) offset Herd Mentality
+			unless already offset by VRE Highmate's Distressed-->
+			<li Class="PatchOperationFindMod">
+				<mods>
+					<li>Outland - Genetics</li>
+				</mods>
+				<match Class="PatchOperationFindMod">
+					<mods>
+						<li>Vanilla Races Expanded - Highmate</li>
+					</mods>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>Defs/XenotypeDef[defName="CYB_Glimmer"]/genes</xpath>
+						<value>
+							<li>MeleeDamage_Weak</li>
+						</value>
+					</nomatch>
+				</match>
+			</li>
+			
+			<!--move Docile and Domineering to slavery category-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="CYB_Docile" or defName="CYB_Domineering"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Turn_GeneCategory_Slavery</displayCategory>
+				</value>
+			</li>
+		</operations>
+	</match>
+</Operation>
+
+</Patch>

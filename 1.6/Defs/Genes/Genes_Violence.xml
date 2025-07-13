@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--Tough Skin-->
+<GeneDef>
+	<defName>CYB_ToughSkin</defName>
+	<label>tough skin</label>
+	<description>Carriers of this gene grow thick, damage-resistant skin.</description>
+	<iconPath>Genes/CYB_ToughSkin</iconPath>
+	<displayCategory>Violence</displayCategory>
+    <displayOrderInCategory>610</displayOrderInCategory> 
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>-2</biostatMet>
+	<statOffsets>
+		<ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+		<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+	</statOffsets>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>tough</symbol></li>
+			<li><symbol>sturd</symbol></li>
+			<li><symbol>leather</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>tank</symbol></li>
+			<li><symbol>soak</symbol></li>
+			<li><symbol>wall</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+
+
+<!--Clumsy-->
+<GeneDef>
+	<defName>CYB_Clumsy</defName>
+	<label>clumsy</label>
+	<description>Carriers of this gene have poor coordination and slow reactions that leave them vulnerable in melee combat.</description>
+	<iconPath>Genes/CYB_Clumsy</iconPath>
+	<displayCategory>Violence</displayCategory>
+    <displayOrderInCategory>600</displayOrderInCategory> 
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>3</biostatMet>
+	<statFactors>
+	  <MeleeDodgeChance>0</MeleeDodgeChance>
+	</statFactors>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>clum</symbol></li>
+			<li><symbol>stum</symbol></li>
+			<li><symbol>fall</symbol></li>
+			<li><symbol>awk</symbol></li>
+			<li><symbol>bungle</symbol></li>
+			<li><symbol>bumble</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>klutz</symbol></li>
+			<li><symbol>gawk</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+
+<!--Violence Averse-->
+<GeneDef>
+	<defName>CYB_ViolenceAverse</defName>
+	<label>violence averse</label>
+	<description>Due to enhanced signalling pathways relating to empathy and moral distress, carriers of this gene are invariably upset by physical violence and the suffering of others.</description>
+	<iconPath>Genes/CYB_ViolenceAverse</iconPath>
+	<exclusionTags>
+      <li>Aggression</li>
+	</exclusionTags>
+	<displayCategory>Violence</displayCategory>
+    <displayOrderInCategory>51</displayOrderInCategory> 
+	<biostatCpx>1</biostatCpx>
+	<biostatMet>3</biostatMet>
+    <socialFightChanceFactor>0</socialFightChanceFactor>
+	<aggroMentalBreakSelectionChanceFactor>0.2</aggroMentalBreakSelectionChanceFactor>
+	<prisonBreakMTBFactor>2.0</prisonBreakMTBFactor>
+	<suppressedTraits>
+		<li>
+			<def>Bloodlust</def>
+			<degree>0</degree>
+		</li>
+		<li>
+			<def>Psychopath</def>
+			<degree>0</degree>
+		</li>
+		<li>
+			<def>Brawler</def>
+			<degree>0</degree>
+		</li>
+		<li>
+			<def>ShootingAccuracy</def>
+			<degree>1</degree>
+		</li>
+		<li>
+			<def>ShootingAccuracy</def>
+			<degree>-1</degree>
+		</li>
+		<li MayRequire="vanillaexpanded.vanillatraitsexpanded">
+			<def>VTE_Vengeful</def>
+			<degree>0</degree>
+		</li>
+		<li MayRequire="vanillaexpanded.vanillatraitsexpanded">
+			<def>VTE_Desensitized</def>
+			<degree>0</degree>
+		</li>
+	</suppressedTraits>
+	<symbolPack>
+		<prefixSymbols>
+			<li><symbol>mis</symbol></li>
+			<li><symbol>woe</symbol></li>
+			<li><symbol>soft</symbol></li>
+			<li><symbol>compassi</symbol></li>
+			<li><symbol>gentle</symbol></li>
+			<li><symbol>tender</symbol></li>
+		</prefixSymbols>
+		<suffixSymbols>
+			<li><symbol>heart</symbol></li>
+			<li><symbol>wimp</symbol></li>
+		</suffixSymbols>
+	</symbolPack>
+</GeneDef>
+
+</Defs>

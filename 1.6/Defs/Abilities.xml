@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!--Endostimulant burst-->
+<AbilityDef>
+	<defName>CYB_EndostimulantBurst</defName>
+	<label>endostimulant burst</label>
+	<description>Release a burst of endogenous stimulants into the blood that increase alertness and stave off tiredness.</description>
+	<iconPath>Genes/CYB_EndostimulantBurst</iconPath>
+	<targetRequired>false</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <hotKey>Misc12</hotKey>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <writeCombatLog>True</writeCombatLog>
+    <cooldownTicksRange>60000</cooldownTicksRange> <!-- 24 hours -->
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>1</warmupTime>
+      <drawAimPie>False</drawAimPie>
+      <requireLineOfSight>False</requireLineOfSight>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityHemogenCost">
+        <hemogenCost>0.3</hemogenCost>
+      </li>
+	  <li Class="CyanobotsGenes.CompProperties_AbilityOffsetNeed">
+		<need>Rest</need>
+		<offset>0.4</offset>
+	  </li>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>CYB_EndostimulantBurst</hediffDef>
+      </li>
+    </comps>
+</AbilityDef>
+
+<!--Implant xenotype-->
+<CyanobotsGenes.AbilityTemplateDef>
+	<defName>CYB_ImplantXenotype</defName>
+	<abilityClass>CyanobotsGenes.Ability_ImplantXenotype</abilityClass>
+	<label>implant {0} xenogerm</label>
+	<description>Implant a copy of the {0} xenogerm into a willing or helpless target. The target will enter a xenogermination coma, and the implanted xenogerm will overwrite any xenogenes they might already have. Germline genes will be unaffected.</description>
+	<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+    <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+    <warmupEffecter>Implant_Xenogerm</warmupEffecter>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <hotKey>Misc12</hotKey>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>1200000</cooldownTicksRange> <!-- 20 days -->
+    <stunTargetWhileCasting>true</stunTargetWhileCasting>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>4</warmupTime>
+      <stunTargetOnCastStart>true</stunTargetOnCastStart>
+      <targetParams>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CyanobotsGenes.CompProperties_AbilityImplantXenotype" />
+    </comps>
+</CyanobotsGenes.AbilityTemplateDef>
+
+<AbilityDef>
+	<defName>CYB_Psyphon</defName>
+	<label>psyphon</label>
+	<description>Drain psychic energy from the target to refuel psyfocus. Targets with psyfocus of their own will lose psyfocus first at a base conversion rate of 2:1. If no or insufficient psyfocus can be drained, the target's consciousness will be drained directly, potentially causing brain damage and other harms in the process.\n\nTo control the amount of energy drained, use the Desired Psyfocus slider as you would to control meditation.</description>
+	<iconPath>Genes/CYB_Psyphon</iconPath>
+	<hostile>true</hostile>
+	<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+	<hotKey>Misc12</hotKey>
+	<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+	<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+	<cooldownTicksRange>600</cooldownTicksRange>
+	<stunTargetWhileCasting>true</stunTargetWhileCasting>
+	<jobDef>CastAbilityOnThingMelee</jobDef>
+	<verbProperties>
+		<verbClass>Verb_CastAbilityTouch</verbClass>
+        <drawAimPie>false</drawAimPie>
+		<range>-1</range>
+		<warmupTime>4</warmupTime>
+		<stunTargetOnCastStart>true</stunTargetOnCastStart>
+		<targetParams>
+			<canTargetAnimals>false</canTargetAnimals>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetBuildings>false</canTargetBuildings>
+			<canTargetMechs>false</canTargetMechs>
+		</targetParams>
+	</verbProperties>
+	<comps>
+		<li Class="CyanobotsGenes.CompProperties_AbilityPsyphon">
+		</li>
+	</comps>
+</AbilityDef>
+
+</Defs>

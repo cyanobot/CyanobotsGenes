@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  
+  <Operation Class="PatchOperationAdd">
+	<xpath>Defs/GeneDef[defName="Bloodfeeder"]</xpath>
+	<value>
+		<exclusionTags>
+			<li>Bodyfeeder</li>
+		</exclusionTags>
+	</value>
+  </Operation>
+
+<!--make each of the sight genes conflict with blindness without conflicting with each other-->
+
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/GeneDef[defName="Nearsighted"]/exclusionTags</xpath>
+	<value>
+		<li>CYB_Nearsighted</li>
+	</value>
+</Operation>
+
+<Operation Class="PatchOperationConditional">
+	<xpath>Defs/GeneDef[defName="DarkVision"]/exclusionTags</xpath>
+	<nomatch Class="PatchOperationAdd">
+		<xpath>Defs/GeneDef[defName="DarkVision"]</xpath>
+		<value>
+			<exclusionTags/>
+		</value>
+	</nomatch>
+</Operation>
+<Operation Class="PatchOperationAdd">
+	<xpath>Defs/GeneDef[defName="DarkVision"]/exclusionTags</xpath>
+	<value>
+		<li>CYB_DarkVision</li>
+	</value>
+</Operation>
+
+</Patch>

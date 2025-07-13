@@ -29,6 +29,13 @@
 		<li>Beard_NoBeardOnly</li>
 		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Harmonist</li>
 		<li MayRequire="Danzen.VPE.BiotechIntegration">Gene_Skipmaster</li>
+		<li MayRequire="Milkman.BiotechCosmeticGenesMM">MMEars_KittyEars</li>
+		<li MayRequire="JintuziLamian.Gene.XenoCosmetic">AFU_HA_CatEar</li>
+		<li MayRequire="JintuziLamian.Gene.XenoCosmetic">AFU_HA_LeopardCatEar</li>
+		<li MayRequire="JintuziLamian.Gene.XenoCosmetic">AFU_HA_LoverlyCatEar</li>
+		<li MayRequire="Lusty.HelltakerGenes">LMEarsCerberus</li>
+		<li MayRequire="Neronix17.Outland.Genetics">Outland_Ears_Foxie</li>
+		<li MayRequire="Neronix17.Outland.Genetics">Outland_Ears_Swish</li>
 	</genes>
 </XenotypeDef>
 	

@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThoughtDef>
+    <defName>BodyfeederStarvation</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>BodyfeederStarvation</hediff>
+    <stages>
+      <li>
+        <label>bodyfeeder starvation</label>
+        <description>I'm so hungry.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+      <li>
+        <label>bodyfeeder starvation</label>
+        <description>It hurts. Everyone looks like food. Everything gets on my nerves. I'm so hungry.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+      <li>
+        <label>bodyfeeder starvation</label>
+        <description>I must have flesh. I must.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- VICTIM -->
+  
+  <ThoughtDef Name="BodyfeederVictim_BodyPartEaten_Opinion_Base" Abstract="True">
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <stackLimit>300</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <socialTargetDevelopmentalStageFilter>Child, Adult</socialTargetDevelopmentalStageFilter>
+	<nullifyingPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Pain_Idealized</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredRavenous</li>
+	</nullifyingPrecepts>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="BodyfeederVictim_BodyPartEaten_Opinion_Base">
+    <defName>BodyfeederVictim_BodyPartEaten_Opinion</defName>
+    <durationDays>120</durationDays>
+    <nullifyingPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredStrong</li>
+    </nullifyingPrecepts>
+    <stages>
+      <li>
+        <label>ate a part of me!</label>
+        <baseOpinionOffset>-80</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="BodyfeederVictim_BodyPartEaten_Opinion_Base">
+    <defName>BodyfeederVictim_BodyPartEaten_Opinion_CRequiredStrong</defName>
+    <durationDays>6</durationDays>
+	<replaceThoughts>
+		<li>BodyfeederVictim_BodyPartEaten_Opinion</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate a part of me!</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef Name="BodyfeederVictim_BodyPartEaten_Mood_Base" Abstract="True">
+    <durationDays>15</durationDays>
+    <stackLimit>1</stackLimit>
+    <validWhileDespawned>true</validWhileDespawned>
+	<nullifyingPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Pain_Idealized</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredRavenous</li>
+	</nullifyingPrecepts>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="BodyfeederVictim_BodyPartEaten_Mood_Base">
+	<defName>BodyfeederVictim_BodyPartEaten_Mood</defName>
+    <nullifyingPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredStrong</li>
+    </nullifyingPrecepts>
+    <stages>
+      <li>
+        <label>{0} ate a part of me!</label>
+        <description>They just pinned me down and started chewing. It was horrific.</description>      
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="BodyfeederVictim_BodyPartEaten_Mood_Base">
+	<defName>BodyfeederVictim_BodyPartEaten_Mood_CRequiredStrong</defName>
+	<replaceThoughts>
+		<li>BodyfeederVictim_BodyPartEaten_Mood</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>{0} ate a part of me!</label>
+        <description>I'm not accustomed to being the one getting eaten.</description>      
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- BODYFEEDER -->
+  
+  <ThoughtDef Name="Bodyfeeder_AteLive_Base" Abstract="True">
+    <validWhileDespawned>true</validWhileDespawned>
+	<nullifyingPrecepts>
+      <li MayRequire="Sarg.AlphaMemes">AM_OrganUse_Torturous</li>
+	</nullifyingPrecepts>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+  
+  <ThoughtDef Name="Bodyfeeder_AteLivePerson_Base" ParentName="Bodyfeeder_AteLive_Base" Abstract="True">
+	<durationDays>15</durationDays>
+	<thoughtClass>CyanobotsGenes.Thought_Bodyfeeder_AteNonFriend</thoughtClass>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="Bodyfeeder_AteLivePerson_Base">
+	<defName>Bodyfeeder_AteLivePerson</defName>
+	<replaceThoughts>
+		<li>Bodyfeeder_AteBodyPart</li>
+	</replaceThoughts>
+	<stages>
+		<li>
+			<label>ate enemy alive</label>
+			<description>I lost control of my hunger and ate a person alive. Even our enemies don't deserve that.</description>
+			<baseMoodEffect>-15</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate someone alive</label>
+			<description>I lost control of my hunger and ate a person alive. I couldn't stop myself. I didn't want to stop.</description>
+			<baseMoodEffect>-20</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate colonist alive</label>
+			<description>I ate {OTHERPAWN}. I lost control of my hunger. I couldn't stop. I didn't want to.</description>
+			<baseMoodEffect>-25</baseMoodEffect>
+		</li>
+	</stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="Bodyfeeder_AteLivePerson_Base">
+	<defName>Bodyfeeder_AteLivePerson_CAcceptable</defName>
+	<replaceThoughts>
+		<li>Bodyfeeder_AteLivePerson</li>
+		<li>Bodyfeeder_AteBodyPart</li>
+		<li>Bodyfeeder_AteBodyPart_CAcceptable</li>
+	</replaceThoughts>
+	<stages>
+		<li>
+			<label>ate enemy alive</label>
+			<description>I'm lucky it was an enemy I tore to pieces. It's unsettling knowing I can lose control like that.</description>
+			<baseMoodEffect>-5</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate someone alive</label>
+			<description>I lost control of my hunger and ate someone alive. At least it was an outsider - this time.</description>
+			<baseMoodEffect>-8</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate colonist alive</label>
+			<description>I ate {OTHERPAWN}. One of our own people. I couldn't stop myself. I'm scared of what else I might do.</description>
+			<baseMoodEffect>-12</baseMoodEffect>
+		</li>
+	</stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="Bodyfeeder_AteLivePerson_Base">
+	<defName>Bodyfeeder_AteLivePerson_CRequired</defName>
+	<nullifyingTraits Inherit="False"/>
+	<replaceThoughts>
+		<li>Bodyfeeder_AteLivePerson</li>
+		<li>Bodyfeeder_AteBodyPart</li>
+		<li>Bodyfeeder_AteLivePerson_CAcceptable</li>
+		<li>Bodyfeeder_AteBodyPart_CAcceptable</li>
+		<li>Bodyfeeder_AteBodyPart_CRequired</li>
+		<li>AteHumanlikeMeatDirectCannibal</li>
+		<li>AteHumanlikeMeatAsIngredientCannibal</li>
+	</replaceThoughts>
+	<stages>
+		<li>
+			<label>ate enemy alive</label>
+			<description>I devoured an enemy in a frenzy of wild bloodlust. I've never been so alive.</description>
+			<baseMoodEffect>+30</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate someone alive</label>
+			<description>I devoured that outsider with the ferocity of a wild beast.</description>
+			<baseMoodEffect>+20</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate colonist alive</label>
+			<description>Maybe I shouldn't have eaten {OTHERPAWN}. But it felt so good.</description>
+			<baseMoodEffect>+10</baseMoodEffect>
+		</li>
+	</stages>
+  </ThoughtDef>
+  
+  <ThoughtDef Name="Bodyfeeder_AteBodyPart_Base" ParentName="Bodyfeeder_AteLive_Base" Abstract="True">
+	<durationDays>10</durationDays>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="Bodyfeeder_AteBodyPart_Base">
+    <defName>Bodyfeeder_AteBodyPart</defName>
+    <stages>
+		<li>
+			<label>ate a part of a live enemy</label>
+			<description>I ripped pieces off a living person to eat them. They were my enemy, but it's still horrific.</description>      
+			<baseMoodEffect>-8</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate a part of a live person</label>
+			<description>I ripped pieces off a living person to eat them. They tasted so good.</description>      
+			<baseMoodEffect>-12</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate part of a colonist</label>
+			<description>I lost control of my hunger and started eating one of our own people. This is both horrifying and incredibly awkward.</description>      
+			<baseMoodEffect>-16</baseMoodEffect>
+		</li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="Bodyfeeder_AteBodyPart_Base">
+    <defName>Bodyfeeder_AteBodyPart_CAcceptable</defName>
+	<replaceThoughts>
+		<li>Bodyfeeder_AteBodyPart</li>
+	</replaceThoughts>
+    <stages>
+		<li>
+			<label>ate a part of a live enemy</label>
+			<description>I might not have been totally in control of myself there.</description>      
+			<baseMoodEffect>-2</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate a part of a live person</label>
+			<description>I attacked someone out of raw hunger. I don't like losing control like that. I could get myself into a lot of trouble.</description>      
+			<baseMoodEffect>-5</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate part of a colonist</label>
+			<description>I started eating a fellow colonist. This is incredibly awkward.</description>      
+			<baseMoodEffect>-8</baseMoodEffect>
+		</li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="Bodyfeeder_AteBodyPart_Base">
+    <defName>Bodyfeeder_AteBodyPart_CRequired</defName>
+    <nullifyingTraits Inherit="False"/>
+	<replaceThoughts>
+		<li>Bodyfeeder_AteBodyPart</li>
+		<li>AteHumanlikeMeatDirectCannibal</li>
+		<li>AteHumanlikeMeatAsIngredientCannibal</li>
+	</replaceThoughts>
+    <stages>
+		<li>
+			<label>ate a part of a live enemy</label>
+			<description>I am a ferocious predator!</description>      
+			<baseMoodEffect>+20</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate a part of a live person</label>
+			<description>The savour is so different when the blood is still pumping. So potent.</description>      
+			<baseMoodEffect>+10</baseMoodEffect>
+		</li>
+		<li>
+			<label>ate part of a colonist</label>
+			<description>I started eating a fellow colonist. This is pretty awkward.</description>      
+			<baseMoodEffect>-2</baseMoodEffect>
+		</li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+	<defName>Bodyfeeder_AteFriend</defName>
+	<thoughtClass>CyanobotsGenes.Thought_Bodyfeeder_AteFriend</thoughtClass>
+	<durationDays>30</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+	<replaceThoughts>
+		<li>Bodyfeeder_AteBodyPart</li>
+		<li>Bodyfeeder_AteBodyPart_CAcceptable</li>
+		<li>Bodyfeeder_AteBodyPart_CRequired</li>
+	</replaceThoughts>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredRavenous</li>
+    </nullifyingPrecepts>
+	<stages>
+		<!-- 0 friend -->
+		<li>
+			<label>ate {0}</label>
+			<description>I ate {OTHERPAWN_objective}. I ate my friend.</description>
+			<baseMoodEffect>-10</baseMoodEffect>
+		</li>
+		<!-- 1 lover/spouce -->
+		<li>
+			<label>ate {0}</label>
+			<description>I devoured my own love.</description>
+			<baseMoodEffect>-18</baseMoodEffect>
+		</li>
+		<!-- 2 parent -->
+		<li>
+			<label>ate {0}</label>
+			<description>Consumed by the child {OTHERPAWN_pronoun} brought into this world...</description>
+			<baseMoodEffect>-10</baseMoodEffect>
+		</li>
+		<!-- 3 child -->
+		<li>
+			<label>ate {0}</label>
+			<description>I have eaten my own child.</description>
+			<baseMoodEffect>-20</baseMoodEffect>
+		</li>
+		<!-- 4 sibling -->
+		<li>
+			<label>ate {0}</label>
+			<description>I ate {OTHERPAWN_objective}. My own flesh and blood...</description>
+			<baseMoodEffect>-10</baseMoodEffect>
+		</li>
+		<!-- 5 kin -->
+		<li>
+			<label>ate {0}</label>
+			<description>I have devoured my own kin.</description>
+			<baseMoodEffect>-5</baseMoodEffect>
+		</li>
+	</stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+	<defName>Bodyfeeder_AteBodyPartFriend</defName>
+	<durationDays>15</durationDays>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredRavenous</li>
+    </nullifyingPrecepts>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+	<stages>
+		<li>
+			<label>ate a part of {0}</label>
+			<description>It was like I didn't even know them. Like it didn't matter. I don't know how to look at them anymore.</description>      
+			<baseMoodEffect>-16</baseMoodEffect>
+		</li>
+	</stages>
+  </ThoughtDef>
+  
+  <!-- OBSERVER-->
+  
+  <ThoughtDef Name="Bodyfeeder_Know_Base" Abstract="True">
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>30</durationDays>
+    <stackLimit>300</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
+    <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+    <socialTargetDevelopmentalStageFilter>Child, Adult</socialTargetDevelopmentalStageFilter>
+	<nullifyingPrecepts>
+      <li MayRequire="Sarg.AlphaMemes">AM_OrganUse_Torturous</li>
+	</nullifyingPrecepts>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+      <li>Cannibal</li>
+    </nullifyingTraits>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_EnemyEaten</defName>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_EnemyBodyPartEaten</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate enemy alive</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_OutsiderEaten</defName>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_OutsiderBodyPartEaten</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate someone alive</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_ColonistEaten</defName>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_ColonistBodyPartEaten</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate a colonist alive</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_EnemyEaten_CAcceptable</defName>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_EnemyEaten</li>
+		<li>Bodyfeeder_Know_EnemyBodyPartEaten</li>
+		<li>Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate enemy alive</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef> 
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_OutsiderEaten_CAcceptable</defName>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_OutsiderEaten</li>
+		<li>Bodyfeeder_Know_OutsiderBodyPartEaten</li>
+		<li>Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate someone alive</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_ColonistEaten_CAcceptable</defName>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_ColonistEaten</li>
+		<li>Bodyfeeder_Know_ColonistBodyPartEaten</li>
+		<li>Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate a colonist alive</label>
+        <baseOpinionOffset>-15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_EnemyEaten_CRequired</defName>
+	<nullifyingTraits Inherit="False"/>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_EnemyEaten</li>
+		<li>Bodyfeeder_Know_EnemyBodyPartEaten</li>
+		<li>Bodyfeeder_Know_EnemyEaten_CAcceptable</li>
+		<li>Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</li>
+		<li>Bodyfeeder_Know_EnemyBodyPartEaten_CRequired</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate enemy alive</label>
+        <baseOpinionOffset>+30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef> 
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_OutsiderEaten_CRequired</defName>
+	<nullifyingTraits Inherit="False"/>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_OutsiderEaten</li>
+		<li>Bodyfeeder_Know_OutsiderBodyPartEaten</li>
+		<li>Bodyfeeder_Know_OutsiderEaten_CAcceptable</li>
+		<li>Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</li>
+		<li>Bodyfeeder_Know_OutsiderBodyPartEaten_CRequired</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate someone alive</label>
+        <baseOpinionOffset>+15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_ColonistEaten_CRequired</defName>
+	<nullifyingTraits Inherit="False"/>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_ColonistEaten</li>
+		<li>Bodyfeeder_Know_ColonistBodyPartEaten</li>
+		<li>Bodyfeeder_Know_ColonistEaten_CAcceptable</li>
+		<li>Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</li>
+		<li>Bodyfeeder_Know_ColonistBodyPartEaten_CRequired</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate a colonist alive</label>
+        <baseOpinionOffset>0</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_EnemyBodyPartEaten</defName>
+    <stages>
+      <li>
+        <label>ate part of a live enemy</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_OutsiderBodyPartEaten</defName>
+    <stages>
+      <li>
+        <label>ate a part of someone</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_ColonistBodyPartEaten</defName>
+    <stages>
+      <li>
+        <label>ate part of a colonist</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</defName>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_EnemyBodyPartEaten</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate part of a live enemy</label>
+        <baseOpinionOffset>0</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</defName>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_OutsiderBodyPartEaten</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate a part of someone</label>
+        <baseOpinionOffset>-2</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</defName>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_ColonistBodyPartEaten</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate part of a colonist</label>
+        <baseOpinionOffset>-6</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_EnemyBodyPartEaten_CRequired</defName>
+	<nullifyingTraits Inherit="False"/>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_EnemyBodyPartEaten</li>
+		<li>Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate part of a live enemy</label>
+        <baseOpinionOffset>+16</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_OutsiderBodyPartEaten_CRequired</defName>
+	<nullifyingTraits Inherit="False"/>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_OutsiderBodyPartEaten</li>
+		<li>Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate a part of someone</label>
+        <baseOpinionOffset>+8</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
+    <defName>Bodyfeeder_Know_ColonistBodyPartEaten_CRequired</defName>
+	<nullifyingTraits Inherit="False"/>
+	<replaceThoughts>
+		<li>Bodyfeeder_Know_ColonistBodyPartEaten</li>
+		<li>Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</li>
+	</replaceThoughts>
+    <stages>
+      <li>
+        <label>ate part of a colonist</label>
+        <baseOpinionOffset>0</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  
+</Defs>

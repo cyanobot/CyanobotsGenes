@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!--
+  <Operation Class="CyanobotsGenes.PatchOperationBySetting">
+	<setting>changeMealStacking</setting>
+	<on Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MealSurvivalPack"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Meals/SurvivalPack</texPath>
+		</value>
+	</on>
+	<off Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MealSurvivalPack"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Item/Meal/SurvivalPack</texPath>
+		</value>
+	</off>
+  </Operation>
+  
+  <Operation Class="CyanobotsGenes.PatchOperationBySetting">
+	<setting>changeMealStacking</setting>
+	<on Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MealSimple"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Meals/Simple</texPath>
+		</value>
+	</on>
+	<off Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MealSimple"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Item/Meal/Simple</texPath>
+		</value>
+	</off>
+  </Operation>
+  
+  <Operation Class="CyanobotsGenes.PatchOperationBySetting">
+	<setting>changeMealStacking</setting>
+	<on Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MealFine"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Meals/Fine</texPath>
+		</value>
+	</on>
+	<off Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MealFine"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Item/Meal/Fine</texPath>
+		</value>
+	</off>
+  </Operation>
+  
+  <Operation Class="CyanobotsGenes.PatchOperationBySetting">
+	<setting>changeMealStacking</setting>
+	<on Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MealFine_Veg"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Meals/FineVeg</texPath>
+		</value>
+	</on>
+	<off Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MealFine_Veg"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Item/Meal/FineVeg</texPath>
+		</value>
+	</off>
+  </Operation>
+  
+  <Operation Class="CyanobotsGenes.PatchOperationBySetting">
+	<setting>changeMealStacking</setting>
+	<on Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MealLavish"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Meals/Lavish</texPath>
+		</value>
+	</on>
+	<off Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MealLavish"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Item/Meal/Lavish</texPath>
+		</value>
+	</off>
+  </Operation>
+  
+  <Operation Class="CyanobotsGenes.PatchOperationBySetting">
+	<setting>changeMealStacking</setting>
+	<on Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MealLavish_Veg"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Meals/LavishVeg</texPath>
+		</value>
+	</on>
+	<off Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MealLavish_Veg"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Item/Meal/LavishVeg</texPath>
+		</value>
+	</off>
+  </Operation>
+  -->
+  
+  
+</Patch>

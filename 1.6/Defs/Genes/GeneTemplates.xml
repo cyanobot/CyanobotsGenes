@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<CyanobotsGenes.XenotypeGeneTemplateDef>
+	<defName>CYB_Metamorphosis</defName>
+	<geneClass>CyanobotsGenes.Gene_Metamorphosis</geneClass>
+	<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+	<label>metamorphosis: {0}</label>
+	<description>Carriers of this gene carry a latent copy of an entirely separate genome. At puberty (13) they will metamorphose permanently into the other xenotype.</description>
+	<biostatCpx>3</biostatCpx>
+	<displayCategory>CYB_Metamorphosis</displayCategory>
+	<modExtensions>
+		<li Class="VanillaGenesExpanded.GeneExtension">
+			<backgroundPathEndogenes>Genes/TemplateBackgrounds/Metamorphosis_Endogene</backgroundPathEndogenes>
+			<backgroundPathXenogenes>Genes/TemplateBackgrounds/Metamorphosis_Xenogene</backgroundPathXenogenes>
+		</li>
+	</modExtensions>
+</CyanobotsGenes.XenotypeGeneTemplateDef>
+
+<CyanobotsGenes.XenotypeGeneTemplateDef>
+	<defName>CYB_Offspring</defName>
+	<geneClass>CyanobotsGenes.Gene_Offspring</geneClass>
+	<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+	<label>offspring: {0}</label>
+	<description>Carriers of this gene carry an entirely separate genome in their gametes. As a result, their offspring will be of a different xenotype to the parent.</description>
+	<biostatCpx>3</biostatCpx>
+	<displayCategory>CYB_Offspring</displayCategory>
+	<modExtensions>
+		<li Class="VanillaGenesExpanded.GeneExtension">
+			<backgroundPathEndogenes>Genes/TemplateBackgrounds/Offspring_Endogene</backgroundPathEndogenes>
+			<backgroundPathXenogenes>Genes/TemplateBackgrounds/Offspring_Xenogene</backgroundPathXenogenes>
+		</li>
+	</modExtensions>
+</CyanobotsGenes.XenotypeGeneTemplateDef>
+
+<CyanobotsGenes.XenotypeGeneTemplateDef>
+	<defName>CYB_ImplantXenotype</defName>
+	<geneClass>CyanobotsGenes.Gene_ImplantXenotype</geneClass>
+	<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+	<label>implant {0} xenogerm</label>
+	<description>Carriers store a copy of an entirely separate xenogerm in a specialised implantation organ. Every 20 days they can implant this stored xenogerm into another person, overwriting any existing xenogerm.</description>
+	<biostatCpx>3</biostatCpx>
+	<displayCategory>CYB_ImplantXenotype</displayCategory>
+	<abilityTemplates>
+		<li>CYB_ImplantXenotype</li>
+	</abilityTemplates>
+	<modExtensions>
+		<li Class="VanillaGenesExpanded.GeneExtension">
+			<backgroundPathEndogenes>Genes/TemplateBackgrounds/ImplantXenotype_Endogene</backgroundPathEndogenes>
+			<backgroundPathXenogenes>Genes/TemplateBackgrounds/ImplantXenotype_Xenogene</backgroundPathXenogenes>
+		</li>
+	</modExtensions>
+</CyanobotsGenes.XenotypeGeneTemplateDef>
+
+
+</Defs>

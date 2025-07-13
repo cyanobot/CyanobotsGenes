@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!--LightFur-->
+<GeneDef>
+	<defName>LightFur</defName>
+	<label>light fur</label>
+	<labelShortAdj>lightfurred</labelShortAdj>
+    <iconPath>Genes/CYB_LightFur</iconPath>
+	<description>Carriers of this gene grow a thin coat of fine, soft fur that provides little protection from the elements and gets soaked easily.</description>
+	<biostatCpx>1</biostatCpx>
+	<displayCategory>CYB_Fur</displayCategory>
+    <displayOrderInCategory>10</displayOrderInCategory>
+	<exclusionTags>
+      <li>Fur</li>
+    </exclusionTags>
+    <skinIsHairColor>true</skinIsHairColor>
+    <tattoosVisible>false</tattoosVisible>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>plush</symbol></li>
+        <li><symbol>soft</symbol></li>
+        <li><symbol>velvet</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>plush</symbol></li>
+        <li><symbol>fur</symbol></li>
+        <li><symbol>coat</symbol></li>
+        <li><symbol>fuzz</symbol></li>
+      </suffixSymbols>
+    </symbolPack>	
+  </GeneDef>
+  
+<!--Tabby-->
+<GeneDef>
+	<defName>Tabby</defName>
+	<label>tabby</label>
+	<labelShortAdj>tabby</labelShortAdj>
+	<iconPath>Genes/CYB_Tabby</iconPath>
+	<description>Carriers of this gene express patterning genes taken from various feline species. Their light fur is tabby striped.</description>
+	<prerequisite>LightFur</prerequisite>
+	<displayCategory>CYB_Fur</displayCategory>
+    <displayOrderInCategory>20</displayOrderInCategory>
+    <forcedHeadTypes>
+      <li>Male_AverageNormal</li>
+      <li>Male_AveragePointy</li>
+      <li>Male_AverageWide</li>
+      <li>Female_AverageNormal</li>
+      <li>Female_AveragePointy</li>
+      <li>Female_AverageWide</li>
+      <li>Male_HeavyJawNormal</li>
+      <li>Female_HeavyJawNormal</li>
+    </forcedHeadTypes>
+	<fur>CYB_Tabby</fur>
+	<renderNodeProperties>
+		<li>
+			<nodeClass>PawnRenderNode_Fur</nodeClass>
+			<workerClass>PawnRenderNodeWorker_Fur</workerClass>
+			<baseLayer>5</baseLayer>
+			<rotDrawMode>Fresh, Rotting</rotDrawMode>
+			<colorType>Hair</colorType>
+			<parentTagDef>Body</parentTagDef>
+		</li>
+		<li>
+			<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+			<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+			<texPaths>
+				<li>HeadAttachments/CYB_TabbyStripesA</li>
+				<li>HeadAttachments/CYB_TabbyStripesB</li>
+				<li>HeadAttachments/CYB_TabbyStripesC</li>
+				<li>HeadAttachments/CYB_TabbyStripesD</li>
+				<li>HeadAttachments/CYB_TabbyStripesE</li>
+			</texPaths>
+			<parentTagDef>Head</parentTagDef>
+			<useSkinShader>true</useSkinShader>
+			<useRottenColor>true</useRottenColor>
+			<colorType>Hair</colorType>
+			<rotDrawMode>Fresh, Rotting</rotDrawMode>
+			<drawData>
+			  <defaultData>
+				<layer>51</layer>
+			  </defaultData>
+			</drawData>
+		</li>
+	</renderNodeProperties>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>tabby</symbol></li>
+        <li><symbol>stripe</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>cat</symbol></li>
+        <li><symbol>kitten</symbol></li>
+        <li><symbol>tiger</symbol></li>
+      </suffixSymbols>
+    </symbolPack>	
+</GeneDef>
+
+
+</Defs>

@@ -6,6 +6,7 @@
     <supportedVersions>
         <li>1.4</li>
 		<li>1.5</li>
+		<li>1.6</li>
     </supportedVersions>
 
     <description>7 new xenotypes and 47 new genes (16 cosmetic, 31 functional) to add to your gene pool. Requires Biotech.
@@ -74,6 +75,14 @@ Xenotypes:
 				<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
 			</li>
 		</v1.5>
+		<v1.6>
+			<li>
+				<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+				<displayName>Vanilla Expanded Framework</displayName>
+				<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
+				<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
+			</li>
+		</v1.6>
 	</modDependenciesByVersion>
 	<loadAfter>
 		<li>brrainz.harmony</li>
@@ -85,6 +94,7 @@ Xenotypes:
 		<li>telardo.BetterGeneGraphicsFramework</li>
 		<li>EBSG.Food</li>
 		<li>EBSG.AiO</li>
+		<li>sindre0830.universum</li>
 	</loadAfter>	
 
 </ModMetaData>
