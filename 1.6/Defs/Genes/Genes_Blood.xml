@@ -15,7 +15,7 @@
 			<li>BloodColor</li>
 		</exclusionTags>
 		<modExtensions>
-			<li Class="VanillaGenesExpanded.GeneExtension">
+			<li Class="VEF.Genes.GeneExtension">
 				<customBloodThingDef>CYB_Filth_Blood_Black</customBloodThingDef>
 				<!--<customBloodIcon>UI/CYB_Bleeding_Black</customBloodIcon>-->
 				<customBloodEffect>CYB_Damage_HitFlesh_Black</customBloodEffect>
@@ -38,7 +38,7 @@
 			<li>BloodColor</li>
 		</exclusionTags>
 		<modExtensions>
-			<li Class="VanillaGenesExpanded.GeneExtension">
+			<li Class="VEF.Genes.GeneExtension">
 				<customBloodThingDef>CYB_Filth_Blood_Lilac</customBloodThingDef>
 				<customBloodIcon>UI/CYB_Bleeding_Lilac</customBloodIcon>
 				<customBloodEffect>CYB_Damage_HitFlesh_Lilac</customBloodEffect>

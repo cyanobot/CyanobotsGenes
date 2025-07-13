@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Integrated Genes</li>
+	</mods>
+	<match Class="PatchOperationAdd">
+		<xpath>Defs/GeneDef[
+			defName="CYB_WorkSpeed_Low" or
+			defName="CYB_WorkSpeed_High"
+			]</xpath>
+		<value>
+			<modExtensions>
+				<li Class="VEF.Genes.GeneExtension">
+					<hideGene>true</hideGene>
+				</li>
+			</modExtensions>
+		</value>
+	</match>
+</Operation>
+	
+</Patch>

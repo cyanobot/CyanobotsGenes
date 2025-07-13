@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>EBSG - Expanded Lifespan Genes</li>
+		<li>Expanded Biotech Style Genes - All in One</li>
+	</mods>
+			<!-- only if EBSG is patching growth points,
+				replace maturation genes-->
+	<match Class="PatchOperationConditional">
+		<xpath>Defs/StatDef[defName="EBSG_GrowthPointRate"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/GeneDef[
+				defName="CYB_SlowMaturation" or
+				defName="CYB_FastMaturation"
+				]</xpath>
+			<value>
+				<modExtensions>
+					<li Class="VEF.Genes.GeneExtension">
+						<hideGene>true</hideGene>
+					</li>
+				</modExtensions>
+			</value>
+		</match>
+	</match>
+</Operation>
+	
+</Patch>

@@ -287,7 +287,7 @@
 		</li>
 	</capMods>
 	<modExtensions>
-		<li Class="VanillaGenesExpanded.GeneExtension">
+		<li Class="VEF.Genes.GeneExtension">
 			<hediffsToBodyParts>
 				<li>
 					<hediff>CYB_Claws</hediff>
@@ -355,7 +355,7 @@
 		</li>
 	</capMods>
 	<modExtensions>
-		<li Class="VanillaGenesExpanded.GeneExtension">
+		<li Class="VEF.Genes.GeneExtension">
 			<hediffsToBodyParts>
 				<li>
 					<hediff>CYB_Fangs</hediff>

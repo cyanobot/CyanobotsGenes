@@ -73,7 +73,7 @@
 	<biostatCpx>2</biostatCpx>
 	<biostatMet>-2</biostatMet>
 	<modExtensions>
-		<li Class="VanillaGenesExpanded.GeneExtension">
+		<li Class="VEF.Genes.GeneExtension">
 			<sizeByAge>
 			  <minOffset>0</minOffset>
 			  <maxOffset>4</maxOffset>

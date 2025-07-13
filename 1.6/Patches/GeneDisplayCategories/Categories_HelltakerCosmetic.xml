@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
+<!-- smooth fur and chest fur to fur category-->
 <Operation Class="PatchOperationFindMod">
 	<mods>
 		<li>Helltaker Cosmetic Genes</li>

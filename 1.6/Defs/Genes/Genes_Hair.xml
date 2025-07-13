@@ -5,7 +5,7 @@
 	<selectionWeight>0</selectionWeight>
     <displayOrderInCategory>330</displayOrderInCategory>
     <modExtensions>
-		<li Class="VanillaGenesExpanded.GeneExtension">
+		<li Class="VEF.Genes.GeneExtension">
 			<hideGene>false</hideGene>
 		</li>
 	</modExtensions>
@@ -171,19 +171,5 @@
     <label>licorice hair</label>
     <hairColorOverride>(37, 29, 24)</hairColorOverride>
   </GeneDef>
-
-<!--
-  <GeneDef ParentName="CYB_GeneColorHairBase">
-    <defName>CYB_Hair_Wolf</defName>
-    <label>wolf grey hair</label>
-    <hairColorOverride>(68, 78, 88)</hairColorOverride>
-  </GeneDef>
-
-  <GeneDef ParentName="CYB_GeneColorHairBase">
-    <defName>CYB_Hair_Bone</defName>
-    <label>bone white hair</label>
-    <hairColorOverride>(231, 228, 205)</hairColorOverride>
-  </GeneDef>
- -->
   
 </Defs>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Integrated Genes</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+			
+			<!--move Docile and Domineering to slavery category-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="CYB_Docile" or defName="CYB_Domineering"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Turn_GeneCategory_Slavery</displayCategory>
+				</value>
+			</li>
+		</operations>
+	</match>
+</Operation>
+
+</Patch>

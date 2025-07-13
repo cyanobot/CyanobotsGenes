@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Vanilla Races Expanded - Pigskin</li>
+	</mods>
+	<match Class="PatchOperationAdd">
+	<!-- prodigious growth and evergrowing are close enough we don't need both-->
+		<xpath>Defs/GeneDef[defName="CYB_ProdigiousGrowth"]/modExtensions/li[@Class="VEF.Genes.GeneExtension"]</xpath>
+		<value>
+			<hideGene>true</hideGene>
+		</value>
+	</match>
+</Operation>
+	
+</Patch>

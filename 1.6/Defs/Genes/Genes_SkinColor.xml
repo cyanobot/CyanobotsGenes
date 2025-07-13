@@ -5,7 +5,7 @@
 	<randomBrightnessFactor>0</randomBrightnessFactor>
     <displayOrderInCategory>300</displayOrderInCategory>
     <modExtensions>
-		<li Class="VanillaGenesExpanded.GeneExtension">
+		<li Class="VEF.Genes.GeneExtension">
 			<hideGene>false</hideGene>
 		</li>
 	</modExtensions>

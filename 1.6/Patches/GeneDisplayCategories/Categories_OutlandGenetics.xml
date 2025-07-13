@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Outland - Genetics</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>
+			
+			<!--move our genes into outland categories where relevant-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="CYB_Nose_Flat"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Outland_FacialFeatures</displayCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="CYB_Tusks"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Outland_Teeth</displayCategory>
+				</value>
+			</li>
+						
+		</operations>
+	</match>
+</Operation>
+
+
+</Patch>

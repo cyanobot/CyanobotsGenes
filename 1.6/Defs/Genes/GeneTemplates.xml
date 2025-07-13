@@ -10,7 +10,7 @@
 	<biostatCpx>3</biostatCpx>
 	<displayCategory>CYB_Metamorphosis</displayCategory>
 	<modExtensions>
-		<li Class="VanillaGenesExpanded.GeneExtension">
+		<li Class="VEF.Genes.GeneExtension">
 			<backgroundPathEndogenes>Genes/TemplateBackgrounds/Metamorphosis_Endogene</backgroundPathEndogenes>
 			<backgroundPathXenogenes>Genes/TemplateBackgrounds/Metamorphosis_Xenogene</backgroundPathXenogenes>
 		</li>
@@ -26,7 +26,7 @@
 	<biostatCpx>3</biostatCpx>
 	<displayCategory>CYB_Offspring</displayCategory>
 	<modExtensions>
-		<li Class="VanillaGenesExpanded.GeneExtension">
+		<li Class="VEF.Genes.GeneExtension">
 			<backgroundPathEndogenes>Genes/TemplateBackgrounds/Offspring_Endogene</backgroundPathEndogenes>
 			<backgroundPathXenogenes>Genes/TemplateBackgrounds/Offspring_Xenogene</backgroundPathXenogenes>
 		</li>
@@ -45,7 +45,7 @@
 		<li>CYB_ImplantXenotype</li>
 	</abilityTemplates>
 	<modExtensions>
-		<li Class="VanillaGenesExpanded.GeneExtension">
+		<li Class="VEF.Genes.GeneExtension">
 			<backgroundPathEndogenes>Genes/TemplateBackgrounds/ImplantXenotype_Endogene</backgroundPathEndogenes>
 			<backgroundPathXenogenes>Genes/TemplateBackgrounds/ImplantXenotype_Xenogene</backgroundPathXenogenes>
 		</li>

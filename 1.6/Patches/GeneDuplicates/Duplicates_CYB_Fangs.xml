@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Outland - Genetics</li>
+	</mods>
+	<match Class="PatchOperationAdd">
+		<xpath>Defs/GeneDef[defName="CYB_Fangs"]/modExtensions/li[@Class="VEF.Genes.GeneExtension"]</xpath>
+		<value>
+			<hideGene>true</hideGene>
+		</value>
+	</match>
+</Operation>
+	
+</Patch>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>EBSG - Capacity Genes (Sight, Hearing, etc)</li>
+		<li>Expanded Biotech Style Genes - All in One</li>
+		<li>Integrated Genes</li>
+	</mods>
+	<match Class="PatchOperationAdd">
+		<xpath>Defs/GeneDef[defName="CYB_Blind"]</xpath>
+		<value>
+			<modExtensions>
+				<li Class="VEF.Genes.GeneExtension">
+					<hideGene>true</hideGene>
+				</li>
+			</modExtensions>
+		</value>
+	</match>
+</Operation>
+	
+</Patch>

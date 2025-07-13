@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Det's Xenotypes - Stoneborn</li>
+	</mods>
+	<match Class="PatchOperationAdd">
+		<xpath>Defs/GeneDef[defName="CYB_Undergrounder"]]</xpath>
+		<value>
+			<modExtensions>
+				<li Class="VEF.Genes.GeneExtension">
+					<hideGene>true</hideGene>
+				</li>
+			</modExtensions>
+		</value>
+	</match>
+</Operation>
+	
+</Patch>
