@@ -2,6 +2,7 @@
 <Defs>
 
 <!--Eyes_SlitPupil-->
+<!--
 <GeneDef ParentName="GeneEyeColor">
 	<defName>Eyes_SlitPupil</defName>
 	<label>slit pupils</label>
@@ -57,7 +58,208 @@
       </li>
     </renderNodeProperties>
 </GeneDef>
+-->
 
+<GeneDef ParentName="GeneEyeColor">
+	<defName>CYB_Eyes_Cat_Amber</defName>
+	<label>amber cat eyes</label>
+	<labelShortAdj>cateye</labelShortAdj>
+	<description>Carriers of this gene have slit pupils, like those of a cat or snake, and large amber irises.</description>
+	<iconPath>Genes/CYB_Eyes_Cat_Amber</iconPath>
+	<displayCategory>Cosmetic</displayCategory>
+    <biostatCpx>0</biostatCpx>
+	<displayOrderInCategory>2</displayOrderInCategory>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Cat_Amber</texPath>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+		<useSkinShader>false</useSkinShader>
+		<useRottenColor>true</useRottenColor>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.255)</offset>
+            <flip>false</flip>
+          </defaultData>
+        </drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Cat_Amber</texPath>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+		<useSkinShader>false</useSkinShader>
+		<useRottenColor>true</useRottenColor>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+            <flip>true</flip>
+          </defaultData>
+          <dataWest>
+            <flip>false</flip>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+</GeneDef>
+
+<GeneDef ParentName="GeneEyeColor">
+	<defName>CYB_Eyes_Cat_Blue</defName>
+	<label>blue cat eyes</label>
+	<labelShortAdj>cateye</labelShortAdj>
+	<description>Carriers of this gene have slit pupils, like those of a cat or snake, and large blue irises.</description>
+	<iconPath>Genes/CYB_Eyes_Cat_Blue</iconPath>
+	<displayCategory>Cosmetic</displayCategory>
+    <biostatCpx>0</biostatCpx>
+	<displayOrderInCategory>2</displayOrderInCategory>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Cat_Blue</texPath>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+		<useSkinShader>false</useSkinShader>
+		<useRottenColor>true</useRottenColor>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.255)</offset>
+            <flip>false</flip>
+          </defaultData>
+        </drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Cat_Blue</texPath>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+		<useSkinShader>false</useSkinShader>
+		<useRottenColor>true</useRottenColor>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+            <flip>true</flip>
+          </defaultData>
+          <dataWest>
+            <flip>false</flip>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+</GeneDef>
+
+<GeneDef ParentName="GeneEyeColor">
+	<defName>CYB_Eyes_Cat_Green</defName>
+	<label>green cat eyes</label>
+	<labelShortAdj>cateye</labelShortAdj>
+	<description>Carriers of this gene have slit pupils, like those of a cat or snake, and large green irises.</description>
+	<iconPath>Genes/CYB_Eyes_Cat_Green</iconPath>
+	<displayCategory>Cosmetic</displayCategory>
+    <biostatCpx>0</biostatCpx>
+	<displayOrderInCategory>2</displayOrderInCategory>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Cat_Green</texPath>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+		<useSkinShader>false</useSkinShader>
+		<useRottenColor>true</useRottenColor>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.255)</offset>
+            <flip>false</flip>
+          </defaultData>
+        </drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Cat_Green</texPath>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+		<useSkinShader>false</useSkinShader>
+		<useRottenColor>true</useRottenColor>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+            <flip>true</flip>
+          </defaultData>
+          <dataWest>
+            <flip>false</flip>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+</GeneDef>
+
+<GeneDef ParentName="GeneEyeColor">
+	<defName>CYB_Eyes_Cat_Red</defName>
+	<label>red cat eyes</label>
+	<labelShortAdj>cateye</labelShortAdj>
+	<description>Carriers of this gene have slit pupils, like those of a cat or snake, and large red irises.</description>
+	<iconPath>Genes/CYB_Eyes_Cat_Red</iconPath>
+	<displayCategory>Cosmetic</displayCategory>
+    <biostatCpx>0</biostatCpx>
+	<displayOrderInCategory>2</displayOrderInCategory>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Cat_Red</texPath>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+		<useSkinShader>false</useSkinShader>
+		<useRottenColor>true</useRottenColor>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.255)</offset>
+          </defaultData>
+        </drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>HeadAttachments/CYB_Eyes_Cat_Red</texPath>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+		<useSkinShader>false</useSkinShader>
+		<useRottenColor>true</useRottenColor>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+            <flip>true</flip>
+          </defaultData>
+          <dataWest>
+            <flip>false</flip>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+</GeneDef>
+
+<!--eyes CMY-->
   <GeneDef ParentName="GeneEyeColor">
     <defName>CYB_Eyes_Cyan</defName>
     <label>cyan eyes</label>
