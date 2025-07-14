@@ -75,10 +75,22 @@ namespace CyanobotsGenes
 			//yield return AdjustCarriedStack();
 			yield return chew;
 			yield return FinalizeIngest();
-			yield return Toils_Jump.JumpIf(chew, () => 
+			yield return Toils_Jump.JumpIf(chew, () =>
+			{
+				Thing targetThing = job.GetTarget(TargetIndex.A).Thing;
+				LogUtil.DebugLog($"JumpIf - targetThing: {targetThing}, job.count: {job.count}" +
+					$", is Corpse: {targetThing is Corpse}");
+                if (job.count <= 0) return false;
+                if (!(targetThing is Corpse)) return false;
+				if (targetThing.DestroyedOrNull()) return false;
+				if (HemogenLevelPct(pawn) >= 0.9f) return false;
+				return true;
+			});
+			/*
 				(job.GetTarget(TargetIndex.A).Thing is Corpse && BodyfeederUtility.HemogenLevelPct(pawn) < 0.9f)
 				|| (!job.GetTarget(TargetIndex.A).Thing.DestroyedOrNull() 
 					&& job.count > 0));
+			*/
 			//Log.Message("Finished creating toils");
 		}
 

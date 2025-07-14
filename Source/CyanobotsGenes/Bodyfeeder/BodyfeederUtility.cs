@@ -130,13 +130,22 @@ namespace CyanobotsGenes
             float hemogenWanted = HemogenWanted(pawn);
 
             //Log.Message("efficiency: " + efficiency + ", hemogenWanted: " + hemogenWanted + ", nutrition wanted: " + (hemogenWanted / efficiency).ToString());
-            return hemogenWanted / efficiency;
+            float nutritionWanted = hemogenWanted / efficiency;
+
+            if (food is Pawn || food is Corpse)
+            {
+                //cap on desired nutrition from pawn/corpse to encourage piecemeal eating
+                nutritionWanted = Mathf.Min(nutritionWanted, 1.5f);
+            }
+
+            return nutritionWanted;
         }
 
         public static float HemogenLevelPct(Pawn pawn)
         {
             if (!pawn.HasActiveGene(GeneDefOf.Hemogenic)) return 1f;
             Gene_Hemogen gene_Hemogen = pawn.genes.GetFirstGeneOfType<Gene_Hemogen>();
+            LogUtil.DebugLog($"HemogenLevelPct - pawn: {pawn}, result: {gene_Hemogen.Value / gene_Hemogen.Max}");
             return gene_Hemogen.Value / gene_Hemogen.Max;
         }
 
@@ -394,7 +403,8 @@ namespace CyanobotsGenes
             {
                 return null;
             }
-            return source.MinBy((BodyPartRecord x) => Mathf.Abs(GetBodyPartNutrition(victim, x) - nutritionWanted));
+            BodyPartRecord result = source.MinBy((BodyPartRecord x) => Mathf.Abs(GetBodyPartNutrition(victim, x) - nutritionWanted));
+            return result;
         }
 
         public static float GetBodyPartNutrition(Pawn victim, BodyPartRecord part)
@@ -411,7 +421,12 @@ namespace CyanobotsGenes
             }
 
             float partCoverage = hediffSet.GetCoverageOfNotMissingNaturalParts(part);
-            return totalNutrition * partCoverage;
+            float nutrition = totalNutrition * partCoverage;
+            if (!victim.Dead)
+            {
+                nutrition *= 2f;
+            }
+            return nutrition;
         }
 
         public static Thing TryGetHemogenSource(Pawn pawn, float searchRadius = -1f)

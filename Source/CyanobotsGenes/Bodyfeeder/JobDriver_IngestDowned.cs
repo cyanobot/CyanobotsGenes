@@ -114,6 +114,7 @@ namespace CyanobotsGenes
 
                 float nutritionWanted = BodyfeederUtility.BodyfeederNutritionWanted(ingester, victim);    
                 float hpn = HemogenPerNutrition(ingester, victim);       //gotta calculate this before they potentially die
+                
                 IngestedCalculateAmounts(ingester, victim, nutritionWanted, out int numTaken, out float nutritionIngested, out BodyPartDef bodyPartDef);
 
                 //can't directly notify genes and hediffs because victim is not an ingestible,

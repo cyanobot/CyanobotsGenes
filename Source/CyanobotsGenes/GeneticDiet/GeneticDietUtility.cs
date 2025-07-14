@@ -432,6 +432,7 @@ namespace CyanobotsGenes
         //but it's an approximation
         public static float ProportionHumanlike(Thing food)
         {
+            if (food.def == ThingDefOf.HemogenPack) return 1f;
             CompIngredients compIngredients = food.TryGetComp<CompIngredients>();
             if (compIngredients == null)
             {

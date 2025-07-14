@@ -11,7 +11,7 @@
 <CYB_SettingDesc_ChangeMealStacking>Tighter restrictions on meal stacking by ingredient. If you have no herbivorous/carnivorous pawns and would prefer the vanilla logic, turn this off. NOTE: failure to restart after changing will cause errors and invisble meals.</CYB_SettingDesc_ChangeMealStacking>
 
 <CYB_SettingLabel_BundleSkinHairColors>Bundle skin and hair color genes</CYB_SettingLabel_BundleSkinHairColors>
-<CYB_SettingDesc_BundleSkinHairColors>Combines skin and hair color genes into one gene per xenotype to reduce clutter. To see the colors as separate genes, turn this setting off.</CYB_SettingDesc_BundleSkinHairColors>
+<CYB_SettingDesc_BundleSkinHairColors>Combines skin and hair color genes into themed bundles to reduce clutter. To see the colors as separate genes, turn this setting off.</CYB_SettingDesc_BundleSkinHairColors>
 
 <CYB_SettingsHeader_OffspringAffects>Offspring genes affect:</CYB_SettingsHeader_OffspringAffects>
 <CYB_SettingsHeaderDesc_OffspringAffects>Use these toggles to control whether the non-standard means of reproduction below are affected by the Offspring line of genes, which force the carrier's children to be a specific xenotype.</CYB_SettingsHeaderDesc_OffspringAffects>
