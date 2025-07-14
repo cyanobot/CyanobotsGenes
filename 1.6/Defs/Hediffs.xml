@@ -8,6 +8,7 @@
 	<description>An upset stomach caused by eating genetically inappropriate foodstuffs. It will get better with time, or worse if they keep eating things they can't digest well.</description>
     <makesSickThought>false</makesSickThought>
     <scenarioCanAdd>true</scenarioCanAdd>
+	<maxSeverity>1.0</maxSeverity>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-0.4</severityPerDay>

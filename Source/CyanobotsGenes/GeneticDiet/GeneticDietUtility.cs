@@ -173,6 +173,8 @@ namespace CyanobotsGenes
         //whether their diet renders a food absolutely inedible
         public static bool DietForbids(ThingDef foodDef, Pawn pawn)
         {
+            //LogUtil.DebugLog($"DietForbids(def) - foodDef: {foodDef}, pawn: {pawn}");
+
             //covers drugs, hemogen packs for hemogenic pawns
             if (NeverForbidden(foodDef, pawn)) return false;
 
@@ -184,8 +186,8 @@ namespace CyanobotsGenes
             if (pawn.HasActiveGene(CG_DefOf.ObligateCannibal))
             {
                 if (foodDef != ThingDefOf.HemogenPack
-                    && !foodDef.IsCorpse 
-                    && !foodDef.HasComp(typeof(CompIngredients)) 
+                    && !foodDef.IsCorpse
+                    && !foodDef.HasComp(typeof(CompIngredients))
                     && FoodUtility.GetMeatSourceCategory(foodDef) != MeatSourceCategory.Humanlike)
                 {
                     return true;
@@ -195,13 +197,16 @@ namespace CyanobotsGenes
             CG_FoodKind cg_FoodKind = GetCG_FoodKind(foodDef);
             DietCategory dietCategory = GetDietCategory(pawn);
 
+            //LogUtil.DebugLog($"DietForbids(def) - foodDef: {foodDef}, pawn: {pawn}, dietCategory: {dietCategory}" +
+            //    $", cg_FoodKind: {cg_FoodKind}");
+
+
             //no one who isn't a strict herbivore is allowed to eat hay
             if (dietCategory != DietCategory.StrictHerbivore && foodDef == ThingDefOf.Hay) return true;
 
             //otherwise don't mess with non-genetic-diet pawns
             if (dietCategory == DietCategory.Default) return false;
 
-           
             if (dietCategory == DietCategory.Hypercarnivore && cg_FoodKind == CG_FoodKind.Vegetable)
             {
                 return true;
@@ -212,16 +217,26 @@ namespace CyanobotsGenes
                 return true;
             }
 
-            else return false;
+            else
+            {
+                //LogUtil.DebugLog($"Diet does not forbid whole def - foodDef: {foodDef}, pawn: {pawn}");
+                return false;
+            }
         }
 
         public static bool DietForbids(Thing food, Pawn pawn)
         {
+            //LogUtil.DebugLog($"DietForbids(thing) - food: {food}, pawn: {pawn}, def: {food.def}");
+
             //covers drugs, hemogen packs for hemogenic pawns
             if (NeverForbidden(food.def, pawn)) return false;
-            
+
+            //LogUtil.DebugLog($"Def is not NeverForbidden");
+
             //if the def is always forbidden
             if (DietForbids(food.def, pawn)) return true;
+
+            //LogUtil.DebugLog($"Def is not forbidden");
 
             //obligate cannibals
             if (pawn.HasActiveGene(CG_DefOf.ObligateCannibal))
@@ -233,6 +248,10 @@ namespace CyanobotsGenes
 
             DietCategory dietCategory = GetDietCategory(pawn);
             CG_FoodKind cg_FoodKind = GetCG_FoodKind(food);
+
+            //LogUtil.DebugLog($"DietForbids(thing) - food: {food}, pawn: {pawn}, dietCategory: {dietCategory}" +
+            //    $", cg_FoodKind: {cg_FoodKind}"
+            //    );
 
             if (cg_FoodKind == CG_FoodKind.Any) return false;
 

@@ -23,7 +23,7 @@ namespace CyanobotsGenes
             if (result.Disabled) return result;
 
             //only looking for things that should be forbidden by genetic diet
-            if (!GeneticDietUtility.DietForbids(clickedThing, pawn)) return null;
+            if (!GeneticDietUtility.DietForbids(clickedThing, pawn)) return result;
 
             //disable and tell the player why
             result.Disabled = true;
