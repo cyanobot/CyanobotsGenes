@@ -6,11 +6,11 @@ using Verse;
 using Verse.AI;
 using System.Collections.Generic;
 using static CyanobotsGenes.BodyfeederUtility;
-
+#if RW_1_5
 namespace CyanobotsGenes
 {
     [HarmonyPatch(typeof(FloatMenuMakerMap),"AddHumanlikeOrders")]
-    class AddHumanlikeOrders_Bodyfeeder_Patch
+    public static class AddHumanlikeOrders_Bodyfeeder_Patch
     {
         static void Postfix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts)
         {
@@ -48,3 +48,4 @@ namespace CyanobotsGenes
         }
     }
 }
+#endif

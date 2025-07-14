@@ -35,14 +35,14 @@ namespace CyanobotsGenes
             }
 
             float desiredPsyfocus = DesiredPsyfocus(actor);
-            Log.Message("Psyphon.Apply - desiredPsyfocus: " + desiredPsyfocus);
+            LogUtil.DebugLog("Psyphon.Apply - desiredPsyfocus: " + desiredPsyfocus);
 
             //psychic sensitivity of target
             float targetSensitivity = targetPawn.GetStatValue(StatDefOf.PsychicSensitivity);
             if (targetSensitivity <= 0)
             {
                 //failure due to 0 psychic sensitivity
-                //Log.Error("[Cyanobot's Genes] Psyphon ability used on pawn " + targetPawn + " but " + targetPawn + " has no psychic sensitivity and should not have been a valid target.");
+                Log.Error("[Cyanobot's Genes] Psyphon ability used on pawn " + targetPawn + " but " + targetPawn + " has no psychic sensitivity and should not have been a valid target.");
                 return;
             }
 
@@ -59,7 +59,7 @@ namespace CyanobotsGenes
             if (remainingToDrain > 0f)
             {
                 float consciousnessToDrain = ConsciousnessToDrain(targetPawn, remainingToDrain);
-                Log.Message("consciousnessToDrain: " + consciousnessToDrain);
+                LogUtil.DebugLog("consciousnessToDrain: " + consciousnessToDrain);
 
                 ApplyNegativeEffects(actor, targetPawn, consciousnessToDrain);
                 remainingToDrain -= consciousnessToDrain * BaseConsciousnessConversionFactor;
@@ -108,7 +108,9 @@ namespace CyanobotsGenes
                     SkillRecord targetSkill = passionSkills.RandomElement();
                     targetSkill.passion -= 1;
 
-                    string letterText = "CYB_LetterText_PsyphonRemovedPassion".Translate().Formatted(victim.Named("PAWN"), targetSkill.Named("SKILL"));
+                    LogUtil.DebugLog($"Attempting to remove passion from targetSkill: {targetSkill}");
+
+                    string letterText = "CYB_LetterText_PsyphonRemovedPassion".Translate().Formatted(victim.Named("PAWN"), targetSkill.def.Named("SKILL"));
                     Find.LetterStack.ReceiveLetter(LetterMaker.MakeLetter("CYB_LetterLabel_PsyphonRemovedPassion".Translate(), letterText, LetterDefOf.NegativeEvent));
                 }
             }
@@ -209,6 +211,14 @@ namespace CyanobotsGenes
                     }
                     text += "CYB_MightKill".Translate();
                 }
+                else if (MightCauseBrainDamage(targetPawn, DesiredPsyfocus(parent.pawn)))
+                {
+                    if (!text.NullOrEmpty())
+                    {
+                        text += "\n";
+                    }
+                    text += "CYB_MightCauseBrainDamage".Translate();
+                }
                 return text;
             }
             return base.ExtraLabelMouseAttachment(target);
@@ -219,7 +229,7 @@ namespace CyanobotsGenes
             Pawn targetPawn = target.Pawn;
             if (targetPawn != null)
             {
-                if (targetPawn.genes != null && targetPawn.genes.HasGene(GeneDefOf.Deathless))
+                if (targetPawn.genes != null && targetPawn.genes.HasActiveGene(GeneDefOf.Deathless))
                 {
                     return null;
                 }

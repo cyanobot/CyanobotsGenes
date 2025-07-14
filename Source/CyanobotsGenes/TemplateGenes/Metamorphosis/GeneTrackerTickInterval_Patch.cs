@@ -7,14 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 #if RW_1_5
+#else
 namespace CyanobotsGenes
 {
-    [HarmonyPatch(typeof(Pawn_GeneTracker),nameof(Pawn_GeneTracker.GeneTrackerTick))]
-    public static class GeneTrackerTick_Patch
+    [HarmonyPatch(typeof(Pawn_GeneTracker),nameof(Pawn_GeneTracker.GeneTrackerTickInterval))]
+    public static class GeneTrackerTickInterval_Patch
     {
-        public static void Postfix(Pawn_GeneTracker __instance)
+        public static void Postfix(Pawn_GeneTracker __instance, int delta)
         {
-            if (__instance.pawn.IsHashIntervalTick(Gene_Metamorphosis.tickInterval))
+            if (__instance.pawn.IsHashIntervalTick(Gene_Metamorphosis.tickInterval,delta))
             {
                 Gene_Metamorphosis chosenGene = null;
                 foreach (Gene gene in __instance.GenesListForReading)

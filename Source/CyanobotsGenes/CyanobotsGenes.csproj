@@ -9,16 +9,17 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CyanobotsGenes</RootNamespace>
     <AssemblyName>CyanobotsGenes</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\Assemblies\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;RW_1_6</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -26,18 +27,38 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Assemblies\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
+    <DefineConstants>TRACE;RW_1_6</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
+    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
+    <DefineConstants>TRACE;RW_1_5</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\..\..\..\..\..\..\..\..\Harmony.2.2.2.0\net472\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+    <Reference Condition="'$(Configuration)' == '1.5'" Include="1.5_Assembly-CSharp">
+      <HintPath>..\..\..\1.5Assemblies\1.5_Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Condition="'$(Configuration)' == '1.5'" Include="1.5_UnityEngine.CoreModule">
+      <HintPath>..\..\..\1.5Assemblies\1.5_UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Condition="'$(Configuration)' == '1.5'" Include="1.5_UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\1.5Assemblies\1.5_UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Condition="'$(Configuration)' != '1.5'" Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -48,20 +69,25 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    <Reference Condition="'$(Configuration)' != '1.5'" Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    <Reference Condition="'$(Configuration)' != '1.5'" Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Condition="'$(Configuration)' != '1.5'" Include="VEF">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2023507013\1.6\Assemblies\VEF.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="VFECore">
-      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\VFECore.dll</HintPath>
+    <Reference Condition="'$(Configuration)' == '1.5'" Include="VFECore">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\VFECore.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bodyfeeder\Harmony\FloatMenuOptionProvider_Ingest_Bodyfeeder_Patch.cs" />
+    <Compile Include="GeneticDiet\Harmony\FloatMenuOptionProvider_Ingest_Diet_Patch.cs" />
     <Compile Include="TemplateGenes\Caste\CasteUtility.cs" />
     <Compile Include="TemplateGenes\Caste\GeneExtension_Caste.cs" />
     <Compile Include="Precocious\Harmony\GenerateTraits_Patch.cs" />
@@ -110,6 +136,7 @@
     <Compile Include="CG_Util.cs" />
     <Compile Include="GeneExtension_DisabledWorkTypes\Gene_DisabledWorkTypes_Patch.cs" />
     <Compile Include="GeneExtension_DisabledWorkTypes\GetReasonsForDisabledWorkType_Patch.cs" />
+    <Compile Include="TemplateGenes\Metamorphosis\GeneTrackerTickInterval_Patch.cs" />
     <Compile Include="TemplateGenes\Metamorphosis\GeneTrackerTick_Patch.cs" />
     <Compile Include="TemplateGenes\Offspring\Harmony\BigAndSmall_MultipleBabies_Patch.cs" />
     <Compile Include="TemplateGenes\Offspring\Harmony\TrySpawnHatchedOrBornPawn_Patch.cs" />

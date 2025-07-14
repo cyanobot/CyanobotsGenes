@@ -10,8 +10,13 @@ using UnityEngine;
 
 namespace CyanobotsGenes.Precocious.Harmony
 {
+#if RW_1_5
     [HarmonyPatch(typeof(Gizmo_GrowthTier), "GrowthTierTooltip",
         new Type[] { typeof(Rect), typeof(int) })]
+#else
+    [HarmonyPatch(typeof(Gizmo_GrowthTier), "GrowthTierTooltip",
+        new Type[] { typeof(int) })]
+#endif
     public static class GrowthTierTooltip_Patch
     {
         private static int approxStartPosition = 0;

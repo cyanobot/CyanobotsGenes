@@ -27,6 +27,7 @@ namespace CyanobotsGenes
         public static bool offspringAffects_AG_ParasiticEndogenes = false;
         public static bool offspringAffects_AG_ParasiticXenogenes = false;
 
+#if RW_1_5
         public static bool noOutlandGlimmer = false;
 
         public static float generationWeight_Biodrone = 1f;
@@ -37,6 +38,7 @@ namespace CyanobotsGenes
         public static float generationWeight_Psycrux = 0f;
         public static float generationWeight_Shulk = 1f;
         public static float generationWeight_Wist = 1f;
+#endif
 
         private static Vector2 scrollPosition = new Vector2(0f, 0f);
 
@@ -53,6 +55,7 @@ namespace CyanobotsGenes
             Scribe_Values.Look(ref offspringAffects_AG_ParasiticEndogenes, "offspringAffects_AG_ParasiticEndogenes", offspringAffects_AG_ParasiticEndogenes, true);
             Scribe_Values.Look(ref offspringAffects_AG_ParasiticXenogenes, "offspringAffects_AG_ParasiticXenogenes", offspringAffects_AG_ParasiticXenogenes, true);
 
+#if RW_1_5
             Scribe_Values.Look(ref noOutlandGlimmer, "noOutlandGlimmer", noOutlandGlimmer, true);
 
             Scribe_Values.Look(ref generationWeight_Biodrone, "generationWeight_Biodrone", generationWeight_Biodrone, true);
@@ -63,6 +66,7 @@ namespace CyanobotsGenes
             Scribe_Values.Look(ref generationWeight_Psycrux, "generationWeight_Psycrux", generationWeight_Psycrux, true);
             Scribe_Values.Look(ref generationWeight_Shulk, "generationWeight_Shulk", generationWeight_Shulk, true);
             Scribe_Values.Look(ref generationWeight_Wist, "generationWeight_Wist", generationWeight_Wist, true);
+#endif
 
         }
 
@@ -90,7 +94,9 @@ namespace CyanobotsGenes
             l.CheckboxLabeled("CYB_SettingLabel_MoveVanillaGenes".Translate(), ref moveVanillaGenes, "CYB_SettingDesc_MoveVanillaGenes".Translate());
             l.CheckboxLabeled("CYB_SettingLabel_ChangeMealStacking".Translate(), ref changeMealStacking, "CYB_SettingDesc_ChangeMealStacking".Translate());
             l.CheckboxLabeled("CYB_SettingLabel_BundleSkinHairColors".Translate(), ref bundleSkinHairColors, "CYB_SettingDesc_BundleSkinHairColors".Translate());
+#if RW_1_5
             l.CheckboxLabeled("CYB_SettingLabel_NoOutlandGlimmer".Translate(), ref noOutlandGlimmer, "CYB_SettingDesc_NoOutlandGlimmer".Translate());
+#endif
 
             l.Gap();
             l.Gap();
@@ -103,6 +109,7 @@ namespace CyanobotsGenes
             l.CheckboxLabeled("CYB_SettingLabel_OffspringAffects_AG_ParasiticEndogenes".Translate(), ref offspringAffects_AG_ParasiticEndogenes, "CYB_SettingDesc_OffspringAffects_AG_ParasiticEndogenes".Translate());
             l.CheckboxLabeled("CYB_SettingLabel_OffspringAffects_AG_ParasiticXenogenes".Translate(), ref offspringAffects_AG_ParasiticXenogenes, "CYB_SettingDesc_OffspringAffects_AG_ParasiticXenogenes".Translate());
 
+#if RW_1_5
             l.Gap();
             l.Gap();
 
@@ -138,7 +145,7 @@ namespace CyanobotsGenes
 
             l.Label(CG_DefOf.CYB_Wist.LabelCap + " : " + generationWeight_Wist.ToString("F2"));
             generationWeight_Wist = l.Slider(generationWeight_Wist, 0f, 100f);
-
+#endif
             l.End();
 
             Widgets.EndScrollView();

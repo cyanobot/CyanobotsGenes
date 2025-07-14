@@ -22,8 +22,7 @@ namespace CyanobotsGenes
         public static GeneDef Asocial;
         public static GeneDef Bodyfeeder;
         public static GeneDef Carnivore;
-        [MayRequireAnomaly]
-        public static GeneDef CYB_Darkling;
+        [MayRequireAnomaly] public static GeneDef CYB_Darkling;
         public static GeneDef Hypercarnivore;
         public static GeneDef Herbivore;
         public static GeneDef StrictHerbivore;
@@ -58,7 +57,6 @@ namespace CyanobotsGenes
         public static StatDef JoyFallRateFactor;
         public static StatDef VegetableNutritionFactor;
         public static StatDef AnimalNutritionFactor;
-        //public static StatDef CYB_GrowthPointFactor;
 
         public static TaleDef TaleBodyfeederAtePerson;
         public static TaleDef TaleBodyfeederAteBodyPart;
@@ -117,6 +115,7 @@ namespace CyanobotsGenes
         public static TraitDef Unaffected;
         public static TraitDef CYB_Delightful;
 
+#if RW_1_5
         public static XenotypeDef Biodrone;
         public static XenotypeDef CYB_Changeling;
         public static XenotypeDef CYB_Fairy;
@@ -126,5 +125,6 @@ namespace CyanobotsGenes
         public static XenotypeDef CYB_Thrall = null;
         public static XenotypeDef CYB_Shulk;
         public static XenotypeDef CYB_Wist;
+#endif
     }
 }

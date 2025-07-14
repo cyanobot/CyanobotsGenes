@@ -18,7 +18,11 @@ namespace CyanobotsGenes
                 {
                     return false;
                 }
+#if RW_1_5
                 if (__instance.FactionPreventsClaimingOrAdopting(__instance.Faction, forClaim: false))
+#else
+                if (__instance.FactionPreventsClaimingOrAdopting(__instance.Faction, forClaim: false, out _))
+#endif
                 {
                     return false;
                 }

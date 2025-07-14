@@ -4,7 +4,7 @@
 <!--Wist venom bite-->
 <GeneDef>
 	<defName>CYB_WistVenomBite</defName>
-	<label>wist venom</label>
+	<label>pharma venom</label>
 	<description>Carriers of this gene possess hollow fangs and venom glands that secrete a potent pharmaceutical venom. The effects are euphoric, analgesic, and antibiotic. The venom is addictive.</description>
 	<iconPath>Genes/CYB_WistVenomBite</iconPath>
 	<biostatMet>-1</biostatMet>

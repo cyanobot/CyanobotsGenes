@@ -2,7 +2,11 @@
 using Verse;
 using RimWorld;
 using static CyanobotsGenes.OffspringUtility;
+#if RW_1_5
 using VanillaGenesExpanded;
+#else
+using VEF.Genes;
+#endif
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;

@@ -98,6 +98,7 @@ namespace CyanobotsGenes
         }
         */
 
+#if RW_1_5
         public override void Tick()
         {
             base.Tick();
@@ -108,6 +109,18 @@ namespace CyanobotsGenes
                 RemovePrecociousEffects();
             }
         }
+#else
+        public override void TickInterval(int delta)
+        {
+            base.TickInterval(delta);
+            if (pawn.IsHashIntervalTick(60,delta))
+            {
+                //if (Active && CurrentlyPrecocious) ApplyPrecociousEffects();
+                //else RemovePrecociousEffects();
+                RemovePrecociousEffects();
+            }
+        }
+#endif
 
         public override void PostRemove()
         {

@@ -109,7 +109,11 @@ namespace CyanobotsGenes
             Mesh mesh = base.GetMesh(parms);
             if (cachedFlip && !parms.facing.IsHorizontal)
             {
+#if RW_1_5
                 mesh = MeshPool.GridPlaneFlip(MeshPool.SizeOf(mesh));
+#else
+                mesh = MeshPool.GridPlaneFlip(mesh);
+#endif
             }
             return mesh;
         }

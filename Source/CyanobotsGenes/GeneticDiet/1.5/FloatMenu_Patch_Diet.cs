@@ -1,12 +1,12 @@
-﻿using UnityEngine;
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
-using Verse;
 using System.Collections.Generic;
-
+using UnityEngine;
+using Verse;
+#if RW_1_5
 namespace CyanobotsGenes
 {
-    [HarmonyPatch(typeof(FloatMenuMakerMap),"AddHumanlikeOrders")]
+    [HarmonyPatch(typeof(FloatMenuMakerMap), "AddHumanlikeOrders")]
     class FloatMenu_Patch_Diet
     {
         static void Postfix(ref List<FloatMenuOption> opts, Pawn pawn, Vector3 clickPos)
@@ -43,16 +43,16 @@ namespace CyanobotsGenes
                 else
                 {
                 */
-                    foreach (FloatMenuOption consume in opts.FindAll(x => x.Label.Contains(text)))
+                foreach (FloatMenuOption consume in opts.FindAll(x => x.Label.Contains(text)))
+                {
+                    //if it's already disabled, leave it alone
+                    if (consume.Disabled) continue;
+                    if (GeneticDietUtility.DietForbids(t, pawn))
                     {
-                        //if it's already disabled, leave it alone
-                        if (consume.Disabled) continue;
-                        if (GeneticDietUtility.DietForbids(t, pawn))
-                        {
-                            consume.Label = text += " : " + "CYB_Inedible".Translate();
-                            consume.Disabled = true;
-                        }
+                        consume.Label = text += " : " + "CYB_Inedible".Translate();
+                        consume.Disabled = true;
                     }
+                }
                 //}
 
             }
@@ -60,3 +60,4 @@ namespace CyanobotsGenes
     }
 
 }
+#endif

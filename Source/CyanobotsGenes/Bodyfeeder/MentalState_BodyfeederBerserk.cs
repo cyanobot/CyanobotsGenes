@@ -52,6 +52,7 @@ namespace CyanobotsGenes
 			return RandomSocialMode.Off;
 		}
 
+#if RW_1_5
 		public override void MentalStateTick()
 		{
 			if (ShouldStop())
@@ -63,5 +64,18 @@ namespace CyanobotsGenes
 				base.MentalStateTick();
 			}
 		}
-	}
+#else
+        public override void MentalStateTick(int delta)
+        {
+            if (ShouldStop())
+            {
+                RecoverFromState();
+            }
+            else
+            {
+                base.MentalStateTick(delta);
+            }
+        }
+#endif
+    }
 }

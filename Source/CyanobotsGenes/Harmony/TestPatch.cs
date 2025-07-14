@@ -19,7 +19,7 @@ namespace CyanobotsGenes
             if (precept.def.issue == DefDatabase<IssueDef>.GetNamed("Cannibalism"))
             {
 
-                Log.Message("Notify_MemberTookAction - precept: " + precept.def
+                LogUtil.DebugLog("Notify_MemberTookAction - precept: " + precept.def
                     + ", PreceptComp: " + __instance.GetType()
                     + ", historyEvent: " + ev.def + ", eventDef: " + __instance.eventDef
                     + ", canApplySelfTookThoughts: " + canApplySelfTookThoughts);

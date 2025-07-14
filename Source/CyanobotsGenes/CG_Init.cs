@@ -8,7 +8,11 @@ using static CyanobotsGenes.CG_Settings;
 using static CyanobotsGenes.CG_Mod;
 using UnityEngine;
 using System;
+#if RW_1_5
 using VanillaGenesExpanded;
+#else
+using VEF.Genes;
+#endif
 
 namespace CyanobotsGenes
 {
@@ -111,6 +115,7 @@ namespace CyanobotsGenes
                 }
             }
 
+#if RW_1_5
             CG_DefOf.Biodrone.factionlessGenerationWeight = generationWeight_Biodrone;
             CG_DefOf.CYB_Changeling.factionlessGenerationWeight = generationWeight_Changeling;
             CG_DefOf.CYB_Fairy.factionlessGenerationWeight = generationWeight_Fairy;
@@ -137,6 +142,7 @@ namespace CyanobotsGenes
             }
             CG_DefOf.CYB_Shulk.factionlessGenerationWeight = generationWeight_Shulk;
             CG_DefOf.CYB_Wist.factionlessGenerationWeight = generationWeight_Wist;
+#endif
 
             
             foreach (string key in patchDict.Keys)
@@ -161,6 +167,7 @@ namespace CyanobotsGenes
             };
         }
 
+#if RW_1_5
         public static void RemoveXenotype(XenotypeDef xenotype)
         {
             if (DefDatabase<XenotypeDef>.AllDefsListForReading.Contains(xenotype)) DefDatabase<XenotypeDef>.AllDefsListForReading.Remove(xenotype);
@@ -193,5 +200,6 @@ namespace CyanobotsGenes
             removedXenotypes.Remove(xenotype);
             f_cachedGeneDefsInOrder.SetValue(null, null);
         }
+#endif
     }
 }

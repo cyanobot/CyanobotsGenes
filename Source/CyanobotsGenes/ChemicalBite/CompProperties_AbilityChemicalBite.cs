@@ -86,14 +86,24 @@ namespace CyanobotsGenes
 					AddictionUtility.CheckDrugAddictionTeachOpportunity(targetPawn);
 				}
 			}
+#if RW_1_5
 			if (addictionHediffDef.causesNeed != null)
 			{
 				Need need = targetPawn.needs.AllNeeds.Find((Need x) => x.def == addictionHediffDef.causesNeed);
-				if (need != null)
+#else
+            if (addictionHediffDef.chemicalNeed != null)
+            {
+                Need need = targetPawn.needs.AllNeeds.Find((Need x) => x.def == addictionHediffDef.chemicalNeed);
+#endif
+                if (need != null)
 				{
 					float effect = Props.needLevelOffset;
+#if RW_1_5
 					AddictionUtility.ModifyChemicalEffectForToleranceAndBodySize_NewTemp(targetPawn, Props.chemical, ref effect, applyGeneToleranceFactor: false);
-					need.CurLevel += effect;
+#else
+                    AddictionUtility.ModifyChemicalEffectForToleranceAndBodySize(targetPawn, Props.chemical, ref effect, applyGeneToleranceFactor: false);
+#endif
+                    need.CurLevel += effect;
 				}
 			}
 		}

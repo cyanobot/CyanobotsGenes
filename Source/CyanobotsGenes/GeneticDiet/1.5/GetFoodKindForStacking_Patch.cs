@@ -3,6 +3,7 @@ using RimWorld;
 using Verse;
 using static CyanobotsGenes.GeneticDietUtility;
 
+#if RW_1_5
 namespace CyanobotsGenes
 {
     [HarmonyPatch(typeof(FoodUtility),nameof(FoodUtility.GetFoodKindForStacking))]
@@ -26,3 +27,4 @@ namespace CyanobotsGenes
     }
 
 }
+#endif

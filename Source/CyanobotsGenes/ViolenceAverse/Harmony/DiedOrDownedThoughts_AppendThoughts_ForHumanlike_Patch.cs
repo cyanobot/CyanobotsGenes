@@ -24,8 +24,12 @@ namespace CyanobotsGenes
             
 		    if (thoughtsKind == PawnDiedOrDownedThoughtsKind.Downed)
 		    {
-			    foreach (Pawn pawn in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive)
-			    {
+#if RW_1_5
+                foreach (Pawn pawn in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive)
+#else
+                foreach (Pawn pawn in PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive)
+#endif
+                {
 				    if (pawn == victim || pawn.needs == null || pawn.needs.mood == null || !PawnUtility.ShouldGetThoughtAbout(pawn, victim))
 				    {
 					    continue;

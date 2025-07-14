@@ -105,7 +105,7 @@
 	<defName>CYB_WistVenomAddiction</defName>
 	<label>wist venom addiction</label>
 	<description>A chemical addiction to wist venom. Long-term presence of wist venom has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
-\nWithout regular doses of wake-up, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+\nWithout regular doses of wist venom, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
 	<hediffClass>Hediff_Addiction</hediffClass>
 	<causesNeed>Chemical_CYB_WistVenom</causesNeed>
 	

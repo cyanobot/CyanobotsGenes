@@ -12,7 +12,7 @@ namespace CyanobotsGenes
         {
             if (!___pawn.Dead && ___pawn.HasActiveGene(CG_DefOf.CYB_Afamilial))
             {
-                Log.Message("Editing OpinionExplanation for Afamilial pawn " + ___pawn
+                LogUtil.DebugLog("Editing OpinionExplanation for Afamilial pawn " + ___pawn
                     + ", original result: " + __result);
                 foreach (PawnRelationDef relation in ___pawn.GetRelations(other))
                 {
@@ -25,7 +25,7 @@ namespace CyanobotsGenes
                             + relation.GetGenderSpecificLabelCap(other).Length 
                             + relation.opinionOffset.ToStringWithSign().Length
                             + Environment.NewLine.Length;
-                        Log.Message("Found blood relation: " + relation
+                        LogUtil.DebugLog("Found blood relation: " + relation
                             + ", GenderSpecificLabel: " + relation.GetGenderSpecificLabelCap(other)
                             + ", relationLineIndex: " + relationLineIndex
                             + ", relationLineLength: " + relationLineLength

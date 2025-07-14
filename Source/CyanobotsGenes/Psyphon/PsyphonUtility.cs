@@ -23,8 +23,8 @@ namespace CyanobotsGenes
         public const float BasePsyfocusConversionFactor = 0.5f;
         public const float BaseConsciousnessConversionFactor = 2f;
         public const float BrainDamageThreshold = 0.15f;
-        public const float PersonalityDamageThreshold = 0.4f;
-        public const float PsychicallyDeadThreshold = 0.6f;
+        public const float PersonalityDamageThreshold = 0.3f;
+        public const float PsychicallyDeadThreshold = 0.4f;
 
         public static FloatRange brainDamageVariance = new FloatRange(0.5f, 1.5f);
 
@@ -167,16 +167,45 @@ namespace CyanobotsGenes
 
         public static bool WouldKill(Pawn pawn, float drainAmount)
         {
+            LogUtil.DebugLog($"WouldKill - pawn: {pawn}, drainAmount {drainAmount}" +
+                $", CurrentConsciousness: {CurrentConsciousness(pawn)}" +
+                $", ConsciousnessToDrain: {ConsciousnessToDrain(pawn, drainAmount, true)}"
+                );
             return CurrentConsciousness(pawn) <= ConsciousnessToDrain(pawn, drainAmount, true);
         }
 
         public static bool MightKill(Pawn pawn, float drainAmount)
         {
             float consciousnessToDrain = ConsciousnessToDrain(pawn, drainAmount, true);
-            if (CurrentConsciousness(pawn) <= consciousnessToDrain) return true;
+            float curConsciousness = CurrentConsciousness(pawn);
+            LogUtil.DebugLog($"MightKill - pawn: {pawn}, drainAmount {drainAmount}" +
+                $", CurrentConsciousness: {curConsciousness}" +
+                $", ConsciousnessToDrain: {consciousnessToDrain}" +
+                $", MaxPotentialBrainDamage: {MaxPotentialBrainDamage(consciousnessToDrain)}"
+                );
+            if (curConsciousness <= consciousnessToDrain) return true;
 
             BodyPartRecord brain = pawn.health.hediffSet.GetBrain();
-            return pawn.health.hediffSet.GetPartHealth(brain) <= MaxPotentialBrainDamage(consciousnessToDrain);
+            float curBrainHealth = pawn.health.hediffSet.GetPartHealth(brain);
+
+            float minPotentialBrainHealth = curBrainHealth - MaxPotentialBrainDamage(consciousnessToDrain);
+            if (minPotentialBrainHealth <= 0f) return true;
+
+            if (((curConsciousness / curBrainHealth) * minPotentialBrainHealth)
+                 - consciousnessToDrain
+                 <= 0f)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool MightCauseBrainDamage(Pawn pawn, float drainAmount)
+        {
+            float consciousnessToDrain = ConsciousnessToDrain(pawn, drainAmount, true);
+            if (consciousnessToDrain > BrainDamageThreshold) return true;
+
+            return false;
         }
 
         public static float GetBrainDamage(float consciousnessDrained)

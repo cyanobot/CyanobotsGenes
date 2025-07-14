@@ -21,11 +21,18 @@ namespace CyanobotsGenes
                 if (preyDrive)
                 {
                     //Log.Message("Trying to add action to toil " + toil.debugName);
+#if RW_1_5
                     toil.AddPreTickAction(delegate
                     {
                         //Log.Message("Fired extra action");
                         JoyUtility.JoyTickCheckEnd(pawn, JoyTickFullJoyAction.None);
                     });
+#else
+                    toil.AddPreTickIntervalAction(delegate (int delta)
+                    {
+                        JoyUtility.JoyTickCheckEnd(pawn, delta, JoyTickFullJoyAction.None);
+                    });
+#endif
                 }
                 yield return toil;
             }

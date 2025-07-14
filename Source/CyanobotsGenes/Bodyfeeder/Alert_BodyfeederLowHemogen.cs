@@ -38,7 +38,11 @@ namespace CyanobotsGenes
 			{
 				return;
 			}
+#if RW_1_5
 			foreach (Pawn item in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive)
+#else
+			foreach (Pawn item in PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive)
+#endif
 			{
 				if (item.RaceProps.Humanlike && item.Faction == Faction.OfPlayer)
 				{

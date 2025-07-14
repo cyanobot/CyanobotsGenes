@@ -76,6 +76,7 @@ namespace CyanobotsGenes
             return LightLevel.Bright;
         }
 
+#if RW_1_5
         public static LightLevel LightLevelAt(int tile)
         {
             string biome = Find.WorldGrid[tile].biome.defName;
@@ -119,5 +120,63 @@ namespace CyanobotsGenes
 
             return false;
         }
+#else
+        public static LightLevel LightLevelAt(PlanetTile planetTile)
+        {
+            PlanetLayer planetLayer = planetTile.Layer;
+            //use this for eg cave layers
+
+            Tile tile = planetTile.Tile;
+            BiomeDef biome = tile.PrimaryBiome;
+
+            if (biome.biomeMapConditions.Any(gc => typeof(GameCondition_NoSunlight).IsAssignableFrom(gc.conditionClass)))
+            {
+                return LightLevel.Dark;
+            }
+
+            string biomeName = biome.defName;
+            if (lightlessBiomes.Contains(biomeName)) return LightLevel.Dark;
+
+            if (IsLightlessBiomeVariant(planetTile)) return LightLevel.Dark;
+            float sunGlow = GenCelestial.CelestialSunGlow(planetTile, Find.TickManager.TicksAbs);
+            if (sunGlow >= BrightLightThreshold)
+            {
+                if (dimBiomes.Contains(biomeName)) return LightLevel.Dim;
+                return LightLevel.Bright;
+            }
+            if (sunGlow >= AnyLightThreshold) return LightLevel.Dim;
+            return LightLevel.Dark;
+        }
+
+        public static bool IsLightlessBiomeVariant(PlanetTile tile)
+        {
+            if (!geologicalLandformsLoaded) return false;
+            //Log.Message("geologicalLandformsLoaded. t_WorldTileInfo: " + t_WorldTileInfo
+            //    + ", m_WorldTileInfo_Get: " + m_WorldTileInfo_Get
+            //    + ", p_BiomeVariants: " + p_BiomeVariants);
+
+            object worldTileInfo = m_WorldTileInfo_Get.Invoke(null, new object[] { tile, true });
+            object obj_BiomeVariants = p_BiomeVariants.GetValue(worldTileInfo);
+
+            //Log.Message("worldTileInfo: " + worldTileInfo + ", obj_BiomeVariants: " + obj_BiomeVariants);
+
+            IEnumerable ienum_BiomeVariants = (IEnumerable)obj_BiomeVariants;
+            //Log.Message("ienum_BiomeVariants: " + ienum_BiomeVariants + ", TSSE: " + ienum_BiomeVariants.ToStringSafeEnumerable());
+            if (ienum_BiomeVariants == null) return false;
+            List<Def> ls_BiomeVariants = new List<Def>();
+            foreach (Def variant in ienum_BiomeVariants)
+            {
+                ls_BiomeVariants.Add(variant);
+            }
+            //Log.Message("ls_BiomeVariants: " + ls_BiomeVariants.ToStringSafeEnumerable());
+            if (ls_BiomeVariants.Any(v => lightlessBiomeVariants.Contains(v.defName)))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+#endif
     }
 }

@@ -15,8 +15,11 @@ namespace CyanobotsGenes
         {
             if (!(node is PawnRenderNode_VariantsOverTime node_Variants))
                 return base.GetMaterial(node, parms);
-
+#if RW_1_5
 			Graphic graphic = node.Graphic;
+#else
+			Graphic graphic = node.PrimaryGraphic;
+#endif
 			if (graphic == null)
 			{
 				return null;

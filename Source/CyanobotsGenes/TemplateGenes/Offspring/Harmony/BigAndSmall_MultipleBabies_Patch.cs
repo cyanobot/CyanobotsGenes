@@ -12,7 +12,12 @@ using static CyanobotsGenes.OffspringUtility;
 
 namespace CyanobotsGenes
 {
+#if RW_1_5
     [HarmonyPatch(typeof(PregnancyUtility), nameof(PregnancyUtility.ApplyBirthOutcome_NewTemp), new Type[]
+#else
+    [HarmonyPatch(typeof(PregnancyUtility), nameof(PregnancyUtility.ApplyBirthOutcome), new Type[]
+#endif
+
             {
                 typeof(RitualOutcomePossibility),
                 typeof(float),

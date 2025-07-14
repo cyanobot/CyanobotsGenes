@@ -301,8 +301,14 @@ namespace CyanobotsGenes
 					}
 				}
 			};
+#if RW_1_5
 			toil.tickAction = delegate
 			{
+				int delta = 1;
+#else
+			toil.tickIntervalAction = delegate(int delta)
+			{
+#endif
 				if (chewer != toil.actor)
 				{
 					toil.actor.rotationTracker.FaceCell(chewer.Position);
@@ -319,7 +325,11 @@ namespace CyanobotsGenes
 						toil.actor.rotationTracker.FaceCell(toil.actor.CurJob.GetTarget(eatSurfaceInd).Cell);
 					}
 				}
+#if RW_1_5
 				toil.actor.GainComfortFromCellIfPossible();
+#else
+				toil.actor.GainComfortFromCellIfPossible(delta);
+#endif
 			};
 			toil.WithProgressBar(ingestibleInd, delegate
 			{

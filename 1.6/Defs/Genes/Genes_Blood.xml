@@ -17,6 +17,7 @@
 		<modExtensions>
 			<li Class="VEF.Genes.GeneExtension">
 				<customBloodThingDef>CYB_Filth_Blood_Black</customBloodThingDef>
+				<customBloodSmearThingDef>CYB_Filth_BloodSmear_Black</customBloodSmearThingDef>
 				<!--<customBloodIcon>UI/CYB_Bleeding_Black</customBloodIcon>-->
 				<customBloodEffect>CYB_Damage_HitFlesh_Black</customBloodEffect>
 				<customWoundsFromFleshtype>CYB_Flesh_Black</customWoundsFromFleshtype>
@@ -40,6 +41,7 @@
 		<modExtensions>
 			<li Class="VEF.Genes.GeneExtension">
 				<customBloodThingDef>CYB_Filth_Blood_Lilac</customBloodThingDef>
+				<customBloodSmearThingDef>CYB_Filth_BloodSmear_Lilac</customBloodSmearThingDef>
 				<customBloodIcon>UI/CYB_Bleeding_Lilac</customBloodIcon>
 				<customBloodEffect>CYB_Damage_HitFlesh_Lilac</customBloodEffect>
 				<customWoundsFromFleshtype>CYB_Flesh_Lilac</customWoundsFromFleshtype>

@@ -36,9 +36,15 @@ namespace CyanobotsGenes
 
             //replicate vanilla growth moment behaviour if passed both checks
             int growthTier = __instance.GrowthTier;
+#if RW_1_5
             newPassionOptions = GrowthUtility.PassionChoicesPerTier[growthTier];
             newTraitOptions = GrowthUtility.TraitChoicesPerTier[growthTier];
             passionGainsCount = Mathf.Min(___pawn.skills.skills.Count((SkillRecord s) => (int)s.passion < 2), GrowthUtility.PassionGainsPerTier[growthTier]);
+#else
+            newPassionOptions = GrowthUtility.GrowthTiers[growthTier].passionChoices;
+            newTraitOptions = GrowthUtility.GrowthTiers[growthTier].traitChoices;
+            passionGainsCount = Mathf.Min(___pawn.skills.skills.Count((SkillRecord s) => (int)s.passion < 2), GrowthUtility.GrowthTiers[growthTier].PassionGainFor(___pawn));
+#endif
 
             LogUtil.DebugLog("newPassionOptions: " + newPassionOptions + ", newTraitOptions: " + newTraitOptions
                 + ", passionGainsCount: " + passionGainsCount);

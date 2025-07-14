@@ -11,8 +11,11 @@ namespace CyanobotsGenes
     {
         public static bool HasActiveGene(this Pawn pawn, GeneDef geneDef)
         {
+#if RW_1_5
             return pawn?.genes?.GetGene(geneDef)?.Active ?? false;
+#else
+            return pawn?.genes?.HasActiveGene(geneDef) ?? false;
+#endif
         }
-
     }
-}
+    }
