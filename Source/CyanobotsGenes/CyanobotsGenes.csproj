@@ -87,7 +87,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bodyfeeder\Harmony\FloatMenuOptionProvider_Ingest_Bodyfeeder_Patch.cs" />
+    <Compile Include="GeneticDiet\Harmony\CompIngredients_AllowStackWith_Patch.cs" />
     <Compile Include="GeneticDiet\Harmony\FloatMenuOptionProvider_Ingest_Diet_Patch.cs" />
+    <Compile Include="GeneticDiet\Harmony\TransferableUtility_TransferAsOne_Patch.cs" />
     <Compile Include="TemplateGenes\Caste\CasteUtility.cs" />
     <Compile Include="TemplateGenes\Caste\GeneExtension_Caste.cs" />
     <Compile Include="Precocious\Harmony\GenerateTraits_Patch.cs" />
@@ -103,8 +105,8 @@
     <Compile Include="Bodyfeeder\Harmony\IngestedCalculateAmounts_Patch.cs" />
     <Compile Include="Bodyfeeder\Harmony\LowHemogenTargets_Patch.cs" />
     <Compile Include="GeneticDiet\Harmony\GetFoodKindInspectString_Patch.cs" />
-    <Compile Include="GeneticDiet\Harmony\GetFoodKindForStacking_Patch.cs" />
-    <Compile Include="GeneticDiet\Harmony\FloatMenu_Patch_Diet.cs" />
+    <Compile Include="GeneticDiet\1.5\GetFoodKindForStacking_Patch.cs" />
+    <Compile Include="GeneticDiet\1.5\FloatMenu_Patch_Diet.cs" />
     <Compile Include="GeneticDiet\Harmony\FoodOptimality_Patch.cs" />
     <Compile Include="GeneticDiet\Harmony\CanEverEat_Patch.cs" />
     <Compile Include="GeneticDiet\Harmony\FoodThoughts_Patch.cs" />
