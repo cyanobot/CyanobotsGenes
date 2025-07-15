@@ -122,7 +122,7 @@
         <socialFightChanceFactor>3.0</socialFightChanceFactor>
 		<statOffsets>
 			<MentalBreakThreshold>0.15</MentalBreakThreshold>
-			<PainShockThreshold>-0.1</PainShockThreshold>
+			<PainShockThreshold>0.1</PainShockThreshold>
 		</statOffsets>
         <mentalStateGivers>
           <li>
@@ -139,7 +139,7 @@
         <socialFightChanceFactor>3.0</socialFightChanceFactor>
 		<statOffsets>
 			<MentalBreakThreshold>0.3</MentalBreakThreshold>
-			<PainShockThreshold>-0.2</PainShockThreshold>
+			<PainShockThreshold>0.2</PainShockThreshold>
 		</statOffsets>
         <mentalStateGivers>
           <li>
