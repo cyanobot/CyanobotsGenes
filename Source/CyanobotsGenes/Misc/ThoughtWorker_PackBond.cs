@@ -23,12 +23,12 @@ namespace CyanobotsGenes
                 return false;
             }
 
-           if (!p.HasActiveGene(CG_DefOf.PackBond))
+           if (!p.HasActiveGene(CG_DefOf.CYB_PackBond))
             {
                 return false;
             }
 
-            if (!other.HasActiveGene(CG_DefOf.PackBond))
+            if (!other.HasActiveGene(CG_DefOf.CYB_PackBond))
             {
                 return false;
             }

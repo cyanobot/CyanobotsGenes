@@ -2,7 +2,7 @@
 <Defs>
 
   <JoyKindDef>
-	<defName>PreyDrive_Hunting</defName>
+	<defName>CYB_PreyDrive_Hunting</defName>
 	<label>hunting</label>
   </JoyKindDef>
 

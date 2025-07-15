@@ -2,7 +2,7 @@
 <Defs>
 
   <TaleDef>
-    <defName>TaleBodyfeederAtePerson</defName>
+    <defName>CYB_TaleBodyfeederAtePerson</defName>
     <label>person eaten by bodyfeeder</label>
     <taleClass>Tale_DoublePawn</taleClass>
     <type>Expirable</type>
@@ -65,7 +65,7 @@
   </TaleDef>
 
   <TaleDef>
-    <defName>TaleBodyfeederAteBodyPart</defName>
+    <defName>CYB_TaleBodyfeederAteBodyPart</defName>
     <label>body part eaten</label>
     <taleClass>Tale_DoublePawnAndDef</taleClass>
     <type>Expirable</type>

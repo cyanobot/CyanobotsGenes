@@ -3,7 +3,7 @@
 
 <!--Bodyfeeder-->
 <GeneDef>
-	<defName>Bodyfeeder</defName>
+	<defName>CYB_Bodyfeeder</defName>
 	<label>bodyfeeder</label>
 	<iconPath>Genes/CYB_Bodyfeeder</iconPath>
 	<description>Bodyfeeder mechanites in the carrier's digestive system rapidly break down ingested human flesh into hemogen. The process unfortunately also digests hemogen if it's swallowed directly, making hemogen packs very inefficient.</description>

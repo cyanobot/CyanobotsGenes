@@ -3,7 +3,7 @@
 
 <!--Tail_Cat-->
 <GeneDef ParentName="GeneTailBase">
-    <defName>Tail_Cat</defName>
+    <defName>CYB_Tail_Cat</defName>
     <label>cat tail</label>
     <description>Carriers of this gene grow a catlike tail that helps with balance.</description>
     <iconPath>Genes/CYB_Tail_Cat</iconPath>

@@ -11,7 +11,7 @@ namespace CyanobotsGenes
     {
         static bool Prefix(ref Job __result, Pawn pawn)
         {
-            if (!pawn.HasActiveGene(CG_DefOf.Bodyfeeder))
+            if (!pawn.HasActiveGene(CG_DefOf.CYB_Bodyfeeder))
                 return true;
 
             Gene_Hemogen gene_Hemogen = pawn.genes?.GetFirstGeneOfType<Gene_Hemogen>();

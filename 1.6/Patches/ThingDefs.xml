@@ -13,7 +13,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Hay"]/ingestible</xpath>
 		<value>
-			<specialThoughtDirect>AteHay</specialThoughtDirect>
+			<specialThoughtDirect>CYB_AteHay</specialThoughtDirect>
 		</value>
 	</Operation>
 	

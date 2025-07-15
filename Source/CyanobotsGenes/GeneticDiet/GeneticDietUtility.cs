@@ -153,10 +153,10 @@ namespace CyanobotsGenes
         public static DietCategory GetDietCategory(Pawn pawn)
         {
             if (pawn.genes == null) return DietCategory.Default;
-            if (pawn.HasActiveGene(CG_DefOf.Carnivore)) return DietCategory.Carnivore;
-            if (pawn.HasActiveGene(CG_DefOf.Hypercarnivore)) return DietCategory.Hypercarnivore;
-            if (pawn.HasActiveGene(CG_DefOf.Herbivore)) return DietCategory.Herbivore;
-            if (pawn.HasActiveGene(CG_DefOf.StrictHerbivore)) return DietCategory.StrictHerbivore;
+            if (pawn.HasActiveGene(CG_DefOf.CYB_Carnivore)) return DietCategory.Carnivore;
+            if (pawn.HasActiveGene(CG_DefOf.CYB_Hypercarnivore)) return DietCategory.Hypercarnivore;
+            if (pawn.HasActiveGene(CG_DefOf.CYB_Herbivore)) return DietCategory.Herbivore;
+            if (pawn.HasActiveGene(CG_DefOf.CYB_StrictHerbivore)) return DietCategory.StrictHerbivore;
             return DietCategory.Default;
         }
 
@@ -183,7 +183,7 @@ namespace CyanobotsGenes
             // - corpses (can't check if human at this stage)
             // - things with ingredients (could have human meat in)
             // - human meat
-            if (pawn.HasActiveGene(CG_DefOf.ObligateCannibal))
+            if (pawn.HasActiveGene(CG_DefOf.CYB_ObligateCannibal))
             {
                 if (foodDef != ThingDefOf.HemogenPack
                     && !foodDef.IsCorpse
@@ -239,7 +239,7 @@ namespace CyanobotsGenes
             //LogUtil.DebugLog($"Def is not forbidden");
 
             //obligate cannibals
-            if (pawn.HasActiveGene(CG_DefOf.ObligateCannibal))
+            if (pawn.HasActiveGene(CG_DefOf.CYB_ObligateCannibal))
             {
                 if (FoodUtility.IsHumanlikeCorpseOrHumanlikeMeatOrIngredient(food) || food.def == ThingDefOf.HemogenPack)
                     return false;
@@ -301,7 +301,7 @@ namespace CyanobotsGenes
                 return 1f;
             }
 
-            if (pawn.genes != null && pawn.HasActiveGene(CG_DefOf.ObligateCannibal))
+            if (pawn.genes != null && pawn.HasActiveGene(CG_DefOf.CYB_ObligateCannibal))
             {
                 return ProportionHumanlike(food);
             }
@@ -313,7 +313,7 @@ namespace CyanobotsGenes
             if (food.def == ThingDefOf.HemogenPack 
                 && (dietCategory == DietCategory.Herbivore || dietCategory == DietCategory.StrictHerbivore))
             {
-                return pawn.GetStatValue(CG_DefOf.AnimalNutritionFactor);
+                return pawn.GetStatValue(CG_DefOf.CYB_AnimalNutritionFactor);
             }
 
             CG_FoodKind cg_foodKind = GetCG_FoodKind(food);
@@ -324,7 +324,7 @@ namespace CyanobotsGenes
                 if (!cg_foodKind.HasFlag(CG_FoodKind.Vegetable)) return 1f;
                 else
                 {
-                    float nutritionFactor = pawn.GetStatValue(CG_DefOf.VegetableNutritionFactor);
+                    float nutritionFactor = pawn.GetStatValue(CG_DefOf.CYB_VegetableNutritionFactor);
                     //if there are ingredients other than vegetables, halve the effect
                     if (cg_foodKind != CG_FoodKind.Vegetable) nutritionFactor += (1 - nutritionFactor) / 2;
                     return nutritionFactor;
@@ -335,7 +335,7 @@ namespace CyanobotsGenes
                 if (cg_foodKind == CG_FoodKind.Vegetable) return 1f;
                 else
                 {
-                    float nutritionFactor = pawn.GetStatValue(CG_DefOf.AnimalNutritionFactor);
+                    float nutritionFactor = pawn.GetStatValue(CG_DefOf.CYB_AnimalNutritionFactor);
                     //if there are some vegetables, halve the effect
                     if (cg_foodKind.HasFlag(CG_FoodKind.Vegetable))
                     {
@@ -392,7 +392,7 @@ namespace CyanobotsGenes
             if (dietCategory == DietCategory.Carnivore || dietCategory == DietCategory.Hypercarnivore)
             {
                 if (!cg_foodKind.HasFlag(CG_FoodKind.Vegetable)) return null;
-                else return CG_DefOf.AtePlantCarnivore;
+                else return CG_DefOf.CYB_AtePlantCarnivore;
             }
             if (dietCategory == DietCategory.Herbivore || dietCategory == DietCategory.StrictHerbivore)
             {
@@ -400,9 +400,9 @@ namespace CyanobotsGenes
                 else if (cg_foodKind.HasFlag(CG_FoodKind.Meat) ||
                     (food.def == ThingDefOf.HemogenPack && !pawn.HasActiveGene(GeneDefOf.Hemogenic)))
                 {
-                    return CG_DefOf.AteMeatHerbivore;
+                    return CG_DefOf.CYB_AteMeatHerbivore;
                 }
-                else return CG_DefOf.AteAnimalProductHerbivore;
+                else return CG_DefOf.CYB_AteAnimalProductHerbivore;
             }
             //fall-through : shouldn't happen
             return null;
@@ -415,13 +415,13 @@ namespace CyanobotsGenes
 
             float indigestionOffset = INDIGESTION_FACTOR * (1 - nutritionFactor) * food.def.GetStatValueAbstract(StatDefOf.Nutrition, null);
 
-            Hediff indigestionHediff = pawn.health.hediffSet.GetFirstHediffOfDef(CG_DefOf.DietaryIndigestion, false);
+            Hediff indigestionHediff = pawn.health.hediffSet.GetFirstHediffOfDef(CG_DefOf.CYB_DietaryIndigestion, false);
             if (indigestionHediff == null)
             {
-                pawn.health.AddHediff(HediffMaker.MakeHediff(CG_DefOf.DietaryIndigestion, pawn, null), null, null, null);
+                pawn.health.AddHediff(HediffMaker.MakeHediff(CG_DefOf.CYB_DietaryIndigestion, pawn, null), null, null, null);
             }
 
-            indigestionHediff = pawn.health.hediffSet.GetFirstHediffOfDef(CG_DefOf.DietaryIndigestion, false);
+            indigestionHediff = pawn.health.hediffSet.GetFirstHediffOfDef(CG_DefOf.CYB_DietaryIndigestion, false);
 
             indigestionHediff.Severity += indigestionOffset;
 

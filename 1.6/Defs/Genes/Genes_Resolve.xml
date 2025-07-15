@@ -2,15 +2,15 @@
 <Defs>
 
 <!--GeneResolveBase-->
-<GeneDef Name="GeneResolveBase" Abstract="True">
+<GeneDef Name="CYB_GeneResolveBase" Abstract="True">
     <exclusionTags>
       <li>Resolve</li>
     </exclusionTags>
 </GeneDef>
 
 <!--Unstable-->
-<GeneDef>
-    <defName>Unstable</defName>
+<GeneDef ParentName="CYB_GeneResolveBase">
+    <defName>CYB_Unstable</defName>
     <label>unstable</label>
 	<description>Carriers of this gene are highly strung and sensitive to stress.</description>
 	<iconPath>Genes/CYB_Unstable</iconPath>
@@ -38,8 +38,8 @@
 </GeneDef>
 
 <!--Stoic-->
-<GeneDef>
-    <defName>Stoic</defName>
+<GeneDef ParentName="CYB_GeneResolveBase">
+    <defName>CYB_Stoic</defName>
     <label>stoic</label>
 	<description>Carriers of this gene are resilient to stress.</description>
 	<iconPath>Genes/CYB_Stoic</iconPath>

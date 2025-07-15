@@ -42,7 +42,6 @@
   <Operation Class="PatchOperationAdd">
 	<xpath>Defs/ThoughtDef[(
 		defName="SoakingWet" or
-		defName="WetFur" or
 		defName="CYB_WetFur"
 		) and not(nullifyingGenes)]</xpath>
 	<value>
@@ -53,7 +52,6 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThoughtDef[
 		defName="SoakingWet" or
-		defName="WetFur" or
 		defName="CYB_WetFur"
 		]/nullifyingGenes</xpath>
     <value>

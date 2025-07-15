@@ -13,7 +13,7 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThoughtDef[defName="Slighted"]/nullifyingTraits</xpath>
     <value>
-      <li>Unaffected</li>
+      <li>CYB_Unaffected</li>
     </value>
   </Operation>
   
@@ -30,7 +30,7 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThoughtDef[defName="Insulted"]/nullifyingTraits</xpath>
     <value>
-      <li>Unaffected</li>
+      <li>CYB_Unaffected</li>
     </value>
   </Operation>
 
@@ -47,7 +47,7 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThoughtDef[defName="InsultedMood"]/nullifyingTraits</xpath>
     <value>
-      <li>Unaffected</li>
+      <li>CYB_Unaffected</li>
     </value>
   </Operation>  
 
@@ -64,7 +64,7 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThoughtDef[defName="KindWords"]/nullifyingTraits</xpath>
     <value>
-      <li>Unaffected</li>
+      <li>CYB_Unaffected</li>
     </value>
   </Operation>  
  
@@ -81,15 +81,15 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThoughtDef[defName="KindWordsMood"]/nullifyingTraits</xpath>
     <value>
-      <li>Unaffected</li>
+      <li>CYB_Unaffected</li>
     </value>
   </Operation>
   
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThoughtDef[defName="AteRawFood"]/nullifyingGenes</xpath>
     <value>
-      <li>Hypercarnivore</li>
-	  <li>StrictHerbivore</li>
+      <li>CYB_Hypercarnivore</li>
+	  <li>CYB_StrictHerbivore</li>
     </value>
   </Operation>
     

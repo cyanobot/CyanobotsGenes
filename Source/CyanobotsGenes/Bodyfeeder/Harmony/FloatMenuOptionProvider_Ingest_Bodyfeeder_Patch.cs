@@ -42,7 +42,7 @@ namespace CyanobotsGenes
                         new FloatMenuOption(text, delegate
                         {
                             clickedThing.SetForbidden(false);
-                            Job job = JobMaker.MakeJob(CG_DefOf.IngestForHemogen, clickedThing);
+                            Job job = JobMaker.MakeJob(CG_DefOf.CYB_IngestForHemogen, clickedThing);
                             job.count = 1;
                             pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
                         }, MenuOptionPriority.Low),

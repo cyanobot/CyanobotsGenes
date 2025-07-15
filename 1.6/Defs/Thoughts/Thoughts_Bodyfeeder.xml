@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThoughtDef>
-    <defName>BodyfeederStarvation</defName>
+    <defName>CYB_BodyfeederStarvation</defName>
     <workerClass>ThoughtWorker_Hediff</workerClass>
-    <hediff>BodyfeederStarvation</hediff>
+    <hediff>CYB_BodyfeederStarvation</hediff>
     <stages>
       <li>
         <label>bodyfeeder starvation</label>
@@ -25,7 +25,7 @@
   
   <!-- VICTIM -->
   
-  <ThoughtDef Name="BodyfeederVictim_BodyPartEaten_Opinion_Base" Abstract="True">
+  <ThoughtDef Name="CYB_BodyfeederVictim_BodyPartEaten_Opinion_Base" Abstract="True">
     <thoughtClass>Thought_MemorySocial</thoughtClass>
     <stackLimit>300</stackLimit>
     <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
@@ -38,8 +38,8 @@
 	</nullifyingPrecepts>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="BodyfeederVictim_BodyPartEaten_Opinion_Base">
-    <defName>BodyfeederVictim_BodyPartEaten_Opinion</defName>
+  <ThoughtDef ParentName="CYB_BodyfeederVictim_BodyPartEaten_Opinion_Base">
+    <defName>CYB_BodyfeederVictim_BodyPartEaten_Opinion</defName>
     <durationDays>120</durationDays>
     <nullifyingPrecepts>
       <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredStrong</li>
@@ -52,11 +52,11 @@
     </stages>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="BodyfeederVictim_BodyPartEaten_Opinion_Base">
-    <defName>BodyfeederVictim_BodyPartEaten_Opinion_CRequiredStrong</defName>
+  <ThoughtDef ParentName="CYB_BodyfeederVictim_BodyPartEaten_Opinion_Base">
+    <defName>CYB_BodyfeederVictim_BodyPartEaten_Opinion_CRequiredStrong</defName>
     <durationDays>6</durationDays>
 	<replaceThoughts>
-		<li>BodyfeederVictim_BodyPartEaten_Opinion</li>
+		<li>CYB_BodyfeederVictim_BodyPartEaten_Opinion</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -66,7 +66,7 @@
     </stages>
   </ThoughtDef>
   
-  <ThoughtDef Name="BodyfeederVictim_BodyPartEaten_Mood_Base" Abstract="True">
+  <ThoughtDef Name="CYB_BodyfeederVictim_BodyPartEaten_Mood_Base" Abstract="True">
     <durationDays>15</durationDays>
     <stackLimit>1</stackLimit>
     <validWhileDespawned>true</validWhileDespawned>
@@ -76,8 +76,8 @@
 	</nullifyingPrecepts>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="BodyfeederVictim_BodyPartEaten_Mood_Base">
-	<defName>BodyfeederVictim_BodyPartEaten_Mood</defName>
+  <ThoughtDef ParentName="CYB_BodyfeederVictim_BodyPartEaten_Mood_Base">
+	<defName>CYB_BodyfeederVictim_BodyPartEaten_Mood</defName>
     <nullifyingPrecepts>
       <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredStrong</li>
     </nullifyingPrecepts>
@@ -90,10 +90,10 @@
     </stages>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="BodyfeederVictim_BodyPartEaten_Mood_Base">
-	<defName>BodyfeederVictim_BodyPartEaten_Mood_CRequiredStrong</defName>
+  <ThoughtDef ParentName="CYB_BodyfeederVictim_BodyPartEaten_Mood_Base">
+	<defName>CYB_BodyfeederVictim_BodyPartEaten_Mood_CRequiredStrong</defName>
 	<replaceThoughts>
-		<li>BodyfeederVictim_BodyPartEaten_Mood</li>
+		<li>CYB_BodyfeederVictim_BodyPartEaten_Mood</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -106,7 +106,7 @@
   
   <!-- BODYFEEDER -->
   
-  <ThoughtDef Name="Bodyfeeder_AteLive_Base" Abstract="True">
+  <ThoughtDef Name="CYB_Bodyfeeder_AteLive_Base" Abstract="True">
     <validWhileDespawned>true</validWhileDespawned>
 	<nullifyingPrecepts>
       <li MayRequire="Sarg.AlphaMemes">AM_OrganUse_Torturous</li>
@@ -118,15 +118,15 @@
     </nullifyingTraits>
   </ThoughtDef>
   
-  <ThoughtDef Name="Bodyfeeder_AteLivePerson_Base" ParentName="Bodyfeeder_AteLive_Base" Abstract="True">
+  <ThoughtDef Name="CYB_Bodyfeeder_AteLivePerson_Base" ParentName="CYB_Bodyfeeder_AteLive_Base" Abstract="True">
 	<durationDays>15</durationDays>
 	<thoughtClass>CyanobotsGenes.Thought_Bodyfeeder_AteNonFriend</thoughtClass>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="Bodyfeeder_AteLivePerson_Base">
-	<defName>Bodyfeeder_AteLivePerson</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_AteLivePerson_Base">
+	<defName>CYB_Bodyfeeder_AteLivePerson</defName>
 	<replaceThoughts>
-		<li>Bodyfeeder_AteBodyPart</li>
+		<li>CYB_Bodyfeeder_AteBodyPart</li>
 	</replaceThoughts>
 	<stages>
 		<li>
@@ -147,12 +147,12 @@
 	</stages>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="Bodyfeeder_AteLivePerson_Base">
-	<defName>Bodyfeeder_AteLivePerson_CAcceptable</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_AteLivePerson_Base">
+	<defName>CYB_Bodyfeeder_AteLivePerson_CAcceptable</defName>
 	<replaceThoughts>
-		<li>Bodyfeeder_AteLivePerson</li>
-		<li>Bodyfeeder_AteBodyPart</li>
-		<li>Bodyfeeder_AteBodyPart_CAcceptable</li>
+		<li>CYB_Bodyfeeder_AteLivePerson</li>
+		<li>CYB_Bodyfeeder_AteBodyPart</li>
+		<li>CYB_Bodyfeeder_AteBodyPart_CAcceptable</li>
 	</replaceThoughts>
 	<stages>
 		<li>
@@ -173,15 +173,15 @@
 	</stages>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="Bodyfeeder_AteLivePerson_Base">
-	<defName>Bodyfeeder_AteLivePerson_CRequired</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_AteLivePerson_Base">
+	<defName>CYB_Bodyfeeder_AteLivePerson_CRequired</defName>
 	<nullifyingTraits Inherit="False"/>
 	<replaceThoughts>
-		<li>Bodyfeeder_AteLivePerson</li>
-		<li>Bodyfeeder_AteBodyPart</li>
-		<li>Bodyfeeder_AteLivePerson_CAcceptable</li>
-		<li>Bodyfeeder_AteBodyPart_CAcceptable</li>
-		<li>Bodyfeeder_AteBodyPart_CRequired</li>
+		<li>CYB_Bodyfeeder_AteLivePerson</li>
+		<li>CYB_Bodyfeeder_AteBodyPart</li>
+		<li>CYB_Bodyfeeder_AteLivePerson_CAcceptable</li>
+		<li>CYB_Bodyfeeder_AteBodyPart_CAcceptable</li>
+		<li>CYB_Bodyfeeder_AteBodyPart_CRequired</li>
 		<li>AteHumanlikeMeatDirectCannibal</li>
 		<li>AteHumanlikeMeatAsIngredientCannibal</li>
 	</replaceThoughts>
@@ -204,12 +204,12 @@
 	</stages>
   </ThoughtDef>
   
-  <ThoughtDef Name="Bodyfeeder_AteBodyPart_Base" ParentName="Bodyfeeder_AteLive_Base" Abstract="True">
+  <ThoughtDef Name="CYB_Bodyfeeder_AteBodyPart_Base" ParentName="CYB_Bodyfeeder_AteLive_Base" Abstract="True">
 	<durationDays>10</durationDays>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="Bodyfeeder_AteBodyPart_Base">
-    <defName>Bodyfeeder_AteBodyPart</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_AteBodyPart_Base">
+    <defName>CYB_Bodyfeeder_AteBodyPart</defName>
     <stages>
 		<li>
 			<label>ate a part of a live enemy</label>
@@ -229,10 +229,10 @@
     </stages>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="Bodyfeeder_AteBodyPart_Base">
-    <defName>Bodyfeeder_AteBodyPart_CAcceptable</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_AteBodyPart_Base">
+    <defName>CYB_Bodyfeeder_AteBodyPart_CAcceptable</defName>
 	<replaceThoughts>
-		<li>Bodyfeeder_AteBodyPart</li>
+		<li>CYB_Bodyfeeder_AteBodyPart</li>
 	</replaceThoughts>
     <stages>
 		<li>
@@ -253,11 +253,11 @@
     </stages>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="Bodyfeeder_AteBodyPart_Base">
-    <defName>Bodyfeeder_AteBodyPart_CRequired</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_AteBodyPart_Base">
+    <defName>CYB_Bodyfeeder_AteBodyPart_CRequired</defName>
     <nullifyingTraits Inherit="False"/>
 	<replaceThoughts>
-		<li>Bodyfeeder_AteBodyPart</li>
+		<li>CYB_Bodyfeeder_AteBodyPart</li>
 		<li>AteHumanlikeMeatDirectCannibal</li>
 		<li>AteHumanlikeMeatAsIngredientCannibal</li>
 	</replaceThoughts>
@@ -281,14 +281,14 @@
   </ThoughtDef>
   
   <ThoughtDef>
-	<defName>Bodyfeeder_AteFriend</defName>
+	<defName>CYB_Bodyfeeder_AteFriend</defName>
 	<thoughtClass>CyanobotsGenes.Thought_Bodyfeeder_AteFriend</thoughtClass>
 	<durationDays>30</durationDays>
     <validWhileDespawned>true</validWhileDespawned>
 	<replaceThoughts>
-		<li>Bodyfeeder_AteBodyPart</li>
-		<li>Bodyfeeder_AteBodyPart_CAcceptable</li>
-		<li>Bodyfeeder_AteBodyPart_CRequired</li>
+		<li>CYB_Bodyfeeder_AteBodyPart</li>
+		<li>CYB_Bodyfeeder_AteBodyPart_CAcceptable</li>
+		<li>CYB_Bodyfeeder_AteBodyPart_CRequired</li>
 	</replaceThoughts>
     <nullifyingTraits>
       <li>Psychopath</li>
@@ -337,7 +337,7 @@
   </ThoughtDef>
   
   <ThoughtDef>
-	<defName>Bodyfeeder_AteBodyPartFriend</defName>
+	<defName>CYB_Bodyfeeder_AteBodyPartFriend</defName>
 	<durationDays>15</durationDays>
     <validWhileDespawned>true</validWhileDespawned>
     <nullifyingPrecepts>
@@ -357,7 +357,7 @@
   
   <!-- OBSERVER-->
   
-  <ThoughtDef Name="Bodyfeeder_Know_Base" Abstract="True">
+  <ThoughtDef Name="CYB_Bodyfeeder_Know_Base" Abstract="True">
     <thoughtClass>Thought_MemorySocial</thoughtClass>
     <durationDays>30</durationDays>
     <stackLimit>300</stackLimit>
@@ -375,10 +375,10 @@
     </nullifyingTraits>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_EnemyEaten</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_EnemyEaten</defName>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_EnemyBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_EnemyBodyPartEaten</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -387,10 +387,10 @@
       </li>
     </stages>
   </ThoughtDef>
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_OutsiderEaten</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_OutsiderEaten</defName>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_OutsiderBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -399,10 +399,10 @@
       </li>
     </stages>
   </ThoughtDef>
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_ColonistEaten</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_ColonistEaten</defName>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_ColonistBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_ColonistBodyPartEaten</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -412,12 +412,12 @@
     </stages>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_EnemyEaten_CAcceptable</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_EnemyEaten_CAcceptable</defName>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_EnemyEaten</li>
-		<li>Bodyfeeder_Know_EnemyBodyPartEaten</li>
-		<li>Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</li>
+		<li>CYB_Bodyfeeder_Know_EnemyEaten</li>
+		<li>CYB_Bodyfeeder_Know_EnemyBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -426,12 +426,12 @@
       </li>
     </stages>
   </ThoughtDef> 
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_OutsiderEaten_CAcceptable</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_OutsiderEaten_CAcceptable</defName>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_OutsiderEaten</li>
-		<li>Bodyfeeder_Know_OutsiderBodyPartEaten</li>
-		<li>Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</li>
+		<li>CYB_Bodyfeeder_Know_OutsiderEaten</li>
+		<li>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -440,12 +440,12 @@
       </li>
     </stages>
   </ThoughtDef>
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_ColonistEaten_CAcceptable</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_ColonistEaten_CAcceptable</defName>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_ColonistEaten</li>
-		<li>Bodyfeeder_Know_ColonistBodyPartEaten</li>
-		<li>Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</li>
+		<li>CYB_Bodyfeeder_Know_ColonistEaten</li>
+		<li>CYB_Bodyfeeder_Know_ColonistBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -455,15 +455,15 @@
     </stages>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_EnemyEaten_CRequired</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_EnemyEaten_CRequired</defName>
 	<nullifyingTraits Inherit="False"/>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_EnemyEaten</li>
-		<li>Bodyfeeder_Know_EnemyBodyPartEaten</li>
-		<li>Bodyfeeder_Know_EnemyEaten_CAcceptable</li>
-		<li>Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</li>
-		<li>Bodyfeeder_Know_EnemyBodyPartEaten_CRequired</li>
+		<li>CYB_Bodyfeeder_Know_EnemyEaten</li>
+		<li>CYB_Bodyfeeder_Know_EnemyBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_EnemyEaten_CAcceptable</li>
+		<li>CYB_Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</li>
+		<li>CYB_Bodyfeeder_Know_EnemyBodyPartEaten_CRequired</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -472,15 +472,15 @@
       </li>
     </stages>
   </ThoughtDef> 
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_OutsiderEaten_CRequired</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_OutsiderEaten_CRequired</defName>
 	<nullifyingTraits Inherit="False"/>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_OutsiderEaten</li>
-		<li>Bodyfeeder_Know_OutsiderBodyPartEaten</li>
-		<li>Bodyfeeder_Know_OutsiderEaten_CAcceptable</li>
-		<li>Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</li>
-		<li>Bodyfeeder_Know_OutsiderBodyPartEaten_CRequired</li>
+		<li>CYB_Bodyfeeder_Know_OutsiderEaten</li>
+		<li>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_OutsiderEaten_CAcceptable</li>
+		<li>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</li>
+		<li>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten_CRequired</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -489,15 +489,15 @@
       </li>
     </stages>
   </ThoughtDef>
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_ColonistEaten_CRequired</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_ColonistEaten_CRequired</defName>
 	<nullifyingTraits Inherit="False"/>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_ColonistEaten</li>
-		<li>Bodyfeeder_Know_ColonistBodyPartEaten</li>
-		<li>Bodyfeeder_Know_ColonistEaten_CAcceptable</li>
-		<li>Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</li>
-		<li>Bodyfeeder_Know_ColonistBodyPartEaten_CRequired</li>
+		<li>CYB_Bodyfeeder_Know_ColonistEaten</li>
+		<li>CYB_Bodyfeeder_Know_ColonistBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_ColonistEaten_CAcceptable</li>
+		<li>CYB_Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</li>
+		<li>CYB_Bodyfeeder_Know_ColonistBodyPartEaten_CRequired</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -507,8 +507,8 @@
     </stages>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_EnemyBodyPartEaten</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_EnemyBodyPartEaten</defName>
     <stages>
       <li>
         <label>ate part of a live enemy</label>
@@ -516,8 +516,8 @@
       </li>
     </stages>
   </ThoughtDef>
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_OutsiderBodyPartEaten</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten</defName>
     <stages>
       <li>
         <label>ate a part of someone</label>
@@ -525,8 +525,8 @@
       </li>
     </stages>
   </ThoughtDef>
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_ColonistBodyPartEaten</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_ColonistBodyPartEaten</defName>
     <stages>
       <li>
         <label>ate part of a colonist</label>
@@ -535,10 +535,10 @@
     </stages>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</defName>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_EnemyBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_EnemyBodyPartEaten</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -547,10 +547,10 @@
       </li>
     </stages>
   </ThoughtDef>
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</defName>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_OutsiderBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -559,10 +559,10 @@
       </li>
     </stages>
   </ThoughtDef>
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</defName>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_ColonistBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_ColonistBodyPartEaten</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -572,12 +572,12 @@
     </stages>
   </ThoughtDef>
   
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_EnemyBodyPartEaten_CRequired</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_EnemyBodyPartEaten_CRequired</defName>
 	<nullifyingTraits Inherit="False"/>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_EnemyBodyPartEaten</li>
-		<li>Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</li>
+		<li>CYB_Bodyfeeder_Know_EnemyBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -586,12 +586,12 @@
       </li>
     </stages>
   </ThoughtDef>
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_OutsiderBodyPartEaten_CRequired</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten_CRequired</defName>
 	<nullifyingTraits Inherit="False"/>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_OutsiderBodyPartEaten</li>
-		<li>Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</li>
+		<li>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</li>
 	</replaceThoughts>
     <stages>
       <li>
@@ -600,12 +600,12 @@
       </li>
     </stages>
   </ThoughtDef>
-  <ThoughtDef ParentName="Bodyfeeder_Know_Base">
-    <defName>Bodyfeeder_Know_ColonistBodyPartEaten_CRequired</defName>
+  <ThoughtDef ParentName="CYB_Bodyfeeder_Know_Base">
+    <defName>CYB_Bodyfeeder_Know_ColonistBodyPartEaten_CRequired</defName>
 	<nullifyingTraits Inherit="False"/>
 	<replaceThoughts>
-		<li>Bodyfeeder_Know_ColonistBodyPartEaten</li>
-		<li>Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</li>
+		<li>CYB_Bodyfeeder_Know_ColonistBodyPartEaten</li>
+		<li>CYB_Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</li>
 	</replaceThoughts>
     <stages>
       <li>

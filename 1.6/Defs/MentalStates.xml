@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<MentalStateDef ParentName="BaseMentalState">
-    <defName>BodyfeederBeserk</defName>
+    <defName>CYB_BodyfeederBeserk</defName>
     <stateClass>CyanobotsGenes.MentalState_BodyfeederBerserk</stateClass>
     <label>feeding frenzy</label>
     <category>Aggro</category>

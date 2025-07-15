@@ -11,7 +11,7 @@ namespace CyanobotsGenes
         {
             //uninterested in nonhumans
             if (ingester == null || !ingester.RaceProps.Humanlike) return;
-            nutritionIngested *= ingester.GetStatValue(CG_DefOf.AnimalNutritionFactor);
+            nutritionIngested *= ingester.GetStatValue(CG_DefOf.CYB_AnimalNutritionFactor);
         }
     }
 

@@ -3,7 +3,7 @@
 
 <!--Carnivore-->
 <GeneDef>
-	<defName>Carnivore</defName>
+	<defName>CYB_Carnivore</defName>
 	<label>carnivore</label>
 	<description>Carriers of this gene have short guts and don't digest plant matter well. They don't enjoy eating vegetable matter, get less nutrition from it, and become unwell from eating too much of it.</description>
 	<iconPath>Genes/CYB_Carnivore</iconPath>
@@ -15,7 +15,7 @@
 	</exclusionTags>
 	<biostatMet>2</biostatMet>
 	<statFactors>
-		<VegetableNutritionFactor>0.5</VegetableNutritionFactor>
+		<CYB_VegetableNutritionFactor>0.5</CYB_VegetableNutritionFactor>
 	</statFactors>
     <minAgeActive>3</minAgeActive>
     <symbolPack>
@@ -34,7 +34,7 @@
 
 <!--Hypercarnivore-->
 <GeneDef>
-	<defName>Hypercarnivore</defName>
+	<defName>CYB_Hypercarnivore</defName>
 	<label>hypercarnivore</label>
 	<description>Carriers of this gene have short guts and a genetic deficiency in many enzymes associated with an omnivorous diet. They cannot digest plant matter at all, and must subsist on meat and other animal products. Their appetites make even raw meat appealing.</description>
 	<iconPath>Genes/CYB_Hypercarnivore</iconPath>
@@ -47,7 +47,7 @@
     <dontMindRawFood>true</dontMindRawFood>
 	<biostatMet>3</biostatMet>
 	<statFactors>
-		<VegetableNutritionFactor>0</VegetableNutritionFactor>
+		<CYB_VegetableNutritionFactor>0</CYB_VegetableNutritionFactor>
 	</statFactors>
     <minAgeActive>3</minAgeActive>
     <symbolPack>
@@ -66,7 +66,7 @@
 
 <!--Herbivore-->
 <GeneDef>
-	<defName>Herbivore</defName>
+	<defName>CYB_Herbivore</defName>
 	<label>herbivore</label>
 	<description>Carriers of this gene have digestive systems tuned to plant food. They don't enjoy eating animal  products, get less nutrition from them, and become unwell from eating too much of them.</description>
 	<iconPath>Genes/CYB_Herbivore</iconPath>
@@ -78,7 +78,7 @@
 	</exclusionTags>
 	<biostatMet>2</biostatMet>
 	<statFactors>
-		<AnimalNutritionFactor>0.5</AnimalNutritionFactor>
+		<CYB_AnimalNutritionFactor>0.5</CYB_AnimalNutritionFactor>
 	</statFactors>
     <minAgeActive>3</minAgeActive>
     <symbolPack>
@@ -97,7 +97,7 @@
 
 <!--StrictHerbivore-->
 <GeneDef>
-	<defName>StrictHerbivore</defName>
+	<defName>CYB_StrictHerbivore</defName>
 	<label>strict herbivore</label>
 	<description>Carriers of this gene have multiple stomachs and support gut flora that digests only plant food. They cannot digest meat or other animal-derived food at all. If desperate, they can eat hay.</description>
 	<iconPath>Genes/CYB_StrictHerbivore</iconPath>
@@ -110,7 +110,7 @@
     <dontMindRawFood>true</dontMindRawFood>
 	<biostatMet>3</biostatMet>
 	<statFactors>
-		<AnimalNutritionFactor>0</AnimalNutritionFactor>
+		<CYB_AnimalNutritionFactor>0</CYB_AnimalNutritionFactor>
 	</statFactors>
     <minAgeActive>3</minAgeActive>
     <symbolPack>
@@ -131,7 +131,7 @@
 
 <!--ObligateCannibal-->
 <GeneDef>
-	<defName>ObligateCannibal</defName>
+	<defName>CYB_ObligateCannibal</defName>
 	<label>obligate cannibal</label>
 	<description>Whether by a deeply unfortunate quirk of genetic drift or by purposeful engineering to some sick end, carriers of this gene are completely unable to synthesise many basic metabolic compounds key to human life. To survive, they depend on ingesting the flesh of fellow human beings : the fresher the better.</description>
 	<iconPath>Genes/CYB_ObligateCannibal</iconPath>

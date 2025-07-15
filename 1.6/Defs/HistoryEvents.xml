@@ -1,45 +1,33 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<!--
-	<HistoryEventDef>
-		<defName>BodyfeederAtePerson</defName>
-		<label>ate person</label>
-	</HistoryEventDef>
 	
 	<HistoryEventDef>
-		<defName>BodyfeederAteBodyPart</defName>
-		<label>ate person's body part</label>
-	</HistoryEventDef>
-	-->
-	
-	
-	<HistoryEventDef>
-		<defName>BodyfeederAteEnemy</defName>
+		<defName>CYB_BodyfeederAteEnemy</defName>
 		<label>ate enemy</label>
 	</HistoryEventDef>
 
 	<HistoryEventDef>
-		<defName>BodyfeederAteOutsider</defName>
+		<defName>CYB_BodyfeederAteOutsider</defName>
 		<label>ate person</label>
 	</HistoryEventDef>
 
 	<HistoryEventDef>
-		<defName>BodyfeederAteColonist</defName>
+		<defName>CYB_BodyfeederAteColonist</defName>
 		<label>ate colonist</label>
 	</HistoryEventDef>
 	
 	<HistoryEventDef>
-		<defName>BodyfeederAteBodyPartEnemy</defName>
+		<defName>CYB_BodyfeederAteBodyPartEnemy</defName>
 		<label>ate enemy's body part</label>
 	</HistoryEventDef>
 
 	<HistoryEventDef>
-		<defName>BodyfeederAteBodyPartOutsider</defName>
+		<defName>CYB_BodyfeederAteBodyPartOutsider</defName>
 		<label>ate person's body part</label>
 	</HistoryEventDef>
 
 	<HistoryEventDef>
-		<defName>BodyfeederAteBodyPartColonist</defName>
+		<defName>CYB_BodyfeederAteBodyPartColonist</defName>
 		<label>ate colonist's body part</label>
 	</HistoryEventDef>
 </Defs>

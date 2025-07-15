@@ -12,7 +12,7 @@
 
 <!--EasilyBored-->
 <GeneDef ParentName="GeneJoyBase">
-    <defName>EasilyBored</defName>
+    <defName>CYB_EasilyBored</defName>
     <label>easily bored</label>
     <description>Carriers of this gene need more recreation than others.</description>
     <iconPath>Genes/CYB_EasilyBored</iconPath>
@@ -40,7 +40,7 @@
 
 <!--RarelyBored-->
 <GeneDef ParentName="GeneJoyBase">
-    <defName>RarelyBored</defName>
+    <defName>CYB_RarelyBored</defName>
     <label>rarely bored</label>
     <description>Carriers of this gene need less recreation than others.</description>
     <iconPath>Genes/CYB_RarelyBored</iconPath>
@@ -68,7 +68,7 @@
 
 <!--NeverBored-->
 <GeneDef ParentName="GeneJoyBase">
-    <defName>NeverBored</defName>
+    <defName>CYB_NeverBored</defName>
     <label>never bored</label>
     <description>Carriers of this gene have infinite patience for their work, never feeling the need to engage in frivolous recreation.</description>
     <iconPath>Genes/CYB_NeverBored</iconPath>
@@ -97,7 +97,7 @@
 
 <!--PreyDrive-->
 <GeneDef>
-    <defName>PreyDrive</defName>
+    <defName>CYB_PreyDrive</defName>
 	<label>prey drive</label>
 	<description>Carriers of this gene have predatory instincts originally derived from feline genomes. Hunting is a form of recreation for them.</description>
 	<iconPath>Genes/CYB_PreyDrive</iconPath>

@@ -37,7 +37,7 @@ namespace CyanobotsGenes
                 validator: downedValidator);
             if (downed != null)
             {
-                Job jobIngestDowned = JobMaker.MakeJob(CG_DefOf.IngestDowned, downed);
+                Job jobIngestDowned = JobMaker.MakeJob(CG_DefOf.CYB_IngestDowned, downed);
                 return jobIngestDowned;
             }
 

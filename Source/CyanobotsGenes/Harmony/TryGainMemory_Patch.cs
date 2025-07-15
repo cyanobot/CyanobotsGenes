@@ -13,9 +13,9 @@ namespace CyanobotsGenes
             //Log.Message("TryGainMemory - newThought: " + newThought.def + ", ___pawn: " + ___pawn);
             if (___pawn.genes == null) return true; ;
 
-            if (newThought.def == ThoughtDefOf.SoakingWet && ___pawn.HasActiveGene(CG_DefOf.LightFur))
+            if (newThought.def == ThoughtDefOf.SoakingWet && ___pawn.HasActiveGene(CG_DefOf.CYB_LightFur))
             {
-                __instance.TryGainMemoryFast(CG_DefOf.WetFur);
+                __instance.TryGainMemoryFast(CG_DefOf.CYB_WetFur);
                 return true;
             }
 

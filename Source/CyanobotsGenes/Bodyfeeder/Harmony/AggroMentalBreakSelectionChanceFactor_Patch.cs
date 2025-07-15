@@ -15,10 +15,10 @@ namespace CyanobotsGenes
 
         static float Postfix(float result, Pawn_GeneTracker __instance)
         {
-            if (__instance.pawn.HasActiveGene(CG_DefOf.Bodyfeeder) && __instance.pawn.health != null 
-                && __instance.pawn.health.hediffSet.HasHediff(CG_DefOf.BodyfeederStarvation))
+            if (__instance.pawn.HasActiveGene(CG_DefOf.CYB_Bodyfeeder) && __instance.pawn.health != null 
+                && __instance.pawn.health.hediffSet.HasHediff(CG_DefOf.CYB_BodyfeederStarvation))
             {
-                result *= 1f + (8f * __instance.pawn.health.hediffSet.GetFirstHediffOfDef(CG_DefOf.BodyfeederStarvation).Severity);
+                result *= 1f + (8f * __instance.pawn.health.hediffSet.GetFirstHediffOfDef(CG_DefOf.CYB_BodyfeederStarvation).Severity);
             }
             return result;
         }

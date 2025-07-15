@@ -14,7 +14,7 @@ namespace CyanobotsGenes
             __instance.job.ignoreJoyTimeAssignment = true;
 
             Pawn pawn = __instance.pawn;
-            bool preyDrive = pawn.genes != null && pawn.HasActiveGene(CG_DefOf.PreyDrive);
+            bool preyDrive = pawn.genes != null && pawn.HasActiveGene(CG_DefOf.CYB_PreyDrive);
 
             foreach (Toil toil in originalToils)
             {

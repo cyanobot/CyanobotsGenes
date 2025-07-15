@@ -2,7 +2,7 @@
 <Defs>
 
 <TraitDef>
-    <defName>Unaffected</defName>
+    <defName>CYB_Unaffected</defName>
     <commonality>0.5</commonality>
     <degreeDatas>
       <li>

@@ -3,7 +3,7 @@
 
 <!--Psychopathic-->
 <GeneDef>
-    <defName>Psychopathic</defName>
+    <defName>CYB_Psychopathic</defName>
 	<label>psychopathic</label>
 	<description>Carriers of this gene are naturally numb to violence and human suffering.</description>
 	<iconPath>Genes/CYB_Psychopathic</iconPath>

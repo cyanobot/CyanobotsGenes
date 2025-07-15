@@ -3,7 +3,7 @@
 
 <!--Stealthy-->
 <GeneDef>
-	<defName>Stealthy</defName>
+	<defName>CYB_Stealthy</defName>
 	<label>stealthy</label>
 	<description>Carriers of this gene have an innate instinct for stealth that makes them capable hunters.</description>
 	<iconPath>Genes/CYB_Stealthy</iconPath>

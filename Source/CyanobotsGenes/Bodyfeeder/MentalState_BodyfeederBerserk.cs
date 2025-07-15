@@ -21,7 +21,7 @@ namespace CyanobotsGenes
 			if (hemogenGene == null) return true;
 			if (hemogenGene.Resource.ValuePercent >= 0.9f) return true;
 
-			if (!pawn.health.hediffSet.HasHediff(CG_DefOf.BodyfeederStarvation)) return true;
+			if (!pawn.health.hediffSet.HasHediff(CG_DefOf.CYB_BodyfeederStarvation)) return true;
 
 			return false;
 		}
@@ -31,9 +31,9 @@ namespace CyanobotsGenes
 			base.PostEnd();
 
 			Gene_Hemogen hemogenGene = pawn.genes.GetFirstGeneOfType<Gene_Hemogen>();
-			if ((hemogenGene ==  null || hemogenGene.Resource.ValuePercent >= 0.9f) && pawn.health.hediffSet.HasHediff(CG_DefOf.BodyfeederStarvation))
+			if ((hemogenGene ==  null || hemogenGene.Resource.ValuePercent >= 0.9f) && pawn.health.hediffSet.HasHediff(CG_DefOf.CYB_BodyfeederStarvation))
             {
-				pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(CG_DefOf.BodyfeederStarvation));
+				pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(CG_DefOf.CYB_BodyfeederStarvation));
             }
 		}
 

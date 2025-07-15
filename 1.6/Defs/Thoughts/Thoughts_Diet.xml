@@ -2,7 +2,7 @@
 <Defs>
    
   <ThoughtDef>
-    <defName>AtePlantCarnivore</defName>
+    <defName>CYB_AtePlantCarnivore</defName>
     <showBubble>true</showBubble>
     <icon>Things/Mote/ThoughtSymbol/Food</icon>
     <durationDays>0.5</durationDays>
@@ -18,7 +18,7 @@
   </ThoughtDef>
    
   <ThoughtDef>
-    <defName>AteAnimalProductHerbivore</defName>
+    <defName>CYB_AteAnimalProductHerbivore</defName>
     <showBubble>true</showBubble>
     <icon>Things/Mote/ThoughtSymbol/Food</icon>
     <durationDays>0.5</durationDays>
@@ -32,12 +32,12 @@
       </li>
     </stages>
     <replaceThoughts>
-      <li>AteMeatHerbivore</li>
+      <li>CYB_AteMeatHerbivore</li>
     </replaceThoughts>
   </ThoughtDef>
    
   <ThoughtDef>
-    <defName>AteMeatHerbivore</defName>
+    <defName>CYB_AteMeatHerbivore</defName>
     <showBubble>true</showBubble>
     <icon>Things/Mote/ThoughtSymbol/Food</icon>
     <durationDays>0.5</durationDays>
@@ -51,12 +51,12 @@
       </li>
     </stages>
     <replaceThoughts>
-      <li>AteAnimalProductHerbivore</li>
+      <li>CYB_AteAnimalProductHerbivore</li>
     </replaceThoughts>
   </ThoughtDef>
    
   <ThoughtDef>
-    <defName>AteHay</defName>
+    <defName>CYB_AteHay</defName>
     <showBubble>true</showBubble>
     <icon>Things/Mote/ThoughtSymbol/Food</icon>
     <durationDays>1</durationDays>
@@ -72,7 +72,7 @@
   </ThoughtDef>
    
   <ThoughtDef>
-    <defName>AteCorpseHypercarnivore</defName>
+    <defName>CYB_AteCorpseHypercarnivore</defName>
     <showBubble>true</showBubble>
     <icon>Things/Mote/ThoughtSymbol/Food</icon>
     <durationDays>1</durationDays>

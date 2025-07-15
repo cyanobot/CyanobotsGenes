@@ -53,14 +53,14 @@ namespace CyanobotsGenes
 
         public static void PopulateDefaults()
         {
-            TraitDef unaffectedDef = CG_DefOf.Unaffected;
+            TraitDef unaffectedDef = CG_DefOf.CYB_Unaffected;
             default_unaffectedCommonality = (float) unaffectedDef.GetType().GetField("commonality", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(unaffectedDef);
 
         }
 
         public static void ApplySettingsToDefs()
         {
-            TraitDef unaffectedDef = CG_DefOf.Unaffected;
+            TraitDef unaffectedDef = CG_DefOf.CYB_Unaffected;
             float unaffectedCommonality;
 
             if (CG_Settings.unaffectedInTraitPool) unaffectedCommonality = default_unaffectedCommonality;

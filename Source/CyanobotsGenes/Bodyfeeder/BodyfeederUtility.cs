@@ -48,7 +48,7 @@ namespace CyanobotsGenes
 
         public static bool IsBodyFeeder(Pawn pawn)
         {
-            return pawn.HasActiveGene(CG_DefOf.Bodyfeeder);
+            return pawn.HasActiveGene(CG_DefOf.CYB_Bodyfeeder);
         }
 
         public static float HemogenPerNutrition(Pawn pawn, Thing food)
@@ -451,7 +451,7 @@ namespace CyanobotsGenes
                 {
                     if (t.IsForbidden(pawn) || !pawn.RaceProps.CanEverEat(t)
                         || !t.IsSociallyProper(pawn) || FoodUtility.InappropriateForTitle(t.def, pawn, false)
-                        || (t is Corpse && !(pawn.story.traits.HasTrait(DefDatabase<TraitDef>.GetNamed("Cannibal")) || pawn.HasActiveGene(CG_DefOf.Hypercarnivore))))
+                        || (t is Corpse && !(pawn.story.traits.HasTrait(DefDatabase<TraitDef>.GetNamed("Cannibal")) || pawn.HasActiveGene(CG_DefOf.CYB_Hypercarnivore))))
                     {
                         return false;
                     }
@@ -582,7 +582,7 @@ namespace CyanobotsGenes
         {
             Thing ingestible = TryGetHemogenSource(pawn, searchRadius);
             if (ingestible == null) return null;
-            Job job = JobMaker.MakeJob(CG_DefOf.IngestForHemogen, ingestible);
+            Job job = JobMaker.MakeJob(CG_DefOf.CYB_IngestForHemogen, ingestible);
             job.count = NumRequiredForHemogen(pawn, ingestible);
             return job;
         }

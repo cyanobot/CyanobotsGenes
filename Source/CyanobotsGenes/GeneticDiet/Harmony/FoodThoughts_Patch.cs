@@ -36,7 +36,7 @@ namespace CyanobotsGenes
                 if (thoughtAteCorpse.thought != null)
                 {
                     __result.Remove(thoughtAteCorpse);
-                    __result.Add(new FoodUtility.ThoughtFromIngesting { thought = CG_DefOf.AteCorpseHypercarnivore, fromPrecept = null });
+                    __result.Add(new FoodUtility.ThoughtFromIngesting { thought = CG_DefOf.CYB_AteCorpseHypercarnivore, fromPrecept = null });
                 }
             }
 

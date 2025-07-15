@@ -3,7 +3,7 @@
 
 <!--LightFur-->
 <GeneDef>
-	<defName>LightFur</defName>
+	<defName>CYB_LightFur</defName>
 	<label>light fur</label>
 	<labelShortAdj>lightfurred</labelShortAdj>
     <iconPath>Genes/CYB_LightFur</iconPath>
@@ -33,12 +33,12 @@
   
 <!--Tabby-->
 <GeneDef>
-	<defName>Tabby</defName>
+	<defName>CYB_Tabby</defName>
 	<label>tabby</label>
 	<labelShortAdj>tabby</labelShortAdj>
 	<iconPath>Genes/CYB_Tabby</iconPath>
 	<description>Carriers of this gene express patterning genes taken from various feline species. Their light fur is tabby striped.</description>
-	<prerequisite>LightFur</prerequisite>
+	<prerequisite>CYB_LightFur</prerequisite>
 	<displayCategory>CYB_Fur</displayCategory>
     <displayOrderInCategory>20</displayOrderInCategory>
     <forcedHeadTypes>

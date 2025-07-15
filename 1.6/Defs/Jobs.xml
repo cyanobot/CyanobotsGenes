@@ -2,14 +2,14 @@
 <Defs>
 
   <JobDef>
-    <defName>IngestForHemogen</defName>
+    <defName>CYB_IngestForHemogen</defName>
     <driverClass>CyanobotsGenes.JobDriver_IngestForHemogen</driverClass>
     <reportString>consuming TargetA.</reportString>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
 
   <JobDef>
-    <defName>IngestDowned</defName>
+    <defName>CYB_IngestDowned</defName>
     <driverClass>CyanobotsGenes.JobDriver_IngestDowned</driverClass>
     <reportString>consuming TargetA.</reportString>
     <allowOpportunisticPrefix>false</allowOpportunisticPrefix>

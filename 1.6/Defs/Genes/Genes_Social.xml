@@ -3,7 +3,7 @@
 
 <!--Asocial-->
 <GeneDef>
-    <defName>Asocial</defName>
+    <defName>CYB_Asocial</defName>
     <label>asocial</label>
     <description>Carriers of this gene lack key neural pathways relating to complex social interactions. They lack any concept of how to convince others of anything, and experience little interest in the words or opinions of others.</description>
     <iconPath>Genes/CYB_Asocial</iconPath>
@@ -11,7 +11,7 @@
     <displayOrderInCategory>10</displayOrderInCategory> 
     <forcedTraits>
       <li>
-        <def>Unaffected</def>
+        <def>CYB_Unaffected</def>
       </li>
     </forcedTraits>
     <disabledWorkTags>
@@ -33,14 +33,14 @@
 
 <!--PackBond-->
 <GeneDef>
-	<defName>PackBond</defName>
+	<defName>CYB_PackBond</defName>
 	<label>packbond</label>
 	<description>Carriers of this gene form a natural bond with each other when they work together as allies.</description>
 	<iconPath>Genes/CYB_PackBond</iconPath>
 	<displayCategory>CYB_Social</displayCategory>
     <displayOrderInCategory>20</displayOrderInCategory> 
 	<statOffsets>
-		<RelationshipWithAlliedFellowPackBond>30</RelationshipWithAlliedFellowPackBond>
+		<CYB_RelationshipWithAlliedFellowPackBond>30</CYB_RelationshipWithAlliedFellowPackBond>
 	</statOffsets>
 	<biostatCpx>1</biostatCpx>
 	<biostatMet>-1</biostatMet>

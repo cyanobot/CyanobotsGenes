@@ -6,7 +6,7 @@
 	<value>
 		<li Class="CyanobotsGenes.HediffCompProperties_GeneToggle">
 			<invert>true</invert>
-			<gene>Bodyfeeder</gene>
+			<gene>CYB_Bodyfeeder</gene>
 		</li>
 	</value>
 </Operation>

@@ -4,7 +4,7 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/JobDef[defName="Hunt"]</xpath>
     <value>
-      <joyKind>PreyDrive_Hunting</joyKind>	  
+      <joyKind>CYB_PreyDrive_Hunting</joyKind>	  
     </value>
   </Operation>
   

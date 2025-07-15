@@ -5,28 +5,28 @@
 	<xpath>Defs/PreceptDef[defName="Cannibalism_Classic"]/comps</xpath>
 	<value>
 		<li Class="PreceptComp_KnowsMemoryThought">
-			<eventDef>BodyfeederAteEnemy</eventDef>
-			<thought>Bodyfeeder_Know_EnemyEaten</thought>
+			<eventDef>CYB_BodyfeederAteEnemy</eventDef>
+			<thought>CYB_Bodyfeeder_Know_EnemyEaten</thought>
 		</li>
 		<li Class="PreceptComp_KnowsMemoryThought">
-			<eventDef>BodyfeederAteOutsider</eventDef>
-			<thought>Bodyfeeder_Know_OutsiderEaten</thought>
+			<eventDef>CYB_BodyfeederAteOutsider</eventDef>
+			<thought>CYB_Bodyfeeder_Know_OutsiderEaten</thought>
 		</li>
 		<li Class="PreceptComp_KnowsMemoryThought">
-			<eventDef>BodyfeederAteColonist</eventDef>
-			<thought>Bodyfeeder_Know_ColonistEaten</thought>
+			<eventDef>CYB_BodyfeederAteColonist</eventDef>
+			<thought>CYB_Bodyfeeder_Know_ColonistEaten</thought>
 		</li>
 		<li Class="PreceptComp_KnowsMemoryThought">
-			<eventDef>BodyfeederAteBodyPartEnemy</eventDef>
-			<thought>Bodyfeeder_Know_EnemyBodyPartEaten</thought>
+			<eventDef>CYB_BodyfeederAteBodyPartEnemy</eventDef>
+			<thought>CYB_Bodyfeeder_Know_EnemyBodyPartEaten</thought>
 		</li>
 		<li Class="PreceptComp_KnowsMemoryThought">
-			<eventDef>BodyfeederAteBodyPartOutsider</eventDef>
-			<thought>Bodyfeeder_Know_OutsiderBodyPartEaten</thought>
+			<eventDef>CYB_BodyfeederAteBodyPartOutsider</eventDef>
+			<thought>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten</thought>
 		</li>
 		<li Class="PreceptComp_KnowsMemoryThought">
-			<eventDef>BodyfeederAteBodyPartColonist</eventDef>
-			<thought>Bodyfeeder_Know_ColonistBodyPartEaten</thought>
+			<eventDef>CYB_BodyfeederAteBodyPartColonist</eventDef>
+			<thought>CYB_Bodyfeeder_Know_ColonistBodyPartEaten</thought>
 		</li>
 	</value>
 </Operation>
@@ -42,28 +42,28 @@
 		]/comps</xpath>
 		<value>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteEnemy</eventDef>
-				<thought>Bodyfeeder_Know_EnemyEaten</thought>
+				<eventDef>CYB_BodyfeederAteEnemy</eventDef>
+				<thought>CYB_Bodyfeeder_Know_EnemyEaten</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteOutsider</eventDef>
-				<thought>Bodyfeeder_Know_OutsiderEaten</thought>
+				<eventDef>CYB_BodyfeederAteOutsider</eventDef>
+				<thought>CYB_Bodyfeeder_Know_OutsiderEaten</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteColonist</eventDef>
-				<thought>Bodyfeeder_Know_ColonistEaten</thought>
+				<eventDef>CYB_BodyfeederAteColonist</eventDef>
+				<thought>CYB_Bodyfeeder_Know_ColonistEaten</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteBodyPartEnemy</eventDef>
-				<thought>Bodyfeeder_Know_EnemyBodyPartEaten</thought>
+				<eventDef>CYB_BodyfeederAteBodyPartEnemy</eventDef>
+				<thought>CYB_Bodyfeeder_Know_EnemyBodyPartEaten</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteBodyPartOutsider</eventDef>
-				<thought>Bodyfeeder_Know_OutsiderBodyPartEaten</thought>
+				<eventDef>CYB_BodyfeederAteBodyPartOutsider</eventDef>
+				<thought>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteBodyPartColonist</eventDef>
-				<thought>Bodyfeeder_Know_ColonistBodyPartEaten</thought>
+				<eventDef>CYB_BodyfeederAteBodyPartColonist</eventDef>
+				<thought>CYB_Bodyfeeder_Know_ColonistBodyPartEaten</thought>
 			</li>
 		</value>
 	</match>
@@ -89,28 +89,28 @@
 		<xpath>Defs/PreceptDef[defName="Cannibalism_Preferred" or defName="Cannibalism_Acceptable"]/comps</xpath>
 		<value>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteEnemy</eventDef>
-				<thought>Bodyfeeder_Know_EnemyEaten_CAcceptable</thought>
+				<eventDef>CYB_BodyfeederAteEnemy</eventDef>
+				<thought>CYB_Bodyfeeder_Know_EnemyEaten_CAcceptable</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteOutsider</eventDef>
-				<thought>Bodyfeeder_Know_OutsiderEaten_CAcceptable</thought>
+				<eventDef>CYB_BodyfeederAteOutsider</eventDef>
+				<thought>CYB_Bodyfeeder_Know_OutsiderEaten_CAcceptable</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteColonist</eventDef>
-				<thought>Bodyfeeder_Know_ColonistEaten_CAcceptable</thought>
+				<eventDef>CYB_BodyfeederAteColonist</eventDef>
+				<thought>CYB_Bodyfeeder_Know_ColonistEaten_CAcceptable</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteBodyPartEnemy</eventDef>
-				<thought>Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</thought>
+				<eventDef>CYB_BodyfeederAteBodyPartEnemy</eventDef>
+				<thought>CYB_Bodyfeeder_Know_EnemyBodyPartEaten_CAcceptable</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteBodyPartOutsider</eventDef>
-				<thought>Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</thought>
+				<eventDef>CYB_BodyfeederAteBodyPartOutsider</eventDef>
+				<thought>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten_CAcceptable</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteBodyPartColonist</eventDef>
-				<thought>Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</thought>
+				<eventDef>CYB_BodyfeederAteBodyPartColonist</eventDef>
+				<thought>CYB_Bodyfeeder_Know_ColonistBodyPartEaten_CAcceptable</thought>
 			</li>
 		</value>
 	</match>
@@ -124,28 +124,28 @@
 		<xpath>Defs/PreceptDef[defName="Cannibalism_RequiredStrong" or defName="Cannibalism_RequiredRavenous"]/comps</xpath>
 		<value>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteEnemy</eventDef>
-				<thought>Bodyfeeder_Know_EnemyEaten_CRequired</thought>
+				<eventDef>CYB_BodyfeederAteEnemy</eventDef>
+				<thought>CYB_Bodyfeeder_Know_EnemyEaten_CRequired</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteOutsider</eventDef>
-				<thought>Bodyfeeder_Know_OutsiderEaten_CRequired</thought>
+				<eventDef>CYB_BodyfeederAteOutsider</eventDef>
+				<thought>CYB_Bodyfeeder_Know_OutsiderEaten_CRequired</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteColonist</eventDef>
-				<thought>Bodyfeeder_Know_ColonistEaten_CRequired</thought>
+				<eventDef>CYB_BodyfeederAteColonist</eventDef>
+				<thought>CYB_Bodyfeeder_Know_ColonistEaten_CRequired</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteBodyPartEnemy</eventDef>
-				<thought>Bodyfeeder_Know_EnemyBodyPartEaten_CRequired</thought>
+				<eventDef>CYB_BodyfeederAteBodyPartEnemy</eventDef>
+				<thought>CYB_Bodyfeeder_Know_EnemyBodyPartEaten_CRequired</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteBodyPartOutsider</eventDef>
-				<thought>Bodyfeeder_Know_OutsiderBodyPartEaten_CRequired</thought>
+				<eventDef>CYB_BodyfeederAteBodyPartOutsider</eventDef>
+				<thought>CYB_Bodyfeeder_Know_OutsiderBodyPartEaten_CRequired</thought>
 			</li>
 			<li Class="PreceptComp_KnowsMemoryThought">
-				<eventDef>BodyfeederAteBodyPartColonist</eventDef>
-				<thought>Bodyfeeder_Know_ColonistBodyPartEaten_CRequired</thought>
+				<eventDef>CYB_BodyfeederAteBodyPartColonist</eventDef>
+				<thought>CYB_Bodyfeeder_Know_ColonistBodyPartEaten_CRequired</thought>
 			</li>
 		</value>
 	</match>

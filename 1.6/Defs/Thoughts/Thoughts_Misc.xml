@@ -3,7 +3,7 @@
 
   <!-- Pack bond-->
   <ThoughtDef>
-    <defName>PackBond</defName>
+    <defName>CYB_PackBond</defName>
     <thoughtClass>Thought_SituationalSocial</thoughtClass>
     <workerClass>CyanobotsGenes.ThoughtWorker_PackBond</workerClass>
     <validWhileDespawned>true</validWhileDespawned>
@@ -17,7 +17,7 @@
    
   <!--Wet Fur-->
   <ThoughtDef>
-    <defName>WetFur</defName>
+    <defName>CYB_WetFur</defName>
     <durationDays>0.1</durationDays>
     <stackLimit>1</stackLimit>
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
@@ -25,7 +25,7 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">RoughLiving_Welcomed</li>
     </nullifyingPrecepts>
 	<requiredGenes>
-		<li>LightFur</li>
+		<li>CYB_LightFur</li>
 	</requiredGenes>
     <stages>
       <li>
@@ -63,7 +63,7 @@
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
     <socialTargetDevelopmentalStageFilter>Baby, Child, Adult</socialTargetDevelopmentalStageFilter>
 	<nullifyingTraits>
-		<li>Unaffected</li>
+		<li>CYB_Unaffected</li>
 	</nullifyingTraits>
     <nullifyingHediffs>
       <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
@@ -84,7 +84,7 @@
     <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
 	<nullifyingTraits>
-		<li>Unaffected</li>
+		<li>CYB_Unaffected</li>
 	</nullifyingTraits>
     <nullifyingHediffs>
       <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>

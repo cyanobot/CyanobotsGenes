@@ -311,23 +311,23 @@ namespace CyanobotsGenes
             {
                 //Log.Message("death");
 
-                TaleRecorder.RecordTale(CG_DefOf.TaleBodyfeederAtePerson, new object[] { bodyfeeder, victim });
+                TaleRecorder.RecordTale(CG_DefOf.CYB_TaleBodyfeederAtePerson, new object[] { bodyfeeder, victim });
 
                 HistoryEvent ev;
                 //event handles thoughts for witnesses
                 if (pawnGroup == PawnGroup.Colonist)
                 {
-                    ev = new HistoryEvent(CG_DefOf.BodyfeederAteColonist,
+                    ev = new HistoryEvent(CG_DefOf.CYB_BodyfeederAteColonist,
                         bodyfeeder.Named(HistoryEventArgsNames.Doer), victim.Named(HistoryEventArgsNames.Victim));
                 }
                 else if (pawnGroup == PawnGroup.Enemy)
                 {
-                    ev = new HistoryEvent(CG_DefOf.BodyfeederAteEnemy,
+                    ev = new HistoryEvent(CG_DefOf.CYB_BodyfeederAteEnemy,
                         bodyfeeder.Named(HistoryEventArgsNames.Doer), victim.Named(HistoryEventArgsNames.Victim));
                 }
                 else
                 {
-                    ev = new HistoryEvent(CG_DefOf.BodyfeederAteOutsider,
+                    ev = new HistoryEvent(CG_DefOf.CYB_BodyfeederAteOutsider,
                         bodyfeeder.Named(HistoryEventArgsNames.Doer), victim.Named(HistoryEventArgsNames.Victim));
                 }
                 Find.HistoryEventsManager.RecordEvent(ev);
@@ -383,7 +383,7 @@ namespace CyanobotsGenes
                         if (stage_relation != -1)
                         {
                             //Log.Message("stage_relation: " + stage_relation);
-                            Thought_Memory memory_atefriend = ThoughtMaker.MakeThought(CG_DefOf.Bodyfeeder_AteFriend, stage_relation);
+                            Thought_Memory memory_atefriend = ThoughtMaker.MakeThought(CG_DefOf.CYB_Bodyfeeder_AteFriend, stage_relation);
                             memoryHandler.TryGainMemory(memory_atefriend, victim);
                             //for some reason PawnWithGoodOpinionDied doesn't seem to get applied anywhere, so let's check for it and add it if hasn't already
                             if (stage_relation == 0 && !memoryHandler.Memories.Any<Thought_Memory>(m => m.def == ThoughtDefOf.PawnWithGoodOpinionDied && m.otherPawn == victim))
@@ -400,15 +400,15 @@ namespace CyanobotsGenes
                     Thought_Memory memory_ateperson;
                     if (cannibalType == CannibalType.Required)
                     {
-                        memory_ateperson = ThoughtMaker.MakeThought(CG_DefOf.Bodyfeeder_AteLivePerson_CRequired, (int)pawnGroup);
+                        memory_ateperson = ThoughtMaker.MakeThought(CG_DefOf.CYB_Bodyfeeder_AteLivePerson_CRequired, (int)pawnGroup);
                     }
                     else if (cannibalType == CannibalType.Acceptable)
                     {
-                        memory_ateperson = ThoughtMaker.MakeThought(CG_DefOf.Bodyfeeder_AteLivePerson_CAcceptable, (int)pawnGroup);
+                        memory_ateperson = ThoughtMaker.MakeThought(CG_DefOf.CYB_Bodyfeeder_AteLivePerson_CAcceptable, (int)pawnGroup);
                     }
                     else
                     {
-                        memory_ateperson = ThoughtMaker.MakeThought(CG_DefOf.Bodyfeeder_AteLivePerson, (int)pawnGroup);
+                        memory_ateperson = ThoughtMaker.MakeThought(CG_DefOf.CYB_Bodyfeeder_AteLivePerson, (int)pawnGroup);
                     }
                     //Log.Message("memory_ateperson: " + memory_ateperson);
                     bodyfeeder.needs.mood.thoughts.memories.TryGainMemory(memory_ateperson, victim);
@@ -428,23 +428,23 @@ namespace CyanobotsGenes
             {
                 //Log.Message("not death");
 
-                TaleRecorder.RecordTale(CG_DefOf.TaleBodyfeederAteBodyPart, new object[] { bodyfeeder, victim, bodyPartDef });
+                TaleRecorder.RecordTale(CG_DefOf.CYB_TaleBodyfeederAteBodyPart, new object[] { bodyfeeder, victim, bodyPartDef });
 
                 HistoryEvent ev;
                 //event handles thoughts for witnesses
                 if (pawnGroup == PawnGroup.Colonist)
                 {
-                    ev = new HistoryEvent(CG_DefOf.BodyfeederAteBodyPartColonist,
+                    ev = new HistoryEvent(CG_DefOf.CYB_BodyfeederAteBodyPartColonist,
                         bodyfeeder.Named(HistoryEventArgsNames.Doer), victim.Named(HistoryEventArgsNames.Victim));
                 }
                 else if (pawnGroup == PawnGroup.Enemy)
                 {
-                    ev = new HistoryEvent(CG_DefOf.BodyfeederAteBodyPartEnemy,
+                    ev = new HistoryEvent(CG_DefOf.CYB_BodyfeederAteBodyPartEnemy,
                         bodyfeeder.Named(HistoryEventArgsNames.Doer), victim.Named(HistoryEventArgsNames.Victim));
                 }
                 else
                 {
-                    ev = new HistoryEvent(CG_DefOf.BodyfeederAteBodyPartOutsider,
+                    ev = new HistoryEvent(CG_DefOf.CYB_BodyfeederAteBodyPartOutsider,
                         bodyfeeder.Named(HistoryEventArgsNames.Doer), victim.Named(HistoryEventArgsNames.Victim));
                 }
                 Find.HistoryEventsManager.RecordEvent(ev);
@@ -456,7 +456,7 @@ namespace CyanobotsGenes
                     //if that was a friend
                     if (bodyfeeder.relations != null && bodyfeeder.relations.OpinionOf(victim) >= Pawn_RelationsTracker.FriendOpinionThreshold)
                     {
-                        Thought_Memory memory_atebodypartfriend = ThoughtMaker.MakeThought(CG_DefOf.Bodyfeeder_AteBodyPartFriend, 0);
+                        Thought_Memory memory_atebodypartfriend = ThoughtMaker.MakeThought(CG_DefOf.CYB_Bodyfeeder_AteBodyPartFriend, 0);
                         bodyfeeder.needs.mood.thoughts.memories.TryGainMemory(memory_atebodypartfriend, victim);
                     }
 
@@ -465,15 +465,15 @@ namespace CyanobotsGenes
                     Thought_Memory memory_atebodypart;
                     if (cannibalType == CannibalType.Required)
                     {
-                        memory_atebodypart = ThoughtMaker.MakeThought(CG_DefOf.Bodyfeeder_AteBodyPart_CRequired, (int)pawnGroup);
+                        memory_atebodypart = ThoughtMaker.MakeThought(CG_DefOf.CYB_Bodyfeeder_AteBodyPart_CRequired, (int)pawnGroup);
                     }
                     else if (cannibalType == CannibalType.Acceptable)
                     {
-                        memory_atebodypart = ThoughtMaker.MakeThought(CG_DefOf.Bodyfeeder_AteBodyPart_CAcceptable, (int)pawnGroup);
+                        memory_atebodypart = ThoughtMaker.MakeThought(CG_DefOf.CYB_Bodyfeeder_AteBodyPart_CAcceptable, (int)pawnGroup);
                     }
                     else
                     {
-                        memory_atebodypart = ThoughtMaker.MakeThought(CG_DefOf.Bodyfeeder_AteBodyPart, (int)pawnGroup);
+                        memory_atebodypart = ThoughtMaker.MakeThought(CG_DefOf.CYB_Bodyfeeder_AteBodyPart, (int)pawnGroup);
                     }
                     bodyfeeder.needs.mood.thoughts.memories.TryGainMemory(memory_atebodypart, victim);
 
@@ -491,13 +491,13 @@ namespace CyanobotsGenes
                     Thought_Memory memory_bodyparteaten_social;
                     if (victimCannibal)
                     {
-                        memory_bodyparteaten = ThoughtMaker.MakeThought(CG_DefOf.BodyfeederVictim_BodyPartEaten_Mood_CRequiredStrong, 0);
-                        memory_bodyparteaten_social = ThoughtMaker.MakeThought(CG_DefOf.BodyfeederVictim_BodyPartEaten_Opinion_CRequiredStrong, 0);
+                        memory_bodyparteaten = ThoughtMaker.MakeThought(CG_DefOf.CYB_BodyfeederVictim_BodyPartEaten_Mood_CRequiredStrong, 0);
+                        memory_bodyparteaten_social = ThoughtMaker.MakeThought(CG_DefOf.CYB_BodyfeederVictim_BodyPartEaten_Opinion_CRequiredStrong, 0);
                     }
                     else
                     {
-                        memory_bodyparteaten = ThoughtMaker.MakeThought(CG_DefOf.BodyfeederVictim_BodyPartEaten_Mood, 0);
-                        memory_bodyparteaten_social = ThoughtMaker.MakeThought(CG_DefOf.BodyfeederVictim_BodyPartEaten_Opinion, 0);
+                        memory_bodyparteaten = ThoughtMaker.MakeThought(CG_DefOf.CYB_BodyfeederVictim_BodyPartEaten_Mood, 0);
+                        memory_bodyparteaten_social = ThoughtMaker.MakeThought(CG_DefOf.CYB_BodyfeederVictim_BodyPartEaten_Opinion, 0);
                     }
                     victim.needs.mood.thoughts.memories.TryGainMemory(memory_bodyparteaten, bodyfeeder);
                     victim.needs.mood.thoughts.memories.TryGainMemory(memory_bodyparteaten_social, bodyfeeder);
