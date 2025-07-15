@@ -39,12 +39,12 @@ namespace CyanobotsGenes
             ebsgAllInOneLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Expanded Biotech Style Genes - All in One");
             bigAndSmallFrameworkLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Big and Small - Framework");
 
-            if (forsakenNightLoaded) ThoughtWorker_LightSensitivity.lightlessBiomes.Add("AB_RockyCrags");
+            if (forsakenNightLoaded) LightSensitivityUtility.lightlessBiomes.Add("AB_RockyCrags");
             if (geologicalLandformsLoaded)
             {
-                ThoughtWorker_LightSensitivity.t_WorldTileInfo = AccessTools.TypeByName("GeologicalLandforms.WorldTileInfo");
-                ThoughtWorker_LightSensitivity.m_WorldTileInfo_Get = AccessTools.Method(ThoughtWorker_LightSensitivity.t_WorldTileInfo, "Get", new Type[] { typeof(int), typeof(bool) });
-                ThoughtWorker_LightSensitivity.p_BiomeVariants = AccessTools.Property(ThoughtWorker_LightSensitivity.t_WorldTileInfo, "BiomeVariants");
+                LightSensitivityUtility.t_WorldTileInfo = AccessTools.TypeByName("GeologicalLandforms.WorldTileInfo");
+                LightSensitivityUtility.m_WorldTileInfo_Get = AccessTools.Method(LightSensitivityUtility.t_WorldTileInfo, "Get", new Type[] { typeof(int), typeof(bool) });
+                LightSensitivityUtility.p_BiomeVariants = AccessTools.Property(LightSensitivityUtility.t_WorldTileInfo, "BiomeVariants");
             }
 
             PopulateDefaults();

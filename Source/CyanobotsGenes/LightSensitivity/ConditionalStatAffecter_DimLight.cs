@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
-using static CyanobotsGenes.ThoughtWorker_LightSensitivity;
+using static CyanobotsGenes.LightSensitivityUtility;
 
 namespace CyanobotsGenes
 {
     class ConditionalStatAffecter_DimLight : ConditionalStatAffecter
     {
-        public override string Label => "CYB_StatsReport_BrightLight".Translate();
+        public override string Label => "CYB_StatsReport_DimLight".Translate();
 
         public override bool Applies(StatRequest req)
         {

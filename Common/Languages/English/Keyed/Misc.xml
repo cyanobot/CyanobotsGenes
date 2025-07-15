@@ -4,6 +4,8 @@
 <CYB_WorkDisabledGene>Disabled by gene: {0}</CYB_WorkDisabledGene>
 
 <CYB_StatsReport_LightSensitivity>Light sensitivity</CYB_StatsReport_LightSensitivity>
+<CYB_StatsReport_BrightLight>bright light</CYB_StatsReport_BrightLight>
+<CYB_StatsReport_DimLight>dim light</CYB_StatsReport_DimLight>
 
 <CYB_AbilityNoPsyfocusWanted>Psyfocus already above target level</CYB_AbilityNoPsyfocusWanted>
 <CYB_MightKill>Might kill</CYB_MightKill>

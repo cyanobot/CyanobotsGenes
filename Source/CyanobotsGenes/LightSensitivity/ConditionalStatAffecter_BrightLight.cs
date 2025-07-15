@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
-using static CyanobotsGenes.ThoughtWorker_LightSensitivity;
+using static CyanobotsGenes.LightSensitivityUtility;
 
 namespace CyanobotsGenes
 {

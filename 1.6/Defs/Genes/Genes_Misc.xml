@@ -13,7 +13,7 @@
       <li>Stealth</li>
     </exclusionTags>
 	<statOffsets>
-		<HuntingStealth>0.5</HuntingStealth>
+		<HuntingStealth>1.0</HuntingStealth>
 	</statOffsets>
     <symbolPack>
       <prefixSymbols>

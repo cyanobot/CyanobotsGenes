@@ -100,12 +100,28 @@
   
   <!--Light sensitivity-->
   <ThoughtDef>
-	<defName>CYB_LightSensitivity</defName>
-	<workerClass>CyanobotsGenes.ThoughtWorker_LightSensitivity</workerClass>
+	<defName>CYB_LightSensitivity_Mild</defName>
+	<workerClass>CyanobotsGenes.ThoughtWorker_LightSensitivity_Mild</workerClass>
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
 	<validWhileDespawned>true</validWhileDespawned>
 	<requiredGenes>
-		<li>CYB_LightSensitivity</li>
+		<li>CYB_LightSensitivity_Mild</li>
+	</requiredGenes>
+	<stages>
+		<li>
+			<label>bright light</label>
+			<description>The light is too bright.</description>
+			<baseMoodEffect>-3</baseMoodEffect>
+		</li>
+	</stages>
+  </ThoughtDef>
+  <ThoughtDef>
+	<defName>CYB_LightSensitivity_Severe</defName>
+	<workerClass>CyanobotsGenes.ThoughtWorker_LightSensitivity_Severe</workerClass>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+	<validWhileDespawned>true</validWhileDespawned>
+	<requiredGenes>
+		<li>CYB_LightSensitivity_Severe</li>
 	</requiredGenes>
 	<stages>
 		<li>
@@ -124,7 +140,7 @@
   <ThoughtDef>
 	<defName>CYB_LightSensitivity_Dummy</defName>
 	<requiredGenes>
-		<li>CYB_LightSensitivity</li>
+		<li>CYB_LightSensitivity_Severe</li>
 	</requiredGenes>
 	<stages>
 		<li>

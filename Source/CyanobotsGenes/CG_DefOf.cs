@@ -18,11 +18,9 @@ namespace CyanobotsGenes
 
         public static EffecterDef CYB_Metamorphosis;
 
-        public static GeneDef CYB_Afamilial;
         public static GeneDef Asocial;
         public static GeneDef Bodyfeeder;
         public static GeneDef Carnivore;
-        [MayRequireAnomaly] public static GeneDef CYB_Darkling;
         public static GeneDef Hypercarnivore;
         public static GeneDef Herbivore;
         public static GeneDef StrictHerbivore;
@@ -31,13 +29,17 @@ namespace CyanobotsGenes
         public static GeneDef RarelyBored;
         public static GeneDef NeverBored;
         public static GeneDef LightFur;
-        public static GeneDef CYB_LightSensitivity;
         public static GeneDef Tabby;
         public static GeneDef PackBond;
-        public static GeneDef CYB_Precocious;
         public static GeneDef PreyDrive;
         public static GeneDef Psychopathic;
         public static GeneDef Stealthy;
+#if RW_1_5
+        public static GeneDef CYB_LightSensitivity;
+#endif
+        public static GeneDef CYB_Afamilial;
+        [MayRequireAnomaly] public static GeneDef CYB_Darkling;
+        public static GeneDef CYB_Precocious;
         public static GeneDef CYB_ViolenceAverse;
 
         public static HediffDef BodyfeederStarvation;

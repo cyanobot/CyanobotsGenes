@@ -90,6 +90,7 @@
     <Compile Include="GeneticDiet\Harmony\CompIngredients_AllowStackWith_Patch.cs" />
     <Compile Include="GeneticDiet\Harmony\FloatMenuOptionProvider_Ingest_Diet_Patch.cs" />
     <Compile Include="GeneticDiet\Harmony\TransferableUtility_TransferAsOne_Patch.cs" />
+    <Compile Include="LightSensitivity\LightSensitivityUtility.cs" />
     <Compile Include="TemplateGenes\Caste\CasteUtility.cs" />
     <Compile Include="TemplateGenes\Caste\GeneExtension_Caste.cs" />
     <Compile Include="Precocious\Harmony\GenerateTraits_Patch.cs" />

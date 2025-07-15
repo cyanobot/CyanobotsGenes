@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using RimWorld;
 using Verse;
-using static CyanobotsGenes.ThoughtWorker_LightSensitivity;
+
+#if RW_1_5
+
+using static CyanobotsGenes.LightSensitivityUtility;
 
 namespace CyanobotsGenes
 {
@@ -47,3 +50,4 @@ namespace CyanobotsGenes
 
     }
 }
+#endif

@@ -22,7 +22,8 @@
 		defName="AB_ForsakenThunderstorm"
 		]/nullifyingGenes</xpath>
     <value>
-		<li>CYB_LightSensitivity</li>
+		<li>CYB_LightSensitivity_Mild</li>
+		<li>CYB_LightSensitivity_Severe</li>
 		<li MayRequire="Ludeon.RimWorld.Anomaly">CYB_Darkling</li>
 	</value>
   </Operation>
