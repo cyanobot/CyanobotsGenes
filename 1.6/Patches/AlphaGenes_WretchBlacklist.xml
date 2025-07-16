@@ -8,6 +8,8 @@
 		<value>
 			<li>CYB_Metamorphosis_</li>
 			<li>CYB_Caste_</li>
+			<li>CYB_HairBundle_</li>
+			<li>CYB_SkinBundle_</li>
 		</value>
 	</match>
 </Operation>

@@ -21,6 +21,72 @@
 					<displayCategory>Outland_Teeth</displayCategory>
 				</value>
 			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="CYB_Blood_Lilac"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Outland_Blood</displayCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[defName="CYB_ProdigiousGrowth"]/displayCategory</xpath>
+				<value>
+					<displayCategory>Outland_BodyScale</displayCategory>
+				</value>
+			</li>
+			
+			<!--move outland genes to our categories where relevant-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[
+					defName="Outland_Evasive" or
+					defName="Outland_ThickSkin"
+					]/displayCategory</xpath>
+				<value>
+					<displayCategory>Violence</displayCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[
+					defName="Outland_UnusualSpeech" or
+					defName="Outland_FamiliarScent" or
+					defName="Outland_CalmingPheromones" or
+					defName="Outland_Submissive" or
+					defName="Outland_Empathic"
+					]/displayCategory</xpath>
+				<value>
+					<displayCategory>CYB_Social</displayCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/GeneDef[
+					(defName="Outland_BumFluff" or
+					defName="Outland_Furbody") and
+					not(displayCategory)
+					]</xpath>
+				<value>
+					<displayCategory/>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[
+					defName="Outland_BumFluff" or
+					defName="Outland_Furbody"
+					]/displayCategory</xpath>
+				<value>
+					<displayCategory>CYB_Fur</displayCategory>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[
+					defName="Outland_YouthfulAgeing" or
+					defName="Outland_FeyAgeing" or
+					defName="Outland_AcceleratedAgeing" or
+					defName="Outland_AcceleratedMaturation" or
+					defName="Outland_DeceleratedMaturation"
+					]/displayCategory</xpath>
+				<value>
+					<displayCategory>CYB_Aging</displayCategory>
+				</value>
+			</li>
 						
 		</operations>
 	</match>

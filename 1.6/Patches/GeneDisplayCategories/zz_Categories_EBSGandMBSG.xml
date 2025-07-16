@@ -70,4 +70,22 @@
 	</match>
 </Operation>
 
+<!--move all social genes to the EBSG lifespan category-->
+<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>EBSG - Expanded Lifespan Genes</li>
+		<li>Expanded Biotech Style Genes - All in One</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+		<operations>		
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef/displayCategory[text()="CYB_Social"]</xpath>
+				<value>
+					<displayCategory>Beauty</displayCategory>
+				</value>
+			</li>
+		</operations>
+	</match>
+</Operation>
+
 </Patch>

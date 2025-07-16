@@ -8,8 +8,7 @@
 		<li>1.5</li>
 		<li>1.6</li>
     </supportedVersions>
-
-    <description>7 new xenotypes and 47 new genes (16 cosmetic, 31 functional) to add to your gene pool. Requires Biotech.
+    <description>Approximately 50 new genes, functional and cosmetic, to add to your gene pool. Requires Biotech.
         
 Genes:
 - 3 templates that generate genes dynamically from loaded xenotypes
@@ -34,17 +33,6 @@ Genes:
 - 2 blood colors, 3 eye colors, 1 alternative eye graphic
 - 3 hair bundles containing 17 hair colors
 - 3 skin bundles containing 17 skin colors
-
-Xenotypes:
-- Biodrone : Emotionally dampened supersoldiers. Not quite as potent as Hussars, but far more controllable. Stoic and resilient, but inept at most non combat tasks.
-- Changeling : Beautiful, flighty children found mysteriously without parents. They eat a lot, sleep a lot, and don’t work hard, but everyone loves them.
-- Fairy : The ironically named adult form of the changeling. Hulking, highly aggressive brutes with toxic spittle and great strength and speed.
-- Glimmer (requires Outland - Genetics) : Hopelessly lost glitterworlders unsuited for life on the Rim. Intelligent, cheerful, intensely sociable, clumsy, herbivorous, and extremely distressed by violence.
-- Kitlin : Useless cat people who spend all their time sleeping or playing. They are quick and agile and have a knack for shooting.
-- Psycrux (requires VRE - Archon) : Intensely powerful psycasters and psychic parasites, able to implant others with a Thrall xenogerm to more readily enslave them and feed on their psyches.
-- Thrall (requires VRE - Archon) : Created by Psycrux, thralls are easily controlled. They work most hours of the day, needing no recreation and little sleep, but they are slow in everything they do.
-- Shulk : Highly specialised pioneers for settling remote cave systems. Self-sufficient with natural weapons for hunting, tough skin, strong immune systems and the ability to eat pretty much anything, but mute and extremely light sensitive.
-- Wist : Hemogen-powered battlefield medics who use bloodfeeding to power coagulation and a potent, addictive, venomous bite that dulls pain, fights infection, and elevates mood.
     </description>
 	<modDependencies>
 		<li>

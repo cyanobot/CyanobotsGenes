@@ -166,7 +166,7 @@ namespace CyanobotsGenes
             //    + ", m_WorldTileInfo_Get: " + m_WorldTileInfo_Get
             //    + ", p_BiomeVariants: " + p_BiomeVariants);
 
-            object worldTileInfo = m_WorldTileInfo_Get.Invoke(null, new object[] { tile, true });
+            object worldTileInfo = m_WorldTileInfo_Get.Invoke(null, new object[] { tile.tileId, true });
             object obj_BiomeVariants = p_BiomeVariants.GetValue(worldTileInfo);
 
             //Log.Message("worldTileInfo: " + worldTileInfo + ", obj_BiomeVariants: " + obj_BiomeVariants);

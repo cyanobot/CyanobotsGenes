@@ -6,9 +6,13 @@
 		<li>Vanilla Races Expanded - Lycanthrope</li>
 	</mods>
 	<match Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="CYB_Clumsy"]/modExtensions/li[@Class="VEF.Genes.GeneExtension"]</xpath>
+		<xpath>Defs/GeneDef[defName="CYB_Clumsy"]</xpath>
 		<value>
-			<hideGene>true</hideGene>
+			<modExtensions>
+				<li Class="VEF.Genes.GeneExtension">
+					<hideGene>true</hideGene>				
+				</li>
+			</modExtensions>
 		</value>
 	</match>
 </Operation>

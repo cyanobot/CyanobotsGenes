@@ -29,15 +29,17 @@ namespace CyanobotsGenes
             betterGeneInheritanceLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Better Gene Inheritance");
             geologicalLandformsLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Geological Landforms");
             forsakenNightLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Alpha Biomes: Forsaken Night Unofficial Add-On");
-            harLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Humanoid Alien Races");
+            //harLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Humanoid Alien Races");
             outlandGeneticsLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Outland - Genetics");
-            vreArchonLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Vanilla Races Expanded - Archon");
             vreHighmateLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Vanilla Races Expanded - Highmate");
             vreInsectorLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Vanilla Races Expanded - Insector");
             vreSauridLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Vanilla Races Expanded - Saurid");
+            bigAndSmallFrameworkLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Big and Small - Framework");
+#if RW_1_5
+            vreArchonLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Vanilla Races Expanded - Archon");
             ebsgPsychicLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "EBSG - Expanded Psychic Genes");
             ebsgAllInOneLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Expanded Biotech Style Genes - All in One");
-            bigAndSmallFrameworkLoaded = LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Big and Small - Framework");
+#endif
 
             if (forsakenNightLoaded) LightSensitivityUtility.lightlessBiomes.Add("AB_RockyCrags");
             if (geologicalLandformsLoaded)

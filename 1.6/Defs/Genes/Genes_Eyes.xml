@@ -66,7 +66,6 @@
 	<labelShortAdj>cateye</labelShortAdj>
 	<description>Carriers of this gene have slit pupils, like those of a cat or snake, and large amber irises.</description>
 	<iconPath>Genes/CYB_Eyes_Cat_Amber</iconPath>
-	<displayCategory>Cosmetic</displayCategory>
     <biostatCpx>0</biostatCpx>
 	<displayOrderInCategory>2</displayOrderInCategory>
     <renderNodeProperties>
@@ -116,7 +115,6 @@
 	<labelShortAdj>cateye</labelShortAdj>
 	<description>Carriers of this gene have slit pupils, like those of a cat or snake, and large blue irises.</description>
 	<iconPath>Genes/CYB_Eyes_Cat_Blue</iconPath>
-	<displayCategory>Cosmetic</displayCategory>
     <biostatCpx>0</biostatCpx>
 	<displayOrderInCategory>2</displayOrderInCategory>
     <renderNodeProperties>
@@ -166,7 +164,6 @@
 	<labelShortAdj>cateye</labelShortAdj>
 	<description>Carriers of this gene have slit pupils, like those of a cat or snake, and large green irises.</description>
 	<iconPath>Genes/CYB_Eyes_Cat_Green</iconPath>
-	<displayCategory>Cosmetic</displayCategory>
     <biostatCpx>0</biostatCpx>
 	<displayOrderInCategory>2</displayOrderInCategory>
     <renderNodeProperties>
@@ -216,7 +213,6 @@
 	<labelShortAdj>cateye</labelShortAdj>
 	<description>Carriers of this gene have slit pupils, like those of a cat or snake, and large red irises.</description>
 	<iconPath>Genes/CYB_Eyes_Cat_Red</iconPath>
-	<displayCategory>Cosmetic</displayCategory>
     <biostatCpx>0</biostatCpx>
 	<displayOrderInCategory>2</displayOrderInCategory>
     <renderNodeProperties>
