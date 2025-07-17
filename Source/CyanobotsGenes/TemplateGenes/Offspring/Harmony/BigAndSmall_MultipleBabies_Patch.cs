@@ -17,7 +17,6 @@ namespace CyanobotsGenes
 #else
     [HarmonyPatch(typeof(PregnancyUtility), nameof(PregnancyUtility.ApplyBirthOutcome), new Type[]
 #endif
-
             {
                 typeof(RitualOutcomePossibility),
                 typeof(float),
