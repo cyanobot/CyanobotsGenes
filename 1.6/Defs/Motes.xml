@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+<ThingDef ParentName="MoteGlowDistorted">
+    <defName>CYB_Mote_Psyphon_Warmup</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.6</fadeInTime>
+      <fadeOutTime>0.2</fadeOutTime>
+      <solidTime>3.2</solidTime>
+      <growthRate>-0.2</growthRate>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MotePsychicWarmupWordOf</shaderType>
+      <texPath>Things/Mote/PsychicDistortionRing</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.03</_distortionIntensity>
+        <_brightnessMultiplier>1.5</_brightnessMultiplier>
+        <_pulseSpeed>1</_pulseSpeed>
+      </shaderParameters>
+      <drawSize>5</drawSize>
+    </graphicData>
+</ThingDef>
+
+<FleckDef ParentName="FleckGlowDistortBackground">
+    <defName>CYB_Fleck_Psyphon_Apply</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <fadeOutTime>0.1</fadeOutTime>
+    <solidTime>0.3</solidTime>
+    <growthRate>4</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsychicDistortionRing</_DistortionTex>
+        <_distortionIntensity>0.03</_distortionIntensity>
+        <_brightnessMultiplier>1.5</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>5</drawSize>
+    </graphicData>
+</FleckDef>
+
+</Defs>

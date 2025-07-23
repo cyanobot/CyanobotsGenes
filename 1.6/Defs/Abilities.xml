@@ -79,6 +79,7 @@
 	<label>psyphon</label>
 	<description>Drain psychic energy from the target to refuel psyfocus. Targets with psyfocus of their own will lose psyfocus first at a base conversion rate of 2:1. If no or insufficient psyfocus can be drained, the target's consciousness will be drained directly, potentially causing brain damage and other harms in the process.\n\nTo control the amount of energy drained, use the Desired Psyfocus slider as you would to control meditation.</description>
 	<iconPath>Genes/CYB_Psyphon</iconPath>
+    <warmupMote>CYB_Mote_Psyphon_Warmup</warmupMote>
 	<hostile>true</hostile>
 	<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
 	<hotKey>Misc12</hotKey>
@@ -102,6 +103,9 @@
 	</verbProperties>
 	<comps>
 		<li Class="CyanobotsGenes.CompProperties_AbilityPsyphon">
+		</li>
+		<li Class="CompProperties_AbilityFleckOnTarget">
+			<fleckDef>CYB_Fleck_Psyphon_Apply</fleckDef>
 		</li>
 	</comps>
 </AbilityDef>
