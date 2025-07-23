@@ -20,6 +20,7 @@ namespace CyanobotsGenes
 
         //public bool alreadyMetamorphosed = false;
         public bool? chosenGene = null;
+        public int loopDepth = -1;
 
         public override bool Active
         {
@@ -42,7 +43,16 @@ namespace CyanobotsGenes
 
         public void TriggerMetamorphosis()
         {
+            LogUtil.DebugLog($"TriggerMetamorphosis - pawn: {pawn}, xenotype: {Xenotype}, chosenGene: {chosenGene}");
+
             if (chosenGene != null) return;
+
+            if (!SafeToMetamorphose())
+            {
+                Log.Error($"[Cyanobot's Genes] Attempted to initiate metamorphosis for pawn: {pawn}, but found a potentially infinite loop of xenotypes. Removing offending gene: {this.Label}");
+                pawn.genes.RemoveGene(this);
+                return;
+            }
 
             List<Gene_Metamorphosis> geneOptions = new List<Gene_Metamorphosis>();
 
@@ -207,6 +217,36 @@ namespace CyanobotsGenes
             }
 
             m_EnsureCorrectSkinColorOverride.Invoke(pawn.genes, new object[] { });
+        }
+    
+    
+        public bool SafeToMetamorphose()
+        {
+            LogUtil.DebugLog($"SafeToMetamorphose - xenotype: {Xenotype}");
+            loopDepth = -1;
+            return SafeToMetamorphose_int(Xenotype);
+        }
+
+        public bool SafeToMetamorphose_int(XenotypeDef xenotype)
+        {
+            LogUtil.DebugLog($"SafeToMetamorphose_int - xenotype: {xenotype}, loopDepth: {loopDepth}");
+            loopDepth++;
+            if (loopDepth >= 5) return false;
+
+            IEnumerable<GeneDef> metamorphosisGenes = xenotype.AllGenes.Where(g => g.geneClass == typeof(Gene_Metamorphosis));
+            if (metamorphosisGenes == null) return true;
+            if (metamorphosisGenes.Count() == 0) return true;
+
+            foreach (GeneDef gene in metamorphosisGenes)
+            {
+                XenotypeDef childXeno = gene.GetModExtension<GeneExtension_Xenotype>()?.xenotype;
+                if (childXeno == null) continue;
+
+                if (!SafeToMetamorphose_int(childXeno)) return false;
+                loopDepth--;
+            }
+
+            return true;
         }
     }
 }

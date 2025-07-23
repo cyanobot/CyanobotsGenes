@@ -75,6 +75,7 @@
     </Reference>
     <Reference Condition="'$(Configuration)' != '1.5'" Include="UnityEngine.IMGUIModule">
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Condition="'$(Configuration)' != '1.5'" Include="VEF">
       <HintPath>..\..\..\..\..\..\workshop\content\294100\2023507013\1.6\Assemblies\VEF.dll</HintPath>

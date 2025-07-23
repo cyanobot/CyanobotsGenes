@@ -6,7 +6,7 @@
 		<li>Det's Xenotypes - Stoneborn</li>
 	</mods>
 	<match Class="PatchOperationAdd">
-		<xpath>Defs/GeneDef[defName="CYB_Undergrounder"]]</xpath>
+		<xpath>Defs/GeneDef[defName="CYB_Undergrounder"]</xpath>
 		<value>
 			<modExtensions>
 				<li Class="VEF.Genes.GeneExtension">
